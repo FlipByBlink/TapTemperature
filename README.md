@@ -6,7 +6,7 @@
 
 <br>
 
-<!-- Manually sync below text between "🛠Menu.swift/📄AboutEN&📄AboutJA" and "AppStoreConnect/Description" and "/README.md(here)". -->
+<!-- Manually sync below text between "🛠Menu.swift/📄About" and "AppStoreConnect/Description" and "/README.md(here)". -->
 
 ## 📄 Description
 

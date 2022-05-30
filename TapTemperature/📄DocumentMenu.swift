@@ -19,21 +19,10 @@ struct 📄DocumentMenu: View {
                 Section {
                     NavigationLink {
                         ScrollView {
-                            📋PageView(📄AboutEN, "About app")
+                            📋PageView(📄About, "About app")
                         }
                     } label: {
-                        Text(📄AboutEN)
-                            .font(.subheadline)
-                            .lineLimit(7)
-                            .padding(8)
-                    }
-                    
-                    NavigationLink {
-                        ScrollView {
-                            📋PageView(📄AboutJA, "アプリのついて")
-                        }
-                    } label: {
-                        Text(📄AboutJA)
+                        Text(📄About)
                             .font(.subheadline)
                             .lineLimit(7)
                             .padding(8)
@@ -43,7 +32,7 @@ struct 📄DocumentMenu: View {
                 }
                 
                 
-                let 🔗 = "https://apps.apple.com/developer/id1626760566"
+                let 🔗 = "https://apps.apple.com/app/id1626760566"
                 Section {
                     Link(destination: URL(string: 🔗)!) {
                         HStack {
@@ -182,10 +171,6 @@ struct 📄BundleMainInfoDictionary: View {
 }
 
 
-let 📄AboutEN = """
-                    AboutEN PLACEHOLDER
-                    """
-
-let 📄AboutJA = """
-                    AboutJA PLACEHOLDER
-                    """
+let 📄About = """
+                About PLACEHOLDER
+                """
