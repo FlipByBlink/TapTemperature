@@ -50,7 +50,7 @@ struct 📄DocumentMenu: View {
                 
                 Section {
                     Text("""
-                        2022-0?-??
+                        2022-05-31
                         (English)This application don't collect user infomation.
                         (Japanese)このアプリ自身において、ユーザーの情報を一切収集しません。
                         """)

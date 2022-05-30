@@ -1,4 +1,4 @@
-# TapTemperature/体温登録: iPhoneApp for "Health"
+# TapTemperature / 体温登録 : iPhoneApp for "Health"
 
 <br>
 

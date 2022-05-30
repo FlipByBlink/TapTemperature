@@ -116,7 +116,6 @@
 		12E811B9283089D300B0A615 /* TapTemperature */ = {
 			isa = PBXGroup;
 			children = (
-				123690192844F1BD006F22EE /* Info.plist */,
 				12E811BA283089D300B0A615 /* TapTemperatureApp.swift */,
 				12E811BC283089D300B0A615 /* ContentView.swift */,
 				1281D252283E1C4300D59319 /* 📱Model.swift */,
@@ -128,6 +127,7 @@
 				123690172844EE92006F22EE /* InfoPlist.strings */,
 				124BC6BC28437B9000F75E1F /* Localizable.strings */,
 				12E811C828308A2100B0A615 /* TapTemperature.entitlements */,
+				123690192844F1BD006F22EE /* Info.plist */,
 				12E811BE283089D400B0A615 /* Assets.xcassets */,
 				12E811C0283089D400B0A615 /* Preview Content */,
 			);
