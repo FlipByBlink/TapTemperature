@@ -1,4 +1,4 @@
-# 🌡 TapTemperature/体温登録: iPhoneApp for "Health"
+# TapTemperature/体温登録: iPhoneApp for "Health"
 
 <br>
 
@@ -44,7 +44,7 @@ sear_pandora_0x@icloud.com
 ## Privacy Policy for AppStore
 
 
-2022-0?-??
+2022-05-31
 
 
 ### Japanese
