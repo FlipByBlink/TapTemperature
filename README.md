@@ -2,7 +2,7 @@
 
 <br>
 
-<!--![](TapWeight/Assets.xcassets/LaunchIcon.imageset/rounded_LogWeightIcon256.png)-->
+![](TapTemperature/Assets.xcassets/LaunchIcon.imageset/TapTemp_Icon240w.png)
 
 <br>
 
@@ -15,7 +15,7 @@ This application is designed to register body temperature data to the Apple "Hea
 
 ## 🔗 AppStore link
 
-[apps.apple.com/app/id](https://apps.apple.com/app/id)
+[apps.apple.com/app/id1626760566](https://apps.apple.com/app/id1626760566)
 
 
 ## 🧰 Source code link
