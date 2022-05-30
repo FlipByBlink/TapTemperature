@@ -22,6 +22,7 @@ struct 🪧Label: View {
                     .lineLimit(1)
             }
             
+            
             if 📱.🧩Temp.indices.contains(1) {
                 Text(📱.🧩Temp[1].description)
             } else {
@@ -32,7 +33,9 @@ struct 🪧Label: View {
                     }
             }
             
+            
             Text(".")
+            
             
             if 📱.🧩Temp.indices.contains(2) {
                 Text(📱.🧩Temp[2].description)
@@ -43,6 +46,7 @@ struct 🪧Label: View {
                             .opacity(📱.🧩Temp.count < 2 ? 0 : 1)
                     }
             }
+            
             
             if 📱.🧩Temp.indices.contains(3) {
                 Text(📱.🧩Temp[3].description)
@@ -57,6 +61,7 @@ struct 🪧Label: View {
                     EmptyView()
                 }
             }
+            
             
             Text(📱.💾Unit.rawValue)
                 .font(.system(size: 36, weight: .medium))

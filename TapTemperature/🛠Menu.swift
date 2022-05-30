@@ -45,12 +45,14 @@ struct 🛠Menu: View {
                         📱.🧩Reset()
                     }
                     
+                    
                     Toggle(isOn: $📱.🚩BasalTemp) {
                         Label("Basal body temperature", systemImage: "bed.double")
                     }
                     .onChange(of: 📱.🚩BasalTemp) { _ in
                         📱.🏥RequestAuthorization(HKQuantityType(.basalBodyTemperature))
                     }
+                    
                     
                     Toggle(isOn: $📱.🚩2DecimalPlace) {
                         let 🪧: String = {
@@ -62,6 +64,7 @@ struct 🛠Menu: View {
                         
                         Label(🪧, systemImage: "character.cursor.ibeam")
                     }
+                    
                     
                     Toggle(isOn: $📱.🚩AutoComplete) {
                         Label("Auto complete", systemImage: "checkmark.circle.trianglebadge.exclamationmark")
