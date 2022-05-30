@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123690152844EE92006F22EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		124BC6A628432FC400F75E1F /* 📄DocumentMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124BC6A528432FC400F75E1F /* 📄DocumentMenu.swift */; };
 		124BC6A8284333E100F75E1F /* TapTemperatureApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* TapTemperatureApp.swift */; };
 		124BC6A9284333E100F75E1F /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BC283089D300B0A615 /* ContentView.swift */; };
@@ -61,6 +62,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		123690162844EE92006F22EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		123690182844EE96006F22EE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		124BC6A528432FC400F75E1F /* 📄DocumentMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📄DocumentMenu.swift"; sourceTree = "<group>"; };
 		124BC6B62843761300F75E1F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		124BC6BB28437B9000F75E1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 				125A9BEC283B441D00C54634 /* 🆗Result.swift */,
 				125A9BEA283B35FC00C54634 /* 🛠Menu.swift */,
 				124BC6A528432FC400F75E1F /* 📄DocumentMenu.swift */,
+				123690172844EE92006F22EE /* InfoPlist.strings */,
 				124BC6BC28437B9000F75E1F /* Localizable.strings */,
 				12E811C828308A2100B0A615 /* TapTemperature.entitlements */,
 				12E811BE283089D400B0A615 /* Assets.xcassets */,
@@ -206,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12E811C2283089D400B0A615 /* Preview Assets.xcassets in Resources */,
+				123690152844EE92006F22EE /* InfoPlist.strings in Resources */,
 				124BC6BA28437B9000F75E1F /* Localizable.strings in Resources */,
 				12E811BF283089D400B0A615 /* Assets.xcassets in Resources */,
 			);
@@ -232,6 +237,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		123690172844EE92006F22EE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				123690162844EE92006F22EE /* en */,
+				123690182844EE96006F22EE /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		124BC6BC28437B9000F75E1F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
