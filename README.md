@@ -69,7 +69,7 @@ This application don't collect user infomation.
 
 
 <!-- URL "Support page for AppStore" -->
-<!-- https:// -->
+<!-- https://flipbyblink.github.io/TapTemperature/ -->
 
 <!-- URL "Privacy Policy for AppStore" -->
-<!-- https:// -->
+<!-- https://flipbyblink.github.io/TapTemperature/#privacy-policy-for-appstore -->
