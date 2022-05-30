@@ -90,14 +90,6 @@ struct 📄DocumentMenu: View {
 struct 📓SourceCodeDoc: View {
     @Environment(\.dismiss) var 🔙: DismissAction
     
-    var 📁URL: URL {
-        Bundle.main.bundleURL.appendingPathComponent("📁")
-    }
-    
-    var 📦: [String] {
-        try! FileManager.default.contentsOfDirectory(atPath: 📁URL.path)
-    }
-    
     var body: some View {
         List {
             📑Section("📁Primary")
@@ -150,19 +142,19 @@ struct 📑Section: View {
         Bundle.main.bundleURL.appendingPathComponent(🄳irPath)
     }
     
-    var 📦: [String] {
+    var 🏷Name: [String] {
         try! FileManager.default.contentsOfDirectory(atPath: 📁URL.path)
     }
     
     var body: some View {
         Section {
-            ForEach(📦, id: \.self) { 📃 in
-                NavigationLink(📃) {
-                    let 📍 = 📁URL.appendingPathComponent(📃)
+            ForEach(🏷Name, id: \.self) { 🏷 in
+                NavigationLink(🏷) {
+                    let 📍 = 📁URL.appendingPathComponent(🏷)
                     
                     ScrollView(.vertical) {
                         ScrollView(.horizontal, showsIndicators: false) {
-                            📄PageView(try! String(contentsOf: 📍), 📃)
+                            📄PageView(try! String(contentsOf: 📍), 🏷)
                         }
                     }
                 }

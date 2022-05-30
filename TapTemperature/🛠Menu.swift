@@ -35,8 +35,8 @@ struct 🛠Menu: View {
             List {
                 Section {
                     Picker(selection: $📱.💾Unit) {
-                        ForEach(📏EnumUnit.allCases, id: \.self) { 🏷 in
-                            Text(🏷.rawValue)
+                        ForEach(📏EnumUnit.allCases, id: \.self) { 📏 in
+                            Text(📏.rawValue)
                         }
                     } label: {
                         Label("℃  /  ℉", systemImage: "ruler")
@@ -132,6 +132,9 @@ struct 🕛HistoryView: View {
                 .navigationBarTitleDisplayMode(.inline)
         } else {
             ScrollView {
+                Spacer()
+                    .frame(height: 50)
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     📄PageView(🅃ext, "History")
                         .toolbar {
