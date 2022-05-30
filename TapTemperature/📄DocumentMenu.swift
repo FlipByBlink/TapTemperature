@@ -43,7 +43,7 @@ struct 📄DocumentMenu: View {
                 }
                 
                 
-                let 🔗 = "https://apps.apple.com/developer/idPLACEHOLDER"
+                let 🔗 = "https://apps.apple.com/developer/id1626760566"
                 Section {
                     Link(destination: URL(string: 🔗)!) {
                         HStack {
@@ -115,7 +115,7 @@ struct 📓SourceCodeDoc: View {
             }
             
             
-            let 🔗Repository = "https://github.com/FlipByBlink/PLACEHOLDER"
+            let 🔗Repository = "https://github.com/FlipByBlink/TapTemperature"
             Section {
                 Link(destination: URL(string: 🔗Repository)!) {
                     HStack {
