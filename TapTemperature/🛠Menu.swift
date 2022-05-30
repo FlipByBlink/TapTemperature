@@ -136,7 +136,7 @@ struct 🕛HistoryView: View {
                     .frame(height: 50)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    📄PageView(🅃ext, "History")
+                    📋PageView(🅃ext, "History")
                         .toolbar {
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 Button {
@@ -158,7 +158,7 @@ struct 🕛HistoryView: View {
 }
 
 
-struct 📄PageView: View {
+struct 📋PageView: View {
     var 🅃ext: String
     var 🅃itle: String
     

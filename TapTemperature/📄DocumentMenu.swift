@@ -19,7 +19,7 @@ struct 📄DocumentMenu: View {
                 Section {
                     NavigationLink {
                         ScrollView {
-                            📄PageView(📄AboutEN, "About app")
+                            📋PageView(📄AboutEN, "About app")
                         }
                     } label: {
                         Text(📄AboutEN)
@@ -30,7 +30,7 @@ struct 📄DocumentMenu: View {
                     
                     NavigationLink {
                         ScrollView {
-                            📄PageView(📄AboutJA, "アプリのついて")
+                            📋PageView(📄AboutJA, "アプリのついて")
                         }
                     } label: {
                         Text(📄AboutJA)
@@ -92,11 +92,11 @@ struct 📓SourceCodeDoc: View {
     
     var body: some View {
         List {
-            📑Section("📁Primary")
+            📰Section("📁Primary")
             
-            📑Section("📁Secondary")
+            📰Section("📁Secondary")
             
-            📑BundleMainInfoDictionary()
+            📄BundleMainInfoDictionary()
             
             
             let 🔗HealthKit = "https://developer.apple.com/documentation/healthkit"
@@ -135,7 +135,7 @@ struct 📓SourceCodeDoc: View {
 }
 
 
-struct 📑Section: View {
+struct 📰Section: View {
     var 🄳irPath: String
     
     var 📁URL: URL {
@@ -154,7 +154,7 @@ struct 📑Section: View {
                     
                     ScrollView(.vertical) {
                         ScrollView(.horizontal, showsIndicators: false) {
-                            📄PageView(try! String(contentsOf: 📍), 🏷)
+                            📋PageView(try! String(contentsOf: 📍), 🏷)
                         }
                     }
                 }
@@ -169,12 +169,12 @@ struct 📑Section: View {
 
 
 let 🄱undleMainInfoDictionary = Bundle.main.infoDictionary!.description
-struct 📑BundleMainInfoDictionary: View {
+struct 📄BundleMainInfoDictionary: View {
     var body: some View {
         Section {
             NavigationLink("Bundle.main.infoDictionary") {
                 ScrollView {
-                    📄PageView(🄱undleMainInfoDictionary, "Bundle.main.infoDictionary")
+                    📋PageView(🄱undleMainInfoDictionary, "Bundle.main.infoDictionary")
                 }
             }
         }
