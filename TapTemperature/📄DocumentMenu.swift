@@ -92,9 +92,9 @@ struct 📓SourceCodeDoc: View {
     
     var body: some View {
         List {
-            📰Section("📁Primary")
+            📰CodeSection("📁Primary")
             
-            📰Section("📁Secondary")
+            📰CodeSection("📁Secondary")
             
             📄BundleMainInfoDictionary()
             
@@ -135,11 +135,11 @@ struct 📓SourceCodeDoc: View {
 }
 
 
-struct 📰Section: View {
-    var 🄳irPath: String
+struct 📰CodeSection: View {
+    var 🄳irectoryPath: String
     
     var 📁URL: URL {
-        Bundle.main.bundleURL.appendingPathComponent(🄳irPath)
+        Bundle.main.bundleURL.appendingPathComponent(🄳irectoryPath)
     }
     
     var 🏷Name: [String] {
@@ -162,8 +162,8 @@ struct 📰Section: View {
         }
     }
     
-    init(_ ⓓirPath: String) {
-        🄳irPath = ⓓirPath
+    init(_ ⓓirectoryPath: String) {
+        🄳irectoryPath = ⓓirectoryPath
     }
 }
 
