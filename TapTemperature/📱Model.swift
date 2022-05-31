@@ -90,63 +90,57 @@ class 📱Model: ObservableObject {
             return
         }
         
-        
-        📃Sample = HKQuantitySample(type: 🅃ype,
+        let 📃 = HKQuantitySample(type: 🅃ype,
                                     quantity: HKQuantity(unit: 💾Unit.ⒽKUnit, doubleValue: 🌡Temp),
                                     start: .now,
                                     end: .now)
         
-        if let 📃 = 📃Sample {
-            🏥HealthStore.save(📃) { 🙆, 🙅 in
-                if 🙆 {
-                    print(".save: Success")
+        📃Sample = 📃
+        
+        🏥HealthStore.save(📃) { 🙆, 🙅 in
+            if 🙆 {
+                print(".save: Success")
+                
+                DispatchQueue.main.async {
+                    self.🄷istory += self.💾Unit.rawValue + ", " + self.🌡Temp.description + "\n"
                     
-                    DispatchQueue.main.async {
-                        self.🄷istory += self.💾Unit.rawValue + ", " + self.🌡Temp.description + "\n"
-                        
-                        self.🚩Success = true
-                        self.🚩InputDone = true
-                    }
+                    self.🚩Success = true
+                    self.🚩InputDone = true
+                }
+                
+                UINotificationFeedbackGenerator().notificationOccurred(.success)
+            } else {
+                print("🙅:", 🙅.debugDescription)
+                
+                DispatchQueue.main.async {
+                    self.🄷istory += ".save: Error?!\n"
                     
-                    UINotificationFeedbackGenerator().notificationOccurred(.success)
-                } else {
-                    print("🙅:", 🙅.debugDescription)
-                    
-                    DispatchQueue.main.async {
-                        self.🄷istory += ".save: Error?!\n"
-                        
-                        self.🚩Success = false
-                        self.🚩InputDone = true
-                    }
+                    self.🚩Success = false
+                    self.🚩InputDone = true
                 }
             }
-        } else {
-            🄷istory += "HKQuantitySample: Error?!\n"
-            
-            🚩Success = false
-            🚩InputDone = true
         }
     }
     
     
     func 🗑Cancel() {
-        if let 📃 = 📃Sample {
-            🏥HealthStore.delete(📃) { 🙆, 🙅 in
-                if 🙆 {
-                    print(".delete: Success")
-                    
-                    DispatchQueue.main.async {
-                        self.🚩Canceled = true
-                        self.🄷istory += "Cancellation: success\n"
-                    }
-                    
-                    UINotificationFeedbackGenerator().notificationOccurred(.error)
-                } else {
-                    print("🙅:", 🙅.debugDescription)
-                    
-                    DispatchQueue.main.async {
-                        self.🄷istory += "Cancellation: error\n"
-                    }
+        guard let 📃 = 📃Sample else { return }
+        
+        🏥HealthStore.delete(📃) { 🙆, 🙅 in
+            if 🙆 {
+                print(".delete: Success")
+                
+                DispatchQueue.main.async {
+                    self.🚩Canceled = true
+                    self.🄷istory += "Cancellation: success\n"
+                }
+                
+                UINotificationFeedbackGenerator().notificationOccurred(.error)
+            } else {
+                print("🙅:", 🙅.debugDescription)
+                
+                DispatchQueue.main.async {
+                    self.🄷istory += "Cancellation: error\n"
                 }
             }
         }
