@@ -8,7 +8,9 @@
 
 "Basal body temperature" = "基礎体温";
 
-"Auto complete" = "自動完了";
+"Second decimal places mode" = "小数点以下2桁モード";
+
+"Auto complete" = "数字入力だけで自動的に完了";
 
 "Open \"Health\" app" = "「ヘルスケア」アプリを開く";
 
@@ -20,6 +22,8 @@
 "Registration for \"Health\" app" = "「ヘルスケア」アプリに登録しました";
 
 "Please check permission on \"Health\" app" = "「ヘルスケア」アプリで権限を確認して下さい。";
+
+"DONE!" = "完了!";
 
 "Error!?" = "エラー!?";
 

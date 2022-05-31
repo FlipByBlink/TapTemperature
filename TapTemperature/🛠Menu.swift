@@ -41,6 +41,7 @@ struct 🛠Menu: View {
                     } label: {
                         Label("℃  /  ℉", systemImage: "ruler")
                     }
+                    .accessibilityLabel("Unit")
                     .onChange(of: 📱.💾Unit) { _ in
                         📱.🧩Reset()
                     }
@@ -64,6 +65,7 @@ struct 🛠Menu: View {
                         
                         Label(🪧, systemImage: "character.cursor.ibeam")
                     }
+                    .accessibilityLabel("Second decimal places mode")
                     
                     
                     Toggle(isOn: $📱.🚩AutoComplete) {
