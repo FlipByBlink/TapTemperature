@@ -145,12 +145,15 @@ class 📱AppModel: ObservableObject {
     }
     
     
-    func 🏥RequestAuthorization(_ ⓣype: HKQuantityType) {
-        🏥HealthStore.requestAuthorization(toShare: [ⓣype], read: nil) { 🙆, 🙅 in
-            if 🙆 {
-                print(".requestAuthorization: Success")
-            } else {
-                print("🙅:", 🙅.debugDescription)
+    func 🏥RequestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) {
+        let 🅃ype: HKSampleType = HKQuantityType(ⓘdentifier)
+        if 🏥HealthStore.authorizationStatus(for: 🅃ype) == .notDetermined {
+            Task {
+                do {
+                    try await 🏥HealthStore.requestAuthorization(toShare: [🅃ype], read: [])
+                } catch {
+                    print(#function, error)
+                }
             }
         }
     }

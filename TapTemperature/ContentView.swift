@@ -73,7 +73,7 @@ struct ContentView: View {
             🗯ResultView()
         }
         .onAppear {
-            📱.🏥RequestAuthorization(HKQuantityType(.bodyTemperature))
+            📱.🏥RequestAuthorization(.bodyTemperature)
             
             📱.🧩ResetTemp()
         }
