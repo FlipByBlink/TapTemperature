@@ -14,7 +14,7 @@ struct 📣ADMenu: View {
             NavigationLink {
                 List {
                     Section {
-                        Text("This App shows banner advertisement about applications on AppStore. These are Apps by AAAA developer. AD banner is rarely presented on AAAA screen. It appears one in every AAAA times.") //FIXME: Description about AD
+                        Text("This App shows banner advertisement about applications on AppStore. These are Apps by TapTemperature developer. AD banner is rarely presented on result screen. It appears one in every 4 times.")
                             .padding()
                     } header: {
                         Text("About")
