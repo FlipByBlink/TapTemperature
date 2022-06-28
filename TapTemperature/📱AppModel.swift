@@ -4,7 +4,7 @@ import HealthKit
 
 class 📱AppModel: ObservableObject {
     
-    @AppStorage("Unit") var 💾Unit: 📏EnumUnit = .℃
+    @AppStorage("Unit") var 📏Unit: 📏DegreeUnit = .℃
     
     @AppStorage("BasalTemp") var 🚩BasalTemp: Bool = false
     
@@ -18,14 +18,14 @@ class 📱AppModel: ObservableObject {
     
     @Published var 🛏BasalSwitch: Bool = true
     
-    @Published var 🚩InputDone: Bool = false
+    @Published var 🚩ShowResult: Bool = false
     
     @Published var 🚩Success: Bool = false
     
     @Published var 🚩Canceled: Bool = false
     
     
-    @AppStorage("history") var 🄷istory: String = ""
+    @AppStorage("history") var 🕒History: String = ""
     
     
     let 🏥HealthStore = HKHealthStore()
@@ -48,7 +48,7 @@ class 📱AppModel: ObservableObject {
     
     
     func 🧩Reset() {
-        switch 💾Unit {
+        switch 📏Unit {
             case .℃: 🧩Temp = [3]
             case .℉: 🧩Temp = []
         }
@@ -74,23 +74,23 @@ class 📱AppModel: ObservableObject {
     func 🚀Done() {
         let 🚩BasalTempInput = 🚩BasalTemp && 🛏BasalSwitch
         
-        🄷istory += Date.now.formatted(date: .numeric, time: .shortened) + ", "
-        🄷istory += 🚩BasalTempInput ? "BBT, " : "BT, "
+        🕒History += Date.now.formatted(date: .numeric, time: .shortened) + ", "
+        🕒History += 🚩BasalTempInput ? "BBT, " : "BT, "
         
         
         let 🅃ype = HKQuantityType(🚩BasalTempInput ? .basalBodyTemperature : .bodyTemperature)
         
         if 🏥HealthStore.authorizationStatus(for: 🅃ype) == .sharingDenied {
             🚩Success = false
-            🚩InputDone = true
+            🚩ShowResult = true
             
-            🄷istory += ".authorization: Error?!\n"
+            🕒History += ".authorization: Error?!\n"
             
             return
         }
         
         let 📃 = HKQuantitySample(type: 🅃ype,
-                                    quantity: HKQuantity(unit: 💾Unit.ⒽKUnit, doubleValue: 🌡Temp),
+                                    quantity: HKQuantity(unit: 📏Unit.ⒽKUnit, doubleValue: 🌡Temp),
                                     start: .now,
                                     end: .now)
         
@@ -101,10 +101,10 @@ class 📱AppModel: ObservableObject {
                 print(".save: Success")
                 
                 DispatchQueue.main.async {
-                    self.🄷istory += self.💾Unit.rawValue + ", " + self.🌡Temp.description + "\n"
+                    self.🕒History += self.📏Unit.rawValue + ", " + self.🌡Temp.description + "\n"
                     
                     self.🚩Success = true
-                    self.🚩InputDone = true
+                    self.🚩ShowResult = true
                 }
                 
                 UINotificationFeedbackGenerator().notificationOccurred(.success)
@@ -112,10 +112,10 @@ class 📱AppModel: ObservableObject {
                 print("🙅:", 🙅.debugDescription)
                 
                 DispatchQueue.main.async {
-                    self.🄷istory += ".save: Error?!\n"
+                    self.🕒History += ".save: Error?!\n"
                     
                     self.🚩Success = false
-                    self.🚩InputDone = true
+                    self.🚩ShowResult = true
                 }
             }
         }
@@ -131,7 +131,7 @@ class 📱AppModel: ObservableObject {
                 
                 DispatchQueue.main.async {
                     self.🚩Canceled = true
-                    self.🄷istory += "Cancellation: success\n"
+                    self.🕒History += "Cancellation: success\n"
                 }
                 
                 UINotificationFeedbackGenerator().notificationOccurred(.error)
@@ -139,7 +139,7 @@ class 📱AppModel: ObservableObject {
                 print("🙅:", 🙅.debugDescription)
                 
                 DispatchQueue.main.async {
-                    self.🄷istory += "Cancellation: error\n"
+                    self.🕒History += "Cancellation: error\n"
                 }
             }
         }
@@ -158,7 +158,7 @@ class 📱AppModel: ObservableObject {
 }
 
 
-enum 📏EnumUnit: String, CaseIterable {
+enum 📏DegreeUnit: String, CaseIterable {
     case ℃
     case ℉
     

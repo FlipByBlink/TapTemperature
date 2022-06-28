@@ -11,15 +11,15 @@ struct 🛠MenuSheet: View {
         NavigationView {
             List {
                 Section {
-                    Picker(selection: $📱.💾Unit) {
-                        ForEach(📏EnumUnit.allCases, id: \.self) { 📏 in
+                    Picker(selection: $📱.📏Unit) {
+                        ForEach(📏DegreeUnit.allCases, id: \.self) { 📏 in
                             Text(📏.rawValue)
                         }
                     } label: {
                         Label("℃  /  ℉", systemImage: "ruler")
                     }
                     .accessibilityLabel("Unit")
-                    .onChange(of: 📱.💾Unit) { _ in
+                    .onChange(of: 📱.📏Unit) { _ in
                         📱.🧩Reset()
                     }
 
@@ -34,7 +34,7 @@ struct 🛠MenuSheet: View {
 
                     Toggle(isOn: $📱.🚩2DecimalPlace) {
                         let 🪧: String = {
-                            switch 📱.💾Unit {
+                            switch 📱.📏Unit {
                                 case .℃: return "36.1 ℃  →  36.12︭ ℃"
                                 case .℉: return "100.1 ℉  →  100.12︭ ℉"
                             }

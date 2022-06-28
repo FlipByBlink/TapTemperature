@@ -5,7 +5,7 @@ struct 🕛HistoryView: View {
     @EnvironmentObject var 📱: 📱AppModel
     
     var body: some View {
-        if 📱.🄷istory == "" {
+        if 📱.🕒History == "" {
             Image(systemName: "text.append")
                 .foregroundStyle(.tertiary)
                 .font(.system(size: 64))
@@ -14,7 +14,7 @@ struct 🕛HistoryView: View {
         } else {
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    Text(📱.🄷istory)
+                    Text(📱.🕒History)
                         .font(.subheadline)
                         .padding()
                         .textSelection(.enabled)
@@ -23,7 +23,7 @@ struct 🕛HistoryView: View {
                         .toolbar {
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 Button {
-                                    📱.🄷istory = ""
+                                    📱.🕒History = ""
                                 } label: {
                                     Image(systemName: "trash")
                                         .tint(.red)

@@ -5,8 +5,6 @@ import HealthKit
 struct ContentView: View {
     @EnvironmentObject var 📱:📱AppModel
     
-    @Environment(\.scenePhase) private var 🔛: ScenePhase
-    
     var body: some View {
         VStack {
             HStack(spacing: 16) {
@@ -71,7 +69,7 @@ struct ContentView: View {
                 .animation(.default.speed(2), value: 📱.🧩Temp.count)
             }
         }
-        .fullScreenCover(isPresented: $📱.🚩InputDone) {
+        .fullScreenCover(isPresented: $📱.🚩ShowResult) {
             🗯ResultView()
         }
         .onAppear {

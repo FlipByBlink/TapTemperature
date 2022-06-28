@@ -17,7 +17,7 @@ struct 👆Keypad: View {
                         return true
                     }
                     
-                    switch 📱.💾Unit {
+                    switch 📱.📏Unit {
                         case .℃:
                             if 📱.🧩Temp.isEmpty {
                                 if 🔢 != 3 && 🔢 != 4 {
@@ -111,7 +111,7 @@ struct 👆Keypad: View {
                         
                     case 11:
                         let ０or１０: Int = {
-                            if 📱.💾Unit == .℉ && 📱.🧩Temp.isEmpty {
+                            if 📱.📏Unit == .℉ && 📱.🧩Temp.isEmpty {
                                 return 10
                             } else {
                                 return 0

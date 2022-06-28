@@ -46,7 +46,7 @@ struct 🗯ResultView: View {
                 .padding(.horizontal, 20)
                 
                 Button {
-                    📱.🚩InputDone = false
+                    📱.🚩ShowResult = false
                     
                     📱.🚩Canceled = false
                     
@@ -87,7 +87,7 @@ struct 🗯ResultView: View {
                             }
                             
                             if 📱.🚩Success {
-                                Text(📱.🌡Temp.description + " " + 📱.💾Unit.rawValue)
+                                Text(📱.🌡Temp.description + " " + 📱.📏Unit.rawValue)
                                     .font(.title2)
                                     .fontWeight(.bold)
                             }

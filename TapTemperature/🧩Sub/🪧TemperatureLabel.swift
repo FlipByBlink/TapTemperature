@@ -62,7 +62,7 @@ struct 🪧TemperatureLabel: View {
             }
             
             
-            Text(📱.💾Unit.rawValue)
+            Text(📱.📏Unit.rawValue)
                 .font(.system(size: 36, weight: .medium))
                 .minimumScaleFactor(0.1)
                 .scaledToFit()
