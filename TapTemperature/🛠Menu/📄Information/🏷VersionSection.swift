@@ -29,11 +29,13 @@ struct 🏷VersionSection: View {
 let 🕒LatestVersionNumber = "1.0.1"
 
 let 🕒LatestVersionDescription = """
-- AAAA
-- Various bugfixes and improvements.
+- Add AD banner
+- Add "Hide AD banner" option. (in-app-purchase)
+- Refactoring
 ==== Japanese(native) ====
-- ああああ
-- いくつかの改善やバグ修正を行いました。
+- 広告バナーの追加
+- 広告バナー非表示オプション(アプリ内課金)を追加
+- リファクタリング
 """
 
 var 🕒VersionHistory: String {
@@ -45,6 +47,6 @@ var 🕒VersionHistory: String {
 }
 
 let 🕒PastVersionHistory = """
-🕒 Version 1.0 : 2022-AA-AA
+🕒 Version 1.0 : 2022-06-01
 Initial release
 """

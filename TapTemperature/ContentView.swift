@@ -10,25 +10,7 @@ struct ContentView: View {
             HStack(spacing: 16) {
                 🛠MenuButton()
                 
-                if 📱.🚩BasalTemp {
-                    Button {
-                        📱.🛏BasalSwitch.toggle()
-                        UISelectionFeedbackGenerator().selectionChanged()
-                    } label: {
-                        Image(systemName: "bed.double")
-                            .foregroundStyle(📱.🛏BasalSwitch ? .primary : .quaternary)
-                            .padding(.vertical)
-                            .overlay {
-                                if 📱.🛏BasalSwitch == false {
-                                    Image(systemName: "xmark")
-                                        .scaleEffect(1.2)
-                                }
-                            }
-                            .font(.title)
-                            .tint(.primary)
-                    }
-                    .accessibilityLabel("Switch type")
-                }
+                🛏BasalSwitchButton()
                 
                 Spacer()
                 
@@ -76,6 +58,33 @@ struct ContentView: View {
             📱.🏥RequestAuthorization(.bodyTemperature)
             
             📱.🧩ResetTemp()
+        }
+    }
+}
+
+
+struct 🛏BasalSwitchButton: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    
+    var body: some View {
+        if 📱.🚩BasalTemp {
+            Button {
+                📱.🛏BasalSwitch.toggle()
+                UISelectionFeedbackGenerator().selectionChanged()
+            } label: {
+                Image(systemName: "bed.double")
+                    .foregroundStyle(📱.🛏BasalSwitch ? .primary : .quaternary)
+                    .padding(.vertical)
+                    .overlay {
+                        if 📱.🛏BasalSwitch == false {
+                            Image(systemName: "xmark")
+                                .scaleEffect(1.2)
+                        }
+                    }
+                    .font(.title)
+                    .tint(.primary)
+            }
+            .accessibilityLabel("Switch type")
         }
     }
 }
