@@ -2,11 +2,10 @@
 import SwiftUI
 
 struct 🕛HistoryView: View {
-    
-    var 🅃ext: String
+    @EnvironmentObject var 📱: 📱AppModel
     
     var body: some View {
-        if 🅃ext == "" {
+        if 📱.🄷istory == "" {
             Image(systemName: "text.append")
                 .foregroundStyle(.tertiary)
                 .font(.system(size: 64))
@@ -18,24 +17,23 @@ struct 🕛HistoryView: View {
                     .frame(height: 50)
 
                 ScrollView(.horizontal, showsIndicators: false) {
-//                    📋PageView(🅃ext, "History")
-//                        .toolbar {
-//                            ToolbarItem(placement: .navigationBarTrailing) {
-//                                Button {
-//                                    🅃ext = ""
-//                                } label: {
-//                                    Image(systemName: "trash")
-//                                        .tint(.red)
-//                                }
-//                            }
-//                        }
-                    Text("placeholder")
+                    Text(📱.🄷istory)
+                        .font(.caption)
+                        .padding()
+                        .navigationTitle("History")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button {
+                                    📱.🄷istory = ""
+                                } label: {
+                                    Image(systemName: "trash")
+                                        .tint(.red)
+                                }
+                            }
+                        }
                 }
             }
         }
-    }
-
-    init(_ ⓣext: String) {
-        🅃ext = ⓣext
     }
 }

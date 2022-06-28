@@ -16,7 +16,6 @@ struct 🛠MenuButton: View {
             
         }
         .tint(.primary)
-        .accessibilityLabel("Open menu")
         .sheet(isPresented: $🚩ShowMenu) {
             🛠MenuSheet()
                 .onDisappear {

@@ -19,6 +19,7 @@
 		124BC6B528433C4F00F75E1F /* 📄DocumentMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 124BC6A528432FC400F75E1F /* 📄DocumentMenu.swift */; };
 		124BC6B72843778400F75E1F /* README.md in CopyFiles */ = {isa = PBXBuildFile; fileRef = 124BC6B62843761300F75E1F /* README.md */; };
 		124BC6BA28437B9000F75E1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
+		1256A326286AD550002AF08A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1256A325286AD550002AF08A /* StoreKit.framework */; };
 		125A9BEB283B35FC00C54634 /* 🛠Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A9BEA283B35FC00C54634 /* 🛠Menu.swift */; };
 		125A9BED283B441D00C54634 /* 🆗Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🆗Result.swift */; };
 		1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
@@ -83,6 +84,7 @@
 		124BC6B62843761300F75E1F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		124BC6BB28437B9000F75E1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		124BC6BD28438EE200F75E1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1256A325286AD550002AF08A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		125A9BEA283B35FC00C54634 /* 🛠Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠Menu.swift"; sourceTree = "<group>"; };
 		125A9BEC283B441D00C54634 /* 🆗Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🆗Result.swift"; sourceTree = "<group>"; };
 		1281D252283E1C4300D59319 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12E811CB28308A2100B0A615 /* HealthKit.framework in Frameworks */,
+				1256A326286AD550002AF08A /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,9 +138,9 @@
 		1288ADE3286ACDF1002F5511 /* 🛠Menu */ = {
 			isa = PBXGroup;
 			children = (
-				1288ADF7286ACE62002F5511 /* 📄Information */,
 				1288ADF5286ACE62002F5511 /* 🛠MenuButton.swift */,
 				1288ADF6286ACE62002F5511 /* 🛠MenuSheet.swift */,
+				1288ADF7286ACE62002F5511 /* 📄Information */,
 			);
 			path = "🛠Menu";
 			sourceTree = "<group>";
@@ -152,9 +155,9 @@
 		1288ADE5286ACE37002F5511 /* 📣AD */ = {
 			isa = PBXGroup;
 			children = (
-				1288ADE6286ACE37002F5511 /* 📣ADView.swift */,
-				1288ADE7286ACE37002F5511 /* 📣AppName.swift */,
 				1288ADE8286ACE37002F5511 /* 📣ADMenu.swift */,
+				1288ADE7286ACE37002F5511 /* 📣AppName.swift */,
+				1288ADE6286ACE37002F5511 /* 📣ADView.swift */,
 				1288ADE9286ACE37002F5511 /* 📣ADBanner.swift */,
 			);
 			path = "📣AD";
@@ -164,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				1288ADEB286ACE37002F5511 /* 🛒PurchaseSection.swift */,
-				1288ADEC286ACE37002F5511 /* Configuration.storekit */,
 				1288ADED286ACE37002F5511 /* 🛒StoreModel.swift */,
+				1288ADEC286ACE37002F5511 /* Configuration.storekit */,
 			);
 			path = "🛒InAppPurchase";
 			sourceTree = "<group>";
@@ -173,10 +176,10 @@
 		1288ADF7286ACE62002F5511 /* 📄Information */ = {
 			isa = PBXGroup;
 			children = (
-				1288ADF8286ACE62002F5511 /* 📓SourceCodeMenu.swift */,
-				1288ADF9286ACE62002F5511 /* 📄AppDescription.swift */,
 				1288ADFA286ACE62002F5511 /* 📄InformationMenu.swift */,
+				1288ADF9286ACE62002F5511 /* 📄AppDescription.swift */,
 				1288ADFB286ACE62002F5511 /* 🏷VersionSection.swift */,
+				1288ADF8286ACE62002F5511 /* 📓SourceCodeMenu.swift */,
 			);
 			path = "📄Information";
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 		12E811C928308A2100B0A615 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1256A325286AD550002AF08A /* StoreKit.framework */,
 				12E811CA28308A2100B0A615 /* HealthKit.framework */,
 			);
 			name = Frameworks;

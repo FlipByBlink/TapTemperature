@@ -5,8 +5,6 @@ import HealthKit
 struct 🛠MenuSheet: View {
     @EnvironmentObject var 📱: 📱AppModel
     
-    @AppStorage("placeholder") var 🚩placeholder: Bool = false
-    
     @Environment(\.dismiss) var 🔙: DismissAction
     
     var body: some View {
@@ -69,7 +67,7 @@ struct 🛠MenuSheet: View {
 
                 Section {
                     NavigationLink {
-                        🕛HistoryView(📱.🄷istory)
+                        🕛HistoryView()
                     } label: {
                         Label("Local history", systemImage: "clock")
                     }
