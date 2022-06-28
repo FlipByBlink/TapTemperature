@@ -20,7 +20,7 @@ struct 🛠MenuSheet: View {
                     }
                     .accessibilityLabel("Unit")
                     .onChange(of: 📱.📏Unit) { _ in
-                        📱.🧩Reset()
+                        📱.🧩ResetTemp()
                     }
 
 

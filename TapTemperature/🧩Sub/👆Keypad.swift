@@ -66,7 +66,7 @@ struct 👆Keypad: View {
                 switch 🔢 {
                     case 1 ..< 10:
                         Button {
-                            📱.🧩Append(🔢)
+                            📱.🧩AppendTemp(🔢)
                         } label: {
                             Text(🔢.description)
                         }
@@ -75,7 +75,7 @@ struct 👆Keypad: View {
                         
                     case 10:
                         Button {
-                            📱.🚀Done()
+                            📱.👆Register()
                         } label: {
                             let 🔘: String = {
                                 if 📱.🚩AutoComplete == false {
@@ -119,7 +119,7 @@ struct 👆Keypad: View {
                         }()
                         
                         Button {
-                            📱.🧩Append(０or１０)
+                            📱.🧩AppendTemp(０or１０)
                         } label: {
                             Text(０or１０.description)
                         }

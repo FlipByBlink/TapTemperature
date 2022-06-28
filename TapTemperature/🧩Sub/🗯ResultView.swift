@@ -50,7 +50,7 @@ struct 🗯ResultView: View {
                     
                     📱.🚩Canceled = false
                     
-                    📱.🧩Reset()
+                    📱.🧩ResetTemp()
                 } label: {
                     VStack(spacing: 12) {
                         Spacer()

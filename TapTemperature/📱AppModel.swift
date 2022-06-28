@@ -4,6 +4,9 @@ import HealthKit
 
 class 📱AppModel: ObservableObject {
     
+    let 🏥HealthStore = HKHealthStore()
+    
+    
     @AppStorage("Unit") var 📏Unit: 📏DegreeUnit = .℃
     
     @AppStorage("BasalTemp") var 🚩BasalTemp: Bool = false
@@ -11,9 +14,6 @@ class 📱AppModel: ObservableObject {
     @AppStorage("2DecimalPlace") var 🚩2DecimalPlace: Bool = false
     
     @AppStorage("AutoComplete") var 🚩AutoComplete: Bool = false
-    
-    
-    @Published var 🧩Temp: [Int] = []
     
     
     @Published var 🛏BasalSwitch: Bool = true
@@ -24,12 +24,10 @@ class 📱AppModel: ObservableObject {
     
     @Published var 🚩Canceled: Bool = false
     
-    
     @AppStorage("history") var 🕒History: String = ""
     
     
-    let 🏥HealthStore = HKHealthStore()
-    
+    @Published var 🧩Temp: [Int] = []
     
     var 🌡Temp: Double {
         if 🧩Temp.count < 3 { return 0.0 }
@@ -47,7 +45,7 @@ class 📱AppModel: ObservableObject {
     }
     
     
-    func 🧩Reset() {
+    func 🧩ResetTemp() {
         switch 📏Unit {
             case .℃: 🧩Temp = [3]
             case .℉: 🧩Temp = []
@@ -55,12 +53,12 @@ class 📱AppModel: ObservableObject {
     }
     
     
-    func 🧩Append(_ 🔢: Int) {
+    func 🧩AppendTemp(_ 🔢: Int) {
         🧩Temp.append(🔢)
         
         if 🚩AutoComplete {
             if 🧩Temp.count == (🚩2DecimalPlace ? 4 : 3) {
-                🚀Done()
+                👆Register()
                 return
             }
         }
@@ -69,14 +67,13 @@ class 📱AppModel: ObservableObject {
     }
     
     
-    var 📃Sample: HKQuantitySample?
+    var 📦Sample: HKQuantitySample?
     
-    func 🚀Done() {
+    func 👆Register() {
         let 🚩BasalTempInput = 🚩BasalTemp && 🛏BasalSwitch
         
         🕒History += Date.now.formatted(date: .numeric, time: .shortened) + ", "
         🕒History += 🚩BasalTempInput ? "BBT, " : "BT, "
-        
         
         let 🅃ype = HKQuantityType(🚩BasalTempInput ? .basalBodyTemperature : .bodyTemperature)
         
@@ -89,14 +86,13 @@ class 📱AppModel: ObservableObject {
             return
         }
         
-        let 📃 = HKQuantitySample(type: 🅃ype,
+        let 📦 = HKQuantitySample(type: 🅃ype,
                                     quantity: HKQuantity(unit: 📏Unit.ⒽKUnit, doubleValue: 🌡Temp),
-                                    start: .now,
-                                    end: .now)
+                                    start: .now, end: .now)
         
-        📃Sample = 📃
+        📦Sample = 📦
         
-        🏥HealthStore.save(📃) { 🙆, 🙅 in
+        🏥HealthStore.save(📦) { 🙆, 🙅 in
             if 🙆 {
                 print(".save: Success")
                 
@@ -123,9 +119,9 @@ class 📱AppModel: ObservableObject {
     
     
     func 🗑Cancel() {
-        guard let 📃 = 📃Sample else { return }
+        guard let 📦 = 📦Sample else { return }
         
-        🏥HealthStore.delete(📃) { 🙆, 🙅 in
+        🏥HealthStore.delete(📦) { 🙆, 🙅 in
             if 🙆 {
                 print(".delete: Success")
                 
