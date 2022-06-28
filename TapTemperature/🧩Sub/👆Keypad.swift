@@ -75,7 +75,9 @@ struct 👆Keypad: View {
                         
                     case 10:
                         Button {
-                            📱.👆Register()
+                            Task {
+                                await 📱.👆Register()
+                            }
                         } label: {
                             let 🔘: String = {
                                 if 📱.🚩AutoComplete == false {

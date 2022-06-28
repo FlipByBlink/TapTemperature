@@ -60,7 +60,9 @@ class 📱AppModel: ObservableObject {
         
         if 🚩AutoComplete {
             if 🧩Temp.count == (🚩2DecimalPlace ? 4 : 3) {
-                👆Register()
+                Task {
+                    await 👆Register()
+                }
                 return
             }
         }
@@ -71,52 +73,70 @@ class 📱AppModel: ObservableObject {
     
     var 📦Sample: HKQuantitySample?
     
-    func 👆Register() {
-        let 🚩BasalTempInput = 🚩BasalTemp && 🛏BasalSwitch
-        
-        🕒History += Date.now.formatted(date: .numeric, time: .shortened) + ", "
-        🕒History += 🚩BasalTempInput ? "BBT, " : "BT, "
-        
-        let 🅃ype = HKQuantityType(🚩BasalTempInput ? .basalBodyTemperature : .bodyTemperature)
-        
-        if 🏥HealthStore.authorizationStatus(for: 🅃ype) == .sharingDenied {
-            🚩RegisterSuccess = false
+    @MainActor
+    func 👆Register() async {
+        do {
+            let 🚩BasalTempInput = 🚩BasalTemp && 🛏BasalSwitch
+            
+            🕒History += Date.now.formatted(date: .numeric, time: .shortened) + ", "
+            🕒History += 🚩BasalTempInput ? "BBT, " : "BT, "
+            
+            let 🅃ype = HKQuantityType(🚩BasalTempInput ? .basalBodyTemperature : .bodyTemperature)
+            
+            if 🏥HealthStore.authorizationStatus(for: 🅃ype) == .sharingDenied {
+                🚩RegisterSuccess = false
+                🚩ShowResult = true
+                
+                🕒History += ".authorization: Error?!\n"
+                
+                return
+            }
+            
+            let 📦 = HKQuantitySample(type: 🅃ype,
+                                        quantity: HKQuantity(unit: 📏Unit.ⒽKUnit, doubleValue: 🌡Temp),
+                                        start: .now, end: .now)
+            
+            📦Sample = 📦
+            
+            try await 🏥HealthStore.save(📦)
+            
+            🕒History += 📏Unit.rawValue + ", " + 🌡Temp.description + "\n"
+            
+            🚩RegisterSuccess = true
             🚩ShowResult = true
-            
-            🕒History += ".authorization: Error?!\n"
-            
-            return
-        }
         
-        let 📦 = HKQuantitySample(type: 🅃ype,
-                                    quantity: HKQuantity(unit: 📏Unit.ⒽKUnit, doubleValue: 🌡Temp),
-                                    start: .now, end: .now)
-        
-        📦Sample = 📦
-        
-        🏥HealthStore.save(📦) { 🙆, 🙅 in
-            if 🙆 {
-                print(".save: Success")
-                
-                DispatchQueue.main.async {
-                    self.🕒History += self.📏Unit.rawValue + ", " + self.🌡Temp.description + "\n"
-                    
-                    self.🚩RegisterSuccess = true
-                    self.🚩ShowResult = true
-                }
-                
-                UINotificationFeedbackGenerator().notificationOccurred(.success)
-            } else {
-                print("🙅:", 🙅.debugDescription)
-                
-                DispatchQueue.main.async {
-                    self.🕒History += ".save: Error?!\n"
-                    
-                    self.🚩RegisterSuccess = false
-                    self.🚩ShowResult = true
-                }
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+        } catch {
+            DispatchQueue.main.async {
+                print(#function, error)
+                self.🚩RegisterSuccess = false
+                self.🕒History += ".save Error?! " + error.localizedDescription + "\n"
+                self.🚩ShowResult = true
             }
         }
+//        🏥HealthStore.save(📦) { 🙆, 🙅 in
+//            if 🙆 {
+//                print(".save: Success")
+//
+//                DispatchQueue.main.async {
+//                    self.🕒History += self.📏Unit.rawValue + ", " + self.🌡Temp.description + "\n"
+//
+//                    self.🚩RegisterSuccess = true
+//                    self.🚩ShowResult = true
+//                }
+//
+//                UINotificationFeedbackGenerator().notificationOccurred(.success)
+//            } else {
+//                print("🙅:", 🙅.debugDescription)
+//
+//                DispatchQueue.main.async {
+//                    self.🕒History += ".save: Error?!\n"
+//
+//                    self.🚩RegisterSuccess = false
+//                    self.🚩ShowResult = true
+//                }
+//            }
+//        }
     }
     
     
