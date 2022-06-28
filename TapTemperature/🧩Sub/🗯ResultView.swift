@@ -7,40 +7,18 @@ struct 🗯ResultView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(📱.🚩Success ? .pink : .gray)
+                .foregroundColor(📱.🚩RegisterSuccess ? .pink : .gray)
                 .ignoresSafeArea()
             
             VStack {
                 HStack {
-                    if 📱.🚩Success {
-                        Button {
-                            📱.🗑Cancel()
-                        } label: {
-                            Image(systemName: "arrow.uturn.backward.circle")
-                                .font(.title)
-                                .imageScale(.large)
-                                .foregroundColor(.primary)
-                                .padding(.vertical)
-                        }
-                        .disabled(📱.🚩Canceled)
-                        .opacity(📱.🚩Canceled ? 0.5 : 1)
-                        .accessibilityLabel("Cancel")
-                        
-                        if 📱.🚩Canceled {
-                            VStack {
-                                Text("Canceled")
-                                    .fontWeight(.semibold)
-                                
-                                if 📱.🚨CancelError {
-                                    Text("(perhaps error)")
-                                }
-                            }
-                        }
+                    if 📱.🚩RegisterSuccess {
+                        🗑CancelButton()
                     }
                     
                     Spacer()
                     
-                    if 📱.🚩Success == false {
+                    if 📱.🚩RegisterSuccess == false {
                         Image(systemName: "arrow.right")
                             .imageScale(.small)
                             .font(.largeTitle)
@@ -51,23 +29,24 @@ struct 🗯ResultView: View {
                 .opacity(0.75)
                 .padding(.horizontal, 20)
                 
+                
                 Button {
                     📱.🅁eset()
                 } label: {
                     VStack(spacing: 12) {
                         Spacer()
                         
-                        Image(systemName: 📱.🚩Success ? "checkmark" : "exclamationmark.triangle")
+                        Image(systemName: 📱.🚩RegisterSuccess ? "checkmark" : "exclamationmark.triangle")
                             .font(.system(size: 110).weight(.semibold))
                             .minimumScaleFactor(0.1)
                         
-                        Text(📱.🚩Success ? "DONE!" : "Error!?")
+                        Text(📱.🚩RegisterSuccess ? "DONE!" : "Error!?")
                             .font(.system(size: 128).weight(.black))
                             .lineLimit(1)
                             .minimumScaleFactor(0.1)
                             .padding(.horizontal)
                         
-                        if 📱.🚩Success {
+                        if 📱.🚩RegisterSuccess {
                             Text("Registration for \"Health\" app")
                                 .bold()
                                 .opacity(0.8)
@@ -88,7 +67,7 @@ struct 🗯ResultView: View {
                                     .font(.body.bold())
                             }
                             
-                            if 📱.🚩Success {
+                            if 📱.🚩RegisterSuccess {
                                 Text(📱.🌡Temp.description + " " + 📱.📏Unit.rawValue)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -106,5 +85,36 @@ struct 🗯ResultView: View {
         }
         .preferredColorScheme(.dark)
         .animation(.default, value: 📱.🚩Canceled)
+    }
+}
+
+
+struct 🗑CancelButton: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    
+    var body: some View {
+        Button {
+            📱.🗑Cancel()
+        } label: {
+            Image(systemName: "arrow.uturn.backward.circle")
+                .font(.title)
+                .imageScale(.large)
+                .foregroundColor(.primary)
+                .padding(.vertical)
+        }
+        .disabled(📱.🚩Canceled)
+        .opacity(📱.🚩Canceled ? 0.5 : 1)
+        .accessibilityLabel("Cancel")
+        
+        if 📱.🚩Canceled {
+            VStack {
+                Text("Canceled")
+                    .fontWeight(.semibold)
+                
+                if 📱.🚨CancelError {
+                    Text("(perhaps error)")
+                }
+            }
+        }
     }
 }

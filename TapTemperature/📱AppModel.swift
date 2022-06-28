@@ -20,8 +20,7 @@ class 📱AppModel: ObservableObject {
     
     @Published var 🚩ShowResult: Bool = false
     
-    @Published var 🚩Success: Bool = false
-    //@Published var 🚨RegisterError: Bool = false //TODO: 検討?
+    @Published var 🚩RegisterSuccess: Bool = false //TODO: Optionalにするか検討
     
     @Published var 🚩Canceled: Bool = false
     
@@ -81,7 +80,7 @@ class 📱AppModel: ObservableObject {
         let 🅃ype = HKQuantityType(🚩BasalTempInput ? .basalBodyTemperature : .bodyTemperature)
         
         if 🏥HealthStore.authorizationStatus(for: 🅃ype) == .sharingDenied {
-            🚩Success = false
+            🚩RegisterSuccess = false
             🚩ShowResult = true
             
             🕒History += ".authorization: Error?!\n"
@@ -102,7 +101,7 @@ class 📱AppModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.🕒History += self.📏Unit.rawValue + ", " + self.🌡Temp.description + "\n"
                     
-                    self.🚩Success = true
+                    self.🚩RegisterSuccess = true
                     self.🚩ShowResult = true
                 }
                 
@@ -113,7 +112,7 @@ class 📱AppModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.🕒History += ".save: Error?!\n"
                     
-                    self.🚩Success = false
+                    self.🚩RegisterSuccess = false
                     self.🚩ShowResult = true
                 }
             }
@@ -164,6 +163,7 @@ class 📱AppModel: ObservableObject {
     
     func 🅁eset() {
         🚩ShowResult = false
+        🚩RegisterSuccess = false
         //🚨RegisterError = false
         🚩Canceled = false
         🚨CancelError = false
