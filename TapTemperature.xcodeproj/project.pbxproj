@@ -31,6 +31,7 @@
 		1256A338286ADF0E002AF08A /* 📣ADBanner.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1288ADE9286ACE37002F5511 /* 📣ADBanner.swift */; };
 		1256A339286ADF14002AF08A /* 🛒PurchaseSection.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1288ADEB286ACE37002F5511 /* 🛒PurchaseSection.swift */; };
 		1256A33A286ADF14002AF08A /* 🛒StoreModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1288ADED286ACE37002F5511 /* 🛒StoreModel.swift */; };
+		1256A33C286B1547002AF08A /* 🛠AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠AppMenu.swift */; };
 		125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
 		1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
 		1288ADEE286ACE37002F5511 /* 📣ADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288ADE6286ACE37002F5511 /* 📣ADView.swift */; };
@@ -142,6 +143,7 @@
 		124BC6BD28438EE200F75E1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1256A325286AD550002AF08A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1256A327286AD8FE002AF08A /* 💟JumpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💟JumpButton.swift"; sourceTree = "<group>"; };
+		1256A33B286B1547002AF08A /* 🛠AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠AppMenu.swift"; sourceTree = "<group>"; };
 		125A9BEC283B441D00C54634 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
 		1281D252283E1C4300D59319 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
 		1288ADE6286ACE37002F5511 /* 📣ADView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣ADView.swift"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
 				125A9BEC283B441D00C54634 /* 🗯ResultView.swift */,
 				1256A327286AD8FE002AF08A /* 💟JumpButton.swift */,
+				1256A33B286B1547002AF08A /* 🛠AppMenu.swift */,
 				1288AE02286AD0B1002F5511 /* 🕛HistoryView.swift */,
 				1288ADE5286ACE37002F5511 /* 📣AD */,
 				1288ADEA286ACE37002F5511 /* 🛒InAppPurchase */,
@@ -382,6 +385,7 @@
 				1288ADEF286ACE37002F5511 /* 📣AppName.swift in Sources */,
 				1288AE00286ACE62002F5511 /* 📄InformationMenu.swift in Sources */,
 				1288ADFF286ACE62002F5511 /* 📄AppDescription.swift in Sources */,
+				1256A33C286B1547002AF08A /* 🛠AppMenu.swift in Sources */,
 				1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */,
 				1288ADFE286ACE62002F5511 /* 📓SourceCodeMenu.swift in Sources */,
 				1256A328286AD8FE002AF08A /* 💟JumpButton.swift in Sources */,

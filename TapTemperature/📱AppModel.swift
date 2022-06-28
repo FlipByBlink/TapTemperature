@@ -20,7 +20,7 @@ class 📱AppModel: ObservableObject {
     
     @Published var 🚩ShowResult: Bool = false
     
-    @Published var 🚩RegisterSuccess: Bool = false //TODO: Optionalにするか検討
+    @Published var 🚩RegisterSuccess: Bool = false
     
     @Published var 🚩Canceled: Bool = false
     
@@ -71,7 +71,7 @@ class 📱AppModel: ObservableObject {
     }
     
     
-    var 📦Sample: HKQuantitySample?
+    var 📦SampleCache: HKQuantitySample?
     
     @MainActor
     func 👆Register() async {
@@ -92,13 +92,13 @@ class 📱AppModel: ObservableObject {
                 return
             }
             
-            let 📦 = HKQuantitySample(type: 🅃ype,
+            let 📦Sample = HKQuantitySample(type: 🅃ype,
                                         quantity: HKQuantity(unit: 📏Unit.ⒽKUnit, doubleValue: 🌡Temp),
                                         start: .now, end: .now)
             
-            📦Sample = 📦
+            📦SampleCache = 📦Sample
             
-            try await 🏥HealthStore.save(📦)
+            try await 🏥HealthStore.save(📦Sample)
             
             🕒History += 📏Unit.rawValue + ", " + 🌡Temp.description + "\n"
             
@@ -109,34 +109,11 @@ class 📱AppModel: ObservableObject {
         } catch {
             DispatchQueue.main.async {
                 print(#function, error)
-                self.🚩RegisterSuccess = false
                 self.🕒History += ".save Error?! " + error.localizedDescription + "\n"
+                self.🚩RegisterSuccess = false
                 self.🚩ShowResult = true
             }
         }
-//        🏥HealthStore.save(📦) { 🙆, 🙅 in
-//            if 🙆 {
-//                print(".save: Success")
-//
-//                DispatchQueue.main.async {
-//                    self.🕒History += self.📏Unit.rawValue + ", " + self.🌡Temp.description + "\n"
-//
-//                    self.🚩RegisterSuccess = true
-//                    self.🚩ShowResult = true
-//                }
-//
-//                UINotificationFeedbackGenerator().notificationOccurred(.success)
-//            } else {
-//                print("🙅:", 🙅.debugDescription)
-//
-//                DispatchQueue.main.async {
-//                    self.🕒History += ".save: Error?!\n"
-//
-//                    self.🚩RegisterSuccess = false
-//                    self.🚩ShowResult = true
-//                }
-//            }
-//        }
     }
     
     
@@ -158,16 +135,17 @@ class 📱AppModel: ObservableObject {
     func 🗑Cancel() {
         Task {
             do {
-                guard let 📦 = 📦Sample else { return }
+                guard let 📦 = 📦SampleCache else { return }
             
                 🚩Canceled = true
                 
+                🕒History += Date.now.formatted(date: .numeric, time: .shortened) + ", "
+                
                 try await 🏥HealthStore.delete(📦)
                 
-                📦Sample = nil
-                
-                🕒History += Date.now.formatted(date: .numeric, time: .shortened) + ", "
                 🕒History += "Cancel: Success\n"
+                
+                📦SampleCache = nil
                 
                 UINotificationFeedbackGenerator().notificationOccurred(.error)
             } catch {
@@ -184,11 +162,10 @@ class 📱AppModel: ObservableObject {
     func 🅁eset() {
         🚩ShowResult = false
         🚩RegisterSuccess = false
-        //🚨RegisterError = false
         🚩Canceled = false
         🚨CancelError = false
         🧩ResetTemp()
-        📦Sample = nil
+        📦SampleCache = nil
     }
 }
 
