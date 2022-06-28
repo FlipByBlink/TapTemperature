@@ -40,6 +40,8 @@ Mode for second decimal places.
 
 Auto complete function.
 
+Option to hide AD banner. (In-App-Purchase)
+
 【OTHERS】
 
 Launch "Health" app by one tap.
@@ -50,7 +52,9 @@ Cancellation by one tap just after you registered a data.
 
 Check source code in app.
 
-All feature is completely free. Non ad. Non tracking.
+All feature is free.
+
+Rarely appear AD banner of app by TapWeight developer.
 
 
 ==== Native(japanese) ====
@@ -79,6 +83,8 @@ iPhoneにプリインストールされているApple「ヘルスケア」アプ
 
 数字入力だけで自動的に完了する機能。
 
+広告バナー非表示オプション。(アプリ内課金)
+
 【その他】
 
 このアプリ内からApple「ヘルスケア」アプリをワンタップで立ち上げ可能。
@@ -89,9 +95,9 @@ iPhoneにプリインストールされているApple「ヘルスケア」アプ
 
 アプリ内でアプリ自身のソースコードを確認できる機能。
 
-すべての機能を無料で利用できます。無広告。無トラッキング。
+すべての機能を無料で利用できます。
 
-
+自作アプリに関するバナー広告をアプリ内で比較的控えめに表示します。
 
 
 ## 🧰 Source code link
