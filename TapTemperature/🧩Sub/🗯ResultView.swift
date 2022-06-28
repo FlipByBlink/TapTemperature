@@ -37,7 +37,7 @@ struct 🗯ResultView: View {
                         Spacer()
                         
                         Image(systemName: 📱.🚩RegisterSuccess ? "checkmark" : "exclamationmark.triangle")
-                            .font(.system(size: 110).weight(.semibold))
+                            .font(.system(size: 100).weight(.semibold))
                             .minimumScaleFactor(0.1)
                         
                         Text(📱.🚩RegisterSuccess ? "DONE!" : "Error!?")
@@ -73,8 +73,10 @@ struct 🗯ResultView: View {
                                     .fontWeight(.bold)
                             }
                         }
-                        .padding(48)
+                        .padding(.bottom, 24)
                         .opacity(0.8)
+                        
+                        Spacer()
                     }
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
