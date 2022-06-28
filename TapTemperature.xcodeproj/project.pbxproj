@@ -79,7 +79,7 @@
 /* Begin PBXFileReference section */
 		123690162844EE92006F22EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		123690182844EE96006F22EE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		123690192844F1BD006F22EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		123690192844F1BD006F22EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		124BC6A528432FC400F75E1F /* 📄DocumentMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📄DocumentMenu.swift"; sourceTree = "<group>"; };
 		124BC6B62843761300F75E1F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		124BC6BB28437B9000F75E1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -131,6 +131,9 @@
 			children = (
 				1288ADE5286ACE37002F5511 /* 📣AD */,
 				1288ADEA286ACE37002F5511 /* 🛒InAppPurchase */,
+				123690192844F1BD006F22EE /* Info.plist */,
+				12E811C828308A2100B0A615 /* TapTemperature.entitlements */,
+				12E811C0283089D400B0A615 /* Preview Content */,
 			);
 			path = "🧩Sub";
 			sourceTree = "<group>";
@@ -148,6 +151,8 @@
 		1288ADE4286ACE01002F5511 /* 🌏Localization */ = {
 			isa = PBXGroup;
 			children = (
+				123690172844EE92006F22EE /* InfoPlist.strings */,
+				124BC6BC28437B9000F75E1F /* Localizable.strings */,
 			);
 			path = "🌏Localization";
 			sourceTree = "<group>";
@@ -217,12 +222,7 @@
 				1288ADE2286ACDDB002F5511 /* 🧩Sub */,
 				1288ADE3286ACDF1002F5511 /* 🛠Menu */,
 				1288ADE4286ACE01002F5511 /* 🌏Localization */,
-				123690172844EE92006F22EE /* InfoPlist.strings */,
-				124BC6BC28437B9000F75E1F /* Localizable.strings */,
-				12E811C828308A2100B0A615 /* TapTemperature.entitlements */,
-				123690192844F1BD006F22EE /* Info.plist */,
 				12E811BE283089D400B0A615 /* Assets.xcassets */,
-				12E811C0283089D400B0A615 /* Preview Content */,
 			);
 			path = TapTemperature;
 			sourceTree = "<group>";
@@ -489,14 +489,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TapTemperature/TapTemperature.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "TapTemperature/🧩Sub/TapTemperature.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_ASSET_PATHS = "\"TapTemperature/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TapTemperature/🧩Sub/Preview Content\"";
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TapTemperature/Info.plist;
+				INFOPLIST_FILE = "TapTemperature/🧩Sub/Info.plist";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -521,14 +521,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TapTemperature/TapTemperature.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "TapTemperature/🧩Sub/TapTemperature.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_ASSET_PATHS = "\"TapTemperature/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TapTemperature/🧩Sub/Preview Content\"";
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TapTemperature/Info.plist;
+				INFOPLIST_FILE = "TapTemperature/🧩Sub/Info.plist";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
