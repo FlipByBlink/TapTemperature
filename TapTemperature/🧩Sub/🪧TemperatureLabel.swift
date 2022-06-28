@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct 🪧Label: View {
+struct 🪧TemperatureLabel: View {
     @EnvironmentObject var 📱: 📱AppModel
     
     var body: some View {
