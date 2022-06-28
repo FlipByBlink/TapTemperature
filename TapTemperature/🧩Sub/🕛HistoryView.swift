@@ -13,13 +13,11 @@ struct 🕛HistoryView: View {
                 .navigationBarTitleDisplayMode(.inline)
         } else {
             ScrollView {
-                Spacer()
-                    .frame(height: 50)
-
                 ScrollView(.horizontal, showsIndicators: false) {
                     Text(📱.🄷istory)
-                        .font(.caption)
+                        .font(.subheadline)
                         .padding()
+                        .textSelection(.enabled)
                         .navigationTitle("History")
                         .navigationBarTitleDisplayMode(.inline)
                         .toolbar {
