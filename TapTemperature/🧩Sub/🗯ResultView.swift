@@ -81,6 +81,9 @@ struct 🗯ResultView: View {
                 }
                 .accessibilityLabel("Dismiss")
                 .opacity(📱.🚩Canceled ? 0.25 : 1)
+                
+                
+                📣ADBanner()
             }
         }
         .preferredColorScheme(.dark)
