@@ -16,6 +16,7 @@
 "Error!?" = "エラー!?";
 "Cancel" = "取り消す";
 "Canceled" = "登録を取り消しました";
+"(perhaps error)" = "(たぶん失敗しました)";
 
 // ======== Accessibility label =========
 "DONE" = "完了";

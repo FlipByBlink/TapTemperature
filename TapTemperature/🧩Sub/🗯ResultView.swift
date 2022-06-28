@@ -27,8 +27,14 @@ struct 🗯ResultView: View {
                         .accessibilityLabel("Cancel")
                         
                         if 📱.🚩Canceled {
-                            Text("Canceled")
-                                .fontWeight(.semibold)
+                            VStack {
+                                Text("Canceled")
+                                    .fontWeight(.semibold)
+                                
+                                if 📱.🚨CancelError {
+                                    Text("(perhaps error)")
+                                }
+                            }
                         }
                     }
                     
@@ -46,11 +52,7 @@ struct 🗯ResultView: View {
                 .padding(.horizontal, 20)
                 
                 Button {
-                    📱.🚩ShowResult = false
-                    
-                    📱.🚩Canceled = false
-                    
-                    📱.🧩ResetTemp()
+                    📱.🅁eset()
                 } label: {
                     VStack(spacing: 12) {
                         Spacer()

@@ -25,7 +25,7 @@ class 📱AppModel: ObservableObject {
     
     @Published var 🚩Canceled: Bool = false
     
-    @Published var 🚨CancelError: Bool = false //TODO: キャンセル失敗パターン実装する
+    @Published var 🚨CancelError: Bool = false
     
     @AppStorage("history") var 🕒History: String = ""
     
@@ -135,27 +135,40 @@ class 📱AppModel: ObservableObject {
     }
     
     
+    @MainActor
     func 🗑Cancel() {
-        guard let 📦 = 📦Sample else { return }
-        
-        🏥HealthStore.delete(📦) { 🙆, 🙅 in
-            if 🙆 {
-                print(".delete: Success")
+        Task {
+            do {
+                guard let 📦 = 📦Sample else { return }
+            
+                🚩Canceled = true
                 
-                DispatchQueue.main.async {
-                    self.🚩Canceled = true
-                    self.🕒History += "Cancellation: success\n"
-                }
+                try await 🏥HealthStore.delete(📦)
+                
+                📦Sample = nil
+                
+                🕒History += Date.now.formatted(date: .numeric, time: .shortened) + ", "
+                🕒History += "Cancel: Success\n"
                 
                 UINotificationFeedbackGenerator().notificationOccurred(.error)
-            } else {
-                print("🙅:", 🙅.debugDescription)
-                
+            } catch {
                 DispatchQueue.main.async {
-                    self.🕒History += "Cancellation: error\n"
+                    print(#function, error)
+                    self.🕒History += "Cancel: Error?! " + error.localizedDescription + "\n"
+                    self.🚨CancelError = true
                 }
             }
         }
+    }
+    
+    
+    func 🅁eset() {
+        🚩ShowResult = false
+        //🚨RegisterError = false
+        🚩Canceled = false
+        🚨CancelError = false
+        🧩ResetTemp()
+        📦Sample = nil
     }
 }
 
