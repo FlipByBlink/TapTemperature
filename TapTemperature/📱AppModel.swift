@@ -21,8 +21,11 @@ class 📱AppModel: ObservableObject {
     @Published var 🚩ShowResult: Bool = false
     
     @Published var 🚩Success: Bool = false
+    //@Published var 🚨RegisterError: Bool = false //TODO: 検討?
     
     @Published var 🚩Canceled: Bool = false
+    
+    @Published var 🚨CancelError: Bool = false //TODO: キャンセル失敗パターン実装する
     
     @AppStorage("history") var 🕒History: String = ""
     
