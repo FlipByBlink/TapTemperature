@@ -55,13 +55,22 @@ struct 🛠MenuSheet: View {
 
                 Link (destination: URL(string: "x-apple-health://")!) {
                     HStack {
-                        Label("Open \"Health\" app", systemImage: "heart")
-
+                        Image(systemName: "app")
+                            .overlay {
+                                Image(systemName: "heart")
+                                    .scaleEffect(0.55)
+                                    .font(.body.bold())
+                            }
+                            .imageScale(.large)
+                            .padding(.horizontal, 2)
+                        
+                        Text("Open \"Health\" app")
+                        
                         Spacer()
-
+                        
                         Image(systemName: "arrow.up.forward.app")
+                            .foregroundStyle(.secondary)
                     }
-                    .font(.body.weight(.medium))
                 }
 
 

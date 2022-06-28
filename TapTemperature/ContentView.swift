@@ -72,7 +72,7 @@ struct ContentView: View {
             }
         }
         .fullScreenCover(isPresented: $📱.🚩InputDone) {
-            🆗Result()
+            🗯ResultView()
         }
         .onAppear {
             📱.🏥RequestAuthorization(HKQuantityType(.bodyTemperature))

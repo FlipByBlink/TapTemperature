@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct 🆗Result: View {
+struct 🗯ResultView: View {
     @EnvironmentObject var 📱: 📱AppModel
     
     var body: some View {
