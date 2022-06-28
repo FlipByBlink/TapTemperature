@@ -121,6 +121,20 @@ class 📱AppModel: ObservableObject {
     }
     
     
+    func 🏥RequestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) {
+        let 🅃ype: HKSampleType = HKQuantityType(ⓘdentifier)
+        if 🏥HealthStore.authorizationStatus(for: 🅃ype) == .notDetermined {
+            Task {
+                do {
+                    try await 🏥HealthStore.requestAuthorization(toShare: [🅃ype], read: [])
+                } catch {
+                    print(#function, error)
+                }
+            }
+        }
+    }
+    
+    
     func 🗑Cancel() {
         guard let 📦 = 📦Sample else { return }
         
@@ -139,20 +153,6 @@ class 📱AppModel: ObservableObject {
                 
                 DispatchQueue.main.async {
                     self.🕒History += "Cancellation: error\n"
-                }
-            }
-        }
-    }
-    
-    
-    func 🏥RequestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) {
-        let 🅃ype: HKSampleType = HKQuantityType(ⓘdentifier)
-        if 🏥HealthStore.authorizationStatus(for: 🅃ype) == .notDetermined {
-            Task {
-                do {
-                    try await 🏥HealthStore.requestAuthorization(toShare: [🅃ype], read: [])
-                } catch {
-                    print(#function, error)
                 }
             }
         }
