@@ -11,7 +11,7 @@
 		124BC6A628432FC400F75E1F /* 📄DocumentMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124BC6A528432FC400F75E1F /* 📄DocumentMenu.swift */; };
 		124BC6A8284333E100F75E1F /* TapTemperatureApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* TapTemperatureApp.swift */; };
 		124BC6A9284333E100F75E1F /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BC283089D300B0A615 /* ContentView.swift */; };
-		124BC6AA284333E100F75E1F /* 📱Model.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱Model.swift */; };
+		124BC6AA284333E100F75E1F /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
 		124BC6B128433C4F00F75E1F /* 🪧Label.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧Label.swift */; };
 		124BC6B228433C4F00F75E1F /* 👆Keypad.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
 		124BC6B328433C4F00F75E1F /* 🆗Result.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🆗Result.swift */; };
@@ -21,7 +21,7 @@
 		124BC6BA28437B9000F75E1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
 		125A9BEB283B35FC00C54634 /* 🛠Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A9BEA283B35FC00C54634 /* 🛠Menu.swift */; };
 		125A9BED283B441D00C54634 /* 🆗Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🆗Result.swift */; };
-		1281D253283E1C4300D59319 /* 📱Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱Model.swift */; };
+		1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
 		12ADECF8283F7C1500431224 /* 🪧Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧Label.swift */; };
 		12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
 		12E811BB283089D300B0A615 /* TapTemperatureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* TapTemperatureApp.swift */; };
@@ -40,7 +40,7 @@
 			files = (
 				124BC6A8284333E100F75E1F /* TapTemperatureApp.swift in CopyFiles */,
 				124BC6A9284333E100F75E1F /* ContentView.swift in CopyFiles */,
-				124BC6AA284333E100F75E1F /* 📱Model.swift in CopyFiles */,
+				124BC6AA284333E100F75E1F /* 📱AppModel.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +71,7 @@
 		124BC6BD28438EE200F75E1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		125A9BEA283B35FC00C54634 /* 🛠Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠Menu.swift"; sourceTree = "<group>"; };
 		125A9BEC283B441D00C54634 /* 🆗Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🆗Result.swift"; sourceTree = "<group>"; };
-		1281D252283E1C4300D59319 /* 📱Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱Model.swift"; sourceTree = "<group>"; };
+		1281D252283E1C4300D59319 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
 		12ADECF7283F7C1500431224 /* 🪧Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧Label.swift"; sourceTree = "<group>"; };
 		12ADECF9283F7CC700431224 /* 👆Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "👆Keypad.swift"; sourceTree = "<group>"; };
 		12E811B7283089D300B0A615 /* Temperature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Temperature.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,7 +118,7 @@
 			children = (
 				12E811BA283089D300B0A615 /* TapTemperatureApp.swift */,
 				12E811BC283089D300B0A615 /* ContentView.swift */,
-				1281D252283E1C4300D59319 /* 📱Model.swift */,
+				1281D252283E1C4300D59319 /* 📱AppModel.swift */,
 				12ADECF7283F7C1500431224 /* 🪧Label.swift */,
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
 				125A9BEC283B441D00C54634 /* 🆗Result.swift */,
@@ -225,7 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1281D253283E1C4300D59319 /* 📱Model.swift in Sources */,
+				1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */,
 				125A9BEB283B35FC00C54634 /* 🛠Menu.swift in Sources */,
 				12ADECF8283F7C1500431224 /* 🪧Label.swift in Sources */,
 				12E811BD283089D300B0A615 /* ContentView.swift in Sources */,

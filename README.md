@@ -3,7 +3,7 @@
 
 <br>
 
-![](TapTemperature/Assets.xcassets/LaunchIcon.imageset/TapTemp_Icon240w.png)
+![](TapTemperature/Assets.xcassets/LaunchIcon.imageset/LaunchIcon.png)
 
 <br>
 
@@ -97,6 +97,11 @@ iPhoneにプリインストールされているApple「ヘルスケア」アプ
 ## 🧰 Source code link
 
 [github.com/FlipByBlink/TapTemperature](https://github.com/FlipByBlink/TapTemperature)
+
+
+### Source code (Mirror) link
+
+[gitlab.com/FlipByBlink/TapTemperature_Mirror](https://gitlab.com/FlipByBlink/TapTemperature_Mirror)
 
 
 ## ✉️ Contact

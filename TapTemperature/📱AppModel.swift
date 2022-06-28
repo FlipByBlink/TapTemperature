@@ -2,8 +2,7 @@
 import SwiftUI
 import HealthKit
 
-
-class 📱Model: ObservableObject {
+class 📱AppModel: ObservableObject {
     
     @AppStorage("Unit") var 💾Unit: 📏EnumUnit = .℃
     

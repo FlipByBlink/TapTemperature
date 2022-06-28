@@ -2,7 +2,6 @@
 import SwiftUI
 import HealthKit
 
-
 struct 🛠MenuButton: View { // ⚙️
     
     @State private var 🚩Menu: Bool = false
@@ -26,7 +25,7 @@ struct 🛠MenuButton: View { // ⚙️
 
 
 struct 🛠Menu: View {
-    @EnvironmentObject var 📱:📱Model
+    @EnvironmentObject var 📱: 📱AppModel
     
     @Environment(\.dismiss) var 🔚: DismissAction
     

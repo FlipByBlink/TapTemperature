@@ -2,9 +2,8 @@
 import SwiftUI
 import HealthKit
 
-
 struct ContentView: View {
-    @EnvironmentObject var 📱:📱Model
+    @EnvironmentObject var 📱:📱AppModel
     
     @Environment(\.scenePhase) private var 🔛: ScenePhase
     

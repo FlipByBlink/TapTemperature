@@ -1,9 +1,8 @@
 
 import SwiftUI
 
-
 struct 🪧Label: View {
-    @EnvironmentObject var 📱:📱Model
+    @EnvironmentObject var 📱: 📱AppModel
     
     var body: some View {
         HStack(alignment: .firstTextBaseline) {

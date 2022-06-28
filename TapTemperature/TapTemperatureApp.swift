@@ -1,11 +1,10 @@
 
 import SwiftUI
 
-
 @main
 struct TapTemperatureApp: App {
     
-    let 📱 = 📱Model()
+    let 📱 = 📱AppModel()
     
     var body: some Scene {
         WindowGroup {

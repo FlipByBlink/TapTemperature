@@ -1,9 +1,8 @@
 
 import SwiftUI
 
-
 struct 👆Keypad: View {
-    @EnvironmentObject var 📱:📱Model
+    @EnvironmentObject var 📱: 📱AppModel
     
     var body: some View {
         let ꠲ = Array(repeating: GridItem(.flexible()), count: 3)

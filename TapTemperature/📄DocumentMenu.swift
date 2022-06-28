@@ -1,7 +1,6 @@
 
 import SwiftUI
 
-
 struct 📄DocumentMenu: View {
     var body: some View {
         NavigationLink {

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "LaunchIcon-2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "LaunchIcon-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "TapTemp_Icon240w.png",
+      "filename" : "LaunchIcon.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
