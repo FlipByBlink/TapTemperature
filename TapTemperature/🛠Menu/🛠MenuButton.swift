@@ -6,8 +6,8 @@ struct 🛠MenuButton: View {
     
     var body: some View {
         Button {
-            UISelectionFeedbackGenerator().selectionChanged()
             🚩ShowMenu = true
+            UISelectionFeedbackGenerator().selectionChanged()
         } label: {
             Label("Open menu", systemImage: "gearshape")
                 .font(.title)
