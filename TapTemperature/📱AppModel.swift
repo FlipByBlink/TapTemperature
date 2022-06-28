@@ -161,7 +161,6 @@ class 📱AppModel: ObservableObject {
     
     func 🅁eset() {
         🚩ShowResult = false
-        🚩RegisterSuccess = false
         🚩Canceled = false
         🚨CancelError = false
         🧩ResetTemp()

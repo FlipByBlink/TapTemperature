@@ -8,7 +8,7 @@ struct 📣ADBanner: View {
     
     @AppStorage("🄻aunchCount") var 🄻aunchCount: Int = 0
     
-    let 🅃iming: Int = 2 //4
+    let 🅃iming: Int = 4
     
     var body: some View {
         Group {

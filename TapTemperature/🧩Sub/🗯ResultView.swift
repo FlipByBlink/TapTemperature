@@ -90,6 +90,9 @@ struct 🗯ResultView: View {
         }
         .preferredColorScheme(.dark)
         .animation(.default, value: 📱.🚩Canceled)
+        .onDisappear {
+            📱.🚩RegisterSuccess = false
+        }
     }
 }
 
