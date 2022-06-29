@@ -13,7 +13,6 @@ struct 🛠MenuButton: View {
                 .font(.title)
                 .labelStyle(.iconOnly)
                 .padding(.vertical)
-            
         }
         .tint(.primary)
         .sheet(isPresented: $🚩ShowMenu) {

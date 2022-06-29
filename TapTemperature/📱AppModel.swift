@@ -169,9 +169,11 @@ class 📱AppModel: ObservableObject {
 }
 
 
-enum 📏DegreeUnit: String, CaseIterable {
+enum 📏DegreeUnit: String, CaseIterable, Identifiable {
     case ℃
     case ℉
+    
+    var id: Self { self }
     
     var ⒽKUnit: HKUnit {
         switch self {
