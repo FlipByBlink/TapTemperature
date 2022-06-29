@@ -31,7 +31,6 @@
 "Dismiss" = "閉じる";
 "Cancel" = "取り消す";
 
-
 // ======== Information =========
 "Information" = "情報";
 "Version" = "バージョン";
@@ -44,6 +43,24 @@
 "Web Repository" = "Web リポジトリー";
 "(Mirror)" = "(ミラー)";
 
+// ======== AboutDeveloperPublisher ========
+"Developer / Publisher" = "開発 / パブリッシャー";
+"Individual" = "個人系";
+"The System" = "構成";
+"Name" = "名前";
+"only one person" = "1人のみ";
+"age" = "年齢";
+"about 28" = "約28才";
+"country" = "国";
+"Japan" = "日本";
+"native language" = "ネイティブ言語";
+"Japanese" = "日本語";
+"income" = "収入";
+"almost nothing" = "ほぼ無し";
+"As of 2021" = "2021年時点";
+"Image" = "写真";
+"Taken on 2021-11" = "2021年11月に撮影";
+"identity / circumstance / background" = "身元 / 素性 / 境遇";
 
 // ======== AD =========
 "AD" = "広告";
