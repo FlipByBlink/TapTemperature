@@ -38,7 +38,7 @@ Check source code in app.
 
 All feature is free.
 
-Rarely appear AD banner of app by TapWeight developer.
+AD banner of app by TapWeight developer.
 
 
 ==== Native(japanese) ====
@@ -81,5 +81,5 @@ iPhoneにプリインストールされているApple「ヘルスケア」アプ
 
 すべての機能を無料で利用できます。
 
-自作アプリに関するバナー広告をアプリ内で比較的控えめに表示します。
+自作アプリに関するバナー広告を表示します。
 """
