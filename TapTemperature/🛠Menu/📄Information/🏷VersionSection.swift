@@ -30,7 +30,7 @@ let 🕒LatestVersionNumber = "1.0.1"
 
 let 🕒LatestVersionDescription = """
 - Add AD banner
-- Add "Hide AD banner" option. (in-app-purchase)
+- Add "Hide AD banner" option. (In-App Purchase)
 - Refactoring
 ==== Japanese(native) ====
 - 広告バナーの追加

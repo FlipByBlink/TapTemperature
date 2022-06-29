@@ -40,7 +40,7 @@ Mode for second decimal places.
 
 Auto complete function.
 
-Option to hide AD banner. (In-App-Purchase)
+Option to hide AD banner. (In-App Purchase)
 
 【OTHERS】
 
