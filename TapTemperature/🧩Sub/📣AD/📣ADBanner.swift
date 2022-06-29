@@ -8,8 +8,6 @@ struct 📣ADBanner: View {
     
     @AppStorage("🄻aunchCount") var 🄻aunchCount: Int = 0
     
-    let 🅃iming: Int = 4
-    
     var body: some View {
         Group {
             if 🛒.🚩Purchased {
@@ -34,7 +32,7 @@ struct 📣ADBanner: View {
         .onAppear {
             🄻aunchCount += 1
             
-            if 🄻aunchCount % 🅃iming == 0 {
+            if 🄻aunchCount > 5 {
                 🚩ShowBanner = true
             }
         }
