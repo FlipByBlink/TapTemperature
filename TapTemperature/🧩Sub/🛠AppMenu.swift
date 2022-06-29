@@ -14,9 +14,7 @@ struct 🛠AppMenu: View {
                 Label("℃  /  ℉", systemImage: "ruler")
             }
             .accessibilityLabel("Unit")
-            .onChange(of: 📱.📏Unit) { _ in //FIXME: ここの影響でPicker選択後にListの反映が遅れている
-                📱.🧩ResetTemp()
-            }
+            
             
             Toggle(isOn: $📱.🚩BasalTemp) {
                 Label("Basal body temperature", systemImage: "bed.double")

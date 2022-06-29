@@ -7,13 +7,17 @@ class 📱AppModel: ObservableObject {
     let 🏥HealthStore = HKHealthStore()
     
     
-    @AppStorage("Unit") var 📏Unit: 📏DegreeUnit = .℃
-    
     @AppStorage("BasalTemp") var 🚩BasalTemp: Bool = false
     
     @AppStorage("2DecimalPlace") var 🚩2DecimalPlace: Bool = false
     
     @AppStorage("AutoComplete") var 🚩AutoComplete: Bool = false
+    
+    @AppStorage("Unit") var 📏Unit: 📏DegreeUnit = .℃ {
+        didSet {
+            🧩ResetTemp()
+        }
+    }
     
     
     @Published var 🛏BasalSwitch: Bool = true
