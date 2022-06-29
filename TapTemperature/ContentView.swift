@@ -50,7 +50,7 @@ struct 🛏BasalSwitchButton: View {
     @EnvironmentObject var 📱: 📱AppModel
     
     var body: some View {
-        if 📱.🚩BasalTemp {
+        if 📱.🚩BasalTempOption {
             Button {
                 📱.🛏BasalSwitch.toggle()
                 UISelectionFeedbackGenerator().selectionChanged()
@@ -81,8 +81,8 @@ struct 🟥AutoCompleteHintView: View {
             VStack {
                 Spacer()
                 
-                if 📱.🚩AutoComplete {
-                    if 📱.🧩Temp.count == (📱.🚩2DecimalPlace ? 3 : 2) {
+                if 📱.🚩AutoCompleteOption {
+                    if 📱.🧩Temp.count == (📱.🚩2DecimalPlaceOption ? 3 : 2) {
                         Rectangle()
                             .frame(height: 8 + 📐.safeAreaInsets.bottom)
                             .foregroundColor(.pink)

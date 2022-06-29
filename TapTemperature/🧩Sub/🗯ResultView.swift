@@ -62,13 +62,13 @@ struct 🗯ResultView: View {
                         Spacer()
                         
                         HStack {
-                            if 📱.🚩BasalTemp && 📱.🛏BasalSwitch {
+                            if 📱.🚩BasalTempOption && 📱.🛏BasalSwitch {
                                 Image(systemName: "bed.double")
                                     .font(.body.bold())
                             }
                             
                             if 📱.🚩RegisterSuccess {
-                                Text(📱.🌡Temp.description + " " + 📱.📏Unit.rawValue)
+                                Text(📱.🌡Temp.description + " " + 📱.📏UnitOption.rawValue)
                                     .font(.title2)
                                     .fontWeight(.bold)
                             }

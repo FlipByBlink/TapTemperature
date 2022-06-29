@@ -50,7 +50,7 @@ struct 🪧TemperatureLabel: View {
             if 📱.🧩Temp.indices.contains(3) {
                 Text(📱.🧩Temp[3].description)
             } else {
-                if 📱.🚩2DecimalPlace {
+                if 📱.🚩2DecimalPlaceOption {
                     Text("0").opacity(0)
                         .overlay {
                             Text("_")
@@ -62,7 +62,7 @@ struct 🪧TemperatureLabel: View {
             }
             
             
-            Text(📱.📏Unit.rawValue)
+            Text(📱.📏UnitOption.rawValue)
                 .font(.system(size: 36, weight: .medium))
                 .minimumScaleFactor(0.1)
                 .scaledToFit()

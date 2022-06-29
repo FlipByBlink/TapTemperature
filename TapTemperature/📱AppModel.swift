@@ -7,13 +7,13 @@ class 📱AppModel: ObservableObject {
     let 🏥HealthStore = HKHealthStore()
     
     
-    @AppStorage("BasalTemp") var 🚩BasalTemp: Bool = false
+    @AppStorage("BasalTemp") var 🚩BasalTempOption: Bool = false
     
-    @AppStorage("2DecimalPlace") var 🚩2DecimalPlace: Bool = false
+    @AppStorage("2DecimalPlace") var 🚩2DecimalPlaceOption: Bool = false
     
-    @AppStorage("AutoComplete") var 🚩AutoComplete: Bool = false
+    @AppStorage("AutoComplete") var 🚩AutoCompleteOption: Bool = false
     
-    @AppStorage("Unit") var 📏Unit: 📏DegreeUnit = .℃ {
+    @AppStorage("Unit") var 📏UnitOption: 📏DegreeUnit = .℃ {
         didSet {
             🧩ResetTemp()
         }
@@ -52,7 +52,7 @@ class 📱AppModel: ObservableObject {
     
     
     func 🧩ResetTemp() {
-        switch 📏Unit {
+        switch 📏UnitOption {
             case .℃: 🧩Temp = [3]
             case .℉: 🧩Temp = []
         }
@@ -62,8 +62,8 @@ class 📱AppModel: ObservableObject {
     func 🧩AppendTemp(_ 🔢: Int) {
         🧩Temp.append(🔢)
         
-        if 🚩AutoComplete {
-            if 🧩Temp.count == (🚩2DecimalPlace ? 4 : 3) {
+        if 🚩AutoCompleteOption {
+            if 🧩Temp.count == (🚩2DecimalPlaceOption ? 4 : 3) {
                 Task {
                     await 👆Register()
                 }
@@ -80,7 +80,7 @@ class 📱AppModel: ObservableObject {
     @MainActor
     func 👆Register() async {
         do {
-            let 🚩BasalTempInput = 🚩BasalTemp && 🛏BasalSwitch
+            let 🚩BasalTempInput = 🚩BasalTempOption && 🛏BasalSwitch
             
             🕒History += Date.now.formatted(date: .numeric, time: .shortened) + ", "
             🕒History += 🚩BasalTempInput ? "BBT, " : "BT, "
@@ -97,14 +97,14 @@ class 📱AppModel: ObservableObject {
             }
             
             let 📦Sample = HKQuantitySample(type: 🅃ype,
-                                        quantity: HKQuantity(unit: 📏Unit.ⒽKUnit, doubleValue: 🌡Temp),
+                                        quantity: HKQuantity(unit: 📏UnitOption.ⒽKUnit, doubleValue: 🌡Temp),
                                         start: .now, end: .now)
             
             📦SampleCache = 📦Sample
             
             try await 🏥HealthStore.save(📦Sample)
             
-            🕒History += 📏Unit.rawValue + ", " + 🌡Temp.description + "\n"
+            🕒History += 📏UnitOption.rawValue + ", " + 🌡Temp.description + "\n"
             
             🚩RegisterSuccess = true
             🚩ShowResult = true

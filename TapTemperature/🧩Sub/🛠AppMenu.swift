@@ -6,7 +6,7 @@ struct 🛠AppMenu: View {
     
     var body: some View {
         Section {
-            Picker(selection: $📱.📏Unit) {
+            Picker(selection: $📱.📏UnitOption) {
                 ForEach(📏DegreeUnit.allCases) { 📏 in
                     Text(📏.rawValue)
                 }
@@ -16,17 +16,17 @@ struct 🛠AppMenu: View {
             .accessibilityLabel("Unit")
             
             
-            Toggle(isOn: $📱.🚩BasalTemp) {
+            Toggle(isOn: $📱.🚩BasalTempOption) {
                 Label("Basal body temperature", systemImage: "bed.double")
             }
-            .onChange(of: 📱.🚩BasalTemp) { _ in
+            .onChange(of: 📱.🚩BasalTempOption) { _ in
                 📱.🏥RequestAuthorization(.basalBodyTemperature)
             }
             
             
-            Toggle(isOn: $📱.🚩2DecimalPlace) {
+            Toggle(isOn: $📱.🚩2DecimalPlaceOption) {
                 let 🪧: String = {
-                    switch 📱.📏Unit {
+                    switch 📱.📏UnitOption {
                         case .℃: return "36.1 ℃  →  36.12︭ ℃"
                         case .℉: return "100.1 ℉  →  100.12︭ ℉"
                     }
@@ -37,7 +37,7 @@ struct 🛠AppMenu: View {
             .accessibilityLabel("Second decimal places mode")
             
             
-            Toggle(isOn: $📱.🚩AutoComplete) {
+            Toggle(isOn: $📱.🚩AutoCompleteOption) {
                 Label("Auto complete", systemImage: "checkmark.circle.trianglebadge.exclamationmark")
             }
         } header: {
