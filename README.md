@@ -54,7 +54,7 @@ Check source code in app.
 
 All feature is free.
 
-AD banner of app by TapWeight developer.
+AD banner of app by TapTemperature developer.
 
 
 ==== Native(japanese) ====
