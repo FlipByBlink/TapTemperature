@@ -26,16 +26,14 @@ struct 🏷VersionSection: View {
 }
 
 
-let 🕒LatestVersionNumber = "1.0.1"
+let 🕒LatestVersionNumber = "1.0.2"
 
 let 🕒LatestVersionDescription = """
-- Add AD banner
-- Add "Hide AD banner" option. (In-App Purchase)
-- Refactoring
+Add localization.
+Build on latest development environment(iOS16).
 ==== Japanese(native) ====
-- 広告バナーの追加
-- 広告バナー非表示オプション(アプリ内課金)を追加
-- リファクタリング
+ローカライズを追加。
+最新開発環境(iOS16)でビルドしました。
 """
 
 var 🕒VersionHistory: String {
@@ -47,6 +45,14 @@ var 🕒VersionHistory: String {
 }
 
 let 🕒PastVersionHistory = """
+🕒 Version 1.0.1 : 2022-06-30
+- Add AD banner
+- Add "Hide AD banner" option. (In-App Purchase)
+- Refactoring
+==== Japanese(native) ====
+- 広告バナーの追加
+- 広告バナー非表示オプション(アプリ内課金)を追加
+- リファクタリング
 🕒 Version 1.0 : 2022-06-01
 Initial release
 """
