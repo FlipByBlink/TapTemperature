@@ -1,6 +1,7 @@
 
 // ======== Menu ========
 "TapTemperature" = "体温登録";
+"Body Temperature" = "体温";
 "Unit" = "単位";
 "Basal body temperature" = "基礎体温";
 "Second decimal places mode" = "小数点以下2桁モード";

@@ -29,10 +29,10 @@ struct 🏷VersionSection: View {
 let 🕒LatestVersionNumber = "1.0.2"
 
 let 🕒LatestVersionDescription = """
-Add localization.
+Add main 3 words localization(Body Temperature/Basal body temperature/Health).
 Build on latest development environment(iOS16).
 ==== Japanese(native) ====
-ローカライズを追加。
+メイン単語のローカライズ(体温/基礎体温/ヘルスケア)を追加。
 最新開発環境(iOS16)でビルドしました。
 """
 

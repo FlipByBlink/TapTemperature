@@ -13,7 +13,7 @@ struct 🛠MenuSheet: View {
                 
                 📄InformationMenu()
             }
-            .navigationTitle("TapTemperature")
+            .navigationTitle("Body Temperature")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
