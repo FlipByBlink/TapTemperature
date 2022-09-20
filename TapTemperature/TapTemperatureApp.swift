@@ -3,10 +3,8 @@ import SwiftUI
 
 @main
 struct TapTemperatureApp: App {
-    
-    let 📱 = 📱AppModel()
-    
-    let 🛒 = 🛒StoreModel()
+    @StateObject private var 📱 = 📱AppModel()
+    @StateObject private var 🛒 = 🛒StoreModel()
     
     var body: some Scene {
         WindowGroup {

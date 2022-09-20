@@ -11,9 +11,8 @@ struct 🛠AppMenu: View {
                     Text(📏.rawValue)
                 }
             } label: {
-                Label("℃  /  ℉", systemImage: "ruler")
+                Label("Unit", systemImage: "ruler")
             }
-            .accessibilityLabel("Unit")
             
             
             Toggle(isOn: $📱.🚩BasalTempOption) {

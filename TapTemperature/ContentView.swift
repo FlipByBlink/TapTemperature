@@ -4,6 +4,7 @@ import HealthKit
 
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
+    @Environment(\.scenePhase) var 🚥Phase: ScenePhase
     
     var body: some View {
         VStack {
@@ -31,16 +32,18 @@ struct ContentView: View {
             
             👆Keypad()
         }
-        .background {
-            🟥AutoCompleteHintView()
-        }
+        .background { 🟥AutoCompleteHintView() }
         .fullScreenCover(isPresented: $📱.🚩ShowResult) {
             🗯ResultView()
         }
         .onAppear {
             📱.🏥RequestAuthorization(.bodyTemperature)
-            
             📱.🧩ResetTemp()
+        }
+        .onChange(of: 🚥Phase) { 🚥 in
+            if 🚥 == .background {
+                📱.🅁eset()
+            }
         }
     }
 }
