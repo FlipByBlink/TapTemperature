@@ -1,4 +1,4 @@
-# iPhoneApp TapTemperature / 体温登録 for "Health"
+# iPhone App TapTemperature / 体温登録 for "Health"
 
 
 <br>
@@ -14,7 +14,7 @@
 
 
 <!-- Manually sync below text between "🛠Menu.swift/📄About" and "AppStoreConnect/Description" and "/README.md(here)". -->
-## 📄 Description
+## Description
 This application is designed to register body temperature data to the Apple "Health" application pre-installed on iPhone in the fastest possible way (as manual).
 
 This app cannot read, view, or manage past data in "Health" app. This app is intended only to register data to the "Health" app. Please check the registered data on the "Health" app.
