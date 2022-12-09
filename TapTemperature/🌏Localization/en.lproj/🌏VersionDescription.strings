@@ -1,0 +1,8 @@
+"1.0.3" = "small bug fix";
+
+"1.0.2" = "Add main 3 words localization(Body Temperature/Basal body temperature/Health).
+Build on latest development environment(iOS16).";
+"1.0.1" = "- Add AD banner
+- Add \"Hide AD banner\" option. (In-App Purchase)
+- Refactoring";
+"1.0" = "Initial release";

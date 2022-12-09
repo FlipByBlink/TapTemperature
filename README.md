@@ -3,7 +3,7 @@
 
 <br>
 
-![App icon](TapTemperature/Assets.xcassets/LaunchIcon.imageset/LaunchIcon.png)
+![App icon](TapTemperature/Assets.xcassets/RoundedIcon.imageset/icon.png)
 
 <br>
 

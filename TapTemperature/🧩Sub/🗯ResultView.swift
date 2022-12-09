@@ -126,3 +126,41 @@ struct 🗑CancelButton: View {
         }
     }
 }
+
+
+
+struct 📣ADBanner: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    @EnvironmentObject var 🛒: 🛒StoreModel
+    @State private var 🚩ShowBanner = false
+    @AppStorage("🄻aunchCount") var 🄻aunchCount: Int = 0
+    
+    var body: some View {
+        Group {
+            if 🛒.🚩Purchased || !📱.🚩RegisterSuccess {
+                Spacer()
+            } else {
+                if 🚩ShowBanner {
+                    📣ADView(without: .TapWeight)
+                        .padding(.horizontal)
+                        .background {
+                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                .foregroundStyle(.background)
+                                .shadow(radius: 3)
+                        }
+                        .padding()
+                        .frame(maxHeight: 180)
+                        .environment(\.colorScheme, .light)
+                } else {
+                    Spacer()
+                }
+            }
+        }
+        .onAppear {
+            🄻aunchCount += 1
+            if 🄻aunchCount > 5 { 🚩ShowBanner = true }
+        }
+    }
+}
+//ADMenuSheetを表示したままアプリをバックグラウンドに移行した際に、ResultViewの自動非表示機能がうまく動作しない。
+//そのためADBanner上のADMenuシートを削除。
