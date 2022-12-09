@@ -57,9 +57,7 @@ struct 🛠AppMenu: View {
                         }
                         .imageScale(.large)
                 }
-                
                 Spacer()
-                
                 Image(systemName: "arrow.up.forward.app")
                     .foregroundStyle(.secondary)
             }
