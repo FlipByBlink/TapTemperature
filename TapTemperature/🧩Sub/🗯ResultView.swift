@@ -141,7 +141,7 @@ struct 📣ADBanner: View {
                 Spacer()
             } else {
                 if 🚩ShowBanner {
-                    📣ADView(without: .TapWeight)
+                    📣ADView(without: .TapTemperature)
                         .padding(.horizontal)
                         .background {
                             RoundedRectangle(cornerRadius: 16, style: .continuous)
