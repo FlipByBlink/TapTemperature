@@ -23,7 +23,6 @@
 		125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
 		1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
 		1288ADFC286ACE62002F5511 /* 🛠MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288ADF5286ACE62002F5511 /* 🛠MenuButton.swift */; };
-		1288ADFD286ACE62002F5511 /* 🛠MenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288ADF6286ACE62002F5511 /* 🛠MenuSheet.swift */; };
 		12ADECF8283F7C1500431224 /* 🪧TemperatureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧TemperatureLabel.swift */; };
 		12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
 		12E811BB283089D300B0A615 /* TapTemperatureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* TapTemperatureApp.swift */; };
@@ -42,7 +41,6 @@
 		F585A0D82942B1E400BA665C /* 📣AD.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C32942AADC00BA665C /* 📣AD.swift */; };
 		F585A0D92942B1E400BA665C /* 🛒InAppPurchase.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */; };
 		F585A0DA2942B1ED00BA665C /* 🛠MenuButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1288ADF5286ACE62002F5511 /* 🛠MenuButton.swift */; };
-		F585A0DB2942B1ED00BA665C /* 🛠MenuSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1288ADF6286ACE62002F5511 /* 🛠MenuSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,7 +63,6 @@
 			dstSubfolderSpec = 7;
 			files = (
 				F585A0DA2942B1ED00BA665C /* 🛠MenuButton.swift in CopyFiles */,
-				F585A0DB2942B1ED00BA665C /* 🛠MenuSheet.swift in CopyFiles */,
 				1256A33D286B16E1002AF08A /* 🛠AppMenu.swift in CopyFiles */,
 				1256A32D286ADEF5002AF08A /* 💟JumpButton.swift in CopyFiles */,
 				124BC6B128433C4F00F75E1F /* 🪧TemperatureLabel.swift in CopyFiles */,
@@ -101,7 +98,6 @@
 		125A9BEC283B441D00C54634 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
 		1281D252283E1C4300D59319 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
 		1288ADF5286ACE62002F5511 /* 🛠MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛠MenuButton.swift"; sourceTree = "<group>"; };
-		1288ADF6286ACE62002F5511 /* 🛠MenuSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛠MenuSheet.swift"; sourceTree = "<group>"; };
 		12ADECF7283F7C1500431224 /* 🪧TemperatureLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧TemperatureLabel.swift"; sourceTree = "<group>"; };
 		12ADECF9283F7CC700431224 /* 👆Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "👆Keypad.swift"; sourceTree = "<group>"; };
 		12E811B7283089D300B0A615 /* Temperature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Temperature.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,7 +166,6 @@
 				1256A327286AD8FE002AF08A /* 💟JumpButton.swift */,
 				1256A33B286B1547002AF08A /* 🛠AppMenu.swift */,
 				1288ADF5286ACE62002F5511 /* 🛠MenuButton.swift */,
-				1288ADF6286ACE62002F5511 /* 🛠MenuSheet.swift */,
 				123690192844F1BD006F22EE /* Info.plist */,
 				12E811C828308A2100B0A615 /* TapTemperature.entitlements */,
 				12E811C0283089D400B0A615 /* Preview Content */,
@@ -349,7 +344,6 @@
 				1256A328286AD8FE002AF08A /* 💟JumpButton.swift in Sources */,
 				1288ADFC286ACE62002F5511 /* 🛠MenuButton.swift in Sources */,
 				F585A0CA2942AADC00BA665C /* 🛒InAppPurchase.swift in Sources */,
-				1288ADFD286ACE62002F5511 /* 🛠MenuSheet.swift in Sources */,
 				12ADECF8283F7C1500431224 /* 🪧TemperatureLabel.swift in Sources */,
 				12E811BD283089D300B0A615 /* ContentView.swift in Sources */,
 				12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */,
