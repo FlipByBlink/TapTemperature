@@ -5,9 +5,7 @@ struct 🛠AppMenu: View {
     var body: some View {
         Section {
             Picker(selection: $📱.📏unitOption) {
-                ForEach(📏DegreeUnit.allCases) { 📏 in
-                    Text(📏.rawValue)
-                }
+                ForEach(📏DegreeUnit.allCases) { Text($0.rawValue) }
             } label: {
                 Label("Unit", systemImage: "ruler")
             }
@@ -18,13 +16,7 @@ struct 🛠AppMenu: View {
                 📱.🏥requestAuthorization(.basalBodyTemperature)
             }
             Toggle(isOn: $📱.🚩2DecimalPlaceOption) {
-                let 🪧: String = {
-                    switch 📱.📏unitOption {
-                        case .℃: return "36.1 ℃  →  36.12︭ ℃"
-                        case .℉: return "100.1 ℉  →  100.12︭ ℉"
-                    }
-                }()
-                Label(🪧, systemImage: "character.cursor.ibeam")
+                Label(📱.📏unitOption.menuLabel, systemImage: "character.cursor.ibeam")
             }
             .accessibilityLabel("Second decimal places mode")
             Toggle(isOn: $📱.🚩autoCompleteOption) {

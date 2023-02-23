@@ -41,7 +41,7 @@ struct 🛠MenuSheet: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    self.dismiss.callAsFunction()
+                    self.dismiss()
                 } label: {
                     Image(systemName: "chevron.down")
                         .foregroundStyle(.secondary)

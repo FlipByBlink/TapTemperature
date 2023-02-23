@@ -2,15 +2,13 @@ import SwiftUI
 import HealthKit
 
 class 📱AppModel: ObservableObject {
-    let 🏥healthStore = HKHealthStore()
+    private let 🏥healthStore = HKHealthStore()
     
     @AppStorage("BasalTemp") var 🚩basalTempOption: Bool = false
     @AppStorage("2DecimalPlace") var 🚩2DecimalPlaceOption: Bool = false
     @AppStorage("AutoComplete") var 🚩autoCompleteOption: Bool = false
     @AppStorage("Unit") var 📏unitOption: 📏DegreeUnit = .℃ {
-        didSet {
-            self.🧩resetComponents()
-        }
+        didSet { self.🧩resetComponents() }
     }
     
     @Published var 🛏basalSwitch: Bool = true
@@ -43,8 +41,8 @@ class 📱AppModel: ObservableObject {
         }
     }
     
-    func 🧩appendComponent(_ 🔢: Int) {
-        self.🧩components.append(🔢)
+    func 🧩appendComponent(_ ⓘnt: Int) {
+        self.🧩components.append(ⓘnt)
         if self.🚩autoCompleteOption {
             if self.🧩components.count == (self.🚩2DecimalPlaceOption ? 4 : 3) {
                 Task {
@@ -56,7 +54,7 @@ class 📱AppModel: ObservableObject {
         UISelectionFeedbackGenerator().selectionChanged()
     }
     
-    var 📦sampleCache: HKQuantitySample?
+    private var 📦sampleCache: HKQuantitySample?
     
     @MainActor
     func 👆register() async {
@@ -71,27 +69,22 @@ class 📱AppModel: ObservableObject {
             if self.🏥healthStore.authorizationStatus(for: ⓣype) == .sharingDenied {
                 self.🚩registerSuccess = false
                 self.🚩showResult = true
-                
                 self.🕒history += ".authorization: Error?!\n"
-                
                 return
             }
             
             let 📦sample = HKQuantitySample(type: ⓣype,
-                                            quantity: HKQuantity(unit: self.📏unitOption.ⒽKUnit,
+                                            quantity: HKQuantity(unit: self.📏unitOption.hkUnit,
                                                                  doubleValue: self.🌡value),
                                             start: .now,
                                             end: .now)
             
             self.📦sampleCache = 📦sample
-            
             try await self.🏥healthStore.save(📦sample)
             
             self.🕒history += self.📏unitOption.rawValue + ", " + self.🌡value.description + "\n"
-            
             self.🚩registerSuccess = true
             self.🚩showResult = true
-        
             UINotificationFeedbackGenerator().notificationOccurred(.success)
         } catch {
             DispatchQueue.main.async {
@@ -149,10 +142,16 @@ class 📱AppModel: ObservableObject {
 enum 📏DegreeUnit: String, CaseIterable, Identifiable {
     case ℃, ℉
     var id: Self { self }
-    var ⒽKUnit: HKUnit {
+    var hkUnit: HKUnit {
         switch self {
             case .℃: return .degreeCelsius()
             case .℉: return .degreeFahrenheit()
+        }
+    }
+    var menuLabel: String {
+        switch self {
+            case .℃: return "36.1 ℃  →  36.12︭ ℃"
+            case .℉: return "100.1 ℉  →  100.12︭ ℉"
         }
     }
 }
