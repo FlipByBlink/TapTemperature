@@ -1,132 +1,114 @@
-
 import SwiftUI
 import HealthKit
 
 class 📱AppModel: ObservableObject {
+    let 🏥healthStore = HKHealthStore()
     
-    let 🏥HealthStore = HKHealthStore()
-    
-    
-    @AppStorage("BasalTemp") var 🚩BasalTempOption: Bool = false
-    
+    @AppStorage("BasalTemp") var 🚩basalTempOption: Bool = false
     @AppStorage("2DecimalPlace") var 🚩2DecimalPlaceOption: Bool = false
-    
-    @AppStorage("AutoComplete") var 🚩AutoCompleteOption: Bool = false
-    
-    @AppStorage("Unit") var 📏UnitOption: 📏DegreeUnit = .℃ {
+    @AppStorage("AutoComplete") var 🚩autoCompleteOption: Bool = false
+    @AppStorage("Unit") var 📏unitOption: 📏DegreeUnit = .℃ {
         didSet {
-            🧩ResetTemp()
+            self.🧩resetComponents()
         }
     }
     
+    @Published var 🛏basalSwitch: Bool = true
+    @Published var 🚩showResult: Bool = false
+    @Published var 🚩registerSuccess: Bool = false
+    @Published var 🚩canceled: Bool = false
+    @Published var 🚨cancelError: Bool = false
+    @AppStorage("history") var 🕒history: String = ""
     
-    @Published var 🛏BasalSwitch: Bool = true
+    @Published var 🧩components: [Int] = []
     
-    @Published var 🚩ShowResult: Bool = false
-    
-    @Published var 🚩RegisterSuccess: Bool = false
-    
-    @Published var 🚩Canceled: Bool = false
-    
-    @Published var 🚨CancelError: Bool = false
-    
-    @AppStorage("history") var 🕒History: String = ""
-    
-    
-    @Published var 🧩Temp: [Int] = []
-    
-    var 🌡Temp: Double {
-        if 🧩Temp.count < 3 { return 0.0 }
-        
-        var 🌡 = Double(🧩Temp[0].description
-                        + 🧩Temp[1].description
+    var 🌡value: Double {
+        if self.🧩components.count < 3 { return 0.0 }
+        var ⓥalue = Double(self.🧩components[0].description
+                        + self.🧩components[1].description
                         + "."
-                        + 🧩Temp[2].description)!
-        
-        if 🧩Temp.indices.contains(3) {
-            🌡 = Double(🌡.description + 🧩Temp[3].description)!
+                        + self.🧩components[2].description)!
+        if self.🧩components.indices.contains(3) {
+            ⓥalue = Double(ⓥalue.description + self.🧩components[3].description)!
         }
-        
-        return 🌡
+        return ⓥalue
     }
     
-    
-    func 🧩ResetTemp() {
-        switch 📏UnitOption {
-            case .℃: 🧩Temp = [3]
-            case .℉: 🧩Temp = []
+    func 🧩resetComponents() {
+        switch self.📏unitOption {
+            case .℃:
+                self.🧩components = [3]
+            case .℉:
+                self.🧩components = []
         }
     }
     
-    
-    func 🧩AppendTemp(_ 🔢: Int) {
-        🧩Temp.append(🔢)
-        
-        if 🚩AutoCompleteOption {
-            if 🧩Temp.count == (🚩2DecimalPlaceOption ? 4 : 3) {
+    func 🧩appendComponent(_ 🔢: Int) {
+        self.🧩components.append(🔢)
+        if self.🚩autoCompleteOption {
+            if self.🧩components.count == (self.🚩2DecimalPlaceOption ? 4 : 3) {
                 Task {
-                    await 👆Register()
+                    await self.👆register()
                 }
                 return
             }
         }
-        
         UISelectionFeedbackGenerator().selectionChanged()
     }
     
-    
-    var 📦SampleCache: HKQuantitySample?
+    var 📦sampleCache: HKQuantitySample?
     
     @MainActor
-    func 👆Register() async {
+    func 👆register() async {
         do {
-            let 🚩BasalTempInput = 🚩BasalTempOption && 🛏BasalSwitch
+            let 🚩basalTempInput = self.🚩basalTempOption && self.🛏basalSwitch
             
-            🕒History += Date.now.formatted(date: .numeric, time: .shortened) + ", "
-            🕒History += 🚩BasalTempInput ? "BBT, " : "BT, "
+            self.🕒history += Date.now.formatted(date: .numeric, time: .shortened) + ", "
+            self.🕒history += 🚩basalTempInput ? "BBT, " : "BT, "
             
-            let 🅃ype = HKQuantityType(🚩BasalTempInput ? .basalBodyTemperature : .bodyTemperature)
+            let ⓣype = HKQuantityType(🚩basalTempInput ? .basalBodyTemperature : .bodyTemperature)
             
-            if 🏥HealthStore.authorizationStatus(for: 🅃ype) == .sharingDenied {
-                🚩RegisterSuccess = false
-                🚩ShowResult = true
+            if self.🏥healthStore.authorizationStatus(for: ⓣype) == .sharingDenied {
+                self.🚩registerSuccess = false
+                self.🚩showResult = true
                 
-                🕒History += ".authorization: Error?!\n"
+                self.🕒history += ".authorization: Error?!\n"
                 
                 return
             }
             
-            let 📦Sample = HKQuantitySample(type: 🅃ype,
-                                        quantity: HKQuantity(unit: 📏UnitOption.ⒽKUnit, doubleValue: 🌡Temp),
-                                        start: .now, end: .now)
+            let 📦sample = HKQuantitySample(type: ⓣype,
+                                            quantity: HKQuantity(unit: self.📏unitOption.ⒽKUnit,
+                                                                 doubleValue: self.🌡value),
+                                            start: .now,
+                                            end: .now)
             
-            📦SampleCache = 📦Sample
+            self.📦sampleCache = 📦sample
             
-            try await 🏥HealthStore.save(📦Sample)
+            try await self.🏥healthStore.save(📦sample)
             
-            🕒History += 📏UnitOption.rawValue + ", " + 🌡Temp.description + "\n"
+            self.🕒history += self.📏unitOption.rawValue + ", " + self.🌡value.description + "\n"
             
-            🚩RegisterSuccess = true
-            🚩ShowResult = true
+            self.🚩registerSuccess = true
+            self.🚩showResult = true
         
             UINotificationFeedbackGenerator().notificationOccurred(.success)
         } catch {
             DispatchQueue.main.async {
                 print(#function, error)
-                self.🕒History += ".save Error?! " + error.localizedDescription + "\n"
-                self.🚩RegisterSuccess = false
-                self.🚩ShowResult = true
+                self.🕒history += ".save Error?! " + error.localizedDescription + "\n"
+                self.🚩registerSuccess = false
+                self.🚩showResult = true
             }
         }
     }
     
-    
-    func 🏥RequestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) {
-        let 🅃ype: HKSampleType = HKQuantityType(ⓘdentifier)
-        if 🏥HealthStore.authorizationStatus(for: 🅃ype) == .notDetermined {
+    func 🏥requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) {
+        let ⓣype: HKSampleType = HKQuantityType(ⓘdentifier)
+        if self.🏥healthStore.authorizationStatus(for: ⓣype) == .notDetermined {
             Task {
                 do {
-                    try await 🏥HealthStore.requestAuthorization(toShare: [🅃ype], read: [])
+                    try await self.🏥healthStore.requestAuthorization(toShare: [ⓣype], read: [])
                 } catch {
                     print(#function, error)
                 }
@@ -134,51 +116,39 @@ class 📱AppModel: ObservableObject {
         }
     }
     
-    
     @MainActor
-    func 🗑Cancel() {
+    func 🗑cancel() {
         Task {
             do {
-                guard let 📦 = 📦SampleCache else { return }
-            
-                🚩Canceled = true
-                
-                🕒History += Date.now.formatted(date: .numeric, time: .shortened) + ", "
-                
-                try await 🏥HealthStore.delete(📦)
-                
-                🕒History += "Cancel: Success\n"
-                
-                📦SampleCache = nil
-                
+                guard let 📦 = self.📦sampleCache else { return }
+                self.🚩canceled = true
+                self.🕒history += Date.now.formatted(date: .numeric, time: .shortened) + ", "
+                try await self.🏥healthStore.delete(📦)
+                self.🕒history += "Cancel: Success\n"
+                self.📦sampleCache = nil
                 UINotificationFeedbackGenerator().notificationOccurred(.error)
             } catch {
                 DispatchQueue.main.async {
                     print(#function, error)
-                    self.🕒History += "Cancel: Error?! " + error.localizedDescription + "\n"
-                    self.🚨CancelError = true
+                    self.🕒history += "Cancel: Error?! " + error.localizedDescription + "\n"
+                    self.🚨cancelError = true
                 }
             }
         }
     }
     
-    
-    func 🅁eset() {
-        🚩ShowResult = false
-        🚩Canceled = false
-        🚨CancelError = false
-        🧩ResetTemp()
-        📦SampleCache = nil
+    func ⓡeset() {
+        self.🚩showResult = false
+        self.🚩canceled = false
+        self.🚨cancelError = false
+        self.🧩resetComponents()
+        self.📦sampleCache = nil
     }
 }
 
-
 enum 📏DegreeUnit: String, CaseIterable, Identifiable {
-    case ℃
-    case ℉
-    
+    case ℃, ℉
     var id: Self { self }
-    
     var ⒽKUnit: HKUnit {
         switch self {
             case .℃: return .degreeCelsius()

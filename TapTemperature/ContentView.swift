@@ -1,68 +1,56 @@
-
 import SwiftUI
 import HealthKit
 
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @Environment(\.scenePhase) var 🚥Phase: ScenePhase
-    
+    @Environment(\.scenePhase) var scenePhase
     var body: some View {
         VStack {
             HStack(spacing: 16) {
                 🛠MenuButton()
-                
                 🛏BasalSwitchButton()
-                
                 Spacer()
-                
                 💟JumpButton()
             }
             .padding(.horizontal, 20)
-            
             Spacer()
-            
             🪧TemperatureLabel()
                 .padding(.horizontal)
                 .padding(.trailing)
                 .padding(.bottom)
-            
             Spacer()
-            
             Divider()
-            
             👆Keypad()
         }
         .background { 🟥AutoCompleteHintView() }
-        .fullScreenCover(isPresented: $📱.🚩ShowResult) {
+        .fullScreenCover(isPresented: $📱.🚩showResult) {
             🗯ResultView()
         }
         .onAppear {
-            📱.🏥RequestAuthorization(.bodyTemperature)
-            📱.🧩ResetTemp()
+            📱.🏥requestAuthorization(.bodyTemperature)
+            📱.🧩resetComponents()
         }
-        .onChange(of: 🚥Phase) { 🚥 in
-            if 🚥 == .background {
-                📱.🅁eset()
+        .onChange(of: self.scenePhase) {
+            if $0 == .background {
+                📱.ⓡeset()
             }
         }
     }
 }
 
-
 struct 🛏BasalSwitchButton: View {
     @EnvironmentObject var 📱: 📱AppModel
-    
     var body: some View {
-        if 📱.🚩BasalTempOption {
+        if 📱.🚩basalTempOption {
             Button {
-                📱.🛏BasalSwitch.toggle()
+                📱.🛏basalSwitch.toggle()
                 UISelectionFeedbackGenerator().selectionChanged()
             } label: {
                 Image(systemName: "bed.double")
-                    .foregroundStyle(📱.🛏BasalSwitch ? .primary : .quaternary)
+                    .foregroundStyle(📱.🛏basalSwitch ? .primary : .quaternary)
                     .padding(.vertical)
                     .overlay {
-                        if 📱.🛏BasalSwitch == false {
+                        if 📱.🛏basalSwitch == false {
                             Image(systemName: "xmark")
                                 .scaleEffect(1.2)
                         }
@@ -75,17 +63,14 @@ struct 🛏BasalSwitchButton: View {
     }
 }
 
-
 struct 🟥AutoCompleteHintView: View {
     @EnvironmentObject var 📱: 📱AppModel
-    
     var body: some View {
         GeometryReader { 📐 in
             VStack {
                 Spacer()
-                
-                if 📱.🚩AutoCompleteOption {
-                    if 📱.🧩Temp.count == (📱.🚩2DecimalPlaceOption ? 3 : 2) {
+                if 📱.🚩autoCompleteOption {
+                    if 📱.🧩components.count == (📱.🚩2DecimalPlaceOption ? 3 : 2) {
                         Rectangle()
                             .frame(height: 8 + 📐.safeAreaInsets.bottom)
                             .foregroundColor(.pink)
@@ -96,7 +81,7 @@ struct 🟥AutoCompleteHintView: View {
                 }
             }
             .ignoresSafeArea()
-            .animation(.default.speed(2), value: 📱.🧩Temp.count)
+            .animation(.default.speed(2), value: 📱.🧩components.count)
         }
     }
 }

@@ -1,49 +1,38 @@
-
 import SwiftUI
 
 struct 🛠AppMenu: View {
     @EnvironmentObject var 📱: 📱AppModel
-    
     var body: some View {
         Section {
-            Picker(selection: $📱.📏UnitOption) {
+            Picker(selection: $📱.📏unitOption) {
                 ForEach(📏DegreeUnit.allCases) { 📏 in
                     Text(📏.rawValue)
                 }
             } label: {
                 Label("Unit", systemImage: "ruler")
             }
-            
-            
-            Toggle(isOn: $📱.🚩BasalTempOption) {
+            Toggle(isOn: $📱.🚩basalTempOption) {
                 Label("Basal body temperature", systemImage: "bed.double")
             }
-            .onChange(of: 📱.🚩BasalTempOption) { _ in
-                📱.🏥RequestAuthorization(.basalBodyTemperature)
+            .onChange(of: 📱.🚩basalTempOption) { _ in
+                📱.🏥requestAuthorization(.basalBodyTemperature)
             }
-            
-            
             Toggle(isOn: $📱.🚩2DecimalPlaceOption) {
                 let 🪧: String = {
-                    switch 📱.📏UnitOption {
+                    switch 📱.📏unitOption {
                         case .℃: return "36.1 ℃  →  36.12︭ ℃"
                         case .℉: return "100.1 ℉  →  100.12︭ ℉"
                     }
                 }()
-                
                 Label(🪧, systemImage: "character.cursor.ibeam")
             }
             .accessibilityLabel("Second decimal places mode")
-            
-            
-            Toggle(isOn: $📱.🚩AutoCompleteOption) {
+            Toggle(isOn: $📱.🚩autoCompleteOption) {
                 Label("Auto complete", systemImage: "checkmark.circle.trianglebadge.exclamationmark")
             }
         } header: {
             Text("Option")
         }
-        
-        
         Link (destination: URL(string: "x-apple-health://")!) {
             HStack {
                 Label {
@@ -62,8 +51,6 @@ struct 🛠AppMenu: View {
                     .foregroundStyle(.secondary)
             }
         }
-        
-        
         Section {
             NavigationLink {
                 🕛HistoryView()
@@ -76,12 +63,10 @@ struct 🛠AppMenu: View {
     }
 }
 
-
 struct 🕛HistoryView: View {
     @EnvironmentObject var 📱: 📱AppModel
-    
     var body: some View {
-        if 📱.🕒History == "" {
+        if 📱.🕒history == "" {
             Image(systemName: "text.append")
                 .foregroundStyle(.tertiary)
                 .font(.system(size: 64))
@@ -90,7 +75,7 @@ struct 🕛HistoryView: View {
         } else {
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    Text(📱.🕒History)
+                    Text(📱.🕒history)
                         .font(.subheadline)
                         .padding()
                         .textSelection(.enabled)
@@ -99,7 +84,7 @@ struct 🕛HistoryView: View {
                         .toolbar {
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 Button {
-                                    📱.🕒History = ""
+                                    📱.🕒history = ""
                                 } label: {
                                     Image(systemName: "trash")
                                         .tint(.red)

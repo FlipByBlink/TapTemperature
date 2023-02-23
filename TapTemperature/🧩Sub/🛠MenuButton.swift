@@ -1,12 +1,10 @@
-
 import SwiftUI
 
 struct 🛠MenuButton: View {
-    @State private var 🚩ShowMenu = false
-    
+    @State private var 🚩showMenu = false
     var body: some View {
         Button {
-            🚩ShowMenu = true
+            self.🚩showMenu = true
             UISelectionFeedbackGenerator().selectionChanged()
         } label: {
             Label("Open menu", systemImage: "gearshape")
@@ -15,25 +13,25 @@ struct 🛠MenuButton: View {
                 .padding(.vertical)
         }
         .tint(.primary)
-        .sheet(isPresented: $🚩ShowMenu) {
+        .sheet(isPresented: self.$🚩showMenu) {
             🛠MenuSheet()
                 .onDisappear {
-                    🚩ShowMenu = false
+                    self.🚩showMenu = false
                 }
         }
     }
 }
 
 struct 🛠MenuSheet: View {
-    @Environment(\.dismiss) var 🔙: DismissAction
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         if #available(iOS 16.0, *) {
-            NavigationStack { 🄲ontent() }
+            NavigationStack { self.ⓒontent() }
         } else {
-            NavigationView { 🄲ontent() }
+            NavigationView { self.ⓒontent() }
         }
     }
-    func 🄲ontent() -> some View {
+    private func ⓒontent() -> some View {
         List {
             🛠AppMenu()
             ℹ️AboutAppLink()
@@ -43,7 +41,7 @@ struct 🛠MenuSheet: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    🔙.callAsFunction()
+                    self.dismiss.callAsFunction()
                 } label: {
                     Image(systemName: "chevron.down")
                         .foregroundStyle(.secondary)
@@ -87,7 +85,6 @@ struct ℹ️AboutAppLink: View {
                 .frame(width: 📐.size.width)
             }
             .frame(height: 200)
-            
             Link(destination: URL(string: "https://apps.apple.com/app/id1626760566")!) {
                 HStack {
                     Label("Open AppStore page", systemImage: "link")
@@ -97,7 +94,6 @@ struct ℹ️AboutAppLink: View {
                         .foregroundStyle(.secondary)
                 }
             }
-            
             NavigationLink  {
                 ℹ️AboutAppMenu()
             } label: {

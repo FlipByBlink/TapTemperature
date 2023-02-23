@@ -1,91 +1,78 @@
-
 import SwiftUI
 
 struct 👆Keypad: View {
     @EnvironmentObject var 📱: 📱AppModel
-    
     var body: some View {
         let ꠲ = Array(repeating: GridItem(.flexible()), count: 3)
         LazyVGrid(columns: ꠲, spacing: 32) {
             ForEach(1 ..< 13) { 🔢 in
-                let 🄳isable: Bool = {
-                    if 📱.🧩Temp.count == 3 && (📱.🚩2DecimalPlaceOption == false) {
+                let ⓓisable: Bool = {
+                    if 📱.🧩components.count == 3 && (📱.🚩2DecimalPlaceOption == false) {
                         return true
                     }
-                    
-                    if 📱.🧩Temp.count == 4 {
+                    if 📱.🧩components.count == 4 {
                         return true
                     }
-                    
-                    switch 📱.📏UnitOption {
+                    switch 📱.📏unitOption {
                         case .℃:
-                            if 📱.🧩Temp.isEmpty {
+                            if 📱.🧩components.isEmpty {
                                 if 🔢 != 3 && 🔢 != 4 {
                                     return true
                                 }
                             }
-                            
-                            if 📱.🧩Temp.count == 1 {
-                                if 📱.🧩Temp.first == 3 {
+                            if 📱.🧩components.count == 1 {
+                                if 📱.🧩components.first == 3 {
                                     if 🔢 < 4 || 🔢 == 11 {
                                         return true
                                     }
-                                } else if 📱.🧩Temp.first == 4 {
+                                } else if 📱.🧩components.first == 4 {
                                     if 🔢 != 1 && 🔢 != 11 {
                                         return true
                                     }
                                 }
                             }
-                            
                             return false
-                            
                         case .℉:
-                            if 📱.🧩Temp.isEmpty {
+                            if 📱.🧩components.isEmpty {
                                 if !(🔢 == 9 || 🔢 == 11) {
                                     return true
                                 }
                             }
-                            
-                            if 📱.🧩Temp.count == 1 {
-                                if 📱.🧩Temp.first == 10 {
+                            if 📱.🧩components.count == 1 {
+                                if 📱.🧩components.first == 10 {
                                     if 5 < 🔢 && 🔢 < 10 {
                                         return true
                                     }
-                                } else if 📱.🧩Temp.first == 9 {
+                                } else if 📱.🧩components.first == 9 {
                                     if 🔢 < 4 || 🔢 == 11 {
                                         return true
                                     }
                                 }
                             }
-                            
                             return false
                     }
                 }()
-                
-                
                 switch 🔢 {
                     case 1 ..< 10:
                         Button {
-                            📱.🧩AppendTemp(🔢)
+                            📱.🧩appendComponent(🔢)
                         } label: {
                             Text(🔢.description)
                         }
                         .tint(.primary)
-                        .disabled(🄳isable)
-                        
+                        .disabled(ⓓisable)
                     case 10:
                         Button {
                             Task {
-                                await 📱.👆Register()
+                                await 📱.👆register()
                             }
                         } label: {
                             let 🔘: String = {
-                                if 📱.🚩AutoCompleteOption == false {
+                                if 📱.🚩autoCompleteOption == false {
                                     return "checkmark.circle"
                                 }
-                                
                                 if 📱.🚩2DecimalPlaceOption {
-                                    switch 📱.🧩Temp.count {
+                                    switch 📱.🧩components.count {
                                         case 0: return "4.circle"
                                         case 1: return "3.circle"
                                         case 2: return "2.circle"
@@ -93,7 +80,7 @@ struct 👆Keypad: View {
                                         default: return "checkmark.circle"
                                     }
                                 } else {
-                                    switch 📱.🧩Temp.count {
+                                    switch 📱.🧩components.count {
                                         case 0: return "3.circle"
                                         case 1: return "2.circle"
                                         case 2: return "1.circle"
@@ -101,36 +88,32 @@ struct 👆Keypad: View {
                                     }
                                 }
                             }()
-                            
                             Image(systemName: 🔘)
-                                .symbolVariant(📱.🧩Temp.count > 2 ? .fill : .none)
-                                .scaleEffect(📱.🧩Temp.count > 2 ? 1.15 : 1)
+                                .symbolVariant(📱.🧩components.count > 2 ? .fill : .none)
+                                .scaleEffect(📱.🧩components.count > 2 ? 1.15 : 1)
                                 .font(.system(size: 48))
                         }
                         .tint(.pink)
                         .accessibilityLabel("DONE")
-                        .disabled(📱.🧩Temp.count < 3)
-                        
+                        .disabled(📱.🧩components.count < 3)
                     case 11:
                         let ０or１０: Int = {
-                            if 📱.📏UnitOption == .℉ && 📱.🧩Temp.isEmpty {
+                            if 📱.📏unitOption == .℉ && 📱.🧩components.isEmpty {
                                 return 10
                             } else {
                                 return 0
                             }
                         }()
-                        
                         Button {
-                            📱.🧩AppendTemp(０or１０)
+                            📱.🧩appendComponent(０or１０)
                         } label: {
                             Text(０or１０.description)
                         }
                         .tint(.primary)
-                        .disabled(🄳isable)
-                        
+                        .disabled(ⓓisable)
                     case 12:
                         Button {
-                            📱.🧩Temp.removeLast()
+                            📱.🧩components.removeLast()
                             UISelectionFeedbackGenerator().selectionChanged()
                         } label: {
                             Text("⌫")
@@ -139,8 +122,7 @@ struct 👆Keypad: View {
                         }
                         .tint(.primary)
                         .accessibilityLabel("Delete")
-                        .disabled(📱.🧩Temp.isEmpty)
-                        
+                        .disabled(📱.🧩components.isEmpty)
                     default:
                         Text("🐛")
                 }

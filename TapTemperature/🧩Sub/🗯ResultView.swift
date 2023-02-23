@@ -1,52 +1,41 @@
-
 import SwiftUI
 
 struct 🗯ResultView: View {
     @EnvironmentObject var 📱: 📱AppModel
-    
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(📱.🚩RegisterSuccess ? .pink : .gray)
+                .foregroundColor(📱.🚩registerSuccess ? .pink : .gray)
                 .ignoresSafeArea()
-            
             VStack {
                 HStack {
-                    if 📱.🚩RegisterSuccess {
+                    if 📱.🚩registerSuccess {
                         🗑CancelButton()
                     }
-                    
                     Spacer()
-                    
-                    if 📱.🚩RegisterSuccess == false {
+                    if 📱.🚩registerSuccess == false {
                         Image(systemName: "arrow.right")
                             .imageScale(.small)
                             .font(.largeTitle)
                     }
-                    
                     💟JumpButton()
                 }
                 .opacity(0.75)
                 .padding(.horizontal, 20)
-                
-                
                 Button {
-                    📱.🅁eset()
+                    📱.ⓡeset()
                 } label: {
                     VStack(spacing: 12) {
                         Spacer()
-                        
-                        Image(systemName: 📱.🚩RegisterSuccess ? "checkmark" : "exclamationmark.triangle")
+                        Image(systemName: 📱.🚩registerSuccess ? "checkmark" : "exclamationmark.triangle")
                             .font(.system(size: 100).weight(.semibold))
                             .minimumScaleFactor(0.1)
-                        
-                        Text(📱.🚩RegisterSuccess ? "DONE!" : "Error!?")
+                        Text(📱.🚩registerSuccess ? "DONE!" : "Error!?")
                             .font(.system(size: 128).weight(.black))
                             .lineLimit(1)
                             .minimumScaleFactor(0.1)
                             .padding(.horizontal)
-                        
-                        if 📱.🚩RegisterSuccess {
+                        if 📱.🚩registerSuccess {
                             Text("Registration for \"Health\" app")
                                 .bold()
                                 .opacity(0.8)
@@ -58,51 +47,43 @@ struct 🗯ResultView: View {
                                 .minimumScaleFactor(0.1)
                                 .padding(.horizontal)
                         }
-                        
                         Spacer()
-                        
                         HStack {
-                            if 📱.🚩BasalTempOption && 📱.🛏BasalSwitch {
+                            if 📱.🚩basalTempOption && 📱.🛏basalSwitch {
                                 Image(systemName: "bed.double")
                                     .font(.body.bold())
                             }
-                            
-                            if 📱.🚩RegisterSuccess {
-                                Text(📱.🌡Temp.description + " " + 📱.📏UnitOption.rawValue)
+                            if 📱.🚩registerSuccess {
+                                Text(📱.🌡value.description + " " + 📱.📏unitOption.rawValue)
                                     .font(.title2)
                                     .fontWeight(.bold)
                             }
                         }
                         .padding(.bottom, 24)
                         .opacity(0.8)
-                        
                         Spacer()
                     }
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 .accessibilityLabel("Dismiss")
-                .opacity(📱.🚩Canceled ? 0.25 : 1)
-                
-                
+                .opacity(📱.🚩canceled ? 0.25 : 1)
                 📣ADBanner()
             }
         }
         .preferredColorScheme(.dark)
-        .animation(.default, value: 📱.🚩Canceled)
+        .animation(.default, value: 📱.🚩canceled)
         .onDisappear {
-            📱.🚩RegisterSuccess = false
+            📱.🚩registerSuccess = false
         }
     }
 }
 
-
 struct 🗑CancelButton: View {
     @EnvironmentObject var 📱: 📱AppModel
-    
     var body: some View {
         Button {
-            📱.🗑Cancel()
+            📱.🗑cancel()
         } label: {
             Image(systemName: "arrow.uturn.backward.circle")
                 .font(.title)
@@ -110,16 +91,14 @@ struct 🗑CancelButton: View {
                 .foregroundColor(.primary)
                 .padding(.vertical)
         }
-        .disabled(📱.🚩Canceled)
-        .opacity(📱.🚩Canceled ? 0.5 : 1)
+        .disabled(📱.🚩canceled)
+        .opacity(📱.🚩canceled ? 0.5 : 1)
         .accessibilityLabel("Cancel")
-        
-        if 📱.🚩Canceled {
+        if 📱.🚩canceled {
             VStack {
                 Text("Canceled")
                     .fontWeight(.semibold)
-                
-                if 📱.🚨CancelError {
+                if 📱.🚨cancelError {
                     Text("(perhaps error)")
                 }
             }
@@ -127,20 +106,17 @@ struct 🗑CancelButton: View {
     }
 }
 
-
-
 struct 📣ADBanner: View {
     @EnvironmentObject var 📱: 📱AppModel
     @EnvironmentObject var 🛒: 🛒StoreModel
-    @State private var 🚩ShowBanner = false
-    @AppStorage("🄻aunchCount") var 🄻aunchCount: Int = 0
-    
+    @State private var 🚩showBanner = false
+    @AppStorage("🄻aunchCount") private var ⓛaunchCount: Int = 0
     var body: some View {
         Group {
-            if 🛒.🚩Purchased || !📱.🚩RegisterSuccess {
+            if 🛒.🚩Purchased || !📱.🚩registerSuccess {
                 Spacer()
             } else {
-                if 🚩ShowBanner {
+                if self.🚩showBanner {
                     📣ADView(without: .TapTemperature)
                         .padding(.horizontal)
                         .background {
@@ -157,8 +133,8 @@ struct 📣ADBanner: View {
             }
         }
         .onAppear {
-            🄻aunchCount += 1
-            if 🄻aunchCount > 5 { 🚩ShowBanner = true }
+            self.ⓛaunchCount += 1
+            if self.ⓛaunchCount > 5 { self.🚩showBanner = true }
         }
     }
 }
