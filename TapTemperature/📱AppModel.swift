@@ -34,10 +34,8 @@ class 📱AppModel: ObservableObject {
     
     func 🧩resetComponents() {
         switch self.📏unitOption {
-            case .℃:
-                self.🧩components = [3]
-            case .℉:
-                self.🧩components = []
+            case .℃: self.🧩components = [3]
+            case .℉: self.🧩components = []
         }
     }
     
@@ -112,7 +110,6 @@ class 📱AppModel: ObservableObject {
                     case .degreeFahrenheit(): self.📏unitOption = .℉
                     default: assertionFailure()
                 }
-                self.🧩resetComponents()
             } else {
                 assertionFailure()
             }
@@ -128,7 +125,8 @@ class 📱AppModel: ObservableObject {
                     ⓒompletionHandler()
                 }
                 self.🏥healthStore.execute(ⓠuery)
-                try await HKHealthStore().enableBackgroundDelivery(for: ⓣype, frequency: .immediate)
+                try await self.🏥healthStore.enableBackgroundDelivery(for: ⓣype,
+                                                                      frequency: .immediate)
             }
         }
     }

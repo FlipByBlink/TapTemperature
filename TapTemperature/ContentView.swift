@@ -60,6 +60,9 @@ struct 🛏BasalSwitchButton: View {
             .onChange(of: 📱.🛏bbtSwitch) { _ in
                 📱.🏥loadPreferredUnit()
             }
+            .onChange(of: 📱.📏unitOption) { _ in
+                📱.🧩resetComponents()
+            }
         }
     }
 }
