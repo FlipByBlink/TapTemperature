@@ -4,7 +4,7 @@ import HealthKit
 class 📱AppModel: ObservableObject {
     private let 🏥healthStore = HKHealthStore()
     
-    @AppStorage("BasalTemp") var 🚩basalTempOption: Bool = false
+    @AppStorage("BasalTemp") var 🚩bbtOption: Bool = false
     @AppStorage("2DecimalPlace") var 🚩secondDecimalPlaceOption: Bool = false
     @AppStorage("AutoComplete") var 🚩autoCompleteOption: Bool = false
     @AppStorage("Unit") var 📏unitOption: 📏DegreeUnit = .℃ {
@@ -16,17 +16,17 @@ class 📱AppModel: ObservableObject {
     @Published var 🚩canceled: Bool = false
     @Published var 🚨cancelError: Bool = false
     
-    @Published var 🛏basalSwitch: Bool = true
-    var 🛏bbtInputMode: Bool { self.🚩basalTempOption && self.🛏basalSwitch }
+    @Published var 🛏bbtSwitch: Bool = true
+    var 🛏bbtInputMode: Bool { self.🚩bbtOption && self.🛏bbtSwitch }
     
     @Published var 🧩components: [Int] = []
     
     var 🌡value: Double {
         if self.🧩components.count < 3 { return 0.0 }
         var ⓥalue = Double(self.🧩components[0].description
-                        + self.🧩components[1].description
-                        + "."
-                        + self.🧩components[2].description)!
+                           + self.🧩components[1].description
+                           + "."
+                           + self.🧩components[2].description)!
         if self.🧩components.indices.contains(3) {
             ⓥalue = Double(ⓥalue.description + self.🧩components[3].description)!
         }

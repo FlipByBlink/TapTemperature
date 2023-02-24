@@ -45,15 +45,15 @@ struct ContentView: View {
 struct 🛏BasalSwitchButton: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        if 📱.🚩basalTempOption {
+        if 📱.🚩bbtOption {
             Button {
-                📱.🛏basalSwitch.toggle()
+                📱.🛏bbtSwitch.toggle()
                 UISelectionFeedbackGenerator().selectionChanged()
             } label: {
                 Image(systemName: "bed.double")
-                    .foregroundStyle(📱.🛏basalSwitch ? .primary : .quaternary)
+                    .foregroundStyle(📱.🛏bbtSwitch ? .primary : .quaternary)
                     .overlay {
-                        if 📱.🛏basalSwitch == false {
+                        if 📱.🛏bbtSwitch == false {
                             Image(systemName: "xmark")
                                 .scaleEffect(1.2)
                         }

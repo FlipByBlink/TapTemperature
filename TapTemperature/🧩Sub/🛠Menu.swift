@@ -21,10 +21,10 @@ struct 🛠MenuContent: View {
             } label: {
                 Label("Unit", systemImage: "ruler")
             }
-            Toggle(isOn: $📱.🚩basalTempOption) {
+            Toggle(isOn: $📱.🚩bbtOption) {
                 Label("Basal body temperature", systemImage: "bed.double")
             }
-            .onChange(of: 📱.🚩basalTempOption) { _ in
+            .onChange(of: 📱.🚩bbtOption) { _ in
                 📱.🏥requestAuthorization(.basalBodyTemperature)
             }
             Toggle(isOn: $📱.🚩secondDecimalPlaceOption) {

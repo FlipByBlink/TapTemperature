@@ -40,7 +40,7 @@ struct 🗯ResultView: View {
                 }
                 Spacer()
                 VStack(spacing: 10) {
-                    if 📱.🚩basalTempOption {
+                    if 📱.🚩bbtOption {
                         Text(📱.🛏bbtInputMode ? "Basal body temperature" : "Body temperature")
                             .lineLimit(1)
                             .font(.caption.weight(.semibold))
