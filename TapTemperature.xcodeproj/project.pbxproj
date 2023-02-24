@@ -18,11 +18,10 @@
 		1256A326286AD550002AF08A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1256A325286AD550002AF08A /* StoreKit.framework */; };
 		1256A328286AD8FE002AF08A /* 💟JumpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟JumpButton.swift */; };
 		1256A32D286ADEF5002AF08A /* 💟JumpButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟JumpButton.swift */; };
-		1256A33C286B1547002AF08A /* 🛠AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠AppMenu.swift */; };
-		1256A33D286B16E1002AF08A /* 🛠AppMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠AppMenu.swift */; };
+		1256A33C286B1547002AF08A /* 🛠Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠Menu.swift */; };
+		1256A33D286B16E1002AF08A /* 🛠Menu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠Menu.swift */; };
 		125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
 		1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
-		1288ADFC286ACE62002F5511 /* 🛠MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288ADF5286ACE62002F5511 /* 🛠MenuButton.swift */; };
 		12ADECF8283F7C1500431224 /* 🪧TemperatureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧TemperatureLabel.swift */; };
 		12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
 		12E811BB283089D300B0A615 /* TapTemperatureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* TapTemperatureApp.swift */; };
@@ -40,7 +39,6 @@
 		F585A0D72942B1E400BA665C /* ℹ️AboutAppMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutAppMenu.swift */; };
 		F585A0D82942B1E400BA665C /* 📣AD.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C32942AADC00BA665C /* 📣AD.swift */; };
 		F585A0D92942B1E400BA665C /* 🛒InAppPurchase.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */; };
-		F585A0DA2942B1ED00BA665C /* 🛠MenuButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1288ADF5286ACE62002F5511 /* 🛠MenuButton.swift */; };
 		F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */; };
 		F58BC7F129A83BA6003DDAC1 /* 📣ADContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADContent.swift */; };
 		F58BC7F229A83E68003DDAC1 /* 📣ADContent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADContent.swift */; };
@@ -66,8 +64,7 @@
 			dstSubfolderSpec = 7;
 			files = (
 				F58BC7F229A83E68003DDAC1 /* 📣ADContent.swift in CopyFiles */,
-				F585A0DA2942B1ED00BA665C /* 🛠MenuButton.swift in CopyFiles */,
-				1256A33D286B16E1002AF08A /* 🛠AppMenu.swift in CopyFiles */,
+				1256A33D286B16E1002AF08A /* 🛠Menu.swift in CopyFiles */,
 				1256A32D286ADEF5002AF08A /* 💟JumpButton.swift in CopyFiles */,
 				124BC6B128433C4F00F75E1F /* 🪧TemperatureLabel.swift in CopyFiles */,
 				124BC6B228433C4F00F75E1F /* 👆Keypad.swift in CopyFiles */,
@@ -98,10 +95,9 @@
 		124BC6BD28438EE200F75E1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1256A325286AD550002AF08A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1256A327286AD8FE002AF08A /* 💟JumpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💟JumpButton.swift"; sourceTree = "<group>"; };
-		1256A33B286B1547002AF08A /* 🛠AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠AppMenu.swift"; sourceTree = "<group>"; };
+		1256A33B286B1547002AF08A /* 🛠Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠Menu.swift"; sourceTree = "<group>"; };
 		125A9BEC283B441D00C54634 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
 		1281D252283E1C4300D59319 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
-		1288ADF5286ACE62002F5511 /* 🛠MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛠MenuButton.swift"; sourceTree = "<group>"; };
 		12ADECF7283F7C1500431224 /* 🪧TemperatureLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧TemperatureLabel.swift"; sourceTree = "<group>"; };
 		12ADECF9283F7CC700431224 /* 👆Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "👆Keypad.swift"; sourceTree = "<group>"; };
 		12E811B7283089D300B0A615 /* Temperature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Temperature.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,8 +166,7 @@
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
 				125A9BEC283B441D00C54634 /* 🗯ResultView.swift */,
 				1256A327286AD8FE002AF08A /* 💟JumpButton.swift */,
-				1256A33B286B1547002AF08A /* 🛠AppMenu.swift */,
-				1288ADF5286ACE62002F5511 /* 🛠MenuButton.swift */,
+				1256A33B286B1547002AF08A /* 🛠Menu.swift */,
 				F58BC7F029A83BA6003DDAC1 /* 📣ADContent.swift */,
 				123690192844F1BD006F22EE /* Info.plist */,
 				12E811C828308A2100B0A615 /* TapTemperature.entitlements */,
@@ -347,11 +342,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F58BC7F129A83BA6003DDAC1 /* 📣ADContent.swift in Sources */,
-				1256A33C286B1547002AF08A /* 🛠AppMenu.swift in Sources */,
+				1256A33C286B1547002AF08A /* 🛠Menu.swift in Sources */,
 				F585A0C62942AADC00BA665C /* ℹ️AboutAppMenu.swift in Sources */,
 				1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */,
 				1256A328286AD8FE002AF08A /* 💟JumpButton.swift in Sources */,
-				1288ADFC286ACE62002F5511 /* 🛠MenuButton.swift in Sources */,
 				F585A0CA2942AADC00BA665C /* 🛒InAppPurchase.swift in Sources */,
 				12ADECF8283F7C1500431224 /* 🪧TemperatureLabel.swift in Sources */,
 				12E811BD283089D300B0A615 /* ContentView.swift in Sources */,

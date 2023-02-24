@@ -24,5 +24,5 @@ enum 📁SourceFolder: String, CaseIterable, Identifiable {
     case main
     case 🧩Sub
     case 🧰Others
-    var id: String { self.rawValue }
+    var id: Self { self }
 }

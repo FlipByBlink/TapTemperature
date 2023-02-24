@@ -1,5 +1,52 @@
 import SwiftUI
 
+struct 🛠MenuButton: View {
+    @State private var 🚩showMenu = false
+    var body: some View {
+        Button {
+            self.🚩showMenu = true
+            UISelectionFeedbackGenerator().selectionChanged()
+        } label: {
+            Label("Open menu", systemImage: "gearshape")
+                .font(.title)
+                .labelStyle(.iconOnly)
+                .padding(.vertical)
+        }
+        .tint(.primary)
+        .sheet(isPresented: self.$🚩showMenu) {
+            🅂heet()
+                .onDisappear { self.🚩showMenu = false }
+        }
+    }
+    private struct 🅂heet: View {
+        @Environment(\.dismiss) var dismiss
+        var body: some View {
+            if #available(iOS 16.0, *) {
+                NavigationStack { self.ⓒontent() }
+            } else {
+                NavigationView { self.ⓒontent() }
+            }
+        }
+        private func ⓒontent() -> some View {
+            List {
+                🛠AppMenu()
+            }
+            .navigationTitle("Menu")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        self.dismiss()
+                    } label: {
+                        Image(systemName: "chevron.down")
+                    }
+                    .foregroundStyle(.secondary)
+                    .accessibilityLabel("Dismiss")
+                }
+            }
+        }
+    }
+}
+
 struct 🛠AppMenu: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
@@ -26,7 +73,9 @@ struct 🛠AppMenu: View {
             Text("Option")
         }
         self.ⓞpenHealthAppButton()
-        🕛HistoryViewLink()
+        self.ⓗistoryViewLink()
+        ℹ️AboutAppLink(name: "TapTemperature", subtitle: "App for iPhone")
+        📣ADMenuLink()
     }
     private func ⓞpenHealthAppButton() -> some View {
         Link (destination: URL(string: "x-apple-health://")!) {
@@ -48,10 +97,7 @@ struct 🛠AppMenu: View {
             }
         }
     }
-}
-
-struct 🕛HistoryViewLink: View {
-    var body: some View {
+    private func ⓗistoryViewLink() -> some View {
         Section {
             NavigationLink {
                 Self.🕛HistoryView()
