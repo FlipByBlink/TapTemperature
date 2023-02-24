@@ -1,53 +1,18 @@
 import SwiftUI
 
 struct 🛠MenuButton: View {
-    @State private var 🚩showMenu = false
     var body: some View {
-        Button {
-            self.🚩showMenu = true
-            UISelectionFeedbackGenerator().selectionChanged()
+        NavigationLink {
+            List { 🛠MenuContent() }
+                .navigationTitle("Menu")
         } label: {
             Label("Open menu", systemImage: "gearshape")
-                .font(.title)
-                .labelStyle(.iconOnly)
-                .padding(.vertical)
         }
         .tint(.primary)
-        .sheet(isPresented: self.$🚩showMenu) {
-            🅂heet()
-                .onDisappear { self.🚩showMenu = false }
-        }
-    }
-    private struct 🅂heet: View {
-        @Environment(\.dismiss) var dismiss
-        var body: some View {
-            if #available(iOS 16.0, *) {
-                NavigationStack { self.ⓒontent() }
-            } else {
-                NavigationView { self.ⓒontent() }
-            }
-        }
-        private func ⓒontent() -> some View {
-            List {
-                🛠AppMenu()
-            }
-            .navigationTitle("Menu")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        self.dismiss()
-                    } label: {
-                        Image(systemName: "chevron.down")
-                    }
-                    .foregroundStyle(.secondary)
-                    .accessibilityLabel("Dismiss")
-                }
-            }
-        }
     }
 }
 
-struct 🛠AppMenu: View {
+struct 🛠MenuContent: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
         Section {

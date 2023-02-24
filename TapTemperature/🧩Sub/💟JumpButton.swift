@@ -10,8 +10,8 @@ struct 💟JumpButton: View {
                     Image(systemName: "heart")
                         .imageScale(.small)
                 }
+                .scaleEffect(1.2)
         }
-        .font(.title)
         .foregroundStyle(.primary)
         .accessibilityLabel("Open \"Health\" app")
     }

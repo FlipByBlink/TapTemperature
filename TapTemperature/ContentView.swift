@@ -5,14 +5,14 @@ struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
     @Environment(\.scenePhase) var scenePhase
     var body: some View {
+        if #available(iOS 16.0, *) {
+            NavigationStack { ⓒontent() }
+        } else {
+            NavigationView { ⓒontent() }
+        }
+    }
+    private func ⓒontent() -> some View {
         VStack {
-            HStack(spacing: 16) {
-                🛠MenuButton()
-                🛏BasalSwitchButton()
-                Spacer()
-                💟JumpButton()
-            }
-            .padding(.horizontal, 20)
             Spacer()
             🪧TemperatureLabel()
                 .padding(.horizontal)
@@ -22,18 +22,20 @@ struct ContentView: View {
             Divider()
             👆Keypad()
         }
-        .background { 🟥AutoCompleteHintView() }
-        .fullScreenCover(isPresented: $📱.🚩showResult) {
-            🗯ResultView()
+        .navigationTitle(📱.🛏bbtInputMode ? "BBT" : "Body temperature")
+        .toolbar {
+            🛏BasalSwitchButton()
+            💟JumpButton()
+            🛠MenuButton()
         }
+        .background { 🟥AutoCompleteHintView() }
+        .fullScreenCover(isPresented: $📱.🚩showResult) { 🗯ResultView() }
         .onAppear {
             📱.🏥requestAuthorization(.bodyTemperature)
             📱.🧩resetComponents()
         }
         .onChange(of: self.scenePhase) {
-            if $0 == .background {
-                📱.ⓡeset()
-            }
+            if $0 == .background { 📱.ⓡeset() }
         }
     }
 }
@@ -48,14 +50,12 @@ struct 🛏BasalSwitchButton: View {
             } label: {
                 Image(systemName: "bed.double")
                     .foregroundStyle(📱.🛏basalSwitch ? .primary : .quaternary)
-                    .padding(.vertical)
                     .overlay {
                         if 📱.🛏basalSwitch == false {
                             Image(systemName: "xmark")
                                 .scaleEffect(1.2)
                         }
                     }
-                    .font(.title)
                     .tint(.primary)
             }
             .accessibilityLabel("Switch type")

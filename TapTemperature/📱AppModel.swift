@@ -11,11 +11,13 @@ class 📱AppModel: ObservableObject {
         didSet { self.🧩resetComponents() }
     }
     
-    @Published var 🛏basalSwitch: Bool = true
     @Published var 🚩showResult: Bool = false
     @Published var 🚩registerSuccess: Bool = false
     @Published var 🚩canceled: Bool = false
     @Published var 🚨cancelError: Bool = false
+    
+    @Published var 🛏basalSwitch: Bool = true
+    var 🛏bbtInputMode: Bool { self.🚩basalTempOption && self.🛏basalSwitch }
     
     @Published var 🧩components: [Int] = []
     
@@ -56,9 +58,7 @@ class 📱AppModel: ObservableObject {
     @MainActor
     func 👆register() async {
         do {
-            let 🚩basalTempInput = self.🚩basalTempOption && self.🛏basalSwitch
-            
-            let ⓣype = HKQuantityType(🚩basalTempInput ? .basalBodyTemperature : .bodyTemperature)
+            let ⓣype = HKQuantityType(self.🛏bbtInputMode ? .basalBodyTemperature : .bodyTemperature)
             
             if self.🏥healthStore.authorizationStatus(for: ⓣype) == .sharingDenied {
                 self.🚩registerSuccess = false
