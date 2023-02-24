@@ -16,7 +16,6 @@ class 📱AppModel: ObservableObject {
     @Published var 🚩registerSuccess: Bool = false
     @Published var 🚩canceled: Bool = false
     @Published var 🚨cancelError: Bool = false
-    @AppStorage("history") var 🕒history: String = ""
     
     @Published var 🧩components: [Int] = []
     
@@ -59,15 +58,11 @@ class 📱AppModel: ObservableObject {
         do {
             let 🚩basalTempInput = self.🚩basalTempOption && self.🛏basalSwitch
             
-            self.🕒history += Date.now.formatted(date: .numeric, time: .shortened) + ", "
-            self.🕒history += 🚩basalTempInput ? "BBT, " : "BT, "
-            
             let ⓣype = HKQuantityType(🚩basalTempInput ? .basalBodyTemperature : .bodyTemperature)
             
             if self.🏥healthStore.authorizationStatus(for: ⓣype) == .sharingDenied {
                 self.🚩registerSuccess = false
                 self.🚩showResult = true
-                self.🕒history += ".authorization: Error?!\n"
                 return
             }
             
@@ -80,14 +75,12 @@ class 📱AppModel: ObservableObject {
             self.📦sampleCache = 📦sample
             try await self.🏥healthStore.save(📦sample)
             
-            self.🕒history += self.📏unitOption.rawValue + ", " + self.🌡value.description + "\n"
             self.🚩registerSuccess = true
             self.🚩showResult = true
             UINotificationFeedbackGenerator().notificationOccurred(.success)
         } catch {
             DispatchQueue.main.async {
                 print(#function, error)
-                self.🕒history += ".save Error?! " + error.localizedDescription + "\n"
                 self.🚩registerSuccess = false
                 self.🚩showResult = true
             }
@@ -113,15 +106,12 @@ class 📱AppModel: ObservableObject {
             do {
                 guard let 📦 = self.📦sampleCache else { return }
                 self.🚩canceled = true
-                self.🕒history += Date.now.formatted(date: .numeric, time: .shortened) + ", "
                 try await self.🏥healthStore.delete(📦)
-                self.🕒history += "Cancel: Success\n"
                 self.📦sampleCache = nil
                 UINotificationFeedbackGenerator().notificationOccurred(.error)
             } catch {
                 DispatchQueue.main.async {
                     print(#function, error)
-                    self.🕒history += "Cancel: Error?! " + error.localizedDescription + "\n"
                     self.🚨cancelError = true
                 }
             }
