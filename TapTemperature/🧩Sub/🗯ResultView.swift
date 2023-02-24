@@ -39,10 +39,12 @@ struct 🗯ResultView: View {
                         .padding(.horizontal)
                 }
                 Spacer()
-                HStack {
-                    if 📱.🚩basalTempOption && 📱.🛏basalSwitch {
-                        Image(systemName: "bed.double")
-                            .font(.body.bold())
+                VStack(spacing: 10) {
+                    if 📱.🚩basalTempOption {
+                        Text(📱.🛏bbtInputMode ? "Basal body temperature" : "Body temperature")
+                            .lineLimit(1)
+                            .font(.caption.bold())
+                            .minimumScaleFactor(0.1)
                     }
                     if 📱.🚩registerSuccess {
                         Text(📱.🌡value.description + " " + 📱.📏unitOption.rawValue)
