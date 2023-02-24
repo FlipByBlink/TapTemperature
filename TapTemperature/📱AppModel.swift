@@ -158,6 +158,13 @@ class 📱AppModel: ObservableObject {
         self.🧩resetComponents()
         self.📦sampleCache = nil
     }
+    
+    init() {
+        Task {
+            await self.🏥setUp(.bodyTemperature)
+            self.🏥observePreferredUnits()
+        }
+    }
 }
 
 enum 📏DegreeUnit: String, CaseIterable, Identifiable {

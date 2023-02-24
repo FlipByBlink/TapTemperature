@@ -8,10 +8,6 @@ struct TapTemperatureApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .task {
-                    await 📱.🏥setUp(.bodyTemperature)
-                    📱.🏥observePreferredUnits()
-                }
                 .modifier(📣ADSheet())
                 .environmentObject(📱)
                 .environmentObject(🛒)
