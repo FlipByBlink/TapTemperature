@@ -43,7 +43,7 @@ struct 🗯ResultView: View {
                     if 📱.🚩basalTempOption {
                         Text(📱.🛏bbtInputMode ? "Basal body temperature" : "Body temperature")
                             .lineLimit(1)
-                            .font(.caption.bold())
+                            .font(.caption.weight(.semibold))
                             .minimumScaleFactor(0.1)
                     }
                     if 📱.🚩registerSuccess {
