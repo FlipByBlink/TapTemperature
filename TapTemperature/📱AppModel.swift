@@ -107,16 +107,16 @@ class 📱AppModel: ObservableObject {
     
     private func 🏥loadPreferredUnit(_ ⓘdentifier: HKQuantityTypeIdentifier) {
         let ⓣype = HKQuantityType(ⓘdentifier)
-        if self.🏥healthStore.authorizationStatus(for: ⓣype) == .notDetermined {
-            Task {
-                let ⓤnits = try await self.🏥healthStore.preferredUnits(for: [ⓣype])
-                if let ⓤnit = ⓤnits[ⓣype] {
-                    switch ⓤnit {
-                        case .degreeCelsius(): self.📏unitOption = .℃
-                        case .degreeFahrenheit(): self.📏unitOption = .℉
-                        default: assertionFailure()
-                    }
+        Task { @MainActor in
+            let ⓤnits = try await self.🏥healthStore.preferredUnits(for: [ⓣype])
+            if let ⓤnit = ⓤnits[ⓣype] {
+                switch ⓤnit {
+                    case .degreeCelsius(): self.📏unitOption = .℃
+                    case .degreeFahrenheit(): self.📏unitOption = .℉
+                    default: assertionFailure()
                 }
+            } else {
+                assertionFailure()
             }
         }
     }
