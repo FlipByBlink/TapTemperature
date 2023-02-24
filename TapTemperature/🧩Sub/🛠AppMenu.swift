@@ -25,6 +25,10 @@ struct 🛠AppMenu: View {
         } header: {
             Text("Option")
         }
+        self.ⓞpenHealthAppButton()
+        🕛HistoryViewLink()
+    }
+    private func ⓞpenHealthAppButton() -> some View {
         Link (destination: URL(string: "x-apple-health://")!) {
             HStack {
                 Label {
@@ -43,9 +47,14 @@ struct 🛠AppMenu: View {
                     .foregroundStyle(.secondary)
             }
         }
+    }
+}
+
+struct 🕛HistoryViewLink: View {
+    var body: some View {
         Section {
             NavigationLink {
-                🕛HistoryView()
+                Self.🕛HistoryView()
             } label: {
                 Label("Local history", systemImage: "clock")
             }
@@ -53,36 +62,35 @@ struct 🛠AppMenu: View {
             Text("\"Local history\" is for the porpose of \"operation check\" / \"temporary backup\"")
         }
     }
-}
-
-struct 🕛HistoryView: View {
-    @EnvironmentObject var 📱: 📱AppModel
-    var body: some View {
-        if 📱.🕒history == "" {
-            Image(systemName: "text.append")
-                .foregroundStyle(.tertiary)
-                .font(.system(size: 64))
-                .navigationTitle("History")
-                .navigationBarTitleDisplayMode(.inline)
-        } else {
-            ScrollView {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    Text(📱.🕒history)
-                        .font(.subheadline)
-                        .padding()
-                        .textSelection(.enabled)
-                        .navigationTitle("History")
-                        .navigationBarTitleDisplayMode(.inline)
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                Button {
-                                    📱.🕒history = ""
-                                } label: {
-                                    Image(systemName: "trash")
-                                        .tint(.red)
+    private struct 🕛HistoryView: View {
+        @EnvironmentObject var 📱: 📱AppModel
+        var body: some View {
+            if 📱.🕒history == "" {
+                Image(systemName: "text.append")
+                    .foregroundStyle(.tertiary)
+                    .font(.system(size: 64))
+                    .navigationTitle("History")
+                    .navigationBarTitleDisplayMode(.inline)
+            } else {
+                ScrollView {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        Text(📱.🕒history)
+                            .font(.subheadline)
+                            .padding()
+                            .textSelection(.enabled)
+                            .navigationTitle("History")
+                            .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    Button {
+                                        📱.🕒history = ""
+                                    } label: {
+                                        Image(systemName: "trash")
+                                            .tint(.red)
+                                    }
                                 }
                             }
-                        }
+                    }
                 }
             }
         }

@@ -9,9 +9,7 @@ struct 🗯ResultView: View {
                 .ignoresSafeArea()
             VStack {
                 HStack {
-                    if 📱.🚩registerSuccess {
-                        🗑CancelButton()
-                    }
+                    if 📱.🚩registerSuccess { 🗑CancelButton() }
                     Spacer()
                     if 📱.🚩registerSuccess == false {
                         Image(systemName: "arrow.right")

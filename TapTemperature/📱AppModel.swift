@@ -45,9 +45,7 @@ class 📱AppModel: ObservableObject {
         self.🧩components.append(ⓘnt)
         if self.🚩autoCompleteOption {
             if self.🧩components.count == (self.🚩secondDecimalPlaceOption ? 4 : 3) {
-                Task {
-                    await self.👆register()
-                }
+                Task { await self.👆register() }
                 return
             }
         }

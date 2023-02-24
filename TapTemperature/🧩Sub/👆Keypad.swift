@@ -40,9 +40,8 @@ struct 👆Keypad: View {
                             📱.🧩components.removeLast()
                             UISelectionFeedbackGenerator().selectionChanged()
                         } label: {
-                            Text("⌫")
-                                .fontWeight(.regular)
-                                .scaleEffect(0.8)
+                            Image(systemName: "delete.left")
+                                .scaleEffect(0.7)
                         }
                         .tint(.primary)
                         .accessibilityLabel("Delete")
