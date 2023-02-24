@@ -87,14 +87,35 @@ class 📱AppModel: ObservableObject {
         }
     }
     
-    func 🏥requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) {
+    func 🏥setUp(_ ⓘdentifier: HKQuantityTypeIdentifier) {
+        Task {
+            await self.🏥requestAuthorization(ⓘdentifier)
+            self.🏥loadPreferredUnit(ⓘdentifier)
+        }
+    }
+    
+    private func 🏥requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async {
         let ⓣype: HKSampleType = HKQuantityType(ⓘdentifier)
         if self.🏥healthStore.authorizationStatus(for: ⓣype) == .notDetermined {
+            do {
+                try await self.🏥healthStore.requestAuthorization(toShare: [ⓣype], read: [])
+            } catch {
+                print(#function, error)
+            }
+        }
+    }
+    
+    private func 🏥loadPreferredUnit(_ ⓘdentifier: HKQuantityTypeIdentifier) {
+        let ⓣype = HKQuantityType(ⓘdentifier)
+        if self.🏥healthStore.authorizationStatus(for: ⓣype) == .notDetermined {
             Task {
-                do {
-                    try await self.🏥healthStore.requestAuthorization(toShare: [ⓣype], read: [])
-                } catch {
-                    print(#function, error)
+                let ⓤnits = try await self.🏥healthStore.preferredUnits(for: [ⓣype])
+                if let ⓤnit = ⓤnits[ⓣype] {
+                    switch ⓤnit {
+                        case .degreeCelsius(): self.📏unitOption = .℃
+                        case .degreeFahrenheit(): self.📏unitOption = .℉
+                        default: assertionFailure()
+                    }
                 }
             }
         }

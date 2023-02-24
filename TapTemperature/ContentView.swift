@@ -33,7 +33,7 @@ struct ContentView: View {
         .background { 🟥AutoCompleteHintView() }
         .fullScreenCover(isPresented: $📱.🚩showResult) { 🗯ResultView() }
         .onAppear {
-            📱.🏥requestAuthorization(.bodyTemperature)
+            📱.🏥setUp(.bodyTemperature)
             📱.🧩resetComponents()
         }
         .onChange(of: self.scenePhase) {

@@ -25,7 +25,7 @@ struct 🛠MenuContent: View {
                 Label("Basal body temperature", systemImage: "bed.double")
             }
             .onChange(of: 📱.🚩bbtOption) { _ in
-                📱.🏥requestAuthorization(.basalBodyTemperature)
+                📱.🏥setUp(.basalBodyTemperature)
             }
             Toggle(isOn: $📱.🚩secondDecimalPlaceOption) {
                 Label(📱.📏unitOption == .℃ ? "36.1 ℃  →  36.12︭ ℃" : "100.1 ℉  →  100.12︭ ℉",
