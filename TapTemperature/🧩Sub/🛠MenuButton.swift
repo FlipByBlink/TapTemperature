@@ -37,17 +37,15 @@ struct 🛠MenuSheet: View {
             ℹ️AboutAppLink(name: "TapTemperature", subtitle: "App for iPhone")
             📣ADMenuLink()
         }
-        .navigationTitle("Body Temperature")
+        .navigationTitle("Menu")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     self.dismiss()
                 } label: {
                     Image(systemName: "chevron.down")
-                        .foregroundStyle(.secondary)
-                        .grayscale(1.0)
-                        .padding(8)
                 }
+                .foregroundStyle(.secondary)
                 .accessibilityLabel("Dismiss")
             }
         }
