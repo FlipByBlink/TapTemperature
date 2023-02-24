@@ -24,9 +24,11 @@ struct ContentView: View {
         }
         .navigationTitle(📱.🛏bbtInputMode ? "BBT" : "Body temperature")
         .toolbar {
-            🛏BasalSwitchButton()
-            💟JumpButton()
-            🛠MenuButton()
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                🛏BasalSwitchButton()
+                💟JumpButton()
+                🛠MenuButton()
+            }
         }
         .background { 🟥AutoCompleteHintView() }
         .fullScreenCover(isPresented: $📱.🚩showResult) { 🗯ResultView() }
