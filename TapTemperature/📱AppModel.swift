@@ -7,17 +7,16 @@ class 📱AppModel: ObservableObject {
     @AppStorage("BasalTemp") var 🚩bbtOption: Bool = false
     @AppStorage("2DecimalPlace") var 🚩secondDecimalPlaceOption: Bool = false
     @AppStorage("AutoComplete") var 🚩autoCompleteOption: Bool = false
-    @AppStorage("Unit") var 📏unitOption: 📏DegreeUnit = .℃ {
-        didSet { self.🧩resetComponents() }
-    }
+    
+    @Published var 📏unitOption: 📏DegreeUnit = .℃
+    
+    @Published var 🛏bbtSwitch: Bool = true
+    var 🛏bbtInputMode: Bool { self.🚩bbtOption && self.🛏bbtSwitch }
     
     @Published var 🚩showResult: Bool = false
     @Published var 🚩registerSuccess: Bool = false
     @Published var 🚩canceled: Bool = false
     @Published var 🚨cancelError: Bool = false
-    
-    @Published var 🛏bbtSwitch: Bool = true
-    var 🛏bbtInputMode: Bool { self.🚩bbtOption && self.🛏bbtSwitch }
     
     @Published var 🧩components: [Int] = []
     
@@ -87,11 +86,9 @@ class 📱AppModel: ObservableObject {
         }
     }
     
-    func 🏥setUp(_ ⓘdentifier: HKQuantityTypeIdentifier) {
-        Task {
-            await self.🏥requestAuthorization(ⓘdentifier)
-            self.🏥loadPreferredUnit(ⓘdentifier)
-        }
+    func 🏥setUp(_ ⓘdentifier: HKQuantityTypeIdentifier) async {
+        await self.🏥requestAuthorization(ⓘdentifier)
+        self.🏥loadPreferredUnit()
     }
     
     private func 🏥requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async {
@@ -105,9 +102,9 @@ class 📱AppModel: ObservableObject {
         }
     }
     
-    private func 🏥loadPreferredUnit(_ ⓘdentifier: HKQuantityTypeIdentifier) {
-        let ⓣype = HKQuantityType(ⓘdentifier)
+    func 🏥loadPreferredUnit() {
         Task { @MainActor in
+            let ⓣype = HKQuantityType(self.🛏bbtInputMode ? .basalBodyTemperature : .bodyTemperature)
             let ⓤnits = try await self.🏥healthStore.preferredUnits(for: [ⓣype])
             if let ⓤnit = ⓤnits[ⓣype] {
                 switch ⓤnit {
@@ -115,8 +112,23 @@ class 📱AppModel: ObservableObject {
                     case .degreeFahrenheit(): self.📏unitOption = .℉
                     default: assertionFailure()
                 }
+                self.🧩resetComponents()
             } else {
                 assertionFailure()
+            }
+        }
+    }
+    
+    func 🏥observePreferredUnits() {
+        Task {
+            for ⓣype in [HKQuantityType(.bodyTemperature), HKQuantityType(.basalBodyTemperature)] {
+                let ⓠuery = HKObserverQuery(sampleType: ⓣype, predicate: nil) { _, ⓒompletionHandler, ⓔrror in
+                    if ⓔrror != nil { return }
+                    self.🏥loadPreferredUnit()
+                    ⓒompletionHandler()
+                }
+                self.🏥healthStore.execute(ⓠuery)
+                try await HKHealthStore().enableBackgroundDelivery(for: ⓣype, frequency: .immediate)
             }
         }
     }

@@ -32,10 +32,6 @@ struct ContentView: View {
         }
         .background { 🟥AutoCompleteHintView() }
         .fullScreenCover(isPresented: $📱.🚩showResult) { 🗯ResultView() }
-        .onAppear {
-            📱.🏥setUp(.bodyTemperature)
-            📱.🧩resetComponents()
-        }
         .onChange(of: self.scenePhase) {
             if $0 == .background { 📱.ⓡeset() }
         }
@@ -61,6 +57,9 @@ struct 🛏BasalSwitchButton: View {
                     .tint(.primary)
             }
             .accessibilityLabel("Switch type")
+            .onChange(of: 📱.🛏bbtSwitch) { _ in
+                📱.🏥loadPreferredUnit()
+            }
         }
     }
 }

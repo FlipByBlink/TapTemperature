@@ -16,16 +16,16 @@ struct 🛠MenuContent: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
         Section {
-            Picker(selection: $📱.📏unitOption) {
-                ForEach(📏DegreeUnit.allCases) { Text($0.rawValue) }
-            } label: {
-                Label("Unit", systemImage: "ruler")
-            }
+            //Picker(selection: $📱.📏unitOption) {
+            //    ForEach(📏DegreeUnit.allCases) { Text($0.rawValue) }
+            //} label: {
+            //    Label("Unit", systemImage: "ruler")
+            //}
             Toggle(isOn: $📱.🚩bbtOption) {
                 Label("Basal body temperature", systemImage: "bed.double")
             }
             .onChange(of: 📱.🚩bbtOption) { _ in
-                📱.🏥setUp(.basalBodyTemperature)
+                Task { await 📱.🏥setUp(.basalBodyTemperature) }
             }
             Toggle(isOn: $📱.🚩secondDecimalPlaceOption) {
                 Label(📱.📏unitOption == .℃ ? "36.1 ℃  →  36.12︭ ℃" : "100.1 ℉  →  100.12︭ ℉",
