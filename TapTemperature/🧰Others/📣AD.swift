@@ -1,16 +1,30 @@
 import SwiftUI
 import StoreKit
 
-struct 📣ADSheet: View {
-    @Environment(\.verticalSizeClass) var verticalSizeClass
+struct 📣ADView: View {
     @EnvironmentObject var 🛒: 🛒StoreModel
+    @Environment(\.scenePhase) var scenePhase
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    @State private var 🚩disableDismiss: Bool = true
     private var ⓐpp: 📣MyApp
     var body: some View {
-        if #available(iOS 16.0, *) {
-            NavigationStack { self.ⓒontent() }
-        } else {
-            NavigationView { self.ⓒontent() }
-                .navigationViewStyle(.stack)
+        Group {
+            if #available(iOS 16.0, *) {
+                NavigationStack { self.ⓒontent() }
+                    .presentationDetents([.height(600)])
+            } else {
+                NavigationView { self.ⓒontent() }
+                    .navigationViewStyle(.stack)
+            }
+        }
+        .onChange(of: self.scenePhase) {
+            if $0 == .background { 🛒.🚩showADSheet = false }
+        }
+        .interactiveDismissDisabled(self.🚩disableDismiss)
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                self.🚩disableDismiss = false
+            }
         }
     }
     private func ⓒontent() -> some View {
@@ -128,9 +142,11 @@ struct 📣ADSheet: View {
             🛒.🚩showADSheet = false
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
         } label: {
-            Image(systemName: "chevron.down")
+            Image(systemName: "xmark.circle.fill")
         }
-        .foregroundStyle(.primary)
+        .foregroundStyle(self.🚩disableDismiss ? .quaternary : .primary)
+        .disabled(self.🚩disableDismiss)
+        .animation(.default.speed(0.3), value: self.🚩disableDismiss)
         .accessibilityLabel("Dismiss")
     }
     private struct ⓟurchasedEffect: ViewModifier {

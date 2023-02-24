@@ -79,7 +79,6 @@ struct 🗯ResultView: View {
             }
         }
         .animation(.default, value: 📱.🚩canceled)
-        .modifier(📣ADContent())
         .onDisappear {
             📱.🚩registerSuccess = false
         }

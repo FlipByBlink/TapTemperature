@@ -8,6 +8,7 @@ struct TapTemperatureApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modifier(📣ADSheet())
                 .environmentObject(📱)
                 .environmentObject(🛒)
         }

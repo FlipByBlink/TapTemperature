@@ -20,7 +20,7 @@
           "locale" : "ja"
         }
       ],
-      "productID" : "PLACEHOLDER.adfree",
+      "productID" : "TapTemperature.adfree",
       "referenceName" : "AD_Free(Xcode)",
       "type" : "NonConsumable"
     }
