@@ -50,8 +50,6 @@ struct 🪧TemperatureLabel: View {
                             Text("_")
                                 .opacity(📱.🧩components.count < 3 ? 0 : 1)
                         }
-                } else {
-                    EmptyView()
                 }
             }
             
