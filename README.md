@@ -3,7 +3,11 @@
 
 <br>
 
-![App icon](TapTemperature/Assets.xcassets/RoundedIcon.imageset/icon.png)
+<img src="TapTemperature/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
+
+<a href="https://apps.apple.com/app/id1626760566" target="blank">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
+</a>
 
 <br>
 

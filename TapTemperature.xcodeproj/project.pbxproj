@@ -41,6 +41,9 @@
 		F585A0D82942B1E400BA665C /* 📣AD.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C32942AADC00BA665C /* 📣AD.swift */; };
 		F585A0D92942B1E400BA665C /* 🛒InAppPurchase.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */; };
 		F585A0DA2942B1ED00BA665C /* 🛠MenuButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1288ADF5286ACE62002F5511 /* 🛠MenuButton.swift */; };
+		F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */; };
+		F58BC7F129A83BA6003DDAC1 /* 📣ADContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADContent.swift */; };
+		F58BC7F229A83E68003DDAC1 /* 📣ADContent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +65,7 @@
 			dstPath = "🧩Sub";
 			dstSubfolderSpec = 7;
 			files = (
+				F58BC7F229A83E68003DDAC1 /* 📣ADContent.swift in CopyFiles */,
 				F585A0DA2942B1ED00BA665C /* 🛠MenuButton.swift in CopyFiles */,
 				1256A33D286B16E1002AF08A /* 🛠AppMenu.swift in CopyFiles */,
 				1256A32D286ADEF5002AF08A /* 💟JumpButton.swift in CopyFiles */,
@@ -116,6 +120,8 @@
 		F585A0D02942B03300BA665C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/🌏AppStoreDescription.strings"; sourceTree = "<group>"; };
 		F585A0D42942B06500BA665C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/🌏VersionDescription.strings"; sourceTree = "<group>"; };
 		F585A0D62942B06800BA665C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/🌏VersionDescription.strings"; sourceTree = "<group>"; };
+		F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🧰MetaData.swift"; sourceTree = "<group>"; };
+		F58BC7F029A83BA6003DDAC1 /* 📣ADContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣ADContent.swift"; sourceTree = "<group>"; };
 		F597586A28D94E0E002521F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F597586B28D94E0E002521F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F597586C28D94E13002521F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 				1256A327286AD8FE002AF08A /* 💟JumpButton.swift */,
 				1256A33B286B1547002AF08A /* 🛠AppMenu.swift */,
 				1288ADF5286ACE62002F5511 /* 🛠MenuButton.swift */,
+				F58BC7F029A83BA6003DDAC1 /* 📣ADContent.swift */,
 				123690192844F1BD006F22EE /* Info.plist */,
 				12E811C828308A2100B0A615 /* TapTemperature.entitlements */,
 				12E811C0283089D400B0A615 /* Preview Content */,
@@ -236,6 +243,7 @@
 		F585A0C02942AADC00BA665C /* 🧰Others */ = {
 			isa = PBXGroup;
 			children = (
+				F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */,
 				F585A0C12942AADC00BA665C /* ℹ️AboutAppMenu.swift */,
 				F585A0C32942AADC00BA665C /* 📣AD.swift */,
 				F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */,
@@ -338,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F58BC7F129A83BA6003DDAC1 /* 📣ADContent.swift in Sources */,
 				1256A33C286B1547002AF08A /* 🛠AppMenu.swift in Sources */,
 				F585A0C62942AADC00BA665C /* ℹ️AboutAppMenu.swift in Sources */,
 				1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */,
@@ -349,6 +358,7 @@
 				12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */,
 				F585A0C82942AADC00BA665C /* 📣AD.swift in Sources */,
 				125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */,
+				F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */,
 				12E811BB283089D300B0A615 /* TapTemperatureApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

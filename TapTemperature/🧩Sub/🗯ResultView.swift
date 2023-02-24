@@ -66,11 +66,11 @@ struct 🗯ResultView: View {
                 }
                 .accessibilityLabel("Dismiss")
                 .opacity(📱.🚩canceled ? 0.25 : 1)
-                📣ADBanner()
             }
         }
         .preferredColorScheme(.dark)
         .animation(.default, value: 📱.🚩canceled)
+        .modifier(📣ADContent())
         .onDisappear {
             📱.🚩registerSuccess = false
         }
@@ -103,38 +103,3 @@ struct 🗑CancelButton: View {
         }
     }
 }
-
-struct 📣ADBanner: View {
-    @EnvironmentObject var 📱: 📱AppModel
-    @EnvironmentObject var 🛒: 🛒StoreModel
-    @State private var 🚩showBanner = false
-    @AppStorage("🄻aunchCount") private var ⓛaunchCount: Int = 0
-    var body: some View {
-        Group {
-            if 🛒.🚩Purchased || !📱.🚩registerSuccess {
-                Spacer()
-            } else {
-                if self.🚩showBanner {
-                    📣ADView(without: .TapTemperature)
-                        .padding(.horizontal)
-                        .background {
-                            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                .foregroundStyle(.background)
-                                .shadow(radius: 3)
-                        }
-                        .padding()
-                        .frame(maxHeight: 180)
-                        .environment(\.colorScheme, .light)
-                } else {
-                    Spacer()
-                }
-            }
-        }
-        .onAppear {
-            self.ⓛaunchCount += 1
-            if self.ⓛaunchCount > 5 { self.🚩showBanner = true }
-        }
-    }
-}
-//ADMenuSheetを表示したままアプリをバックグラウンドに移行した際に、ResultViewの自動非表示機能がうまく動作しない。
-//そのためADBanner上のADMenuシートを削除。
