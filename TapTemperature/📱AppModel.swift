@@ -146,10 +146,4 @@ enum 📏DegreeUnit: String, CaseIterable, Identifiable {
             case .℉: return .degreeFahrenheit()
         }
     }
-    var secondDecimalPlaceOptionLabel: String {
-        switch self {
-            case .℃: return "36.1 ℃  →  36.12︭ ℃"
-            case .℉: return "100.1 ℉  →  100.12︭ ℉"
-        }
-    }
 }

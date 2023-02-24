@@ -63,7 +63,8 @@ struct 🛠AppMenu: View {
                 📱.🏥requestAuthorization(.basalBodyTemperature)
             }
             Toggle(isOn: $📱.🚩secondDecimalPlaceOption) {
-                Label(📱.📏unitOption.secondDecimalPlaceOptionLabel, systemImage: "character.cursor.ibeam")
+                Label(📱.📏unitOption == .℃ ? "36.1 ℃  →  36.12︭ ℃" : "100.1 ℉  →  100.12︭ ℉",
+                      systemImage: "character.cursor.ibeam")
             }
             .accessibilityLabel("Second decimal places mode")
             Toggle(isOn: $📱.🚩autoCompleteOption) {
