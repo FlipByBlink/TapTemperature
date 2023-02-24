@@ -146,7 +146,7 @@ struct 📣ADView: View {
         }
         .foregroundStyle(self.🚩disableDismiss ? .quaternary : .primary)
         .disabled(self.🚩disableDismiss)
-        .animation(.default.speed(0.3), value: self.🚩disableDismiss)
+        .animation(.default.speed(0.5), value: self.🚩disableDismiss)
         .accessibilityLabel("Dismiss")
     }
     private struct ⓟurchasedEffect: ViewModifier {
