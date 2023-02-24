@@ -57,7 +57,7 @@ struct 👆Keypad: View {
         .padding(.vertical)
     }
     private func ⓓisable(_ ⓘndex: Int) -> Bool {
-        if 📱.🧩components.count == 3 && (📱.🚩2DecimalPlaceOption == false) {
+        if 📱.🧩components.count == 3 && (📱.🚩secondDecimalPlaceOption == false) {
             return true
         }
         if 📱.🧩components.count == 4 {
@@ -106,7 +106,7 @@ struct 👆Keypad: View {
         if 📱.🚩autoCompleteOption == false {
             return "checkmark.circle"
         }
-        if 📱.🚩2DecimalPlaceOption {
+        if 📱.🚩secondDecimalPlaceOption {
             switch 📱.🧩components.count {
                 case 0: return "4.circle"
                 case 1: return "3.circle"

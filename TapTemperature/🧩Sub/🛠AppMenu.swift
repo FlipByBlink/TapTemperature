@@ -15,8 +15,8 @@ struct 🛠AppMenu: View {
             .onChange(of: 📱.🚩basalTempOption) { _ in
                 📱.🏥requestAuthorization(.basalBodyTemperature)
             }
-            Toggle(isOn: $📱.🚩2DecimalPlaceOption) {
-                Label(📱.📏unitOption.menuLabel, systemImage: "character.cursor.ibeam")
+            Toggle(isOn: $📱.🚩secondDecimalPlaceOption) {
+                Label(📱.📏unitOption.secondDecimalPlaceOptionLabel, systemImage: "character.cursor.ibeam")
             }
             .accessibilityLabel("Second decimal places mode")
             Toggle(isOn: $📱.🚩autoCompleteOption) {

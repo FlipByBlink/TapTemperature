@@ -44,7 +44,7 @@ struct 🪧TemperatureLabel: View {
             if 📱.🧩components.indices.contains(3) {
                 Text(📱.🧩components[3].description)
             } else {
-                if 📱.🚩2DecimalPlaceOption {
+                if 📱.🚩secondDecimalPlaceOption {
                     Text("0").opacity(0)
                         .overlay {
                             Text("_")

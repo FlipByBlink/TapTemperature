@@ -70,7 +70,7 @@ struct 🟥AutoCompleteHintView: View {
             VStack {
                 Spacer()
                 if 📱.🚩autoCompleteOption {
-                    if 📱.🧩components.count == (📱.🚩2DecimalPlaceOption ? 3 : 2) {
+                    if 📱.🧩components.count == (📱.🚩secondDecimalPlaceOption ? 3 : 2) {
                         Rectangle()
                             .frame(height: 8 + 📐.safeAreaInsets.bottom)
                             .foregroundColor(.pink)

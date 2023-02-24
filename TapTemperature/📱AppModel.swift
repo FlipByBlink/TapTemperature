@@ -5,7 +5,7 @@ class 📱AppModel: ObservableObject {
     private let 🏥healthStore = HKHealthStore()
     
     @AppStorage("BasalTemp") var 🚩basalTempOption: Bool = false
-    @AppStorage("2DecimalPlace") var 🚩2DecimalPlaceOption: Bool = false
+    @AppStorage("2DecimalPlace") var 🚩secondDecimalPlaceOption: Bool = false
     @AppStorage("AutoComplete") var 🚩autoCompleteOption: Bool = false
     @AppStorage("Unit") var 📏unitOption: 📏DegreeUnit = .℃ {
         didSet { self.🧩resetComponents() }
@@ -44,7 +44,7 @@ class 📱AppModel: ObservableObject {
     func 🧩appendComponent(_ ⓘnt: Int) {
         self.🧩components.append(ⓘnt)
         if self.🚩autoCompleteOption {
-            if self.🧩components.count == (self.🚩2DecimalPlaceOption ? 4 : 3) {
+            if self.🧩components.count == (self.🚩secondDecimalPlaceOption ? 4 : 3) {
                 Task {
                     await self.👆register()
                 }
@@ -148,7 +148,7 @@ enum 📏DegreeUnit: String, CaseIterable, Identifiable {
             case .℉: return .degreeFahrenheit()
         }
     }
-    var menuLabel: String {
+    var secondDecimalPlaceOptionLabel: String {
         switch self {
             case .℃: return "36.1 ℃  →  36.12︭ ℃"
             case .℉: return "100.1 ℉  →  100.12︭ ℉"
