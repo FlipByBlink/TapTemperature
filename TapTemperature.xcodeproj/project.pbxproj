@@ -10,7 +10,6 @@
 		123690152844EE92006F22EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		124BC6A8284333E100F75E1F /* TapTemperatureApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* TapTemperatureApp.swift */; };
 		124BC6A9284333E100F75E1F /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BC283089D300B0A615 /* ContentView.swift */; };
-		124BC6AA284333E100F75E1F /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
 		124BC6B128433C4F00F75E1F /* 🪧ValueLabel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
 		124BC6B228433C4F00F75E1F /* 👆Keypad.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
 		124BC6B328433C4F00F75E1F /* 🗯ResultView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
@@ -30,6 +29,17 @@
 		12E811C2283089D400B0A615 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E811C1283089D400B0A615 /* Preview Assets.xcassets */; };
 		12E811CB28308A2100B0A615 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E811CA28308A2100B0A615 /* HealthKit.framework */; };
 		F519CB4929AA43DF00ACD6B6 /* ⌚️SyncOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */; };
+		F519CB4A29AA44BD00ACD6B6 /* ⌚️SyncOptions.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */; };
+		F519CB4C29AA44EF00ACD6B6 /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
+		F519CB4D29AA44EF00ACD6B6 /* 🪧ValueLabel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
+		F519CB4E29AA44EF00ACD6B6 /* 👆Keypad.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
+		F519CB4F29AA44EF00ACD6B6 /* 🛏BasalSwitchButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BasalSwitchButton.swift */; };
+		F519CB5029AA44EF00ACD6B6 /* ⌚️SyncDelegate.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */; };
+		F519CB5129AA44EF00ACD6B6 /* 💥Feedback.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
+		F519CB5329AA451E00ACD6B6 /* TTApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D228B229A9B1DD00F4F982 /* TTApp.swift */; };
+		F519CB5429AA451E00ACD6B6 /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D228B429A9B1DD00F4F982 /* ContentView.swift */; };
+		F519CB5529AA451E00ACD6B6 /* 🗯ResultView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
+		F519CB5729AA453F00ACD6B6 /* TTWidget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5FFCE6729AA3C740035E638 /* TTWidget.swift */; };
 		F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
 		F585A0C62942AADC00BA665C /* ℹ️AboutAppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutAppMenu.swift */; };
 		F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C22942AADC00BA665C /* Configuration.storekit */; };
@@ -91,7 +101,6 @@
 			files = (
 				124BC6A8284333E100F75E1F /* TapTemperatureApp.swift in CopyFiles */,
 				124BC6A9284333E100F75E1F /* ContentView.swift in CopyFiles */,
-				124BC6AA284333E100F75E1F /* 📱AppModel.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +110,7 @@
 			dstPath = "🧩Sub";
 			dstSubfolderSpec = 7;
 			files = (
+				F519CB4A29AA44BD00ACD6B6 /* ⌚️SyncOptions.swift in CopyFiles */,
 				F58BC7F229A83E68003DDAC1 /* 📣ADSheet.swift in CopyFiles */,
 				1256A33D286B16E1002AF08A /* 🛠Menu.swift in CopyFiles */,
 				1256A32D286ADEF5002AF08A /* 💟OpenHealthAppButton.swift in CopyFiles */,
@@ -119,6 +129,43 @@
 				F585A0D72942B1E400BA665C /* ℹ️AboutAppMenu.swift in CopyFiles */,
 				F585A0D82942B1E400BA665C /* 📣AD.swift in CopyFiles */,
 				F585A0D92942B1E400BA665C /* 🛒InAppPurchase.swift in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F519CB4B29AA44D800ACD6B6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Shared;
+			dstSubfolderSpec = 7;
+			files = (
+				F519CB4C29AA44EF00ACD6B6 /* 📱AppModel.swift in CopyFiles */,
+				F519CB4D29AA44EF00ACD6B6 /* 🪧ValueLabel.swift in CopyFiles */,
+				F519CB4E29AA44EF00ACD6B6 /* 👆Keypad.swift in CopyFiles */,
+				F519CB4F29AA44EF00ACD6B6 /* 🛏BasalSwitchButton.swift in CopyFiles */,
+				F519CB5029AA44EF00ACD6B6 /* ⌚️SyncDelegate.swift in CopyFiles */,
+				F519CB5129AA44EF00ACD6B6 /* 💥Feedback.swift in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F519CB5229AA44F700ACD6B6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = WatchApp;
+			dstSubfolderSpec = 7;
+			files = (
+				F519CB5329AA451E00ACD6B6 /* TTApp.swift in CopyFiles */,
+				F519CB5429AA451E00ACD6B6 /* ContentView.swift in CopyFiles */,
+				F519CB5529AA451E00ACD6B6 /* 🗯ResultView.swift in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F519CB5629AA452300ACD6B6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = WatchComplication;
+			dstSubfolderSpec = 7;
+			files = (
+				F519CB5729AA453F00ACD6B6 /* TTWidget.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,9 +447,12 @@
 				12E811B3283089D300B0A615 /* Sources */,
 				12E811B4283089D300B0A615 /* Frameworks */,
 				12E811B5283089D300B0A615 /* Resources */,
+				F519CB4B29AA44D800ACD6B6 /* CopyFiles */,
 				124BC6A7284333B900F75E1F /* CopyFiles */,
 				124BC6B02843396A00F75E1F /* CopyFiles */,
 				1256A329286ADEBD002AF08A /* CopyFiles */,
+				F519CB5229AA44F700ACD6B6 /* CopyFiles */,
+				F519CB5629AA452300ACD6B6 /* CopyFiles */,
 				F5FFCE4629AA2DA00035E638 /* Embed Watch Content */,
 			);
 			buildRules = (
