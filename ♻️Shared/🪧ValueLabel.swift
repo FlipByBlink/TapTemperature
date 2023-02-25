@@ -2,7 +2,21 @@ import SwiftUI
 
 struct 🪧ValueLabel: View {
     @EnvironmentObject var 📱: 📱AppModel
-    private var ⓕirst: String {
+    var body: some View {
+        HStack(alignment: .firstTextBaseline, spacing: 3) {
+            Text(self.🎰first + self.🎰second)
+                .font(.system(size: self.ⓕontSize, weight: .bold, design: .monospaced))
+                .kerning(3)
+            Text(".")
+                .font(.system(size: self.ⓕontSize, weight: .bold))
+            Text(self.🎰third + self.🎰fourth)
+                .font(.system(size: self.ⓕontSize, weight: .bold, design: .monospaced))
+                .kerning(3)
+            Text(📱.📏unitOption.rawValue)
+                .font(.system(size: self.ⓕontSize * 0.6, weight: .bold))
+        }
+    }
+    private var 🎰first: String {
         switch 📱.📏unitOption {
             case .℃:
                 switch 📱.🧩components.count {
@@ -23,7 +37,7 @@ struct 🪧ValueLabel: View {
                 }
         }
     }
-    private var ⓢecond: String {
+    private var 🎰second: String {
         switch 📱.🧩components.count {
             case 0: return " "
             case 1: return "_"
@@ -31,7 +45,7 @@ struct 🪧ValueLabel: View {
             default: return "🐛"
         }
     }
-    private var ⓣhird: String {
+    private var 🎰third: String {
         switch 📱.🧩components.count {
             case 0, 1: return " "
             case 2: return "_"
@@ -39,7 +53,7 @@ struct 🪧ValueLabel: View {
             default: return "🐛"
         }
     }
-    private var ⓕourth: String {
+    private var 🎰fourth: String {
         if 📱.🚩secondDecimalPlaceOption {
             switch 📱.🧩components.count {
                 case 0, 1, 2: return " "
@@ -50,20 +64,6 @@ struct 🪧ValueLabel: View {
         } else {
             return ""
         }
-    }
-    var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 3) {
-            Text(self.ⓕirst + self.ⓢecond)
-                .font(.system(size: self.ⓕontSize, weight: .bold, design: .monospaced))
-                .kerning(3)
-            Text(".")
-            Text(self.ⓣhird + self.ⓕourth)
-                .font(.system(size: self.ⓕontSize, weight: .bold, design: .monospaced))
-                .kerning(3)
-            Text(📱.📏unitOption.rawValue)
-                .font(.system(size: self.ⓕontSize * 0.6, weight: .bold))
-        }
-        .font(.system(size: self.ⓕontSize, weight: .bold))
     }
     private var ⓕontSize: CGFloat {
 #if os(iOS)
