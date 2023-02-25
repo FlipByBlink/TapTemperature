@@ -2,61 +2,68 @@ import SwiftUI
 
 struct 🪧ValueLabel: View {
     @EnvironmentObject var 📱: 📱AppModel
-    var body: some View {
-        HStack(alignment: .firstTextBaseline) {
-            if 📱.🧩components.indices.contains(0) {
-                Text("10").opacity(0)
-                    .overlay(alignment: .trailing) {
-                        Text(📱.🧩components[0].description)
-                    }
-                    .lineLimit(1)
-            } else {
-                Text("10").opacity(0)
-                    .overlay(alignment: .trailing) {
-                        Text("_")
-                    }
-                    .lineLimit(1)
-            }
-            
-            if 📱.🧩components.indices.contains(1) {
-                Text(📱.🧩components[1].description)
-            } else {
-                Text("0").opacity(0)
-                    .overlay {
-                        Text("_")
-                            .opacity(📱.🧩components.count < 1 ? 0 : 1)
-                    }
-            }
-            
-            Text(".")
-            
-            if 📱.🧩components.indices.contains(2) {
-                Text(📱.🧩components[2].description)
-            } else {
-                Text("0").opacity(0)
-                    .overlay {
-                        Text("_")
-                            .opacity(📱.🧩components.count < 2 ? 0 : 1)
-                    }
-            }
-            
-            if 📱.🧩components.indices.contains(3) {
-                Text(📱.🧩components[3].description)
-            } else {
-                if 📱.🚩secondDecimalPlaceOption {
-                    Text("0").opacity(0)
-                        .overlay {
-                            Text("_")
-                                .opacity(📱.🧩components.count < 3 ? 0 : 1)
-                        }
+    private var ⓕirst: String {
+        switch 📱.📏unitOption {
+            case .℃:
+                switch 📱.🧩components.count {
+                    case 0: return "_"
+                    case 1, 2, 3, 4: return 📱.🧩components[0].description
+                    default: return "🐛"
                 }
+            case .℉:
+                switch 📱.🧩components.count {
+                    case 0: return " _"
+                    case 1, 2, 3, 4:
+                        switch 📱.🧩components.first {
+                            case 9: return " 9"
+                            case 10: return "10"
+                            default: return "🐛"
+                        }
+                    default: return "🐛"
+                }
+        }
+    }
+    private var ⓢecond: String {
+        switch 📱.🧩components.count {
+            case 0: return " "
+            case 1: return "_"
+            case 2, 3, 4: return 📱.🧩components[1].description
+            default: return "🐛"
+        }
+    }
+    private var ⓣhird: String {
+        switch 📱.🧩components.count {
+            case 0, 1: return " "
+            case 2: return "_"
+            case 3, 4: return 📱.🧩components[2].description
+            default: return "🐛"
+        }
+    }
+    private var ⓕourth: String {
+        if 📱.🚩secondDecimalPlaceOption {
+            switch 📱.🧩components.count {
+                case 0, 1, 2: return " "
+                case 3: return "_"
+                case 4: return 📱.🧩components[3].description
+                default: return "🐛"
             }
-            
+        } else {
+            return ""
+        }
+    }
+    var body: some View {
+        HStack(alignment: .firstTextBaseline, spacing: 3) {
+            Text(self.ⓕirst + self.ⓢecond)
+                .font(.system(size: self.ⓕontSize, weight: .bold, design: .monospaced))
+                .kerning(3)
+            Text(".")
+            Text(self.ⓣhird + self.ⓕourth)
+                .font(.system(size: self.ⓕontSize, weight: .bold, design: .monospaced))
+                .kerning(3)
             Text(📱.📏unitOption.rawValue)
-                .font(.system(size: self.ⓕontSize * 0.6, weight: .medium))
+                .font(.system(size: self.ⓕontSize * 0.6, weight: .bold))
         }
         .font(.system(size: self.ⓕontSize, weight: .bold))
-        .monospacedDigit()
     }
     private var ⓕontSize: CGFloat {
 #if os(iOS)

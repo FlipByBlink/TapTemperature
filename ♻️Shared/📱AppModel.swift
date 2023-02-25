@@ -21,7 +21,7 @@ class 📱AppModel: ObservableObject {
     @Published var 🚩canceled: Bool = false
     @Published var 🚨cancelError: Bool = false
     
-    @Published var 🧩components: [Int] = []
+    @Published var 🧩components: [Int] = [3]
     
     var 🌡value: Double {
         if self.🧩components.count < 3 { return 0.0 }
