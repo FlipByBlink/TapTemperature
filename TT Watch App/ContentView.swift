@@ -16,25 +16,10 @@ struct ContentView: View {
             .ignoresSafeArea(edges: .bottom)
         }
         .sheet(isPresented: $📱.🚩showResult) {
-            self.ⓡesultView()
+            📱.ⓡeset()
+        } content: {
+            🗯ResultView()
         }
-    }
-    private func ⓡesultView() -> some View {
-        VStack {
-            Spacer()
-            Image(systemName: "checkmark")
-                .font(.largeTitle.bold())
-            Text("DONE")
-                .font(.title.bold())
-            Spacer()
-            Text(📱.🌡value.description + " " + 📱.📏unitOption.rawValue)
-            Spacer()
-        }
-        .onLongPressGesture {
-            print("Undo?")
-        }
-        .toolbar(.hidden, for: .automatic)
-        //Digital Crown 押し込みでsheetを閉じれる
     }
 }
 

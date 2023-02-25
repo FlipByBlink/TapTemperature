@@ -29,6 +29,7 @@
 		12E811BF283089D400B0A615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E811BE283089D400B0A615 /* Assets.xcassets */; };
 		12E811C2283089D400B0A615 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E811C1283089D400B0A615 /* Preview Assets.xcassets */; };
 		12E811CB28308A2100B0A615 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E811CA28308A2100B0A615 /* HealthKit.framework */; };
+		F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
 		F585A0C62942AADC00BA665C /* ℹ️AboutAppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutAppMenu.swift */; };
 		F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C22942AADC00BA665C /* Configuration.storekit */; };
 		F585A0C82942AADC00BA665C /* 📣AD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C32942AADC00BA665C /* 📣AD.swift */; };
@@ -116,6 +117,7 @@
 		12E811C1283089D400B0A615 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		12E811C828308A2100B0A615 /* TapTemperature.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapTemperature.entitlements; sourceTree = "<group>"; };
 		12E811CA28308A2100B0A615 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
 		F585A0C12942AADC00BA665C /* ℹ️AboutAppMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutAppMenu.swift"; sourceTree = "<group>"; };
 		F585A0C22942AADC00BA665C /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		F585A0C32942AADC00BA665C /* 📣AD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣AD.swift"; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			children = (
 				F5D228B229A9B1DD00F4F982 /* TTApp.swift */,
 				F5D228B429A9B1DD00F4F982 /* ContentView.swift */,
+				F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */,
 				F5D228B629A9B1DF00F4F982 /* Assets.xcassets */,
 				F5D228C229A9B25B00F4F982 /* TT Watch App.entitlements */,
 				F5D228B829A9B1DF00F4F982 /* Preview Content */,
@@ -451,6 +454,7 @@
 				F5D228C129A9B24900F4F982 /* 👆Keypad.swift in Sources */,
 				F5D228B329A9B1DD00F4F982 /* TTApp.swift in Sources */,
 				F5D228BF29A9B24900F4F982 /* 🪧ValueLabel.swift in Sources */,
+				F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */,
 				F5D228C029A9B24900F4F982 /* 📱AppModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
