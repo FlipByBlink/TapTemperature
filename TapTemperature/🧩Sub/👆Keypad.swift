@@ -3,54 +3,56 @@ import SwiftUI
 struct 👆Keypad: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3),
-                  spacing: 32) {
+        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
             ForEach(1 ..< 13) { ⓘndex in
-                switch ⓘndex {
-                    case 1 ..< 10:
-                        Button {
-                            📱.🧩appendComponent(ⓘndex)
-                        } label: {
-                            Text(ⓘndex.description)
-                        }
-                        .tint(.primary)
-                        .disabled(self.ⓓisable(ⓘndex))
-                    case 10:
-                        Button {
-                            Task { await 📱.👆register() }
-                        } label: {
-                            Image(systemName: self.ⓡegisterButtonImage)
-                                .symbolVariant(📱.🧩components.count > 2 ? .fill : .none)
-                                .scaleEffect(📱.🧩components.count > 2 ? 1.15 : 1)
-                                .font(.system(size: 48))
-                        }
-                        .tint(.pink)
-                        .accessibilityLabel("DONE")
-                        .disabled(📱.🧩components.count < 3)
-                    case 11:
-                        Button {
-                            📱.🧩appendComponent(self.ⓩeroOrTen)
-                        } label: {
-                            Text(self.ⓩeroOrTen.description)
-                        }
-                        .tint(.primary)
-                        .disabled(self.ⓓisable(ⓘndex))
-                    case 12:
-                        Button {
-                            📱.🧩components.removeLast()
-                            UISelectionFeedbackGenerator().selectionChanged()
-                        } label: {
-                            Image(systemName: "delete.left")
-                                .scaleEffect(0.7)
-                        }
-                        .tint(.primary)
-                        .accessibilityLabel("Delete")
-                        .disabled(📱.🧩components.isEmpty)
-                    default:
-                        Text("🐛")
+                ZStack {
+                    Color.clear
+                    switch ⓘndex {
+                        case 1 ..< 10:
+                            Button {
+                                📱.🧩appendComponent(ⓘndex)
+                            } label: {
+                                Text(ⓘndex.description)
+                            }
+                            .tint(.primary)
+                            .disabled(self.ⓓisable(ⓘndex))
+                        case 10:
+                            Button {
+                                Task { await 📱.👆register() }
+                            } label: {
+                                Image(systemName: self.ⓡegisterButtonImage)
+                                    .symbolVariant(📱.🧩components.count > 2 ? .fill : .none)
+                                    .scaleEffect(📱.🧩components.count > 2 ? 1.15 : 1)
+                                    .font(.system(size: 48))
+                            }
+                            .tint(.pink)
+                            .accessibilityLabel("DONE")
+                            .disabled(📱.🧩components.count < 3)
+                        case 11:
+                            Button {
+                                📱.🧩appendComponent(self.ⓩeroOrTen)
+                            } label: {
+                                Text(self.ⓩeroOrTen.description)
+                            }
+                            .tint(.primary)
+                            .disabled(self.ⓓisable(ⓘndex))
+                        case 12:
+                            Button {
+                                📱.🧩components.removeLast()
+                                UISelectionFeedbackGenerator().selectionChanged()
+                            } label: {
+                                Image(systemName: "delete.left")
+                                    .scaleEffect(0.7)
+                            }
+                            .tint(.primary)
+                            .accessibilityLabel("Delete")
+                            .disabled(📱.🧩components.isEmpty)
+                        default:
+                            Text("🐛")
+                    }
                 }
             }
-            .font(.system(size: 48, weight: .medium, design: .rounded))
+            .font(.system(size: self.ⓕontSize, weight: .medium, design: .rounded))
         }
         .padding()
         .padding(.vertical)
@@ -128,5 +130,13 @@ struct 👆Keypad: View {
         } else {
             return 0
         }
+    }
+    private var ⓕontSize: CGFloat {
+#if os(iOS)
+        return 48
+#endif
+#if os(watchOS)
+        return 20
+#endif
     }
 }
