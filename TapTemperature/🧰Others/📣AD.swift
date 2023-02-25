@@ -6,6 +6,8 @@ struct 📣ADView: View {
     @Environment(\.scenePhase) var scenePhase
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @State private var 🚩disableDismiss: Bool = true
+    private let 🕒timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
+    @State private var 🕒countdown: Int = 9
     private var ⓐpp: 📣MyApp
     var body: some View {
         Group {
@@ -21,8 +23,10 @@ struct 📣ADView: View {
             if $0 == .background { 🛒.🚩showADSheet = false }
         }
         .interactiveDismissDisabled(self.🚩disableDismiss)
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+        .onReceive(self.🕒timer) { _ in
+            if self.🕒countdown > 1 {
+                self.🕒countdown -= 1
+            } else {
                 self.🚩disableDismiss = false
             }
         }
@@ -142,11 +146,16 @@ struct 📣ADView: View {
             🛒.🚩showADSheet = false
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
         } label: {
-            Image(systemName: "xmark.circle.fill")
+            HStack(spacing: 2) {
+                Image(systemName: "xmark.circle.fill")
+                Text(self.🕒countdown.description)
+                    .font(.subheadline.bold())
+                    .opacity(self.🚩disableDismiss ? 1 : 0)
+            }
         }
         .foregroundStyle(self.🚩disableDismiss ? .quaternary : .primary)
         .disabled(self.🚩disableDismiss)
-        .animation(.default.speed(0.5), value: self.🚩disableDismiss)
+        .animation(.default, value: self.🚩disableDismiss)
         .accessibilityLabel("Dismiss")
     }
     private struct ⓟurchasedEffect: ViewModifier {
