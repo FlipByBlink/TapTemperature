@@ -52,7 +52,7 @@ struct 🛠MenuContent: View {
                       systemImage: "checkmark.circle.trianglebadge.exclamationmark")
             }
         } footer: {
-            Text("Save 1 action.")
+            Text("Save 1 step.")
         }
     }
     private func ⓞpenHealthAppButton() -> some View {
