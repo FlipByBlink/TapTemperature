@@ -15,6 +15,7 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea(edges: .bottom)
         }
+        .ignoresSafeArea(edges: .bottom)
         .sheet(isPresented: $📱.🚩showResult) {
             📱.ⓡeset()
         } content: {

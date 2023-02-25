@@ -68,6 +68,7 @@ struct 👆Keypad: View {
             }
         }
         .font(.system(size: self.ⓕontSize, weight: .medium, design: .rounded))
+        .minimumScaleFactor(0.66)
     }
     private func ⓓisable(_ ⓘndex: Int) -> Bool {
         if 📱.🧩components.count == 3 && (📱.🚩secondDecimalPlaceOption == false) {
@@ -148,7 +149,7 @@ struct 👆Keypad: View {
         return 48
 #endif
 #if os(watchOS)
-        return 23
+        return 30
 #endif
     }
 }
