@@ -27,20 +27,33 @@ struct 🛠MenuContent: View {
             .onChange(of: 📱.🚩bbtOption) { _ in
                 Task { await 📱.🏥setUp(.basalBodyTemperature) }
             }
-            Toggle(isOn: $📱.🚩secondDecimalPlaceOption) {
-                Label(📱.📏unitOption == .℃ ? "36.1 ℃  →  36.12︭ ℃" : "100.1 ℉  →  100.12︭ ℉",
-                      systemImage: "character.cursor.ibeam")
-            }
-            .accessibilityLabel("Second decimal places mode")
-            Toggle(isOn: $📱.🚩autoCompleteOption) {
-                Label("Auto complete", systemImage: "checkmark.circle.trianglebadge.exclamationmark")
-            }
         } header: {
             Text("Option")
         }
+        self.ⓢecondDecimalPlaceToggle()
+        self.ⓐutoCompleteToggle()
         self.ⓞpenHealthAppButton()
         ℹ️AboutAppLink(name: "TapTemperature", subtitle: "App for iPhone")
         📣ADMenuLink()
+    }
+    private func ⓢecondDecimalPlaceToggle() -> some View {
+        Section {
+            Toggle(isOn: $📱.🚩secondDecimalPlaceOption) {
+                Label("Second decimal place mode", systemImage: "character.cursor.ibeam")
+            }
+        } footer: {
+            Text(📱.📏unitOption == .℃ ? "36.1 ℃  →  36.12︭ ℃" : "100.1 ℉  →  100.12︭ ℉")
+        }
+    }
+    private func ⓐutoCompleteToggle() -> some View {
+        Section {
+            Toggle(isOn: $📱.🚩autoCompleteOption) {
+                Label("Auto complete",
+                      systemImage: "checkmark.circle.trianglebadge.exclamationmark")
+            }
+        } footer: {
+            Text("Save 1 action.")
+        }
     }
     private func ⓞpenHealthAppButton() -> some View {
         Link (destination: URL(string: "x-apple-health://")!) {
