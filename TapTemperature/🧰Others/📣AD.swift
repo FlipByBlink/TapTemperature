@@ -146,11 +146,10 @@ struct 📣ADView: View {
             🛒.🚩showADSheet = false
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
         } label: {
-            HStack(spacing: 2) {
+            if self.🚩disableDismiss {
+                Image(systemName: "\(self.🕒countdown.description).circle")
+            } else {
                 Image(systemName: "xmark.circle.fill")
-                Text(self.🕒countdown.description)
-                    .font(.subheadline.bold())
-                    .opacity(self.🚩disableDismiss ? 1 : 0)
             }
         }
         .foregroundStyle(self.🚩disableDismiss ? .quaternary : .primary)
