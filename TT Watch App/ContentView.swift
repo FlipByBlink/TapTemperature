@@ -34,7 +34,7 @@ struct ContentView: View {
             print("Undo?")
         }
         .toolbar(.hidden, for: .automatic)
-        //Digital crown 押し込みでsheetを閉じれる
+        //Digital Crown 押し込みでsheetを閉じれる
     }
 }
 
@@ -43,7 +43,9 @@ struct ContentView: View {
 //TODO: ResultViewを適切に実装
 
 struct ContentView_Previews: PreviewProvider {
+    static let ⓜodel = 📱AppModel()
     static var previews: some View {
         ContentView()
+            .environmentObject(self.ⓜodel)
     }
 }

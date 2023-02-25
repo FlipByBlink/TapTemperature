@@ -8,7 +8,6 @@ struct 🪧ValueLabel: View {
                 Text("10").opacity(0)
                     .overlay(alignment: .trailing) {
                         Text(📱.🧩components[0].description)
-                            .minimumScaleFactor(0.1)
                     }
                     .lineLimit(1)
             } else {
@@ -55,8 +54,6 @@ struct 🪧ValueLabel: View {
             
             Text(📱.📏unitOption.rawValue)
                 .font(.system(size: self.ⓕontSize * 0.6, weight: .medium))
-                .minimumScaleFactor(0.1)
-                .scaledToFit()
         }
         .font(.system(size: self.ⓕontSize, weight: .bold))
         .monospacedDigit()
