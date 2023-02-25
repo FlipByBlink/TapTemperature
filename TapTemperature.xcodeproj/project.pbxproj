@@ -56,7 +56,7 @@
 		F5D228BF29A9B24900F4F982 /* 🪧ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
 		F5D228C029A9B24900F4F982 /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
 		F5D228C129A9B24900F4F982 /* 👆Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
-		F5FFCE4329AA2DA00035E638 /* TT Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F5D228B029A9B1DD00F4F982 /* TT Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F5FFCE4329AA2DA00035E638 /* TapTemperature.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F5D228B029A9B1DD00F4F982 /* TapTemperature.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +115,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				F5FFCE4329AA2DA00035E638 /* TT Watch App.app in Embed Watch Content */,
+				F5FFCE4329AA2DA00035E638 /* TapTemperature.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,7 +184,7 @@
 		F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️SyncDelegate.swift"; sourceTree = "<group>"; };
 		F5C7DE2029A9FE0900694AFD /* 🛏BasalSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛏BasalSwitchButton.swift"; sourceTree = "<group>"; };
 		F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💥Feedback.swift"; sourceTree = "<group>"; };
-		F5D228B029A9B1DD00F4F982 /* TT Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TT Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5D228B029A9B1DD00F4F982 /* TapTemperature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapTemperature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D228B229A9B1DD00F4F982 /* TTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTApp.swift; sourceTree = "<group>"; };
 		F5D228B429A9B1DD00F4F982 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F5D228B629A9B1DF00F4F982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				12E811B7283089D300B0A615 /* Temperature.app */,
-				F5D228B029A9B1DD00F4F982 /* TT Watch App.app */,
+				F5D228B029A9B1DD00F4F982 /* TapTemperature.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -374,7 +374,7 @@
 			);
 			name = "TT Watch App";
 			productName = "TT Watch App";
-			productReference = F5D228B029A9B1DD00F4F982 /* TT Watch App.app */;
+			productReference = F5D228B029A9B1DD00F4F982 /* TapTemperature.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -768,7 +768,6 @@
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = TT;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -779,7 +778,7 @@
 				);
 				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.TapTemperature.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TapTemperature;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -802,7 +801,6 @@
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = TT;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -813,7 +811,7 @@
 				);
 				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.TapTemperature.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TapTemperature;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

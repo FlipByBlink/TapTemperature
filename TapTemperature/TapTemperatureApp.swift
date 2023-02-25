@@ -10,6 +10,7 @@ struct TapTemperatureApp: App {
         WindowGroup {
             ContentView()
                 .modifier(📣ADSheet())
+                .modifier(🅂yncOptions())
                 .environmentObject(📱)
                 .environmentObject(🛒)
         }
