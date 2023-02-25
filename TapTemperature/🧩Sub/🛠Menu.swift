@@ -49,12 +49,13 @@ struct 🛠MenuContent: View {
                     Text("Open \"Health\" app")
                 } icon: {
                     Image(systemName: "app")
+                        .imageScale(.large)
                         .overlay {
                             Image(systemName: "heart")
-                                .scaleEffect(0.55)
-                                .font(.body.bold())
+                                .resizable()
+                                .font(.body.weight(.semibold))
+                                .scaleEffect(0.5)
                         }
-                        .imageScale(.large)
                 }
                 Spacer()
                 Image(systemName: "arrow.up.forward.app")

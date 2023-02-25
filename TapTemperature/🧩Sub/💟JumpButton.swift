@@ -5,12 +5,12 @@ struct 💟JumpButton: View {
         Link(destination: URL(string: "x-apple-health://")!) {
             Image(systemName: "app")
                 .imageScale(.large)
-                .padding(.vertical)
                 .overlay {
                     Image(systemName: "heart")
-                        .imageScale(.small)
+                        .resizable()
+                        .font(.body.weight(.semibold))
+                        .scaleEffect(0.5)
                 }
-                .scaleEffect(1.2)
         }
         .foregroundStyle(.primary)
         .accessibilityLabel("Open \"Health\" app")
