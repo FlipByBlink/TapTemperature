@@ -20,10 +20,22 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct TTWidgetEntryView : View {
+    @Environment(\.widgetFamily) var widgetFamily
     var body: some View {
-        Image(systemName: "medical.thermometer")
-            .font(.largeTitle)
-            .imageScale(.large)
+        switch widgetFamily {
+            case .accessoryCircular, .accessoryCorner:
+                ZStack {
+                    AccessoryWidgetBackground()
+                    Image(systemName: "medical.thermometer")
+                        .font(.largeTitle)
+                }
+                .widgetAccentable()
+            case .accessoryInline:
+                Label("Temperature", systemImage: "medical.thermometer")
+                    .widgetAccentable()
+            default:
+                Text("🐛")
+        }
     }
 }
 
@@ -35,8 +47,7 @@ struct TTWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { _ in
             TTWidgetEntryView()
         }
-        .configurationDisplayName("TapTemperature")
-        .description("Shortcut")
+        .configurationDisplayName("Shortcut")
         .supportedFamilies([.accessoryCircular,
                             .accessoryCorner,
                             .accessoryInline])
