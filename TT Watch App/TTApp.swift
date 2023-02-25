@@ -10,3 +10,5 @@ struct TT_Watch_App: App {
         }
     }
 }
+
+//TODO: ショートカット用ウィジェット実装

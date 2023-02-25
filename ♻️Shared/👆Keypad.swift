@@ -148,7 +148,7 @@ struct 👆Keypad: View {
         return 48
 #endif
 #if os(watchOS)
-        return 20
+        return 23
 #endif
     }
 }
