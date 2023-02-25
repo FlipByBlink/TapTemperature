@@ -39,7 +39,7 @@ struct 👆Keypad: View {
                         case 12:
                             Button {
                                 📱.🧩components.removeLast()
-                                UISelectionFeedbackGenerator().selectionChanged()
+                                💥Feedback.light()
                             } label: {
                                 Image(systemName: "delete.left")
                                     .scaleEffect(0.7)

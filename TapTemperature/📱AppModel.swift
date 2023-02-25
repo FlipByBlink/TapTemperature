@@ -47,7 +47,7 @@ class 📱AppModel: ObservableObject {
                 return
             }
         }
-        UISelectionFeedbackGenerator().selectionChanged()
+        💥Feedback.light()
     }
     
     private var 📦sampleCache: HKQuantitySample?
@@ -74,7 +74,7 @@ class 📱AppModel: ObservableObject {
             
             self.🚩registerSuccess = true
             self.🚩showResult = true
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
+            💥Feedback.success()
         } catch {
             DispatchQueue.main.async {
                 print(#function, error)
@@ -139,7 +139,7 @@ class 📱AppModel: ObservableObject {
                 self.🚩canceled = true
                 try await self.🏥healthStore.delete(📦)
                 self.📦sampleCache = nil
-                UINotificationFeedbackGenerator().notificationOccurred(.error)
+                💥Feedback.error()
             } catch {
                 DispatchQueue.main.async {
                     print(#function, error)

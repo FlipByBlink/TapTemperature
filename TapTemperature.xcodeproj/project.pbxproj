@@ -42,6 +42,7 @@
 		F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */; };
 		F58BC7F129A83BA6003DDAC1 /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
 		F58BC7F229A83E68003DDAC1 /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
+		F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -144,6 +145,7 @@
 		F597588328D94E8C002521F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F597588428D94E9B002521F8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		F597588528D94E9B002521F8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💥Feedback.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				124BC6B62843761300F75E1F /* README.md */,
+				F5D2289029A9A71900F4F982 /* ♻️Shared */,
 				12E811B9283089D300B0A615 /* TapTemperature */,
 				12E811B8283089D300B0A615 /* Products */,
 				12E811C928308A2100B0A615 /* Frameworks */,
@@ -246,6 +249,14 @@
 				F585A0C22942AADC00BA665C /* Configuration.storekit */,
 			);
 			path = "🧰Others";
+			sourceTree = "<group>";
+		};
+		F5D2289029A9A71900F4F982 /* ♻️Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */,
+			);
+			path = "♻️Shared";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +364,7 @@
 				F585A0C82942AADC00BA665C /* 📣AD.swift in Sources */,
 				125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */,
 				F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */,
+				F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */,
 				12E811BB283089D300B0A615 /* TapTemperatureApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
