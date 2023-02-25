@@ -6,17 +6,23 @@ struct 🗯ResultView: View {
     var body: some View {
         VStack {
             Spacer()
-            Image(systemName: "checkmark")
+            Image(systemName: 📱.🚩registerSuccess ? "checkmark" : "exclamationmark.triangle")
                 .font(.largeTitle.bold())
-            Text("DONE")
+            Text(📱.🚩registerSuccess ? "DONE!" : "Error!?")
                 .font(.title.bold())
+            if !📱.🚩registerSuccess {
+                Text("Please check permission on \"Health\" app")
+                    .font(.footnote)
+            }
             Spacer()
             if 📱.🚩bbtOption {
                 Text(📱.ⓣarget.isBT ? "Body temperature" : "Basal body temperature")
                     .font(.caption.weight(.semibold))
                     .minimumScaleFactor(0.66)
             }
-            Text(📱.🌡value.description + " " + 📱.📏unitOption.rawValue)
+            if 📱.🚩registerSuccess {
+                Text(📱.🌡value.description + " " + 📱.📏unitOption.rawValue)
+            }
             Spacer()
         }
         .opacity(📱.🚩canceled ? 0.25 : 1)
