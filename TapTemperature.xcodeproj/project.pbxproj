@@ -43,6 +43,8 @@
 		F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */; };
 		F58BC7F129A83BA6003DDAC1 /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
 		F58BC7F229A83E68003DDAC1 /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
+		F5C7DE2129A9FE0900694AFD /* 🛏BasalSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BasalSwitchButton.swift */; };
+		F5C7DE2229A9FE0900694AFD /* 🛏BasalSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BasalSwitchButton.swift */; };
 		F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
 		F5D228B329A9B1DD00F4F982 /* TTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D228B229A9B1DD00F4F982 /* TTApp.swift */; };
 		F5D228B529A9B1DD00F4F982 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D228B429A9B1DD00F4F982 /* ContentView.swift */; };
@@ -155,6 +157,7 @@
 		F597588328D94E8C002521F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F597588428D94E9B002521F8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		F597588528D94E9B002521F8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F5C7DE2029A9FE0900694AFD /* 🛏BasalSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛏BasalSwitchButton.swift"; sourceTree = "<group>"; };
 		F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💥Feedback.swift"; sourceTree = "<group>"; };
 		F5D228B029A9B1DD00F4F982 /* TT Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TT Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D228B229A9B1DD00F4F982 /* TTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTApp.swift; sourceTree = "<group>"; };
@@ -279,6 +282,7 @@
 				1281D252283E1C4300D59319 /* 📱AppModel.swift */,
 				12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */,
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
+				F5C7DE2029A9FE0900694AFD /* 🛏BasalSwitchButton.swift */,
 				F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */,
 			);
 			path = "♻️Shared";
@@ -442,6 +446,7 @@
 				F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */,
 				F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */,
 				12E811BB283089D300B0A615 /* TapTemperatureApp.swift in Sources */,
+				F5C7DE2129A9FE0900694AFD /* 🛏BasalSwitchButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +457,7 @@
 				F5D228B529A9B1DD00F4F982 /* ContentView.swift in Sources */,
 				F5D228BE29A9B24900F4F982 /* 💥Feedback.swift in Sources */,
 				F5D228C129A9B24900F4F982 /* 👆Keypad.swift in Sources */,
+				F5C7DE2229A9FE0900694AFD /* 🛏BasalSwitchButton.swift in Sources */,
 				F5D228B329A9B1DD00F4F982 /* TTApp.swift in Sources */,
 				F5D228BF29A9B24900F4F982 /* 🪧ValueLabel.swift in Sources */,
 				F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */,

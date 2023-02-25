@@ -7,7 +7,9 @@ struct ContentView: View {
             VStack(spacing: 0) {
                 HStack {
                     🪧ValueLabel()
+                    if 📱.🚩bbtOption { Spacer() }
                     🛏BasalSwitchButton()
+                        .buttonStyle(.plain)
                 }
                 .padding(.horizontal, 8)
                 Divider()
@@ -24,37 +26,6 @@ struct ContentView: View {
             📱.ⓡeset()
         } content: {
             🗯ResultView()
-        }
-    }
-}
-
-struct 🛏BasalSwitchButton: View {
-    @EnvironmentObject var 📱: 📱AppModel
-    var body: some View {
-        if !📱.🚩bbtOption {
-            Spacer()
-            Button {
-                📱.🛏bbtSwitch.toggle()
-                💥Feedback.light()
-            } label: {
-                Image(systemName: "bed.double")
-                    .foregroundStyle(📱.🛏bbtSwitch ? .primary : .quaternary)
-                    .overlay {
-                        if 📱.🛏bbtSwitch == false {
-                            Image(systemName: "xmark")
-                                .scaleEffect(1.2)
-                        }
-                    }
-                    .tint(.primary)
-            }
-            .accessibilityLabel("Switch type")
-            .onChange(of: 📱.🛏bbtSwitch) { _ in
-                📱.🏥loadPreferredUnit()
-            }
-            .onChange(of: 📱.📏unitOption) { _ in
-                📱.🧩resetComponents()
-            }
-            .buttonStyle(.plain)
         }
     }
 }
