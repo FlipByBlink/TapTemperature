@@ -66,7 +66,7 @@ struct 🪧ValueLabel: View {
         return 64
 #endif
 #if os(watchOS)
-        return 18
+        return 22
 #endif
     }
 }

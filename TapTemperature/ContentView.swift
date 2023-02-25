@@ -21,8 +21,9 @@ struct ContentView: View {
             Spacer()
             Divider()
             👆Keypad()
-                .padding()
-                .padding(.vertical)
+                .padding(.horizontal)
+                .padding(.vertical, 8)
+                .frame(height: 400)
         }
         .navigationTitle(📱.🛏bbtInputMode ? "BBT" : "Body temperature")
         .toolbar {

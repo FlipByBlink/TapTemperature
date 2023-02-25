@@ -3,57 +3,71 @@ import SwiftUI
 struct 👆Keypad: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
-            ForEach(1 ..< 13) { ⓘndex in
-                ZStack {
-                    Color.clear
-                    switch ⓘndex {
-                        case 1 ..< 10:
-                            Button {
-                                📱.🧩appendComponent(ⓘndex)
-                            } label: {
-                                Text(ⓘndex.description)
-                            }
-                            .tint(.primary)
-                            .disabled(self.ⓓisable(ⓘndex))
-                        case 10:
-                            Button {
-                                Task { await 📱.👆register() }
-                            } label: {
-                                Image(systemName: self.ⓡegisterButtonImage)
-                                    .symbolVariant(📱.🧩components.count > 2 ? .fill : .none)
-                                    .scaleEffect(📱.🧩components.count > 2 ? 1.15 : 1)
-                                    .font(.system(size: self.ⓕontSize))
-                            }
-                            .tint(.pink)
-                            .accessibilityLabel("DONE")
-                            .disabled(📱.🧩components.count < 3)
-                        case 11:
-                            Button {
-                                📱.🧩appendComponent(self.ⓩeroOrTen)
-                            } label: {
-                                Text(self.ⓩeroOrTen.description)
-                            }
-                            .tint(.primary)
-                            .disabled(self.ⓓisable(ⓘndex))
-                        case 12:
-                            Button {
-                                📱.🧩components.removeLast()
-                                💥Feedback.light()
-                            } label: {
-                                Image(systemName: "delete.left")
-                                    .scaleEffect(0.7)
-                            }
-                            .tint(.primary)
-                            .accessibilityLabel("Delete")
-                            .disabled(📱.🧩components.isEmpty)
-                        default:
-                            Text("🐛")
+        VStack(spacing: 0) {
+            ForEach(0 ..< 4) { ⓡow in
+                HStack(spacing: 0) {
+                    ForEach(0 ..< 3) { ⓒolumn in
+                        let ⓘndex: Int = ⓡow * 3 + ⓒolumn + 1
+                        switch ⓘndex {
+                            case 1 ..< 10:
+                                Button {
+                                    📱.🧩appendComponent(ⓘndex)
+                                } label: {
+                                    ZStack {
+                                        Color.clear
+                                        Text(ⓘndex.description)
+                                    }
+                                }
+                                .tint(.primary)
+                                .disabled(self.ⓓisable(ⓘndex))
+                            case 10:
+                                Button {
+                                    Task { await 📱.👆register() }
+                                } label: {
+                                    ZStack {
+                                        Color.clear
+                                        Image(systemName: self.ⓡegisterButtonImage)
+                                            .symbolVariant(📱.🧩components.count > 2 ? .fill : .none)
+                                            .scaleEffect(📱.🧩components.count > 2 ? 1.15 : 1)
+                                            .font(.system(size: self.ⓕontSize))
+                                    }
+                                }
+                                .tint(.pink)
+                                .accessibilityLabel("DONE")
+                                .disabled(📱.🧩components.count < 3)
+                            case 11:
+                                Button {
+                                    📱.🧩appendComponent(self.ⓩeroOrTen)
+                                } label: {
+                                    ZStack {
+                                        Color.clear
+                                        Text(self.ⓩeroOrTen.description)
+                                    }
+                                }
+                                .tint(.primary)
+                                .disabled(self.ⓓisable(ⓘndex))
+                            case 12:
+                                Button {
+                                    📱.🧩components.removeLast()
+                                    💥Feedback.light()
+                                } label: {
+                                    ZStack {
+                                        Color.clear
+                                        Image(systemName: "delete.left")
+                                            .scaleEffect(0.7)
+                                    }
+                                }
+                                .tint(.primary)
+                                .accessibilityLabel("Delete")
+                                .disabled(📱.🧩components.isEmpty)
+                            default:
+                                Text("🐛")
+                        }
                     }
                 }
             }
-            .font(.system(size: self.ⓕontSize, weight: .medium, design: .rounded))
         }
+        .font(.system(size: self.ⓕontSize, weight: .medium, design: .rounded))
     }
     private func ⓓisable(_ ⓘndex: Int) -> Bool {
         if 📱.🧩components.count == 3 && (📱.🚩secondDecimalPlaceOption == false) {

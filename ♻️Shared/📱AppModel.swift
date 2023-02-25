@@ -105,10 +105,13 @@ class 📱AppModel: ObservableObject {
             let ⓣype = HKQuantityType(self.🛏bbtInputMode ? .basalBodyTemperature : .bodyTemperature)
             let ⓤnits = try await self.🏥healthStore.preferredUnits(for: [ⓣype])
             if let ⓤnit = ⓤnits[ⓣype] {
-                switch ⓤnit {
-                    case .degreeCelsius(): self.📏unitOption = .℃
-                    case .degreeFahrenheit(): self.📏unitOption = .℉
-                    default: assertionFailure()
+                if ⓤnit != self.📏unitOption.hkUnit {
+                    switch ⓤnit {
+                        case .degreeCelsius(): self.📏unitOption = .℃
+                        case .degreeFahrenheit(): self.📏unitOption = .℉
+                        default: assertionFailure()
+                    }
+                    self.🧩resetComponents()
                 }
             } else {
                 assertionFailure()
