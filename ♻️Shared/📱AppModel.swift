@@ -4,9 +4,9 @@ import HealthKit
 class 📱AppModel: ObservableObject {
     private let 🏥healthStore = HKHealthStore()
     
-    @AppStorage("BasalTemp") var 🚩bbtOption: Bool = false
-    @AppStorage("2DecimalPlace") var 🚩secondDecimalPlaceOption: Bool = false
-    @AppStorage("AutoComplete") var 🚩autoCompleteOption: Bool = false
+    @AppStorage(🔑BasalBodyTemperature) var 🚩bbtOption: Bool = false
+    @AppStorage(🔑SecondDecimalPlace) var 🚩secondDecimalPlaceOption: Bool = false
+    @AppStorage(🔑AutoComplete) var 🚩autoCompleteOption: Bool = false
     
     @Published var 📏unitOption: 📏DegreeUnit = .℃
     
@@ -186,3 +186,8 @@ enum 📏DegreeUnit: String, CaseIterable, Identifiable {
         }
     }
 }
+
+// Key for data.
+let 🔑BasalBodyTemperature = "BasalTemp"
+let 🔑SecondDecimalPlace = "2DecimalPlace"
+let 🔑AutoComplete = "AutoComplete"

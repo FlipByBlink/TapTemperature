@@ -3,8 +3,7 @@ import SwiftUI
 struct 🛠MenuButton: View {
     var body: some View {
         NavigationLink {
-            List { 🛠MenuContent() }
-                .navigationTitle("Menu")
+            🛠MenuContent()
         } label: {
             Label("Open menu", systemImage: "gearshape")
         }
@@ -15,21 +14,25 @@ struct 🛠MenuButton: View {
 struct 🛠MenuContent: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        Section {
-            Toggle(isOn: $📱.🚩bbtOption) {
-                Label("Basal body temperature", systemImage: "bed.double")
+        List {
+            Section {
+                Toggle(isOn: $📱.🚩bbtOption) {
+                    Label("Basal body temperature", systemImage: "bed.double")
+                }
+                .onChange(of: 📱.🚩bbtOption) { _ in
+                    Task { await 📱.🏥setUp(.basalBodyTemperature) }
+                }
+            } header: {
+                Text("Option")
             }
-            .onChange(of: 📱.🚩bbtOption) { _ in
-                Task { await 📱.🏥setUp(.basalBodyTemperature) }
-            }
-        } header: {
-            Text("Option")
+            self.ⓢecondDecimalPlaceToggle()
+            self.ⓐutoCompleteToggle()
+            self.ⓞpenHealthAppButton()
+            ℹ️AboutAppLink(name: "TapTemperature", subtitle: "App for iPhone")
+            📣ADMenuLink()
         }
-        self.ⓢecondDecimalPlaceToggle()
-        self.ⓐutoCompleteToggle()
-        self.ⓞpenHealthAppButton()
-        ℹ️AboutAppLink(name: "TapTemperature", subtitle: "App for iPhone")
-        📣ADMenuLink()
+        .navigationTitle("Menu")
+        .modifier(Self.🅂yncOptions())
     }
     private func ⓢecondDecimalPlaceToggle() -> some View {
         Section {
@@ -69,6 +72,16 @@ struct 🛠MenuContent: View {
                 Image(systemName: "arrow.up.forward.app")
                     .foregroundStyle(.secondary)
             }
+        }
+    }
+    private struct 🅂yncOptions: ViewModifier {
+        @EnvironmentObject var ⓓelegate: 🅂yncDelegate
+        @EnvironmentObject var 📱: 📱AppModel
+        func body(content: Content) -> some View {
+            content
+                .onChange(of: 📱.🚩bbtOption) { _ in ⓓelegate.ⓢync() }
+                .onChange(of: 📱.🚩secondDecimalPlaceOption) { _ in ⓓelegate.ⓢync() }
+                .onChange(of: 📱.🚩autoCompleteOption) { _ in ⓓelegate.ⓢync() }
         }
     }
 }
