@@ -7,7 +7,7 @@ struct 📣ADView: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @State private var 🚩disableDismiss: Bool = true
     private let 🕒timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
-    @State private var 🕒countdown: Int = 9
+    @State private var 🕒countdown: Int = 7
     private var ⓐpp: 📣MyApp
     var body: some View {
         Group {
