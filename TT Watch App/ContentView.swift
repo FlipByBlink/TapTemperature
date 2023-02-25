@@ -5,13 +5,17 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                🪧ValueLabel()
+                HStack {
+                    🪧ValueLabel()
+                    🛏BasalSwitchButton()
+                }
+                .padding(.horizontal, 8)
                 Divider()
                     .padding(.vertical, 6)
                 👆Keypad()
                     .buttonStyle(.plain)
             }
-            .navigationTitle("Temperature")
+            .navigationTitle(📱.ⓣarget.isBT ? "Temperature" : "BBT")
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea(edges: .bottom)
         }
@@ -24,9 +28,36 @@ struct ContentView: View {
     }
 }
 
-//TODO: BT/BBT切り替え機能 実装
-//TODO: Undo機能 実装
-//TODO: ResultViewを適切に実装
+struct 🛏BasalSwitchButton: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    var body: some View {
+        if !📱.🚩bbtOption {
+            Spacer()
+            Button {
+                📱.🛏bbtSwitch.toggle()
+                💥Feedback.light()
+            } label: {
+                Image(systemName: "bed.double")
+                    .foregroundStyle(📱.🛏bbtSwitch ? .primary : .quaternary)
+                    .overlay {
+                        if 📱.🛏bbtSwitch == false {
+                            Image(systemName: "xmark")
+                                .scaleEffect(1.2)
+                        }
+                    }
+                    .tint(.primary)
+            }
+            .accessibilityLabel("Switch type")
+            .onChange(of: 📱.🛏bbtSwitch) { _ in
+                📱.🏥loadPreferredUnit()
+            }
+            .onChange(of: 📱.📏unitOption) { _ in
+                📱.🧩resetComponents()
+            }
+            .buttonStyle(.plain)
+        }
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static let ⓜodel = 📱AppModel()

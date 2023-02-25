@@ -38,7 +38,7 @@ struct 🗯ResultView: View {
             }
         }
         .onTapGesture {
-            if !📱.🚩canceled {
+            if !📱.🚩canceled || !📱.🚩registerSuccess {
                 self.ⓢhowUndoAlert = true
             }
         }
