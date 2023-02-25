@@ -43,6 +43,14 @@
 		F58BC7F129A83BA6003DDAC1 /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
 		F58BC7F229A83E68003DDAC1 /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
 		F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
+		F5D228B329A9B1DD00F4F982 /* TTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D228B229A9B1DD00F4F982 /* TTApp.swift */; };
+		F5D228B529A9B1DD00F4F982 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D228B429A9B1DD00F4F982 /* ContentView.swift */; };
+		F5D228B729A9B1DF00F4F982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5D228B629A9B1DF00F4F982 /* Assets.xcassets */; };
+		F5D228BA29A9B1DF00F4F982 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5D228B929A9B1DF00F4F982 /* Preview Assets.xcassets */; };
+		F5D228BE29A9B24900F4F982 /* 💥Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
+		F5D228BF29A9B24900F4F982 /* 🪧ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
+		F5D228C029A9B24900F4F982 /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
+		F5D228C129A9B24900F4F982 /* 👆Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -146,6 +154,12 @@
 		F597588428D94E9B002521F8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		F597588528D94E9B002521F8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💥Feedback.swift"; sourceTree = "<group>"; };
+		F5D228B029A9B1DD00F4F982 /* TT Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TT Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5D228B229A9B1DD00F4F982 /* TTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTApp.swift; sourceTree = "<group>"; };
+		F5D228B429A9B1DD00F4F982 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F5D228B629A9B1DF00F4F982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5D228B929A9B1DF00F4F982 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5D228C229A9B25B00F4F982 /* TT Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TT Watch App.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +169,13 @@
 			files = (
 				12E811CB28308A2100B0A615 /* HealthKit.framework in Frameworks */,
 				1256A326286AD550002AF08A /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5D228AD29A9B1DD00F4F982 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +213,7 @@
 				124BC6B62843761300F75E1F /* README.md */,
 				F5D2289029A9A71900F4F982 /* ♻️Shared */,
 				12E811B9283089D300B0A615 /* TapTemperature */,
+				F5D228B129A9B1DD00F4F982 /* TT Watch App */,
 				12E811B8283089D300B0A615 /* Products */,
 				12E811C928308A2100B0A615 /* Frameworks */,
 			);
@@ -201,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				12E811B7283089D300B0A615 /* Temperature.app */,
+				F5D228B029A9B1DD00F4F982 /* TT Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +282,26 @@
 			path = "♻️Shared";
 			sourceTree = "<group>";
 		};
+		F5D228B129A9B1DD00F4F982 /* TT Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				F5D228B229A9B1DD00F4F982 /* TTApp.swift */,
+				F5D228B429A9B1DD00F4F982 /* ContentView.swift */,
+				F5D228B629A9B1DF00F4F982 /* Assets.xcassets */,
+				F5D228C229A9B25B00F4F982 /* TT Watch App.entitlements */,
+				F5D228B829A9B1DF00F4F982 /* Preview Content */,
+			);
+			path = "TT Watch App";
+			sourceTree = "<group>";
+		};
+		F5D228B829A9B1DF00F4F982 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F5D228B929A9B1DF00F4F982 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,6 +325,23 @@
 			productReference = 12E811B7283089D300B0A615 /* Temperature.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F5D228AF29A9B1DD00F4F982 /* TT Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5D228BB29A9B1DF00F4F982 /* Build configuration list for PBXNativeTarget "TT Watch App" */;
+			buildPhases = (
+				F5D228AC29A9B1DD00F4F982 /* Sources */,
+				F5D228AD29A9B1DD00F4F982 /* Frameworks */,
+				F5D228AE29A9B1DD00F4F982 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TT Watch App";
+			productName = "TT Watch App";
+			productReference = F5D228B029A9B1DD00F4F982 /* TT Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -289,11 +349,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					12E811B6283089D300B0A615 = {
 						CreatedOnToolsVersion = 13.3;
+					};
+					F5D228AF29A9B1DD00F4F982 = {
+						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
@@ -325,6 +388,7 @@
 			projectRoot = "";
 			targets = (
 				12E811B6283089D300B0A615 /* TapTemperature */,
+				F5D228AF29A9B1DD00F4F982 /* TT Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -342,6 +406,15 @@
 				12E811BF283089D400B0A615 /* Assets.xcassets in Resources */,
 				F585A0C92942AADC00BA665C /* Launch Screen.storyboard in Resources */,
 				F585A0CD2942B02E00BA665C /* 🌏AppStoreDescription.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5D228AE29A9B1DD00F4F982 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5D228BA29A9B1DF00F4F982 /* Preview Assets.xcassets in Resources */,
+				F5D228B729A9B1DF00F4F982 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +439,19 @@
 				F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */,
 				F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */,
 				12E811BB283089D300B0A615 /* TapTemperatureApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5D228AC29A9B1DD00F4F982 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5D228B529A9B1DD00F4F982 /* ContentView.swift in Sources */,
+				F5D228BE29A9B24900F4F982 /* 💥Feedback.swift in Sources */,
+				F5D228C129A9B24900F4F982 /* 👆Keypad.swift in Sources */,
+				F5D228B329A9B1DD00F4F982 /* TTApp.swift in Sources */,
+				F5D228BF29A9B24900F4F982 /* 🪧ValueLabel.swift in Sources */,
+				F5D228C029A9B24900F4F982 /* 📱AppModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +707,74 @@
 			};
 			name = Release;
 		};
+		F5D228BC29A9B1DF00F4F982 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "TT Watch App/TT Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TT Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 6696GEY228;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TT;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please activate HeakthKit permission to record data.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please activate HeakthKit permission to record data.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = net.aaaakkkkssssttttnnnn.TapTemperature;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.TapTemperature.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		F5D228BD29A9B1DF00F4F982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "TT Watch App/TT Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TT Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 6696GEY228;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TT;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please activate HeakthKit permission to record data.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please activate HeakthKit permission to record data.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = net.aaaakkkkssssttttnnnn.TapTemperature;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.TapTemperature.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -638,6 +792,15 @@
 			buildConfigurations = (
 				12E811C6283089D400B0A615 /* Debug */,
 				12E811C7283089D400B0A615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5D228BB29A9B1DF00F4F982 /* Build configuration list for PBXNativeTarget "TT Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5D228BC29A9B1DF00F4F982 /* Debug */,
+				F5D228BD29A9B1DF00F4F982 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
