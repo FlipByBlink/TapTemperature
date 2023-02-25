@@ -11,7 +11,10 @@ class 📱AppModel: ObservableObject {
     @Published var 📏unitOption: 📏DegreeUnit = .℃
     
     @Published var 🛏bbtSwitch: Bool = true
-    var 🛏bbtInputMode: Bool { self.🚩bbtOption && self.🛏bbtSwitch }
+    
+    var ⓣarget: 🅃arget {
+        self.🚩bbtOption && self.🛏bbtSwitch ? .basalBodyTemperature : .bodyTemperature
+    }
     
     @Published var 🚩showResult: Bool = false
     @Published var 🚩registerSuccess: Bool = false
@@ -55,15 +58,13 @@ class 📱AppModel: ObservableObject {
     @MainActor
     func 👆register() async {
         do {
-            let ⓣype = HKQuantityType(self.🛏bbtInputMode ? .basalBodyTemperature : .bodyTemperature)
-            
-            if self.🏥healthStore.authorizationStatus(for: ⓣype) == .sharingDenied {
+            if self.🏥healthStore.authorizationStatus(for: self.ⓣarget.quantityType) == .sharingDenied {
                 self.🚩registerSuccess = false
                 self.🚩showResult = true
                 return
             }
             
-            let 📦sample = HKQuantitySample(type: ⓣype,
+            let 📦sample = HKQuantitySample(type: self.ⓣarget.quantityType,
                                             quantity: HKQuantity(unit: self.📏unitOption.hkUnit,
                                                                  doubleValue: self.🌡value),
                                             start: .now,
@@ -90,10 +91,10 @@ class 📱AppModel: ObservableObject {
     }
     
     private func 🏥requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async {
-        let ⓣype: HKSampleType = HKQuantityType(ⓘdentifier)
-        if self.🏥healthStore.authorizationStatus(for: ⓣype) == .notDetermined {
+        if self.🏥healthStore.authorizationStatus(for: self.ⓣarget.quantityType) == .notDetermined {
             do {
-                try await self.🏥healthStore.requestAuthorization(toShare: [ⓣype], read: [])
+                try await self.🏥healthStore.requestAuthorization(toShare: [self.ⓣarget.quantityType],
+                                                                  read: [])
             } catch {
                 print(#function, error)
             }
@@ -102,9 +103,8 @@ class 📱AppModel: ObservableObject {
     
     func 🏥loadPreferredUnit() {
         Task { @MainActor in
-            let ⓣype = HKQuantityType(self.🛏bbtInputMode ? .basalBodyTemperature : .bodyTemperature)
-            let ⓤnits = try await self.🏥healthStore.preferredUnits(for: [ⓣype])
-            if let ⓤnit = ⓤnits[ⓣype] {
+            let ⓤnits = try await self.🏥healthStore.preferredUnits(for: [self.ⓣarget.quantityType])
+            if let ⓤnit = ⓤnits[self.ⓣarget.quantityType] {
                 if ⓤnit != self.📏unitOption.hkUnit {
                     switch ⓤnit {
                         case .degreeCelsius(): self.📏unitOption = .℃
@@ -165,6 +165,14 @@ class 📱AppModel: ObservableObject {
             await self.🏥setUp(.bodyTemperature)
             self.🏥observePreferredUnits()
         }
+    }
+}
+
+enum 🅃arget {
+    case bodyTemperature, basalBodyTemperature
+    var isBT: Bool { self == .bodyTemperature }
+    var quantityType: HKQuantityType {
+        HKQuantityType(self.isBT ? .bodyTemperature : .basalBodyTemperature)
     }
 }
 
