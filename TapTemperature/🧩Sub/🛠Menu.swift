@@ -16,11 +16,6 @@ struct 🛠MenuContent: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
         Section {
-            //Picker(selection: $📱.📏unitOption) {
-            //    ForEach(📏DegreeUnit.allCases) { Text($0.rawValue) }
-            //} label: {
-            //    Label("Unit", systemImage: "ruler")
-            //}
             Toggle(isOn: $📱.🚩bbtOption) {
                 Label("Basal body temperature", systemImage: "bed.double")
             }
@@ -77,3 +72,9 @@ struct 🛠MenuContent: View {
         }
     }
 }
+
+//Picker(selection: $📱.📏unitOption) {
+//    ForEach(📏DegreeUnit.allCases) { Text($0.rawValue) }
+//} label: {
+//    Label("Unit", systemImage: "ruler")
+//}
