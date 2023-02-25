@@ -164,8 +164,6 @@
 		1288ADE2286ACDDB002F5511 /* 🧩Sub */ = {
 			isa = PBXGroup;
 			children = (
-				12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */,
-				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
 				125A9BEC283B441D00C54634 /* 🗯ResultView.swift */,
 				1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */,
 				1256A33B286B1547002AF08A /* 🛠Menu.swift */,
@@ -212,7 +210,6 @@
 			children = (
 				12E811BA283089D300B0A615 /* TapTemperatureApp.swift */,
 				12E811BC283089D300B0A615 /* ContentView.swift */,
-				1281D252283E1C4300D59319 /* 📱AppModel.swift */,
 				1288ADE2286ACDDB002F5511 /* 🧩Sub */,
 				F585A0C02942AADC00BA665C /* 🧰Others */,
 				1288ADE4286ACE01002F5511 /* 🌏Localization */,
@@ -254,6 +251,9 @@
 		F5D2289029A9A71900F4F982 /* ♻️Shared */ = {
 			isa = PBXGroup;
 			children = (
+				1281D252283E1C4300D59319 /* 📱AppModel.swift */,
+				12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */,
+				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
 				F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */,
 			);
 			path = "♻️Shared";

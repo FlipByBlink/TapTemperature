@@ -54,11 +54,19 @@ struct 🪧ValueLabel: View {
             }
             
             Text(📱.📏unitOption.rawValue)
-                .font(.system(size: 36, weight: .medium))
+                .font(.system(size: self.ⓕontSize * 0.6, weight: .medium))
                 .minimumScaleFactor(0.1)
                 .scaledToFit()
         }
-        .font(.system(size: 64, weight: .bold))
+        .font(.system(size: self.ⓕontSize, weight: .bold))
         .monospacedDigit()
+    }
+    private var ⓕontSize: CGFloat {
+#if os(iOS)
+        return 64
+#endif
+#if os(watchOS)
+        return 18
+#endif
     }
 }

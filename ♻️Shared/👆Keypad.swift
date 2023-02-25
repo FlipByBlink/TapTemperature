@@ -23,7 +23,7 @@ struct 👆Keypad: View {
                                 Image(systemName: self.ⓡegisterButtonImage)
                                     .symbolVariant(📱.🧩components.count > 2 ? .fill : .none)
                                     .scaleEffect(📱.🧩components.count > 2 ? 1.15 : 1)
-                                    .font(.system(size: 48))
+                                    .font(.system(size: self.ⓕontSize))
                             }
                             .tint(.pink)
                             .accessibilityLabel("DONE")
@@ -54,8 +54,6 @@ struct 👆Keypad: View {
             }
             .font(.system(size: self.ⓕontSize, weight: .medium, design: .rounded))
         }
-        .padding()
-        .padding(.vertical)
     }
     private func ⓓisable(_ ⓘndex: Int) -> Bool {
         if 📱.🧩components.count == 3 && (📱.🚩secondDecimalPlaceOption == false) {
