@@ -72,7 +72,7 @@ struct 🗯ResultView: View {
                         .imageScale(.small)
                         .font(.largeTitle)
                 }
-                💟JumpButton()
+                💟OpenHealthAppButton()
             }
             ToolbarItemGroup(placement: .bottomBar) {
                 if 📱.🚩registerSuccess { 🗑CancelButton() }

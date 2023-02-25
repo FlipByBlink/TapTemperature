@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 💟JumpButton: View {
+struct 💟OpenHealthAppButton: View {
     var body: some View {
         Link(destination: URL(string: "x-apple-health://")!) {
             Image(systemName: "app")

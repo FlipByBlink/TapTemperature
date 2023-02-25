@@ -14,7 +14,7 @@ struct ContentView: View {
     private func ⓒontent() -> some View {
         VStack {
             Spacer()
-            🪧TemperatureLabel()
+            🪧ValueLabel()
                 .padding(.horizontal)
                 .padding(.trailing)
                 .padding(.bottom)
@@ -26,7 +26,7 @@ struct ContentView: View {
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 🛏BasalSwitchButton()
-                💟JumpButton()
+                💟OpenHealthAppButton()
                 🛠MenuButton()
             }
         }

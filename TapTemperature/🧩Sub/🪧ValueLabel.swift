@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 🪧TemperatureLabel: View {
+struct 🪧ValueLabel: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
         HStack(alignment: .firstTextBaseline) {

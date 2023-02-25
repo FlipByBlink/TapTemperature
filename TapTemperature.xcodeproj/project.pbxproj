@@ -11,18 +11,18 @@
 		124BC6A8284333E100F75E1F /* TapTemperatureApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* TapTemperatureApp.swift */; };
 		124BC6A9284333E100F75E1F /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BC283089D300B0A615 /* ContentView.swift */; };
 		124BC6AA284333E100F75E1F /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
-		124BC6B128433C4F00F75E1F /* 🪧TemperatureLabel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧TemperatureLabel.swift */; };
+		124BC6B128433C4F00F75E1F /* 🪧ValueLabel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
 		124BC6B228433C4F00F75E1F /* 👆Keypad.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
 		124BC6B328433C4F00F75E1F /* 🗯ResultView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
 		124BC6BA28437B9000F75E1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
 		1256A326286AD550002AF08A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1256A325286AD550002AF08A /* StoreKit.framework */; };
-		1256A328286AD8FE002AF08A /* 💟JumpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟JumpButton.swift */; };
-		1256A32D286ADEF5002AF08A /* 💟JumpButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟JumpButton.swift */; };
+		1256A328286AD8FE002AF08A /* 💟OpenHealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */; };
+		1256A32D286ADEF5002AF08A /* 💟OpenHealthAppButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */; };
 		1256A33C286B1547002AF08A /* 🛠Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠Menu.swift */; };
 		1256A33D286B16E1002AF08A /* 🛠Menu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠Menu.swift */; };
 		125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
 		1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
-		12ADECF8283F7C1500431224 /* 🪧TemperatureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧TemperatureLabel.swift */; };
+		12ADECF8283F7C1500431224 /* 🪧ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
 		12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
 		12E811BB283089D300B0A615 /* TapTemperatureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* TapTemperatureApp.swift */; };
 		12E811BD283089D300B0A615 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E811BC283089D300B0A615 /* ContentView.swift */; };
@@ -65,8 +65,8 @@
 			files = (
 				F58BC7F229A83E68003DDAC1 /* 📣ADSheet.swift in CopyFiles */,
 				1256A33D286B16E1002AF08A /* 🛠Menu.swift in CopyFiles */,
-				1256A32D286ADEF5002AF08A /* 💟JumpButton.swift in CopyFiles */,
-				124BC6B128433C4F00F75E1F /* 🪧TemperatureLabel.swift in CopyFiles */,
+				1256A32D286ADEF5002AF08A /* 💟OpenHealthAppButton.swift in CopyFiles */,
+				124BC6B128433C4F00F75E1F /* 🪧ValueLabel.swift in CopyFiles */,
 				124BC6B228433C4F00F75E1F /* 👆Keypad.swift in CopyFiles */,
 				124BC6B328433C4F00F75E1F /* 🗯ResultView.swift in CopyFiles */,
 			);
@@ -94,11 +94,11 @@
 		124BC6BB28437B9000F75E1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		124BC6BD28438EE200F75E1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1256A325286AD550002AF08A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		1256A327286AD8FE002AF08A /* 💟JumpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💟JumpButton.swift"; sourceTree = "<group>"; };
+		1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💟OpenHealthAppButton.swift"; sourceTree = "<group>"; };
 		1256A33B286B1547002AF08A /* 🛠Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠Menu.swift"; sourceTree = "<group>"; };
 		125A9BEC283B441D00C54634 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
 		1281D252283E1C4300D59319 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
-		12ADECF7283F7C1500431224 /* 🪧TemperatureLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧TemperatureLabel.swift"; sourceTree = "<group>"; };
+		12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧ValueLabel.swift"; sourceTree = "<group>"; };
 		12ADECF9283F7CC700431224 /* 👆Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "👆Keypad.swift"; sourceTree = "<group>"; };
 		12E811B7283089D300B0A615 /* Temperature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Temperature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E811BA283089D300B0A615 /* TapTemperatureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTemperatureApp.swift; sourceTree = "<group>"; };
@@ -162,10 +162,10 @@
 		1288ADE2286ACDDB002F5511 /* 🧩Sub */ = {
 			isa = PBXGroup;
 			children = (
-				12ADECF7283F7C1500431224 /* 🪧TemperatureLabel.swift */,
+				12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */,
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
 				125A9BEC283B441D00C54634 /* 🗯ResultView.swift */,
-				1256A327286AD8FE002AF08A /* 💟JumpButton.swift */,
+				1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */,
 				1256A33B286B1547002AF08A /* 🛠Menu.swift */,
 				F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */,
 				123690192844F1BD006F22EE /* Info.plist */,
@@ -345,9 +345,9 @@
 				1256A33C286B1547002AF08A /* 🛠Menu.swift in Sources */,
 				F585A0C62942AADC00BA665C /* ℹ️AboutAppMenu.swift in Sources */,
 				1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */,
-				1256A328286AD8FE002AF08A /* 💟JumpButton.swift in Sources */,
+				1256A328286AD8FE002AF08A /* 💟OpenHealthAppButton.swift in Sources */,
 				F585A0CA2942AADC00BA665C /* 🛒InAppPurchase.swift in Sources */,
-				12ADECF8283F7C1500431224 /* 🪧TemperatureLabel.swift in Sources */,
+				12ADECF8283F7C1500431224 /* 🪧ValueLabel.swift in Sources */,
 				12E811BD283089D300B0A615 /* ContentView.swift in Sources */,
 				12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */,
 				F585A0C82942AADC00BA665C /* 📣AD.swift in Sources */,
