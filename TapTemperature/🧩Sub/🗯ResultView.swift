@@ -88,7 +88,6 @@ struct 🗯ResultView: View {
         } label: {
             Label("Dismiss", systemImage: "xmark.circle")
                 .foregroundColor(.primary)
-                .imageScale(.large)
         }
     }
 }
@@ -100,7 +99,6 @@ struct 🗑CancelButton: View {
             📱.🗑cancel()
         } label: {
             Image(systemName: "arrow.uturn.backward.circle")
-                .imageScale(.large)
                 .foregroundColor(.primary)
                 .font(.title3)
         }
