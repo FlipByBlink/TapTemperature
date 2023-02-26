@@ -370,7 +370,7 @@ struct 🧑‍💻AboutDeveloperPublisherLink: View {
     }
 }
 
-struct 💬RequestUserReview: ViewModifier {
+struct 💬PrepareToRequestUserReview: ViewModifier {
     @Binding private var checkToRequest: Bool
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {

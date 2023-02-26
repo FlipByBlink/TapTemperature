@@ -79,9 +79,8 @@ struct 🗯ResultView: View {
             }
         }
         .animation(.default, value: 📱.🚩canceled)
-        .onDisappear {
-            📱.🚩registerSuccess = false
-        }
+        .onDisappear { 📱.🚩registerSuccess = false }
+        .modifier(💬RequestUserReview())
     }
     private func ⓓismissButton() -> some View {
         Button {
@@ -126,5 +125,18 @@ struct 🗑CanceledLabel: ViewModifier {
                 }
             }
             .animation(.default, value: 📱.🚩canceled)
+    }
+}
+
+struct 💬RequestUserReview: ViewModifier {
+    @State private var ⓒheckToRequest: Bool = false
+    func body(content: Content) -> some View {
+        content
+            .modifier(💬PrepareToRequestUserReview(self.$ⓒheckToRequest))
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.ⓒheckToRequest = true
+                }
+            }
     }
 }
