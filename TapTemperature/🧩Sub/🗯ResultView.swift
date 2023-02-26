@@ -102,6 +102,7 @@ struct 🗑CancelButton: View {
             Image(systemName: "arrow.uturn.backward.circle")
                 .imageScale(.large)
                 .foregroundColor(.primary)
+                .font(.title3)
         }
         .disabled(📱.🚩canceled)
         .opacity(📱.🚩canceled ? 0.5 : 1)
