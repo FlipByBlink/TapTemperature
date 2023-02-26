@@ -36,7 +36,7 @@ struct 🛠MenuContent: View {
     private func ⓢecondDecimalPlaceToggle() -> some View {
         Section {
             Toggle(isOn: $📱.🚩secondDecimalPlaceOption) {
-                Label("Second decimal place mode", systemImage: "character.cursor.ibeam")
+                Label("Input second decimal place", systemImage: "character.cursor.ibeam")
             }
         } footer: {
             Text(📱.📏unitOption == .℃ ? "36.1 ℃  →  36.12︭ ℃" : "100.1 ℉  →  100.12︭ ℉")

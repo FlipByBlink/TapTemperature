@@ -5,8 +5,9 @@
 "Unit" = "単位";
 "Basal body temperature" = "基礎体温";
 "BBT" = "基礎体温";
-"Second decimal places mode" = "小数点以下2桁モード";
+"Input second decimal place" = "小数点以下2桁を入力";
 "Auto complete" = "数字入力だけで自動的に完了";
+"Save 1 step." = "最後の操作を省略します。";
 "Open \"Health\" app" = "「ヘルスケア」アプリを開く";
 "Local history" = "ローカル履歴";
 "\"Local history\" is for the porpose of \"operation check\" / \"temporary backup\"" = "\"ローカル履歴\"は動作確認や簡易バックアップを目的としています。 ";
