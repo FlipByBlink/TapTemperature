@@ -28,7 +28,7 @@ struct 🛠MenuContent: View {
             self.ⓢecondDecimalPlaceToggle()
             self.ⓐutoCompleteToggle()
             self.ⓞpenHealthAppButton()
-            ℹ️AboutAppLink(name: "TapTemperature", subtitle: "App for iPhone")
+            ℹ️AboutAppLink(name: "TapTemperature", subtitle: "App for iPhone / Apple Watch")
             📣ADMenuLink()
         }
         .navigationTitle("Menu")
