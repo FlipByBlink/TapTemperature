@@ -43,6 +43,7 @@
 		F519CB5829AAF6E500ACD6B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		F519CB5929AAF6E500ACD6B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
 		F519CB5A29AAF7CB00ACD6B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
+		F519CB5B29AAFA1C00ACD6B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
 		F585A0C62942AADC00BA665C /* ℹ️AboutAppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutAppMenu.swift */; };
 		F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C22942AADC00BA665C /* Configuration.storekit */; };
@@ -591,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5FFCE6A29AA3C760035E638 /* Assets.xcassets in Resources */,
+				F519CB5B29AAFA1C00ACD6B6 /* InfoPlist.strings in Resources */,
 				F519CB5A29AAF7CB00ACD6B6 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

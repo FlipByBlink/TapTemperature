@@ -1,5 +1,5 @@
 iPhone App TapTemperature for "Health"
-=================================================
+=======================================
 _Register your weight data to the "Health" App as fast as possible!_
 
 <img src="TapTemperature/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
