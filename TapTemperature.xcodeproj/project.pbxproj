@@ -8,17 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		123690152844EE92006F22EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
-		124BC6A8284333E100F75E1F /* TapTemperatureApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* TapTemperatureApp.swift */; };
-		124BC6A9284333E100F75E1F /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BC283089D300B0A615 /* ContentView.swift */; };
-		124BC6B128433C4F00F75E1F /* 🪧ValueLabel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
-		124BC6B228433C4F00F75E1F /* 👆Keypad.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
-		124BC6B328433C4F00F75E1F /* 🗯ResultView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
 		124BC6BA28437B9000F75E1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
 		1256A326286AD550002AF08A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1256A325286AD550002AF08A /* StoreKit.framework */; };
 		1256A328286AD8FE002AF08A /* 💟OpenHealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */; };
-		1256A32D286ADEF5002AF08A /* 💟OpenHealthAppButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */; };
 		1256A33C286B1547002AF08A /* 🛠Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠Menu.swift */; };
-		1256A33D286B16E1002AF08A /* 🛠Menu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠Menu.swift */; };
 		125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
 		1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
 		12ADECF8283F7C1500431224 /* 🪧ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
@@ -29,39 +22,47 @@
 		12E811C2283089D400B0A615 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E811C1283089D400B0A615 /* Preview Assets.xcassets */; };
 		12E811CB28308A2100B0A615 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E811CA28308A2100B0A615 /* HealthKit.framework */; };
 		F519CB4929AA43DF00ACD6B6 /* ⌚️SyncOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */; };
-		F519CB4A29AA44BD00ACD6B6 /* ⌚️SyncOptions.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */; };
-		F519CB4C29AA44EF00ACD6B6 /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
-		F519CB4D29AA44EF00ACD6B6 /* 🪧ValueLabel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
-		F519CB4E29AA44EF00ACD6B6 /* 👆Keypad.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
-		F519CB4F29AA44EF00ACD6B6 /* 🛏BasalSwitchButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BasalSwitchButton.swift */; };
-		F519CB5029AA44EF00ACD6B6 /* ⌚️SyncDelegate.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */; };
-		F519CB5129AA44EF00ACD6B6 /* 💥Feedback.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
-		F519CB5329AA451E00ACD6B6 /* TTApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D228B229A9B1DD00F4F982 /* TTApp.swift */; };
-		F519CB5429AA451E00ACD6B6 /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D228B429A9B1DD00F4F982 /* ContentView.swift */; };
-		F519CB5529AA451E00ACD6B6 /* 🗯ResultView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
-		F519CB5729AA453F00ACD6B6 /* TTWidget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5FFCE6729AA3C740035E638 /* TTWidget.swift */; };
 		F519CB5829AAF6E500ACD6B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		F519CB5929AAF6E500ACD6B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
 		F519CB5A29AAF7CB00ACD6B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
 		F519CB5B29AAFA1C00ACD6B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
-		F585A0C62942AADC00BA665C /* ℹ️AboutAppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutAppMenu.swift */; };
+		F585A0C62942AADC00BA665C /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */; };
 		F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C22942AADC00BA665C /* Configuration.storekit */; };
 		F585A0C82942AADC00BA665C /* 📣AD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C32942AADC00BA665C /* 📣AD.swift */; };
 		F585A0C92942AADC00BA665C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C42942AADC00BA665C /* Launch Screen.storyboard */; };
 		F585A0CA2942AADC00BA665C /* 🛒InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */; };
 		F585A0CD2942B02E00BA665C /* 🌏AppStoreDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F585A0CF2942B02E00BA665C /* 🌏AppStoreDescription.strings */; };
 		F585A0D32942B06500BA665C /* 🌏VersionDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F585A0D52942B06500BA665C /* 🌏VersionDescription.strings */; };
-		F585A0D72942B1E400BA665C /* ℹ️AboutAppMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutAppMenu.swift */; };
-		F585A0D82942B1E400BA665C /* 📣AD.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C32942AADC00BA665C /* 📣AD.swift */; };
-		F585A0D92942B1E400BA665C /* 🛒InAppPurchase.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */; };
 		F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */; };
 		F58BC7F129A83BA6003DDAC1 /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
-		F58BC7F229A83E68003DDAC1 /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
+		F59A2ADE29AB10BD008A194C /* TTWidget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5FFCE6729AA3C740035E638 /* TTWidget.swift */; };
+		F59A2ADF29AB10C4008A194C /* TTApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D228B229A9B1DD00F4F982 /* TTApp.swift */; };
+		F59A2AE029AB10C4008A194C /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D228B429A9B1DD00F4F982 /* ContentView.swift */; };
+		F59A2AE129AB10C4008A194C /* 🗯ResultView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
+		F59A2AE229AB10D1008A194C /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
+		F59A2AE329AB10D1008A194C /* 🪧ValueLabel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
+		F59A2AE429AB10D1008A194C /* 👆Keypad.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
+		F59A2AE529AB10D1008A194C /* 🛏BBTSwitchButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */; };
+		F59A2AE629AB10D2008A194C /* ⌚️SyncDelegate.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */; };
+		F59A2AE729AB10D2008A194C /* 💥Feedback.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
+		F59A2AE829AB10D2008A194C /* TapTemperatureApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* TapTemperatureApp.swift */; };
+		F59A2AE929AB10D2008A194C /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BC283089D300B0A615 /* ContentView.swift */; };
+		F59A2AEA29AB10D2008A194C /* 🗯ResultView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
+		F59A2AEB29AB10D2008A194C /* 💟OpenHealthAppButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */; };
+		F59A2AEC29AB10D2008A194C /* 🛠Menu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠Menu.swift */; };
+		F59A2AED29AB10D2008A194C /* ⌚️SyncOptions.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */; };
+		F59A2AEE29AB10D2008A194C /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
+		F59A2AEF29AB113F008A194C /* 🧰MetaData.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */; };
+		F59A2AF029AB113F008A194C /* ℹ️AboutApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */; };
+		F59A2AF129AB113F008A194C /* 📣AD.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C32942AADC00BA665C /* 📣AD.swift */; };
+		F59A2AF229AB113F008A194C /* 🛒InAppPurchase.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */; };
+		F59A2AF429AB137B008A194C /* 🟥AutoCompleteHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */; };
+		F59A2AF529AB13A2008A194C /* 🟥AutoCompleteHintView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */; };
 		F5A109A229AA180900D2F390 /* ⌚️SyncDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */; };
 		F5A109A329AA180900D2F390 /* ⌚️SyncDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */; };
-		F5C7DE2129A9FE0900694AFD /* 🛏BasalSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BasalSwitchButton.swift */; };
-		F5C7DE2229A9FE0900694AFD /* 🛏BasalSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BasalSwitchButton.swift */; };
+		F5C7DE2129A9FE0900694AFD /* 🛏BBTSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */; };
+		F5C7DE2229A9FE0900694AFD /* 🛏BBTSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */; };
 		F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
 		F5D228B329A9B1DD00F4F982 /* TTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D228B229A9B1DD00F4F982 /* TTApp.swift */; };
 		F5D228B529A9B1DD00F4F982 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D228B429A9B1DD00F4F982 /* ContentView.swift */; };
@@ -97,79 +98,52 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		124BC6A7284333B900F75E1F /* CopyFiles */ = {
+		F59A2ADB29AB1034008A194C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = main;
+			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
-				124BC6A8284333E100F75E1F /* TapTemperatureApp.swift in CopyFiles */,
-				124BC6A9284333E100F75E1F /* ContentView.swift in CopyFiles */,
+				F59A2AF529AB13A2008A194C /* 🟥AutoCompleteHintView.swift in CopyFiles */,
+				F59A2AEF29AB113F008A194C /* 🧰MetaData.swift in CopyFiles */,
+				F59A2AF029AB113F008A194C /* ℹ️AboutApp.swift in CopyFiles */,
+				F59A2AF129AB113F008A194C /* 📣AD.swift in CopyFiles */,
+				F59A2AF229AB113F008A194C /* 🛒InAppPurchase.swift in CopyFiles */,
+				F59A2AE229AB10D1008A194C /* 📱AppModel.swift in CopyFiles */,
+				F59A2AE329AB10D1008A194C /* 🪧ValueLabel.swift in CopyFiles */,
+				F59A2AE429AB10D1008A194C /* 👆Keypad.swift in CopyFiles */,
+				F59A2AE529AB10D1008A194C /* 🛏BBTSwitchButton.swift in CopyFiles */,
+				F59A2AE629AB10D2008A194C /* ⌚️SyncDelegate.swift in CopyFiles */,
+				F59A2AE729AB10D2008A194C /* 💥Feedback.swift in CopyFiles */,
+				F59A2AE829AB10D2008A194C /* TapTemperatureApp.swift in CopyFiles */,
+				F59A2AE929AB10D2008A194C /* ContentView.swift in CopyFiles */,
+				F59A2AEA29AB10D2008A194C /* 🗯ResultView.swift in CopyFiles */,
+				F59A2AEB29AB10D2008A194C /* 💟OpenHealthAppButton.swift in CopyFiles */,
+				F59A2AEC29AB10D2008A194C /* 🛠Menu.swift in CopyFiles */,
+				F59A2AED29AB10D2008A194C /* ⌚️SyncOptions.swift in CopyFiles */,
+				F59A2AEE29AB10D2008A194C /* 📣ADSheet.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		124BC6B02843396A00F75E1F /* CopyFiles */ = {
+		F59A2ADC29AB107C008A194C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "🧩Sub";
+			dstPath = "📁SourceCode/WatchApp";
 			dstSubfolderSpec = 7;
 			files = (
-				F519CB4A29AA44BD00ACD6B6 /* ⌚️SyncOptions.swift in CopyFiles */,
-				F58BC7F229A83E68003DDAC1 /* 📣ADSheet.swift in CopyFiles */,
-				1256A33D286B16E1002AF08A /* 🛠Menu.swift in CopyFiles */,
-				1256A32D286ADEF5002AF08A /* 💟OpenHealthAppButton.swift in CopyFiles */,
-				124BC6B128433C4F00F75E1F /* 🪧ValueLabel.swift in CopyFiles */,
-				124BC6B228433C4F00F75E1F /* 👆Keypad.swift in CopyFiles */,
-				124BC6B328433C4F00F75E1F /* 🗯ResultView.swift in CopyFiles */,
+				F59A2ADF29AB10C4008A194C /* TTApp.swift in CopyFiles */,
+				F59A2AE029AB10C4008A194C /* ContentView.swift in CopyFiles */,
+				F59A2AE129AB10C4008A194C /* 🗯ResultView.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1256A329286ADEBD002AF08A /* CopyFiles */ = {
+		F59A2ADD29AB1095008A194C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "🧰Others";
+			dstPath = "📁SourceCode/WatchComplication";
 			dstSubfolderSpec = 7;
 			files = (
-				F585A0D72942B1E400BA665C /* ℹ️AboutAppMenu.swift in CopyFiles */,
-				F585A0D82942B1E400BA665C /* 📣AD.swift in CopyFiles */,
-				F585A0D92942B1E400BA665C /* 🛒InAppPurchase.swift in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F519CB4B29AA44D800ACD6B6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Shared;
-			dstSubfolderSpec = 7;
-			files = (
-				F519CB4C29AA44EF00ACD6B6 /* 📱AppModel.swift in CopyFiles */,
-				F519CB4D29AA44EF00ACD6B6 /* 🪧ValueLabel.swift in CopyFiles */,
-				F519CB4E29AA44EF00ACD6B6 /* 👆Keypad.swift in CopyFiles */,
-				F519CB4F29AA44EF00ACD6B6 /* 🛏BasalSwitchButton.swift in CopyFiles */,
-				F519CB5029AA44EF00ACD6B6 /* ⌚️SyncDelegate.swift in CopyFiles */,
-				F519CB5129AA44EF00ACD6B6 /* 💥Feedback.swift in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F519CB5229AA44F700ACD6B6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = WatchApp;
-			dstSubfolderSpec = 7;
-			files = (
-				F519CB5329AA451E00ACD6B6 /* TTApp.swift in CopyFiles */,
-				F519CB5429AA451E00ACD6B6 /* ContentView.swift in CopyFiles */,
-				F519CB5529AA451E00ACD6B6 /* 🗯ResultView.swift in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F519CB5629AA452300ACD6B6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = WatchComplication;
-			dstSubfolderSpec = 7;
-			files = (
-				F519CB5729AA453F00ACD6B6 /* TTWidget.swift in CopyFiles */,
+				F59A2ADE29AB10BD008A194C /* TTWidget.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +194,7 @@
 		12E811CA28308A2100B0A615 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️SyncOptions.swift"; sourceTree = "<group>"; };
 		F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
-		F585A0C12942AADC00BA665C /* ℹ️AboutAppMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutAppMenu.swift"; sourceTree = "<group>"; };
+		F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F585A0C22942AADC00BA665C /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		F585A0C32942AADC00BA665C /* 📣AD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣AD.swift"; sourceTree = "<group>"; };
 		F585A0C42942AADC00BA665C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -257,8 +231,9 @@
 		F597588328D94E8C002521F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F597588428D94E9B002521F8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		F597588528D94E9B002521F8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🟥AutoCompleteHintView.swift"; sourceTree = "<group>"; };
 		F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️SyncDelegate.swift"; sourceTree = "<group>"; };
-		F5C7DE2029A9FE0900694AFD /* 🛏BasalSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛏BasalSwitchButton.swift"; sourceTree = "<group>"; };
+		F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛏BBTSwitchButton.swift"; sourceTree = "<group>"; };
 		F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💥Feedback.swift"; sourceTree = "<group>"; };
 		F5D228B029A9B1DD00F4F982 /* TapTemperature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapTemperature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D228B229A9B1DD00F4F982 /* TTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTApp.swift; sourceTree = "<group>"; };
@@ -311,6 +286,7 @@
 				1256A33B286B1547002AF08A /* 🛠Menu.swift */,
 				F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */,
 				F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */,
+				F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */,
 				123690192844F1BD006F22EE /* Info.plist */,
 				12E811C828308A2100B0A615 /* TapTemperature.entitlements */,
 				12E811C0283089D400B0A615 /* Preview Content */,
@@ -388,7 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */,
-				F585A0C12942AADC00BA665C /* ℹ️AboutAppMenu.swift */,
+				F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */,
 				F585A0C32942AADC00BA665C /* 📣AD.swift */,
 				F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */,
 				F585A0C42942AADC00BA665C /* Launch Screen.storyboard */,
@@ -403,7 +379,7 @@
 				1281D252283E1C4300D59319 /* 📱AppModel.swift */,
 				12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */,
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
-				F5C7DE2029A9FE0900694AFD /* 🛏BasalSwitchButton.swift */,
+				F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */,
 				F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */,
 				F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */,
 			);
@@ -451,13 +427,10 @@
 				12E811B3283089D300B0A615 /* Sources */,
 				12E811B4283089D300B0A615 /* Frameworks */,
 				12E811B5283089D300B0A615 /* Resources */,
-				F519CB4B29AA44D800ACD6B6 /* CopyFiles */,
-				124BC6A7284333B900F75E1F /* CopyFiles */,
-				124BC6B02843396A00F75E1F /* CopyFiles */,
-				1256A329286ADEBD002AF08A /* CopyFiles */,
-				F519CB5229AA44F700ACD6B6 /* CopyFiles */,
-				F519CB5629AA452300ACD6B6 /* CopyFiles */,
 				F5FFCE4629AA2DA00035E638 /* Embed Watch Content */,
+				F59A2ADB29AB1034008A194C /* CopyFiles */,
+				F59A2ADC29AB107C008A194C /* CopyFiles */,
+				F59A2ADD29AB1095008A194C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -606,7 +579,8 @@
 			files = (
 				F58BC7F129A83BA6003DDAC1 /* 📣ADSheet.swift in Sources */,
 				1256A33C286B1547002AF08A /* 🛠Menu.swift in Sources */,
-				F585A0C62942AADC00BA665C /* ℹ️AboutAppMenu.swift in Sources */,
+				F59A2AF429AB137B008A194C /* 🟥AutoCompleteHintView.swift in Sources */,
+				F585A0C62942AADC00BA665C /* ℹ️AboutApp.swift in Sources */,
 				1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */,
 				1256A328286AD8FE002AF08A /* 💟OpenHealthAppButton.swift in Sources */,
 				F585A0CA2942AADC00BA665C /* 🛒InAppPurchase.swift in Sources */,
@@ -620,7 +594,7 @@
 				F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */,
 				12E811BB283089D300B0A615 /* TapTemperatureApp.swift in Sources */,
 				F519CB4929AA43DF00ACD6B6 /* ⌚️SyncOptions.swift in Sources */,
-				F5C7DE2129A9FE0900694AFD /* 🛏BasalSwitchButton.swift in Sources */,
+				F5C7DE2129A9FE0900694AFD /* 🛏BBTSwitchButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +605,7 @@
 				F5D228B529A9B1DD00F4F982 /* ContentView.swift in Sources */,
 				F5D228BE29A9B24900F4F982 /* 💥Feedback.swift in Sources */,
 				F5D228C129A9B24900F4F982 /* 👆Keypad.swift in Sources */,
-				F5C7DE2229A9FE0900694AFD /* 🛏BasalSwitchButton.swift in Sources */,
+				F5C7DE2229A9FE0900694AFD /* 🛏BBTSwitchButton.swift in Sources */,
 				F5D228B329A9B1DD00F4F982 /* TTApp.swift in Sources */,
 				F5D228BF29A9B24900F4F982 /* 🪧ValueLabel.swift in Sources */,
 				F5A109A329AA180900D2F390 /* ⌚️SyncDelegate.swift in Sources */,

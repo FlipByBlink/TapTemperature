@@ -8,7 +8,7 @@ struct ContentView: View {
                 HStack {
                     🪧ValueLabel()
                     if 📱.🚩bbtOption { Spacer() }
-                    🛏BasalSwitchButton()
+                    🛏BBTSwitchButton()
                         .buttonStyle(.plain)
                 }
                 .padding(.horizontal, 8)

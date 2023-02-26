@@ -189,8 +189,8 @@ struct 📓SourceCodeLink: View {
     }
     private func ⓢourceCodeMenu() -> some View {
         List {
-            ForEach(📁SourceFolder.allCases) { ⓟath in
-                Self.📓CodeSection(ⓟath.rawValue)
+            ForEach(📁SourceCodeCategory.allCases) { ⓒategory in
+                Self.📓CodeSection(ⓒategory)
             }
             self.📑bundleMainInfoDictionary()
             self.🔗repositoryLinks()
@@ -198,29 +198,27 @@ struct 📓SourceCodeLink: View {
         .navigationTitle("Source code")
     }
     private struct 📓CodeSection: View {
-        private var ⓓirectoryPath: String
-        private var 📁url: URL { Bundle.main.bundleURL.appendingPathComponent(self.ⓓirectoryPath) }
-        private var 🏷fileNames: [String]? {
-            try? FileManager.default.contentsOfDirectory(atPath: self.📁url.path)
-        }
+        private var ⓒategory: 📁SourceCodeCategory
+        private var 🔗url: URL { Bundle.main.bundleURL.appendingPathComponent("📁SourceCode") }
         var body: some View {
             Section {
-                if let 🏷fileNames {
-                    ForEach(🏷fileNames, id: \.self) { 🏷 in
-                        NavigationLink(🏷) {
-                            let 📃 = try? String(contentsOf: self.📁url.appendingPathComponent(🏷))
-                            self.📰sourceCodeView(📃 ?? "🐛Bug", 🏷)
+                ForEach(self.ⓒategory.fileNames, id: \.self) { ⓝame in
+                    if let ⓒode = try? String(contentsOf: self.🔗url.appendingPathComponent(ⓝame)) {
+                        NavigationLink(ⓝame) {
+                            self.📰sourceCodeView(ⓒode, ⓝame)
                         }
+                    } else {
+                        Text("🐛")
                     }
-                    if 🏷fileNames.isEmpty { Text("🐛Bug") }
                 }
+                if self.ⓒategory.fileNames.isEmpty { Text("🐛") }
             } header: {
-                Text(ⓓirectoryPath)
+                Text(self.ⓒategory.rawValue)
                     .textCase(.none)
             }
         }
-        init(_ ⓓirectoryPath: String) {
-            self.ⓓirectoryPath = ⓓirectoryPath
+        init(_ category: 📁SourceCodeCategory) {
+            self.ⓒategory = category
         }
         private func 📰sourceCodeView(_ ⓣext: String, _ ⓣitle: String) -> some View {
             ScrollView {
@@ -368,6 +366,41 @@ struct 🧑‍💻AboutDeveloperPublisherLink: View {
             } header: {
                 Text("Timeline")
             }
+        }
+    }
+}
+
+struct 💬RequestUserReview: ViewModifier {
+    @Binding private var checkToRequest: Bool
+    func body(content: Content) -> some View {
+        if #available(iOS 16.0, *) {
+            content
+                .modifier(ⓜodifier(self.$checkToRequest))
+        } else {
+            content
+        }
+    }
+    init(_ checkToRequest: Binding<Bool>) {
+        self._checkToRequest = checkToRequest
+    }
+    @available(iOS 16, *)
+    private struct ⓜodifier: ViewModifier {
+        @Environment(\.requestReview) var requestReview
+        @AppStorage("launchCount") private var ⓛaunchCount: Int = 0
+        @Binding private var checkToRequest: Bool
+        func body(content: Content) -> some View {
+            content
+                .task { self.ⓛaunchCount += 1 }
+                .onChange(of: self.checkToRequest) {
+                    if $0 == true {
+                        if [10, 30, 60, 100].contains(self.ⓛaunchCount) {
+                            self.requestReview()
+                        }
+                    }
+                }
+        }
+        init(_ checkToRequest: Binding<Bool>) {
+            self._checkToRequest = checkToRequest
         }
     }
 }

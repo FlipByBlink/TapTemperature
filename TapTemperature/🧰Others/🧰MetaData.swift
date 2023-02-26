@@ -21,12 +21,39 @@ This application don't collect user infomation.
 let 🔗webRepositoryURL = URL(string: "https://github.com/FlipByBlink/TapTemperature")!
 let 🔗webRepositoryURL_Mirror = URL(string: "https://gitlab.com/FlipByBlink/TapTemperature_Mirror")!
 
-enum 📁SourceFolder: String, CaseIterable, Identifiable {
-    case main
-    case Shared
-    case 🧩Sub
-    case 🧰Others
-    case WatchApp
-    case WatchComplication
+enum 📁SourceCodeCategory: String, CaseIterable, Identifiable {
+    case main, Shared, Sub, Others, WatchApp, WatchComplication
     var id: Self { self }
+    var fileNames: [String] {
+        switch self {
+            case .main:
+                return ["TapTemperatureApp.swift",
+                        "ContentView.swift"]
+            case .Shared:
+                return ["📱AppModel.swift",
+                        "🪧ValueLabel.swift",
+                        "👆Keypad.swift",
+                        "🛏BBTSwitchButton.swift",
+                        "⌚️SyncDelegate.swift",
+                        "💥Feedback.swift"]
+            case .Sub:
+                return ["🗯ResultView.swift",
+                        "💟OpenHealthAppButton.swift",
+                        "🛠Menu.swift",
+                        "⌚️SyncOptions.swift",
+                        "📣ADSheet.swift",
+                        "🟥AutoCompleteHintView.swift"]
+            case .Others:
+                return ["🧰MetaData.swift",
+                        "ℹ️AboutApp.swift",
+                        "📣AD.swift",
+                        "🛒InAppPurchase.swift"]
+            case .WatchApp:
+                return ["WatchApp/TTApp.swift",
+                        "WatchApp/ContentView.swift",
+                        "WatchApp/🗯ResultView.swift"]
+            case .WatchComplication:
+                return ["WatchComplication/TTWidget.swift"]
+        }
+    }
 }

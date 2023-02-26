@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 🛏BasalSwitchButton: View {
+struct 🛏BBTSwitchButton: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
         if 📱.🚩bbtOption {
