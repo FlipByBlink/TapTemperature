@@ -1,16 +1,16 @@
 
-// ======== Menu ========
-"TapTemperature" = "体温登録";
 "Body temperature" = "体温";
-"Unit" = "単位";
+"Temperature" = "体温";
 "Basal body temperature" = "基礎体温";
 "BBT" = "基礎体温";
+
+// ======== Menu ========
+"TapTemperature" = "体温登録";
+"Unit" = "単位";
 "Input second decimal place" = "小数点以下2桁を入力";
 "Auto complete" = "数字入力だけで自動的に完了";
 "Save 1 step." = "最後の操作を省略します。";
 "Open \"Health\" app" = "「ヘルスケア」アプリを開く";
-"Local history" = "ローカル履歴";
-"\"Local history\" is for the porpose of \"operation check\" / \"temporary backup\"" = "\"ローカル履歴\"は動作確認や簡易バックアップを目的としています。 ";
 
 // ======== Result ========
 "Registration for \"Health\" app" = "「ヘルスケア」アプリに登録しました";
@@ -19,11 +19,16 @@
 "Error!?" = "エラー!?";
 "Canceled" = "登録を取り消しました";
 "(perhaps error)" = "(たぶん失敗しました)";
+"Undo?" = "取り消しますか？";
+"Yes, undo" = "はい、取り消します";
+
 
 // ======== Accessibility label =========
 "DONE" = "完了";
 "Switch type" = "タイプ切り替え";
 "Delete" = "消す";
+
+"Shortcut" = "ショートカット";
 
 "App for iPhone" = "iPhone向けアプリ";
 
