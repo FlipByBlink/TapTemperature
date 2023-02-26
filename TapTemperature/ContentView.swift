@@ -15,9 +15,7 @@ struct ContentView: View {
         VStack {
             Spacer()
             🪧ValueLabel()
-                .padding(.horizontal)
-                .padding(.trailing)
-                .padding(.bottom)
+                .padding(.bottom, 32)
             Spacer()
             Divider()
             👆Keypad()
