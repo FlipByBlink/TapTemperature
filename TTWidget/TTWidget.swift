@@ -27,7 +27,7 @@ struct TTWidgetEntryView : View {
                 ZStack {
                     AccessoryWidgetBackground()
                     Image(systemName: "medical.thermometer")
-                        .font(.largeTitle)
+                        .font(.largeTitle.weight(.medium))
                 }
                 .widgetAccentable()
             case .accessoryInline:
