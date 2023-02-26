@@ -1,6 +1,9 @@
 
-"Body Temperature" = "체온";
+"Body temperature" = "체온";
+"Temperature" = "체온";
+
 "Basal body temperature" = "기초 체온";
+"BBT" = "기초 체온";
 
 "Open \"Health\" app" = "Open \"건강\" app";
 "Registration for \"Health\" app" = "Registration for \"건강\" app";

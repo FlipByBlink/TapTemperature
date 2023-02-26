@@ -1,6 +1,9 @@
 
-"Body Temperature" = "درجة حرارة الجسم";
+"Body temperature" = "درجة حرارة الجسم";
+"Temperature" = "درجة حرارة الجسم";
+
 "Basal body temperature" = "درجة حرارة الجسم الأساسية";
+"BBT" = "درجة حرارة الجسم الأساسية";
 
 "Open \"Health\" app" = "Open \"صحتي\" app";
 "Registration for \"Health\" app" = "Registration for \"صحتي\" app";

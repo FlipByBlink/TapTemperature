@@ -1,6 +1,9 @@
 
-"Body Temperature" = "Suhu Tubuh";
+"Body temperature" = "Suhu Tubuh";
+"Temperature" = "Suhu Tubuh";
+
 "Basal body temperature" = "Suhu Tubuh Basal";
+"BBT" = "Suhu Tubuh Basal";
 
 "Open \"Health\" app" = "Open \"Kesehatan\" app";
 "Registration for \"Health\" app" = "Registration for \"Kesehatan\" app";

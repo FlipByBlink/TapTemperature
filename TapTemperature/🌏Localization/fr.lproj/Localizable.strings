@@ -1,6 +1,9 @@
 
-"Body Temperature" = "Température corporelle";
+"Body temperature" = "Température corporelle";
+"Temperature" = "Température corporelle";
+
 "Basal body temperature" = "Température basale";
+"BBT" = "Température basale";
 
 "Open \"Health\" app" = "Open \"Santé\" app";
 "Registration for \"Health\" app" = "Registration for \"Santé\" app";
