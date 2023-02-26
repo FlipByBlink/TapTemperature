@@ -11,6 +11,7 @@ struct TapTemperatureApp: App {
             ContentView()
                 .modifier(📣ADSheet())
                 .modifier(🅂yncOptions())
+                .environment(\.layoutDirection, .leftToRight)
                 .environmentObject(📱)
                 .environmentObject(🛒)
         }
