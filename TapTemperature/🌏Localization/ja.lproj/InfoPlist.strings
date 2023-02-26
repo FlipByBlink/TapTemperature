@@ -1,2 +1,5 @@
 
 CFBundleDisplayName = "体温登録";
+
+NSHealthShareUsageDescription = "「ヘルスケア」アプリから単位設定を読み込みます。";
+NSHealthUpdateUsageDescription = "このアプリは「ヘルスケア」アプリにデータを保存します。";
