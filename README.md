@@ -1,5 +1,5 @@
-iPhone App TapTemperature for "Health"
-=======================================
+TapTemperature for "Health" - iPhone, Apple Watch
+=================================================
 _Register your weight data to the "Health" App as fast as possible!_
 
 <img src="TapTemperature/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
@@ -8,18 +8,23 @@ _Register your weight data to the "Health" App as fast as possible!_
     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
 </a>
 
+<img src="TapTemperature/Assets.xcassets/ConceptImage.imageset/ConceptImage.png" width="600">
+
+
 Description
 ------------
 This application is designed to register body temperature data to the Apple "Health" application pre-installed on iPhone in the fastest possible way (as manual).
 
-### Target/Use-case
+
+### Target / Use-case
 No "smart" thermometer.
 
 Frequently measure my temperature (and basal body temperature) using a thermometer almost every day.
 
 Intend to register the data into "Health" app every time, after measuring by a thermometer.
 
-### OPTION
+
+### Option
 Mode as basal body temperature.
 
 Mode for second decimal places.
@@ -30,7 +35,8 @@ Unit: ℃, ℉
 
 Option to hide AD banner. (In-App Purchase)
 
-### OTHERS
+
+### Others
 Apple Watch support.
 
 Launch "Health" app by one tap.
@@ -41,7 +47,8 @@ Check source code in app.
 
 All feature is free.
 
-### CONCEPT
+
+### Concept
 People frequently measure their body temperature (and basal body temperature) daily using a thermometer. Many iPhone users register their temperature data on "Health" app. The best solution is to use a smart thermometer that works with "Health" app and automatically stores measurements, but they are expensive and almost non-existent. Manual data registration is possible in "Health" app, but "Health" app is not designed for daily manual data registration. Therefore, manually entering data that occur continuously daily, such as temperature measurements, is a very time-consuming and stressful experience. This app was developed to solve such problems.
 
 This app cannot read, view, or manage past data in "Health" app. This app is intended only to register data to the "Health" app. Please check the registered data on the "Health" app.
@@ -74,8 +81,6 @@ AppStore link
 
 <br>
 <br>
-<br>
-<br>
 
 Privacy Policy for AppStore
 ----------------------------
@@ -87,7 +92,5 @@ Privacy Policy for AppStore
 ### English
 This application don't collect user infomation.
 
-<br>
-<br>
 <br>
 <br>
