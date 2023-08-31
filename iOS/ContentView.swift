@@ -16,7 +16,7 @@ struct ContentView: View {
                     .padding(.vertical, 8)
                     .frame(height: 400)
             }
-            .navigationTitle(self.model.target.isBT ? "Body temperature" : "BBT")
+            .navigationTitle(self.model.mode.navigationTitle)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     🛏BBTSwitchButton()

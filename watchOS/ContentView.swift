@@ -17,7 +17,7 @@ struct ContentView: View {
                 👆Keypad()
                     .buttonStyle(.plain)
             }
-            .navigationTitle(self.model.target.isBT ? "Temperature" : "BBT")
+            .navigationTitle(self.model.mode.navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea(edges: .bottom)
         }

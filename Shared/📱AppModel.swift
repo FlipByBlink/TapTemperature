@@ -24,7 +24,7 @@ class 📱AppModel: NSObject, ObservableObject {
 }
 
 extension 📱AppModel {
-    var target: 🅃arget {
+    var mode: 🏳️Mode {
         self.ableBBT && self.bbtMode ? .basalBodyTemperature : .bodyTemperature
     }
     
@@ -61,12 +61,12 @@ extension 📱AppModel {
     @MainActor
     func register() async {
         do {
-            if self.healthStore.authorizationStatus(for: self.target.quantityType) == .sharingDenied {
+            if self.healthStore.authorizationStatus(for: self.mode.quantityType) == .sharingDenied {
                 self.registrationSuccess = false
                 self.showResult = true
                 return
             }
-            let ⓢample = HKQuantitySample(type: self.target.quantityType,
+            let ⓢample = HKQuantitySample(type: self.mode.quantityType,
                                           quantity: .init(unit: self.degreeUnit.hkUnit,
                                                           doubleValue: self.inputValue),
                                           start: .now,
@@ -92,8 +92,8 @@ extension 📱AppModel {
     
     func loadPreferredUnit() {
         Task { @MainActor in
-            let ⓤnits = try await self.healthStore.preferredUnits(for: [self.target.quantityType])
-            if let ⓤnit = ⓤnits[self.target.quantityType] {
+            let ⓤnits = try await self.healthStore.preferredUnits(for: [self.mode.quantityType])
+            if let ⓤnit = ⓤnits[self.mode.quantityType] {
                 if ⓤnit != self.degreeUnit.hkUnit {
                     switch ⓤnit {
                         case .degreeCelsius(): self.degreeUnit = .℃
@@ -112,9 +112,9 @@ extension 📱AppModel {
     func cancel() {
         Task {
             do {
-                guard let 📦 = self.sampleCache else { return }
+                guard let ⓢample = self.sampleCache else { return }
                 self.canceled = true
-                try await self.healthStore.delete(📦)
+                try await self.healthStore.delete(ⓢample)
                 self.sampleCache = nil
                 💥Feedback.error()
             } catch {
@@ -211,9 +211,9 @@ extension 📱AppModel: WKApplicationDelegate {
 
 private extension 📱AppModel {
     private func requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async { //TODO: 引数おかしい？
-        if self.healthStore.authorizationStatus(for: self.target.quantityType) == .notDetermined {
+        if self.healthStore.authorizationStatus(for: self.mode.quantityType) == .notDetermined {
             do {
-                try await self.healthStore.requestAuthorization(toShare: [self.target.quantityType],
+                try await self.healthStore.requestAuthorization(toShare: [self.mode.quantityType],
                                                                 read: [])
             } catch {
                 print(#function, error)
@@ -234,14 +234,6 @@ private extension 📱AppModel {
                                                                     frequency: .immediate)
             }
         }
-    }
-}
-
-enum 🅃arget {
-    case bodyTemperature, basalBodyTemperature
-    var isBT: Bool { self == .bodyTemperature }
-    var quantityType: HKQuantityType {
-        .init(self.isBT ? .bodyTemperature : .basalBodyTemperature)
     }
 }
 

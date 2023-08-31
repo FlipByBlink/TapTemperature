@@ -35,7 +35,7 @@ struct 🗯ResultView: View {
                     Spacer()
                     VStack(spacing: 10) {
                         if self.model.ableBBT {
-                            Text(self.model.target.isBT ? "Body temperature" : "Basal body temperature")
+                            Text(self.model.mode.label)
                                 .lineLimit(1)
                                 .font(.caption.weight(.semibold))
                                 .minimumScaleFactor(0.1)

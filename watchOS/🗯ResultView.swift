@@ -16,7 +16,7 @@ struct 🗯ResultView: View {
             }
             Spacer()
             if self.model.ableBBT {
-                Text(self.model.target.isBT ? "Body temperature" : "Basal body temperature")
+                Text(self.model.mode.label)
                     .font(.caption.weight(.semibold))
                     .minimumScaleFactor(0.66)
             }
