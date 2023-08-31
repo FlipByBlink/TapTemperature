@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct 👆Keypad: View {
-    @EnvironmentObject var 📱: 📱AppModel
+    @EnvironmentObject var model: 📱AppModel
     var body: some View {
         VStack(spacing: 0) {
             ForEach(0 ..< 4) { ⓡow in
@@ -11,7 +11,7 @@ struct 👆Keypad: View {
                         switch ⓘndex {
                             case 1 ..< 10:
                                 Button {
-                                    📱.🧩appendComponent(ⓘndex)
+                                    self.model.🧩appendComponent(ⓘndex)
                                 } label: {
                                     ZStack {
                                         Color.clear
@@ -22,22 +22,22 @@ struct 👆Keypad: View {
                                 .disabled(self.ⓓisable(ⓘndex))
                             case 10:
                                 Button {
-                                    Task { await 📱.👆register() }
+                                    Task { await self.model.👆register() }
                                 } label: {
                                     ZStack {
                                         Color.clear
                                         Image(systemName: self.ⓡegisterButtonImage)
-                                            .symbolVariant(📱.🧩components.count > 2 ? .fill : .none)
-                                            .scaleEffect(📱.🧩components.count > 2 ? 1.15 : 1)
+                                            .symbolVariant(self.model.🧩components.count > 2 ? .fill : .none)
+                                            .scaleEffect(self.model.🧩components.count > 2 ? 1.15 : 1)
                                             .font(.system(size: self.ⓕontSize))
                                     }
                                 }
                                 .tint(.pink)
                                 .accessibilityLabel("DONE")
-                                .disabled(📱.🧩components.count < 3)
+                                .disabled(self.model.🧩components.count < 3)
                             case 11:
                                 Button {
-                                    📱.🧩appendComponent(self.ⓩeroOrTen)
+                                    self.model.🧩appendComponent(self.ⓩeroOrTen)
                                 } label: {
                                     ZStack {
                                         Color.clear
@@ -48,7 +48,7 @@ struct 👆Keypad: View {
                                 .disabled(self.ⓓisable(ⓘndex))
                             case 12:
                                 Button {
-                                    📱.🧩components.removeLast()
+                                    self.model.🧩components.removeLast()
                                     💥Feedback.light()
                                 } label: {
                                     ZStack {
@@ -59,9 +59,9 @@ struct 👆Keypad: View {
                                 }
                                 .tint(.primary)
                                 .accessibilityLabel("Delete")
-                                .disabled(📱.🧩components.isEmpty)
+                                .disabled(self.model.🧩components.isEmpty)
                             default:
-                                Text("🐛")
+                                Text(verbatim: "🐛")
                         }
                     }
                 }
@@ -70,26 +70,29 @@ struct 👆Keypad: View {
         .font(.system(size: self.ⓕontSize, weight: .medium, design: .rounded))
         .minimumScaleFactor(0.66)
     }
+}
+
+private extension 👆Keypad {
     private func ⓓisable(_ ⓘndex: Int) -> Bool {
-        if 📱.🧩components.count == 3 && (📱.🚩secondDecimalPlaceOption == false) {
+        if self.model.🧩components.count == 3 && (self.model.🚩secondDecimalPlaceOption == false) {
             return true
         }
-        if 📱.🧩components.count == 4 {
+        if self.model.🧩components.count == 4 {
             return true
         }
-        switch 📱.📏unitOption {
+        switch self.model.📏unitOption {
             case .℃:
-                if 📱.🧩components.isEmpty {
+                if self.model.🧩components.isEmpty {
                     if ⓘndex != 3 && ⓘndex != 4 {
                         return true
                     }
                 }
-                if 📱.🧩components.count == 1 {
-                    if 📱.🧩components.first == 3 {
+                if self.model.🧩components.count == 1 {
+                    if self.model.🧩components.first == 3 {
                         if ⓘndex < 4 || ⓘndex == 11 {
                             return true
                         }
-                    } else if 📱.🧩components.first == 4 {
+                    } else if self.model.🧩components.first == 4 {
                         if ⓘndex != 1 && ⓘndex != 11 {
                             return true
                         }
@@ -97,17 +100,17 @@ struct 👆Keypad: View {
                 }
                 return false
             case .℉:
-                if 📱.🧩components.isEmpty {
+                if self.model.🧩components.isEmpty {
                     if !(ⓘndex == 9 || ⓘndex == 11) {
                         return true
                     }
                 }
-                if 📱.🧩components.count == 1 {
-                    if 📱.🧩components.first == 10 {
+                if self.model.🧩components.count == 1 {
+                    if self.model.🧩components.first == 10 {
                         if 5 < ⓘndex && ⓘndex < 10 {
                             return true
                         }
-                    } else if 📱.🧩components.first == 9 {
+                    } else if self.model.🧩components.first == 9 {
                         if ⓘndex < 4 || ⓘndex == 11 {
                             return true
                         }
@@ -117,39 +120,39 @@ struct 👆Keypad: View {
         }
     }
     private var ⓡegisterButtonImage: String {
-        if 📱.🚩autoCompleteOption == false {
-            return "checkmark.circle"
-        }
-        if 📱.🚩secondDecimalPlaceOption {
-            switch 📱.🧩components.count {
-                case 0: return "4.circle"
-                case 1: return "3.circle"
-                case 2: return "2.circle"
-                case 3: return "1.circle"
-                default: return "checkmark.circle"
-            }
+        if self.model.🚩autoCompleteOption == false {
+            "checkmark.circle"
         } else {
-            switch 📱.🧩components.count {
-                case 0: return "3.circle"
-                case 1: return "2.circle"
-                case 2: return "1.circle"
-                default: return "checkmark.circle"
+            if self.model.🚩secondDecimalPlaceOption {
+                switch self.model.🧩components.count {
+                    case 0: "4.circle"
+                    case 1: "3.circle"
+                    case 2: "2.circle"
+                    case 3: "1.circle"
+                    default: "checkmark.circle"
+                }
+            } else {
+                switch self.model.🧩components.count {
+                    case 0: "3.circle"
+                    case 1: "2.circle"
+                    case 2: "1.circle"
+                    default: "checkmark.circle"
+                }
             }
         }
     }
     private var ⓩeroOrTen: Int {
-        if 📱.📏unitOption == .℉ && 📱.🧩components.isEmpty {
-            return 10
+        if self.model.📏unitOption == .℉, self.model.🧩components.isEmpty {
+            10
         } else {
-            return 0
+            0
         }
     }
     private var ⓕontSize: CGFloat {
 #if os(iOS)
-        return 48
-#endif
-#if os(watchOS)
-        return 30
+        48
+#elseif os(watchOS)
+        30
 #endif
     }
 }

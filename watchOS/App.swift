@@ -1,14 +1,13 @@
 import SwiftUI
 
 @main
-struct TT_Watch_App: App {
+struct watchOSApp: App {
     @WKApplicationDelegateAdaptor private var ⓓelegate: 🅂yncDelegate
-    @StateObject private var 📱 = 📱AppModel()
+    @StateObject private var model = 📱AppModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.layoutDirection, .leftToRight)
-                .environmentObject(📱)
+                .environmentObject(self.model)
         }
     }
 }

@@ -181,8 +181,8 @@ enum 📏DegreeUnit: String, CaseIterable, Identifiable {
     var id: Self { self }
     var hkUnit: HKUnit {
         switch self {
-            case .℃: return .degreeCelsius()
-            case .℉: return .degreeFahrenheit()
+            case .℃: .degreeCelsius()
+            case .℉: .degreeFahrenheit()
         }
     }
 }

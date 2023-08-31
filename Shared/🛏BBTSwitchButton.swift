@@ -1,17 +1,17 @@
 import SwiftUI
 
 struct 🛏BBTSwitchButton: View {
-    @EnvironmentObject var 📱: 📱AppModel
+    @EnvironmentObject var model: 📱AppModel
     var body: some View {
-        if 📱.🚩bbtOption {
+        if self.model.🚩bbtOption {
             Button {
-                📱.🛏bbtSwitch.toggle()
+                self.model.🛏bbtSwitch.toggle()
                 💥Feedback.light()
             } label: {
                 Image(systemName: "bed.double")
-                    .foregroundStyle(📱.🛏bbtSwitch ? .primary : .quaternary)
+                    .foregroundStyle(self.model.🛏bbtSwitch ? .primary : .quaternary)
                     .overlay {
-                        if 📱.🛏bbtSwitch == false {
+                        if self.model.🛏bbtSwitch == false {
                             Image(systemName: "xmark")
                                 .scaleEffect(1.2)
                         }
@@ -19,11 +19,11 @@ struct 🛏BBTSwitchButton: View {
                     .tint(.primary)
             }
             .accessibilityLabel("Switch type")
-            .onChange(of: 📱.🛏bbtSwitch) { _ in
-                📱.🏥loadPreferredUnit()
+            .onChange(of: self.model.🛏bbtSwitch) { _ in
+                self.model.🏥loadPreferredUnit()
             }
-            .onChange(of: 📱.📏unitOption) { _ in
-                📱.🧩resetComponents()
+            .onChange(of: self.model.📏unitOption) { _ in
+                self.model.🧩resetComponents()
             }
         }
     }

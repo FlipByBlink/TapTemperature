@@ -1,15 +1,15 @@
 import SwiftUI
 
 struct 🟥AutoCompleteHintView: View {
-    @EnvironmentObject var 📱: 📱AppModel
+    @EnvironmentObject var model: 📱AppModel
     var body: some View {
-        GeometryReader { 📐 in
+        GeometryReader { ⓟroxy in
             VStack {
                 Spacer()
-                if 📱.🚩autoCompleteOption {
-                    if 📱.🧩components.count == (📱.🚩secondDecimalPlaceOption ? 3 : 2) {
+                if self.model.🚩autoCompleteOption {
+                    if self.model.🧩components.count == (self.model.🚩secondDecimalPlaceOption ? 3 : 2) {
                         Rectangle()
-                            .frame(height: 8 + 📐.safeAreaInsets.bottom)
+                            .frame(height: 8 + ⓟroxy.safeAreaInsets.bottom)
                             .foregroundColor(.pink)
                             .shadow(radius: 3)
                             .transition(.asymmetric(insertion: .move(edge: .bottom),
@@ -18,7 +18,7 @@ struct 🟥AutoCompleteHintView: View {
                 }
             }
             .ignoresSafeArea()
-            .animation(.default.speed(2), value: 📱.🧩components.count)
+            .animation(.default.speed(2), value: self.model.🧩components.count)
         }
     }
 }

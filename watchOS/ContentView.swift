@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var 📱: 📱AppModel
+    @EnvironmentObject var model: 📱AppModel
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
                 HStack {
                     🪧ValueLabel()
-                    if 📱.🚩bbtOption { Spacer() }
+                    if self.model.🚩bbtOption { Spacer() }
                     🛏BBTSwitchButton()
                         .buttonStyle(.plain)
                 }
@@ -17,23 +17,16 @@ struct ContentView: View {
                 👆Keypad()
                     .buttonStyle(.plain)
             }
-            .navigationTitle(📱.ⓣarget.isBT ? "Temperature" : "BBT")
+            .navigationTitle(self.model.ⓣarget.isBT ? "Temperature" : "BBT")
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea(edges: .bottom)
         }
         .ignoresSafeArea(edges: .bottom)
-        .sheet(isPresented: $📱.🚩showResult) {
-            📱.ⓡeset()
+        .sheet(isPresented: self.$model.🚩showResult) {
+            self.model.ⓡeset()
         } content: {
             🗯ResultView()
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static let ⓜodel = 📱AppModel()
-    static var previews: some View {
-        ContentView()
-            .environmentObject(self.ⓜodel)
+        .environment(\.layoutDirection, .leftToRight)
     }
 }

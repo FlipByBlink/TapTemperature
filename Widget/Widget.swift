@@ -2,24 +2,20 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: .now)
-    }
-
+    func placeholder(in context: Context) -> SimpleEntry { .init() }
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        completion(SimpleEntry(date: .now))
+        completion(.init())
     }
-
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        completion(Timeline(entries: [SimpleEntry(date: .now)], policy: .never))
+        completion(Timeline(entries: [.init()], policy: .never))
     }
 }
 
 struct SimpleEntry: TimelineEntry {
-    let date: Date
+    let date: Date = .now
 }
 
-struct TTWidgetEntryView : View {
+struct 🪧WidgetEntryView : View {
     @Environment(\.widgetFamily) var widgetFamily
     var body: some View {
         switch widgetFamily {
@@ -34,29 +30,18 @@ struct TTWidgetEntryView : View {
                 Label("Temperature", systemImage: "medical.thermometer")
                     .widgetAccentable()
             default:
-                Text("🐛")
+                Text(verbatim: "🐛")
         }
     }
 }
 
 @main
-struct TTWidget: Widget {
-    let kind: String = "TTWidget"
-
+struct 🪧Widget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { _ in
-            TTWidgetEntryView()
+        StaticConfiguration(kind: "TTWidget", provider: Provider()) { _ in
+            🪧WidgetEntryView()
         }
         .configurationDisplayName("Shortcut")
-        .supportedFamilies([.accessoryCircular,
-                            .accessoryCorner,
-                            .accessoryInline])
-    }
-}
-
-struct TTWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        TTWidgetEntryView()
-            .previewContext(WidgetPreviewContext(family: .accessoryCorner))
+        .supportedFamilies([.accessoryCircular, .accessoryCorner, .accessoryInline])
     }
 }

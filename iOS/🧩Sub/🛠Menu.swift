@@ -11,40 +11,40 @@ struct 🛠MenuButton: View {
     }
 }
 
-struct 🛠MenuContent: View {
-    @EnvironmentObject var 📱: 📱AppModel
+private struct 🛠MenuContent: View {
+    @EnvironmentObject var model: 📱AppModel
     var body: some View {
         List {
             Section {
-                Toggle(isOn: $📱.🚩bbtOption) {
+                Toggle(isOn: self.$model.🚩bbtOption) {
                     Label("Basal body temperature", systemImage: "bed.double")
                 }
-                .onChange(of: 📱.🚩bbtOption) { _ in
-                    Task { await 📱.🏥setUp(.basalBodyTemperature) }
+                .onChange(of: self.model.🚩bbtOption) { _ in
+                    Task { await self.model.🏥setUp(.basalBodyTemperature) }
                 }
             } header: {
                 Text("Option")
             }
-            self.ⓢecondDecimalPlaceToggle()
-            self.ⓐutoCompleteToggle()
-            self.ⓞpenHealthAppButton()
+            self.secondDecimalPlaceToggle()
+            self.autoCompleteToggle()
+            self.openHealthAppButton()
             ℹ️AboutAppLink(name: "TapTemperature", subtitle: "App for iPhone / Apple Watch")
             📣ADMenuLink()
         }
         .navigationTitle("Menu")
     }
-    private func ⓢecondDecimalPlaceToggle() -> some View {
+    private func secondDecimalPlaceToggle() -> some View {
         Section {
-            Toggle(isOn: $📱.🚩secondDecimalPlaceOption) {
+            Toggle(isOn: self.$model.🚩secondDecimalPlaceOption) {
                 Label("Input second decimal place", systemImage: "character.cursor.ibeam")
             }
         } footer: {
-            Text(📱.📏unitOption == .℃ ? "36.1 ℃  →  36.12︭ ℃" : "100.1 ℉  →  100.12︭ ℉")
+            Text(self.model.📏unitOption == .℃ ? "36.1 ℃  →  36.12︭ ℃" : "100.1 ℉  →  100.12︭ ℉")
         }
     }
-    private func ⓐutoCompleteToggle() -> some View {
+    private func autoCompleteToggle() -> some View {
         Section {
-            Toggle(isOn: $📱.🚩autoCompleteOption) {
+            Toggle(isOn: self.$model.🚩autoCompleteOption) {
                 Label("Auto complete",
                       systemImage: "checkmark.circle.trianglebadge.exclamationmark")
             }
@@ -52,7 +52,7 @@ struct 🛠MenuContent: View {
             Text("Save 1 step.")
         }
     }
-    private func ⓞpenHealthAppButton() -> some View {
+    private func openHealthAppButton() -> some View {
         Link (destination: URL(string: "x-apple-health://")!) {
             HStack {
                 Label {
