@@ -30,12 +30,12 @@ extension 📱AppModel {
     
     var inputValue: Double {
         if self.components.count < 3 { return 0.0 }
-        var ⓥalue = Double(self.components[0].description
-                           + self.components[1].description
+        var ⓥalue = Double("\(self.components[0])"
+                           + "\(self.components[1])"
                            + "."
-                           + self.components[2].description)!
+                           + "\(self.components[2])")!
         if self.components.indices.contains(3) {
-            ⓥalue = Double(ⓥalue.description + self.components[3].description)!
+            ⓥalue = Double("\(ⓥalue)" + "\(self.components[3])")!
         }
         return ⓥalue
     }

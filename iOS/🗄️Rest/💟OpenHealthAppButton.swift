@@ -13,6 +13,6 @@ struct 💟OpenHealthAppButton: View {
                 }
         }
         .foregroundStyle(.primary)
-        .accessibilityLabel("Open \"Health\" app")
+        .accessibilityLabel(#"Open "Health" app"#)
     }
 }

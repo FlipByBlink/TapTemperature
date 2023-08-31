@@ -41,7 +41,7 @@ struct 🗯ResultView: View {
                                 .minimumScaleFactor(0.1)
                         }
                         if self.model.registrationSuccess {
-                            Text(self.model.inputValue.description + " " + self.model.degreeUnit.rawValue)
+                            Text("\(self.model.inputValue) " + self.model.degreeUnit.rawValue)
                                 .font(.title2)
                                 .fontWeight(.bold)
                         }

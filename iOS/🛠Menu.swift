@@ -52,7 +52,7 @@ private struct 🛠MenuContent: View {
             Text("Save 1 step.")
         }
     }
-    private func openHealthAppButton() -> some View {
+    private func openHealthAppButton() -> some View { //TODO: リファクタリング
         Link (destination: URL(string: "x-apple-health://")!) {
             HStack {
                 Label {

@@ -20,12 +20,14 @@ extension 🏳️Mode {
     }
     var navigationTitle: LocalizedStringKey {
         switch self {
+            case .bodyTemperature:
 #if os(iOS)
-            case .bodyTemperature: "Body temperature"
+                "Body temperature"
 #elseif os(watchOS)
-            case .bodyTemperature: "Temperature"
+                "Temperature"
 #endif
-            case .basalBodyTemperature: "BBT"
+            case .basalBodyTemperature: 
+                "BBT"
         }
     }
 }

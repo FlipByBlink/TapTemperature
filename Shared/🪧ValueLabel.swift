@@ -24,7 +24,7 @@ private extension 🪧ValueLabel {
             case .℃:
                 switch self.model.components.count {
                     case 0: "_"
-                    case 1, 2, 3, 4: self.model.components[0].description
+                    case 1, 2, 3, 4: "\(self.model.components[0])"
                     default: "🐛"
                 }
             case .℉:
@@ -44,7 +44,7 @@ private extension 🪧ValueLabel {
         switch self.model.components.count {
             case 0: " "
             case 1: "_"
-            case 2, 3, 4: self.model.components[1].description
+            case 2, 3, 4: "\(self.model.components[1])"
             default: "🐛"
         }
     }
@@ -52,7 +52,7 @@ private extension 🪧ValueLabel {
         switch self.model.components.count {
             case 0, 1: " "
             case 2: "_"
-            case 3, 4: self.model.components[2].description
+            case 3, 4: "\(self.model.components[2])"
             default: "🐛"
         }
     }
@@ -61,7 +61,7 @@ private extension 🪧ValueLabel {
             switch self.model.components.count {
                 case 0, 1, 2: " "
                 case 3: "_"
-                case 4: self.model.components[3].description
+                case 4: "\(self.model.components[3])"
                 default: "🐛"
             }
         } else {

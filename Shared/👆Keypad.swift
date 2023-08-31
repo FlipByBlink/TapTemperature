@@ -6,8 +6,8 @@ struct 👆Keypad: View {
         VStack(spacing: 0) {
             ForEach(0 ..< 4) { ⓡow in
                 HStack(spacing: 0) {
-                    ForEach(0 ..< 3) { ⓒolumn in
-                        let ⓘndex: Int = ⓡow * 3 + ⓒolumn + 1
+                    ForEach(1 ..< 4) { ⓒolumn in
+                        let ⓘndex: Int = ⓡow * 3 + ⓒolumn
                         switch ⓘndex {
                             case 1 ..< 10:
                                 Button {
