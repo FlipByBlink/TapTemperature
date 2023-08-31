@@ -6,22 +6,22 @@ struct 🗯ResultView: View {
         NavigationStack {
             ZStack {
                 Rectangle()
-                    .foregroundColor(self.model.🚩registerSuccess ? .pink : .gray)
+                    .foregroundColor(self.model.registrationSuccess ? .pink : .gray)
                     .ignoresSafeArea()
                 VStack(spacing: 12) {
                     Spacer()
-                    Image(systemName: self.model.🚩registerSuccess ? "checkmark" : "exclamationmark.triangle")
+                    Image(systemName: self.model.registrationSuccess ? "checkmark" : "exclamationmark.triangle")
                         .font(.system(size: 100).weight(.semibold))
                         .minimumScaleFactor(0.1)
-                    Text(self.model.🚩registerSuccess ? "DONE!" : "Error!?")
-                        .strikethrough(self.model.🚩canceled)
+                    Text(self.model.registrationSuccess ? "DONE!" : "Error!?")
+                        .strikethrough(self.model.canceled)
                         .font(.system(size: 128).weight(.black))
                         .lineLimit(1)
                         .minimumScaleFactor(0.1)
                         .padding(.horizontal)
-                    if self.model.🚩registerSuccess {
+                    if self.model.registrationSuccess {
                         Text("Registration for \"Health\" app")
-                            .strikethrough(self.model.🚩canceled)
+                            .strikethrough(self.model.canceled)
                             .bold()
                             .opacity(0.8)
                     } else {
@@ -34,14 +34,14 @@ struct 🗯ResultView: View {
                     }
                     Spacer()
                     VStack(spacing: 10) {
-                        if self.model.🚩bbtOption {
-                            Text(self.model.ⓣarget.isBT ? "Body temperature" : "Basal body temperature")
+                        if self.model.ableBBT {
+                            Text(self.model.target.isBT ? "Body temperature" : "Basal body temperature")
                                 .lineLimit(1)
                                 .font(.caption.weight(.semibold))
                                 .minimumScaleFactor(0.1)
                         }
-                        if self.model.🚩registerSuccess {
-                            Text(self.model.🌡value.description + " " + self.model.📏unitOption.rawValue)
+                        if self.model.registrationSuccess {
+                            Text(self.model.inputValue.description + " " + self.model.degreeUnit.rawValue)
                                 .font(.title2)
                                 .fontWeight(.bold)
                         }
@@ -52,7 +52,7 @@ struct 🗯ResultView: View {
                 }
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .opacity(self.model.🚩canceled ? 0.25 : 1)
+                .opacity(self.model.canceled ? 0.25 : 1)
                 .modifier(🗑CanceledLabel())
             }
             .preferredColorScheme(.dark)
@@ -61,7 +61,7 @@ struct 🗯ResultView: View {
                     self.dismissButton()
                 }
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    if self.model.🚩registerSuccess == false {
+                    if self.model.registrationSuccess == false {
                         Image(systemName: "arrow.right")
                             .imageScale(.small)
                             .font(.largeTitle)
@@ -69,17 +69,17 @@ struct 🗯ResultView: View {
                     💟OpenHealthAppButton()
                 }
                 ToolbarItemGroup(placement: .bottomBar) {
-                    if self.model.🚩registerSuccess { 🗑CancelButton() }
+                    if self.model.registrationSuccess { 🗑CancelButton() }
                 }
             }
-            .animation(.default, value: self.model.🚩canceled)
-            .onDisappear { self.model.🚩registerSuccess = false }
+            .animation(.default, value: self.model.canceled)
+            .onDisappear { self.model.registrationSuccess = false }
             //.modifier(💬RequestUserReview())
         }
     }
     private func dismissButton() -> some View {
         Button {
-            self.model.ⓡeset()
+            self.model.reset()
         } label: {
             Label("Dismiss", systemImage: "xmark.circle")
                 .foregroundColor(.primary)
@@ -91,14 +91,14 @@ private struct 🗑CancelButton: View {
     @EnvironmentObject var model: 📱AppModel
     var body: some View {
         Button {
-            self.model.🗑cancel()
+            self.model.cancel()
         } label: {
             Image(systemName: "arrow.uturn.backward.circle")
                 .foregroundColor(.primary)
                 .font(.title3)
         }
-        .disabled(self.model.🚩canceled)
-        .opacity(self.model.🚩canceled ? 0.5 : 1)
+        .disabled(self.model.canceled)
+        .opacity(self.model.canceled ? 0.5 : 1)
         .accessibilityLabel("Cancel")
     }
 }
@@ -108,17 +108,17 @@ private struct 🗑CanceledLabel: ViewModifier {
     func body(content: Content) -> some View {
         content
             .overlay(alignment: .bottom) {
-                if self.model.🚩canceled {
+                if self.model.canceled {
                     VStack {
                         Text("Canceled")
                             .fontWeight(.semibold)
-                        if self.model.🚨cancelError {
+                        if self.model.cancelError {
                             Text("(perhaps error)")
                         }
                     }
                 }
             }
-            .animation(.default, value: self.model.🚩canceled)
+            .animation(.default, value: self.model.canceled)
     }
 }
 

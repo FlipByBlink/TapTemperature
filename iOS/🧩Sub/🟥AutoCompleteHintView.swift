@@ -6,8 +6,8 @@ struct 🟥AutoCompleteHintView: View {
         GeometryReader { ⓟroxy in
             VStack {
                 Spacer()
-                if self.model.🚩autoCompleteOption {
-                    if self.model.🧩components.count == (self.model.🚩secondDecimalPlaceOption ? 3 : 2) {
+                if self.model.ableAutoComplete {
+                    if self.model.components.count == (self.model.ableSecondDecimalPlace ? 3 : 2) {
                         Rectangle()
                             .frame(height: 8 + ⓟroxy.safeAreaInsets.bottom)
                             .foregroundColor(.pink)
@@ -18,7 +18,7 @@ struct 🟥AutoCompleteHintView: View {
                 }
             }
             .ignoresSafeArea()
-            .animation(.default.speed(2), value: self.model.🧩components.count)
+            .animation(.default.speed(2), value: self.model.components.count)
         }
     }
 }

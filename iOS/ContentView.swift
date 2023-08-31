@@ -16,7 +16,7 @@ struct ContentView: View {
                     .padding(.vertical, 8)
                     .frame(height: 400)
             }
-            .navigationTitle(self.model.ⓣarget.isBT ? "Body temperature" : "BBT")
+            .navigationTitle(self.model.target.isBT ? "Body temperature" : "BBT")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     🛏BBTSwitchButton()
@@ -25,9 +25,9 @@ struct ContentView: View {
                 }
             }
             .background { 🟥AutoCompleteHintView() }
-            .fullScreenCover(isPresented: self.$model.🚩showResult) { 🗯ResultView() }
+            .fullScreenCover(isPresented: self.$model.showResult) { 🗯ResultView() }
             .onChange(of: self.scenePhase) {
-                if $0 == .background { self.model.ⓡeset() }
+                if $0 == .background { self.model.reset() }
             }
         }
         .modifier(📣ADSheet())

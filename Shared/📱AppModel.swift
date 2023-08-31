@@ -2,116 +2,111 @@ import SwiftUI
 import HealthKit
 
 class 📱AppModel: ObservableObject {
-    private let 🏥healthStore = HKHealthStore()
+    private let healthStore = HKHealthStore()
     
-    @AppStorage(🔑BasalBodyTemperature) var 🚩bbtOption: Bool = false
-    @AppStorage(🔑SecondDecimalPlace) var 🚩secondDecimalPlaceOption: Bool = false
-    @AppStorage(🔑AutoComplete) var 🚩autoCompleteOption: Bool = false
+    @AppStorage(🔑BasalBodyTemperature) var ableBBT: Bool = false
+    @AppStorage(🔑SecondDecimalPlace) var ableSecondDecimalPlace: Bool = false
+    @AppStorage(🔑AutoComplete) var ableAutoComplete: Bool = false
     
-    @Published var 📏unitOption: 📏DegreeUnit = .℃
+    @Published var degreeUnit: 📏DegreeUnit = .℃
     
-    @Published var 🛏bbtSwitch: Bool = true
+    @Published var bbtMode: Bool = true
     
-    var ⓣarget: 🅃arget {
-        self.🚩bbtOption && self.🛏bbtSwitch ? .basalBodyTemperature : .bodyTemperature
+    @Published var showResult: Bool = false
+    @Published var registrationSuccess: Bool = false
+    @Published var canceled: Bool = false
+    @Published var cancelError: Bool = false
+    
+    @Published var components: [Int] = [3]
+    
+    private var sampleCache: HKQuantitySample? = nil
+    
+    init() {
+        Task {
+            await self.setUpHealthStore(.bodyTemperature)
+            self.observePreferredUnits()
+        }
+    }
+}
+
+extension 📱AppModel {
+    var target: 🅃arget {
+        self.ableBBT && self.bbtMode ? .basalBodyTemperature : .bodyTemperature
     }
     
-    @Published var 🚩showResult: Bool = false
-    @Published var 🚩registerSuccess: Bool = false
-    @Published var 🚩canceled: Bool = false
-    @Published var 🚨cancelError: Bool = false
-    
-    @Published var 🧩components: [Int] = [3]
-    
-    var 🌡value: Double {
-        if self.🧩components.count < 3 { return 0.0 }
-        var ⓥalue = Double(self.🧩components[0].description
-                           + self.🧩components[1].description
+    var inputValue: Double {
+        if self.components.count < 3 { return 0.0 }
+        var ⓥalue = Double(self.components[0].description
+                           + self.components[1].description
                            + "."
-                           + self.🧩components[2].description)!
-        if self.🧩components.indices.contains(3) {
-            ⓥalue = Double(ⓥalue.description + self.🧩components[3].description)!
+                           + self.components[2].description)!
+        if self.components.indices.contains(3) {
+            ⓥalue = Double(ⓥalue.description + self.components[3].description)!
         }
         return ⓥalue
     }
     
-    func 🧩resetComponents() {
-        switch self.📏unitOption {
-            case .℃: self.🧩components = [3]
-            case .℉: self.🧩components = []
+    func resetComponents() {
+        switch self.degreeUnit {
+            case .℃: self.components = [3]
+            case .℉: self.components = []
         }
     }
     
-    func 🧩appendComponent(_ ⓘnt: Int) {
-        self.🧩components.append(ⓘnt)
-        if self.🚩autoCompleteOption {
-            if self.🧩components.count == (self.🚩secondDecimalPlaceOption ? 4 : 3) {
-                Task { await self.👆register() }
+    func append(_ ⓒomponent: Int) {
+        self.components.append(ⓒomponent)
+        if self.ableAutoComplete {
+            if self.components.count == (self.ableSecondDecimalPlace ? 4 : 3) {
+                Task { await self.register() }
                 return
             }
         }
         💥Feedback.light()
     }
     
-    private var 📦sampleCache: HKQuantitySample?
-    
     @MainActor
-    func 👆register() async {
+    func register() async {
         do {
-            if self.🏥healthStore.authorizationStatus(for: self.ⓣarget.quantityType) == .sharingDenied {
-                self.🚩registerSuccess = false
-                self.🚩showResult = true
+            if self.healthStore.authorizationStatus(for: self.target.quantityType) == .sharingDenied {
+                self.registrationSuccess = false
+                self.showResult = true
                 return
             }
-            
-            let 📦sample = HKQuantitySample(type: self.ⓣarget.quantityType,
-                                            quantity: HKQuantity(unit: self.📏unitOption.hkUnit,
-                                                                 doubleValue: self.🌡value),
-                                            start: .now,
-                                            end: .now)
-            
-            self.📦sampleCache = 📦sample
-            try await self.🏥healthStore.save(📦sample)
-            
-            self.🚩registerSuccess = true
-            self.🚩showResult = true
+            let ⓢample = HKQuantitySample(type: self.target.quantityType,
+                                          quantity: .init(unit: self.degreeUnit.hkUnit,
+                                                          doubleValue: self.inputValue),
+                                          start: .now,
+                                          end: .now)
+            self.sampleCache = ⓢample
+            try await self.healthStore.save(ⓢample)
+            self.registrationSuccess = true
+            self.showResult = true
             💥Feedback.success()
         } catch {
-            DispatchQueue.main.async {
+            Task { @MainActor in
                 print(#function, error)
-                self.🚩registerSuccess = false
-                self.🚩showResult = true
+                self.registrationSuccess = false
+                self.showResult = true
             }
         }
     }
     
-    func 🏥setUp(_ ⓘdentifier: HKQuantityTypeIdentifier) async {
-        await self.🏥requestAuthorization(ⓘdentifier)
-        self.🏥loadPreferredUnit()
+    func setUpHealthStore(_ ⓘdentifier: HKQuantityTypeIdentifier) async {
+        await self.requestAuthorization(ⓘdentifier)
+        self.loadPreferredUnit()
     }
     
-    private func 🏥requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async {
-        if self.🏥healthStore.authorizationStatus(for: self.ⓣarget.quantityType) == .notDetermined {
-            do {
-                try await self.🏥healthStore.requestAuthorization(toShare: [self.ⓣarget.quantityType],
-                                                                  read: [])
-            } catch {
-                print(#function, error)
-            }
-        }
-    }
-    
-    func 🏥loadPreferredUnit() {
+    func loadPreferredUnit() {
         Task { @MainActor in
-            let ⓤnits = try await self.🏥healthStore.preferredUnits(for: [self.ⓣarget.quantityType])
-            if let ⓤnit = ⓤnits[self.ⓣarget.quantityType] {
-                if ⓤnit != self.📏unitOption.hkUnit {
+            let ⓤnits = try await self.healthStore.preferredUnits(for: [self.target.quantityType])
+            if let ⓤnit = ⓤnits[self.target.quantityType] {
+                if ⓤnit != self.degreeUnit.hkUnit {
                     switch ⓤnit {
-                        case .degreeCelsius(): self.📏unitOption = .℃
-                        case .degreeFahrenheit(): self.📏unitOption = .℉
+                        case .degreeCelsius(): self.degreeUnit = .℃
+                        case .degreeFahrenheit(): self.degreeUnit = .℉
                         default: assertionFailure()
                     }
-                    self.🧩resetComponents()
+                    self.resetComponents()
                 }
             } else {
                 assertionFailure()
@@ -119,51 +114,57 @@ class 📱AppModel: ObservableObject {
         }
     }
     
-    func 🏥observePreferredUnits() {
-        Task {
-            for ⓣype in [HKQuantityType(.bodyTemperature), HKQuantityType(.basalBodyTemperature)] {
-                let ⓠuery = HKObserverQuery(sampleType: ⓣype, predicate: nil) { _, ⓒompletionHandler, ⓔrror in
-                    if ⓔrror != nil { return }
-                    self.🏥loadPreferredUnit()
-                    ⓒompletionHandler()
-                }
-                self.🏥healthStore.execute(ⓠuery)
-                try await self.🏥healthStore.enableBackgroundDelivery(for: ⓣype,
-                                                                      frequency: .immediate)
-            }
-        }
-    }
-    
     @MainActor
-    func 🗑cancel() {
+    func cancel() {
         Task {
             do {
-                guard let 📦 = self.📦sampleCache else { return }
-                self.🚩canceled = true
-                try await self.🏥healthStore.delete(📦)
-                self.📦sampleCache = nil
+                guard let 📦 = self.sampleCache else { return }
+                self.canceled = true
+                try await self.healthStore.delete(📦)
+                self.sampleCache = nil
                 💥Feedback.error()
             } catch {
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     print(#function, error)
-                    self.🚨cancelError = true
+                    self.cancelError = true
                 }
             }
         }
     }
     
-    func ⓡeset() {
-        self.🚩showResult = false
-        self.🚩canceled = false
-        self.🚨cancelError = false
-        self.🧩resetComponents()
-        self.📦sampleCache = nil
+    func reset() {
+        self.showResult = false
+        self.canceled = false
+        self.cancelError = false
+        self.resetComponents()
+        self.sampleCache = nil
+    }
+}
+
+private extension 📱AppModel {
+    private func requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async { //TODO: 引数おかしい？
+        if self.healthStore.authorizationStatus(for: self.target.quantityType) == .notDetermined {
+            do {
+                try await self.healthStore.requestAuthorization(toShare: [self.target.quantityType],
+                                                                read: [])
+            } catch {
+                print(#function, error)
+            }
+        }
     }
     
-    init() {
+    private func observePreferredUnits() {
         Task {
-            await self.🏥setUp(.bodyTemperature)
-            self.🏥observePreferredUnits()
+            for ⓣype: HKQuantityType in [.init(.bodyTemperature), .init(.basalBodyTemperature)] {
+                let ⓠuery = HKObserverQuery(sampleType: ⓣype, predicate: nil) { _, ⓒompletionHandler, ⓔrror in
+                    if ⓔrror != nil { return }
+                    self.loadPreferredUnit()
+                    ⓒompletionHandler()
+                }
+                self.healthStore.execute(ⓠuery)
+                try await self.healthStore.enableBackgroundDelivery(for: ⓣype,
+                                                                    frequency: .immediate)
+            }
         }
     }
 }
@@ -172,18 +173,7 @@ enum 🅃arget {
     case bodyTemperature, basalBodyTemperature
     var isBT: Bool { self == .bodyTemperature }
     var quantityType: HKQuantityType {
-        HKQuantityType(self.isBT ? .bodyTemperature : .basalBodyTemperature)
-    }
-}
-
-enum 📏DegreeUnit: String, CaseIterable, Identifiable {
-    case ℃, ℉
-    var id: Self { self }
-    var hkUnit: HKUnit {
-        switch self {
-            case .℃: .degreeCelsius()
-            case .℉: .degreeFahrenheit()
-        }
+        .init(self.isBT ? .bodyTemperature : .basalBodyTemperature)
     }
 }
 

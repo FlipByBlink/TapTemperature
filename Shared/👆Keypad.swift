@@ -11,7 +11,7 @@ struct 👆Keypad: View {
                         switch ⓘndex {
                             case 1 ..< 10:
                                 Button {
-                                    self.model.🧩appendComponent(ⓘndex)
+                                    self.model.append(ⓘndex)
                                 } label: {
                                     ZStack {
                                         Color.clear
@@ -19,36 +19,36 @@ struct 👆Keypad: View {
                                     }
                                 }
                                 .tint(.primary)
-                                .disabled(self.ⓓisable(ⓘndex))
+                                .disabled(self.disable(ⓘndex))
                             case 10:
                                 Button {
-                                    Task { await self.model.👆register() }
+                                    Task { await self.model.register() }
                                 } label: {
                                     ZStack {
                                         Color.clear
-                                        Image(systemName: self.ⓡegisterButtonImage)
-                                            .symbolVariant(self.model.🧩components.count > 2 ? .fill : .none)
-                                            .scaleEffect(self.model.🧩components.count > 2 ? 1.15 : 1)
-                                            .font(.system(size: self.ⓕontSize))
+                                        Image(systemName: self.registerButtonImage)
+                                            .symbolVariant(self.model.components.count > 2 ? .fill : .none)
+                                            .scaleEffect(self.model.components.count > 2 ? 1.15 : 1)
+                                            .font(.system(size: self.fontSize))
                                     }
                                 }
                                 .tint(.pink)
                                 .accessibilityLabel("DONE")
-                                .disabled(self.model.🧩components.count < 3)
+                                .disabled(self.model.components.count < 3)
                             case 11:
                                 Button {
-                                    self.model.🧩appendComponent(self.ⓩeroOrTen)
+                                    self.model.append(self.zeroOrTen)
                                 } label: {
                                     ZStack {
                                         Color.clear
-                                        Text(self.ⓩeroOrTen.description)
+                                        Text(self.zeroOrTen.description)
                                     }
                                 }
                                 .tint(.primary)
-                                .disabled(self.ⓓisable(ⓘndex))
+                                .disabled(self.disable(ⓘndex))
                             case 12:
                                 Button {
-                                    self.model.🧩components.removeLast()
+                                    self.model.components.removeLast()
                                     💥Feedback.light()
                                 } label: {
                                     ZStack {
@@ -59,7 +59,7 @@ struct 👆Keypad: View {
                                 }
                                 .tint(.primary)
                                 .accessibilityLabel("Delete")
-                                .disabled(self.model.🧩components.isEmpty)
+                                .disabled(self.model.components.isEmpty)
                             default:
                                 Text(verbatim: "🐛")
                         }
@@ -67,32 +67,32 @@ struct 👆Keypad: View {
                 }
             }
         }
-        .font(.system(size: self.ⓕontSize, weight: .medium, design: .rounded))
+        .font(.system(size: self.fontSize, weight: .medium, design: .rounded))
         .minimumScaleFactor(0.66)
     }
 }
 
 private extension 👆Keypad {
-    private func ⓓisable(_ ⓘndex: Int) -> Bool {
-        if self.model.🧩components.count == 3 && (self.model.🚩secondDecimalPlaceOption == false) {
+    private func disable(_ ⓘndex: Int) -> Bool { //TODO: リファクタリング
+        if self.model.components.count == 3, !self.model.ableSecondDecimalPlace {
             return true
         }
-        if self.model.🧩components.count == 4 {
+        if self.model.components.count == 4 {
             return true
         }
-        switch self.model.📏unitOption {
+        switch self.model.degreeUnit {
             case .℃:
-                if self.model.🧩components.isEmpty {
+                if self.model.components.isEmpty {
                     if ⓘndex != 3 && ⓘndex != 4 {
                         return true
                     }
                 }
-                if self.model.🧩components.count == 1 {
-                    if self.model.🧩components.first == 3 {
+                if self.model.components.count == 1 {
+                    if self.model.components.first == 3 {
                         if ⓘndex < 4 || ⓘndex == 11 {
                             return true
                         }
-                    } else if self.model.🧩components.first == 4 {
+                    } else if self.model.components.first == 4 {
                         if ⓘndex != 1 && ⓘndex != 11 {
                             return true
                         }
@@ -100,17 +100,17 @@ private extension 👆Keypad {
                 }
                 return false
             case .℉:
-                if self.model.🧩components.isEmpty {
+                if self.model.components.isEmpty {
                     if !(ⓘndex == 9 || ⓘndex == 11) {
                         return true
                     }
                 }
-                if self.model.🧩components.count == 1 {
-                    if self.model.🧩components.first == 10 {
+                if self.model.components.count == 1 {
+                    if self.model.components.first == 10 {
                         if 5 < ⓘndex && ⓘndex < 10 {
                             return true
                         }
-                    } else if self.model.🧩components.first == 9 {
+                    } else if self.model.components.first == 9 {
                         if ⓘndex < 4 || ⓘndex == 11 {
                             return true
                         }
@@ -119,12 +119,12 @@ private extension 👆Keypad {
                 return false
         }
     }
-    private var ⓡegisterButtonImage: String {
-        if self.model.🚩autoCompleteOption == false {
+    private var registerButtonImage: String {
+        if self.model.ableAutoComplete == false {
             "checkmark.circle"
         } else {
-            if self.model.🚩secondDecimalPlaceOption {
-                switch self.model.🧩components.count {
+            if self.model.ableSecondDecimalPlace {
+                switch self.model.components.count {
                     case 0: "4.circle"
                     case 1: "3.circle"
                     case 2: "2.circle"
@@ -132,7 +132,7 @@ private extension 👆Keypad {
                     default: "checkmark.circle"
                 }
             } else {
-                switch self.model.🧩components.count {
+                switch self.model.components.count {
                     case 0: "3.circle"
                     case 1: "2.circle"
                     case 2: "1.circle"
@@ -141,14 +141,14 @@ private extension 👆Keypad {
             }
         }
     }
-    private var ⓩeroOrTen: Int {
-        if self.model.📏unitOption == .℉, self.model.🧩components.isEmpty {
+    private var zeroOrTen: Int {
+        if self.model.degreeUnit == .℉, self.model.components.isEmpty {
             10
         } else {
             0
         }
     }
-    private var ⓕontSize: CGFloat {
+    private var fontSize: CGFloat {
 #if os(iOS)
         48
 #elseif os(watchOS)

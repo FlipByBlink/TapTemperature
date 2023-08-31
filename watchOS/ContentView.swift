@@ -7,7 +7,7 @@ struct ContentView: View {
             VStack(spacing: 0) {
                 HStack {
                     🪧ValueLabel()
-                    if self.model.🚩bbtOption { Spacer() }
+                    if self.model.ableBBT { Spacer() }
                     🛏BBTSwitchButton()
                         .buttonStyle(.plain)
                 }
@@ -17,13 +17,13 @@ struct ContentView: View {
                 👆Keypad()
                     .buttonStyle(.plain)
             }
-            .navigationTitle(self.model.ⓣarget.isBT ? "Temperature" : "BBT")
+            .navigationTitle(self.model.target.isBT ? "Temperature" : "BBT")
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea(edges: .bottom)
         }
         .ignoresSafeArea(edges: .bottom)
-        .sheet(isPresented: self.$model.🚩showResult) {
-            self.model.ⓡeset()
+        .sheet(isPresented: self.$model.showResult) {
+            self.model.reset()
         } content: {
             🗯ResultView()
         }

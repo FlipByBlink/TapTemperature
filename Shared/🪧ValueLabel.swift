@@ -12,23 +12,26 @@ struct 🪧ValueLabel: View {
             Text(self.🎰third + self.🎰fourth)
                 .font(.system(size: self.ⓕontSize, weight: .bold, design: .monospaced))
                 .kerning(3)
-            Text(self.model.📏unitOption.rawValue)
+            Text(self.model.degreeUnit.rawValue)
                 .font(.system(size: self.ⓕontSize * 0.6, weight: .bold))
         }
     }
+}
+
+private extension 🪧ValueLabel {
     private var 🎰first: String {
-        switch self.model.📏unitOption {
+        switch self.model.degreeUnit {
             case .℃:
-                switch self.model.🧩components.count {
+                switch self.model.components.count {
                     case 0: "_"
-                    case 1, 2, 3, 4: self.model.🧩components[0].description
+                    case 1, 2, 3, 4: self.model.components[0].description
                     default: "🐛"
                 }
             case .℉:
-                switch self.model.🧩components.count {
+                switch self.model.components.count {
                     case 0: " _"
                     case 1, 2, 3, 4:
-                        switch self.model.🧩components.first {
+                        switch self.model.components.first {
                             case 9: " 9"
                             case 10: "10"
                             default: "🐛"
@@ -38,27 +41,27 @@ struct 🪧ValueLabel: View {
         }
     }
     private var 🎰second: String {
-        switch self.model.🧩components.count {
+        switch self.model.components.count {
             case 0: " "
             case 1: "_"
-            case 2, 3, 4: self.model.🧩components[1].description
+            case 2, 3, 4: self.model.components[1].description
             default: "🐛"
         }
     }
     private var 🎰third: String {
-        switch self.model.🧩components.count {
+        switch self.model.components.count {
             case 0, 1: " "
             case 2: "_"
-            case 3, 4: self.model.🧩components[2].description
+            case 3, 4: self.model.components[2].description
             default: "🐛"
         }
     }
     private var 🎰fourth: String {
-        if self.model.🚩secondDecimalPlaceOption {
-            switch self.model.🧩components.count {
+        if self.model.ableSecondDecimalPlace {
+            switch self.model.components.count {
                 case 0, 1, 2: " "
                 case 3: "_"
-                case 4: self.model.🧩components[3].description
+                case 4: self.model.components[3].description
                 default: "🐛"
             }
         } else {
