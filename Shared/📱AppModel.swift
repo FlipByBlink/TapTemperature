@@ -5,9 +5,9 @@ import WatchConnectivity
 class 📱AppModel: NSObject, ObservableObject {
     private let healthStore = HKHealthStore()
     
-    @AppStorage(🔑BasalBodyTemperature) var ableBBT: Bool = false
-    @AppStorage(🔑SecondDecimalPlace) var ableSecondDecimalPlace: Bool = false
-    @AppStorage(🔑AutoComplete) var ableAutoComplete: Bool = false
+    @AppStorage(🔑Key.ableBBT) var ableBBT: Bool = false
+    @AppStorage(🔑Key.ableSecondDecimalPlace) var ableSecondDecimalPlace: Bool = false
+    @AppStorage(🔑Key.ableAutoComplete) var ableAutoComplete: Bool = false
     
     @Published var degreeUnit: 📏DegreeUnit = .℃
     
@@ -136,9 +136,9 @@ extension 📱AppModel {
     
     func syncAppleWatch() {
         do {
-            try WCSession.default.updateApplicationContext([🔑BasalBodyTemperature: self.ableBBT,
-                                                              🔑SecondDecimalPlace: self.ableSecondDecimalPlace,
-                                                                    🔑AutoComplete: self.ableAutoComplete])
+            try WCSession.default.updateApplicationContext([🔑Key.ableBBT: self.ableBBT,
+                                                            🔑Key.ableSecondDecimalPlace: self.ableSecondDecimalPlace,
+                                                            🔑Key.ableAutoComplete: self.ableAutoComplete])
         } catch {
             print("🚨", error.localizedDescription)
         }
@@ -165,13 +165,13 @@ extension 📱AppModel: WCSessionDelegate {
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         print("🖨️", #function, applicationContext.description)
         Task { @MainActor in
-            if let ⓥalue = applicationContext[🔑BasalBodyTemperature] as? Bool {
+            if let ⓥalue = applicationContext[🔑Key.ableBBT] as? Bool {
                 self.ableBBT = ⓥalue
             }
-            if let ⓥalue = applicationContext[🔑SecondDecimalPlace] as? Bool {
+            if let ⓥalue = applicationContext[🔑Key.ableSecondDecimalPlace] as? Bool {
                 self.ableSecondDecimalPlace = ⓥalue
             }
-            if let ⓥalue = applicationContext[🔑AutoComplete] as? Bool {
+            if let ⓥalue = applicationContext[🔑Key.ableAutoComplete] as? Bool {
                 self.ableAutoComplete = ⓥalue
             }
         }
@@ -236,8 +236,3 @@ private extension 📱AppModel {
         }
     }
 }
-
-// Key for data.
-let 🔑BasalBodyTemperature = "BasalTemp"
-let 🔑SecondDecimalPlace = "2DecimalPlace"
-let 🔑AutoComplete = "AutoComplete"

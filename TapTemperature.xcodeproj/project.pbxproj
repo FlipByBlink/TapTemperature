@@ -29,6 +29,8 @@
 		F5397F4D2AA0AB03002C90F2 /* 📏DegreeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */; };
 		F5397F522AA0C63E002C90F2 /* 🏳️Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */; };
 		F5397F532AA0C63E002C90F2 /* 🏳️Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */; };
+		F5397F552AA14F36002C90F2 /* 🔑Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F542AA14F36002C90F2 /* 🔑Key.swift */; };
+		F5397F562AA14F36002C90F2 /* 🔑Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F542AA14F36002C90F2 /* 🔑Key.swift */; };
 		F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
 		F585A0C62942AADC00BA665C /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */; };
 		F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C22942AADC00BA665C /* Configuration.storekit */; };
@@ -192,6 +194,7 @@
 		F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️SyncOptions.swift"; sourceTree = "<group>"; };
 		F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📏DegreeUnit.swift"; sourceTree = "<group>"; };
 		F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🏳️Mode.swift"; sourceTree = "<group>"; };
+		F5397F542AA14F36002C90F2 /* 🔑Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔑Key.swift"; sourceTree = "<group>"; };
 		F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
 		F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F585A0C22942AADC00BA665C /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -365,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */,
+				F5397F542AA14F36002C90F2 /* 🔑Key.swift */,
 			);
 			path = "🗄️Rest";
 			sourceTree = "<group>";
@@ -584,6 +588,7 @@
 				12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */,
 				F585A0C82942AADC00BA665C /* 📣AD.swift in Sources */,
 				125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */,
+				F5397F552AA14F36002C90F2 /* 🔑Key.swift in Sources */,
 				F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */,
 				F5397F4C2AA0AB03002C90F2 /* 📏DegreeUnit.swift in Sources */,
 				F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */,
@@ -601,6 +606,7 @@
 				F5D228BE29A9B24900F4F982 /* 💥Feedback.swift in Sources */,
 				F5D228C129A9B24900F4F982 /* 👆Keypad.swift in Sources */,
 				F5C7DE2229A9FE0900694AFD /* 🛏BBTSwitchButton.swift in Sources */,
+				F5397F562AA14F36002C90F2 /* 🔑Key.swift in Sources */,
 				F5D228B329A9B1DD00F4F982 /* App.swift in Sources */,
 				F5397F4D2AA0AB03002C90F2 /* 📏DegreeUnit.swift in Sources */,
 				F5D228BF29A9B24900F4F982 /* 🪧ValueLabel.swift in Sources */,
