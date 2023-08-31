@@ -75,48 +75,44 @@ struct 👆Keypad: View {
 private extension 👆Keypad {
     private func disable(_ ⓘndex: Int) -> Bool { //TODO: リファクタリング
         if self.model.components.count == 3, !self.model.ableSecondDecimalPlace {
-            return true
-        }
-        if self.model.components.count == 4 {
-            return true
-        }
-        switch self.model.degreeUnit {
-            case .℃:
-                if self.model.components.isEmpty {
-                    if ⓘndex != 3 && ⓘndex != 4 {
-                        return true
-                    }
-                }
-                if self.model.components.count == 1 {
-                    if self.model.components.first == 3 {
-                        if ⓘndex < 4 || ⓘndex == 11 {
-                            return true
-                        }
-                    } else if self.model.components.first == 4 {
-                        if ⓘndex != 1 && ⓘndex != 11 {
-                            return true
-                        }
-                    }
-                }
-                return false
-            case .℉:
-                if self.model.components.isEmpty {
-                    if !(ⓘndex == 9 || ⓘndex == 11) {
-                        return true
-                    }
-                }
-                if self.model.components.count == 1 {
-                    if self.model.components.first == 10 {
-                        if 5 < ⓘndex && ⓘndex < 10 {
-                            return true
-                        }
-                    } else if self.model.components.first == 9 {
-                        if ⓘndex < 4 || ⓘndex == 11 {
-                            return true
+            true
+        } else if self.model.components.count == 4 {
+            true
+        } else {
+            switch self.model.degreeUnit {
+                case .℃:
+                    if self.model.components.isEmpty {
+                        ⓘndex != 3 && ⓘndex != 4
+                    } else {
+                        if self.model.components.count == 1 {
+                            if self.model.components.first == 3 {
+                                ⓘndex < 4 || ⓘndex == 11
+                            } else if self.model.components.first == 4 {
+                                ⓘndex != 1 && ⓘndex != 11
+                            } else {
+                                false
+                            }
+                        } else {
+                            false
                         }
                     }
-                }
-                return false
+                case .℉:
+                    if self.model.components.isEmpty {
+                        !(ⓘndex == 9 || ⓘndex == 11)
+                    } else {
+                        if self.model.components.count == 1 {
+                            if self.model.components.first == 10 {
+                                5 < ⓘndex && ⓘndex < 10
+                            } else if self.model.components.first == 9 {
+                                ⓘndex < 4 || ⓘndex == 11
+                            } else {
+                                false
+                            }
+                        } else {
+                            false
+                        }
+                    }
+            }
         }
     }
     private var registerButtonImage: String {
