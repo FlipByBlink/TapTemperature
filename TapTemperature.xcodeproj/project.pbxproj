@@ -33,8 +33,8 @@
 		F585A0C82942AADC00BA665C /* 📣AD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C32942AADC00BA665C /* 📣AD.swift */; };
 		F585A0C92942AADC00BA665C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C42942AADC00BA665C /* Launch Screen.storyboard */; };
 		F585A0CA2942AADC00BA665C /* 🛒InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */; };
-		F585A0CD2942B02E00BA665C /* 🌏AppStoreDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F585A0CF2942B02E00BA665C /* 🌏AppStoreDescription.strings */; };
-		F585A0D32942B06500BA665C /* 🌏VersionDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F585A0D52942B06500BA665C /* 🌏VersionDescription.strings */; };
+		F585A0CD2942B02E00BA665C /* 🌐AppStoreDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F585A0CF2942B02E00BA665C /* 🌐AppStoreDescription.strings */; };
+		F585A0D32942B06500BA665C /* 🌐VersionHistory.strings in Resources */ = {isa = PBXBuildFile; fileRef = F585A0D52942B06500BA665C /* 🌐VersionHistory.strings */; };
 		F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */; };
 		F58BC7F129A83BA6003DDAC1 /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
 		F59A2ADE29AB10BD008A194C /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5FFCE6729AA3C740035E638 /* Widget.swift */; };
@@ -199,10 +199,10 @@
 		F585A0C32942AADC00BA665C /* 📣AD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣AD.swift"; sourceTree = "<group>"; };
 		F585A0C42942AADC00BA665C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchase.swift"; sourceTree = "<group>"; };
-		F585A0CE2942B02E00BA665C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/🌏AppStoreDescription.strings"; sourceTree = "<group>"; };
-		F585A0D02942B03300BA665C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/🌏AppStoreDescription.strings"; sourceTree = "<group>"; };
-		F585A0D42942B06500BA665C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/🌏VersionDescription.strings"; sourceTree = "<group>"; };
-		F585A0D62942B06800BA665C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/🌏VersionDescription.strings"; sourceTree = "<group>"; };
+		F585A0CE2942B02E00BA665C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/🌐AppStoreDescription.strings"; sourceTree = "<group>"; };
+		F585A0D02942B03300BA665C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/🌐AppStoreDescription.strings"; sourceTree = "<group>"; };
+		F585A0D42942B06500BA665C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/🌐VersionHistory.strings"; sourceTree = "<group>"; };
+		F585A0D62942B06800BA665C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/🌐VersionHistory.strings"; sourceTree = "<group>"; };
 		F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🧰MetaData.swift"; sourceTree = "<group>"; };
 		F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣ADSheet.swift"; sourceTree = "<group>"; };
 		F597586A28D94E0E002521F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -277,30 +277,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1288ADE2286ACDDB002F5511 /* 🧩Sub */ = {
+		1288ADE2286ACDDB002F5511 /* 🗄️Rest */ = {
 			isa = PBXGroup;
 			children = (
-				125A9BEC283B441D00C54634 /* 🗯ResultView.swift */,
 				1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */,
-				1256A33B286B1547002AF08A /* 🛠Menu.swift */,
-				F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */,
-				F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */,
 				F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */,
-				123690192844F1BD006F22EE /* Info.plist */,
-				12E811C828308A2100B0A615 /* iOS.entitlements */,
+				F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */,
+				F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */,
+				F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */,
+				F585A0C32942AADC00BA665C /* 📣AD.swift */,
+				F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */,
 			);
-			path = "🧩Sub";
+			path = "🗄️Rest";
 			sourceTree = "<group>";
 		};
-		1288ADE4286ACE01002F5511 /* 🌏Localization */ = {
+		1288ADE4286ACE01002F5511 /* 🌐Localization */ = {
 			isa = PBXGroup;
 			children = (
 				124BC6BC28437B9000F75E1F /* Localizable.strings */,
 				123690172844EE92006F22EE /* InfoPlist.strings */,
-				F585A0CF2942B02E00BA665C /* 🌏AppStoreDescription.strings */,
-				F585A0D52942B06500BA665C /* 🌏VersionDescription.strings */,
+				F585A0CF2942B02E00BA665C /* 🌐AppStoreDescription.strings */,
+				F585A0D52942B06500BA665C /* 🌐VersionHistory.strings */,
 			);
-			path = "🌏Localization";
+			path = "🌐Localization";
 			sourceTree = "<group>";
 		};
 		12E811AE283089D300B0A615 = {
@@ -331,10 +330,11 @@
 			children = (
 				12E811BA283089D300B0A615 /* App.swift */,
 				12E811BC283089D300B0A615 /* ContentView.swift */,
-				1288ADE2286ACDDB002F5511 /* 🧩Sub */,
-				F585A0C02942AADC00BA665C /* 🧰Others */,
-				1288ADE4286ACE01002F5511 /* 🌏Localization */,
-				12E811BE283089D400B0A615 /* Assets.xcassets */,
+				125A9BEC283B441D00C54634 /* 🗯ResultView.swift */,
+				1256A33B286B1547002AF08A /* 🛠Menu.swift */,
+				F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */,
+				1288ADE2286ACDDB002F5511 /* 🗄️Rest */,
+				F5397F4E2AA0AD71002C90F2 /* 🧰SupportingFiles */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -350,17 +350,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F585A0C02942AADC00BA665C /* 🧰Others */ = {
+		F5397F4E2AA0AD71002C90F2 /* 🧰SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				F58BC7EE29A83A20003DDAC1 /* 🧰MetaData.swift */,
-				F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */,
-				F585A0C32942AADC00BA665C /* 📣AD.swift */,
-				F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */,
+				12E811BE283089D400B0A615 /* Assets.xcassets */,
+				12E811C828308A2100B0A615 /* iOS.entitlements */,
+				123690192844F1BD006F22EE /* Info.plist */,
 				F585A0C42942AADC00BA665C /* Launch Screen.storyboard */,
 				F585A0C22942AADC00BA665C /* Configuration.storekit */,
+				1288ADE4286ACE01002F5511 /* 🌐Localization */,
 			);
-			path = "🧰Others";
+			path = "🧰SupportingFiles";
+			sourceTree = "<group>";
+		};
+		F5397F4F2AA0ADDE002C90F2 /* 🗄️Rest */ = {
+			isa = PBXGroup;
+			children = (
+				F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */,
+			);
+			path = "🗄️Rest";
+			sourceTree = "<group>";
+		};
+		F5397F502AA0AE5A002C90F2 /* 🧰SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F5D228B629A9B1DF00F4F982 /* Assets.xcassets */,
+				F5D228C229A9B25B00F4F982 /* watchOS.entitlements */,
+			);
+			path = "🧰SupportingFiles";
 			sourceTree = "<group>";
 		};
 		F5D2289029A9A71900F4F982 /* Shared */ = {
@@ -372,7 +389,7 @@
 				F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */,
 				F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */,
 				F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */,
-				F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */,
+				F5397F4F2AA0ADDE002C90F2 /* 🗄️Rest */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -383,8 +400,7 @@
 				F5D228B229A9B1DD00F4F982 /* App.swift */,
 				F5D228B429A9B1DD00F4F982 /* ContentView.swift */,
 				F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */,
-				F5D228B629A9B1DF00F4F982 /* Assets.xcassets */,
-				F5D228C229A9B25B00F4F982 /* watchOS.entitlements */,
+				F5397F502AA0AE5A002C90F2 /* 🧰SupportingFiles */,
 			);
 			path = watchOS;
 			sourceTree = "<group>";
@@ -520,13 +536,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F585A0D32942B06500BA665C /* 🌏VersionDescription.strings in Resources */,
+				F585A0D32942B06500BA665C /* 🌐VersionHistory.strings in Resources */,
 				F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */,
 				123690152844EE92006F22EE /* InfoPlist.strings in Resources */,
 				124BC6BA28437B9000F75E1F /* Localizable.strings in Resources */,
 				12E811BF283089D400B0A615 /* Assets.xcassets in Resources */,
 				F585A0C92942AADC00BA665C /* Launch Screen.storyboard in Resources */,
-				F585A0CD2942B02E00BA665C /* 🌏AppStoreDescription.strings in Resources */,
+				F585A0CD2942B02E00BA665C /* 🌐AppStoreDescription.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,22 +680,22 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		F585A0CF2942B02E00BA665C /* 🌏AppStoreDescription.strings */ = {
+		F585A0CF2942B02E00BA665C /* 🌐AppStoreDescription.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F585A0CE2942B02E00BA665C /* en */,
 				F585A0D02942B03300BA665C /* ja */,
 			);
-			name = "🌏AppStoreDescription.strings";
+			name = "🌐AppStoreDescription.strings";
 			sourceTree = "<group>";
 		};
-		F585A0D52942B06500BA665C /* 🌏VersionDescription.strings */ = {
+		F585A0D52942B06500BA665C /* 🌐VersionHistory.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F585A0D42942B06500BA665C /* en */,
 				F585A0D62942B06800BA665C /* ja */,
 			);
-			name = "🌏VersionDescription.strings";
+			name = "🌐VersionHistory.strings";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -810,14 +826,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "iOS/🧩Sub/iOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "iOS/🧰SupportingFiles/iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS/🧩Sub/Info.plist";
+				INFOPLIST_FILE = "iOS/🧰SupportingFiles/Info.plist";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -847,14 +863,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "iOS/🧩Sub/iOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "iOS/🧰SupportingFiles/iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS/🧩Sub/Info.plist";
+				INFOPLIST_FILE = "iOS/🧰SupportingFiles/Info.plist";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please activate HeakthKit permission to record data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -886,7 +902,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = watchOS/watchOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "watchOS/🧰SupportingFiles/watchOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -921,7 +937,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = watchOS/watchOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "watchOS/🧰SupportingFiles/watchOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
