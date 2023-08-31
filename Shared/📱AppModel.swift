@@ -24,7 +24,7 @@ class 📱AppModel: NSObject, ObservableObject {
 }
 
 extension 📱AppModel {
-    var mode: 🏳️Mode {
+    var activeMode: 🏳️Mode {
         self.ableBBT && self.bbtMode ? .basalBodyTemperature : .bodyTemperature
     }
     
@@ -61,12 +61,12 @@ extension 📱AppModel {
     @MainActor
     func register() async {
         do {
-            if self.healthStore.authorizationStatus(for: self.mode.quantityType) == .sharingDenied {
+            if self.healthStore.authorizationStatus(for: self.activeMode.quantityType) == .sharingDenied {
                 self.registrationSuccess = false
                 self.showResult = true
                 return
             }
-            let ⓢample = HKQuantitySample(type: self.mode.quantityType,
+            let ⓢample = HKQuantitySample(type: self.activeMode.quantityType,
                                           quantity: .init(unit: self.degreeUnit.hkUnit,
                                                           doubleValue: self.inputValue),
                                           start: .now,
@@ -92,8 +92,8 @@ extension 📱AppModel {
     
     func loadPreferredUnit() {
         Task { @MainActor in
-            let ⓤnits = try await self.healthStore.preferredUnits(for: [self.mode.quantityType])
-            if let ⓤnit = ⓤnits[self.mode.quantityType] {
+            let ⓤnits = try await self.healthStore.preferredUnits(for: [self.activeMode.quantityType])
+            if let ⓤnit = ⓤnits[self.activeMode.quantityType] {
                 if ⓤnit != self.degreeUnit.hkUnit {
                     switch ⓤnit {
                         case .degreeCelsius(): self.degreeUnit = .℃
@@ -211,9 +211,9 @@ extension 📱AppModel: WKApplicationDelegate {
 
 private extension 📱AppModel {
     private func requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async { //TODO: 引数おかしい？
-        if self.healthStore.authorizationStatus(for: self.mode.quantityType) == .notDetermined {
+        if self.healthStore.authorizationStatus(for: self.activeMode.quantityType) == .notDetermined {
             do {
-                try await self.healthStore.requestAuthorization(toShare: [self.mode.quantityType],
+                try await self.healthStore.requestAuthorization(toShare: [self.activeMode.quantityType],
                                                                 read: [])
             } catch {
                 print(#function, error)

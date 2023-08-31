@@ -16,7 +16,7 @@ struct 🗯ResultView: View {
             }
             Spacer()
             if self.model.ableBBT {
-                Text(self.model.mode.label)
+                Text(self.model.activeMode.label)
                     .font(.caption.weight(.semibold))
                     .minimumScaleFactor(0.66)
             }

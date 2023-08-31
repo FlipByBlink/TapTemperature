@@ -17,7 +17,7 @@ struct ContentView: View {
                 👆Keypad()
                     .buttonStyle(.plain)
             }
-            .navigationTitle(self.model.mode.navigationTitle)
+            .navigationTitle(self.model.activeMode.navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea(edges: .bottom)
         }

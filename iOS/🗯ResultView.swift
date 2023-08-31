@@ -35,7 +35,7 @@ struct 🗯ResultView: View {
                     Spacer()
                     VStack(spacing: 10) {
                         if self.model.ableBBT {
-                            Text(self.model.mode.label)
+                            Text(self.model.activeMode.label)
                                 .lineLimit(1)
                                 .font(.caption.weight(.semibold))
                                 .minimumScaleFactor(0.1)
