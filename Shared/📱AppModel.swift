@@ -1,7 +1,8 @@
 import SwiftUI
 import HealthKit
+import WatchConnectivity
 
-class 📱AppModel: ObservableObject {
+class 📱AppModel: NSObject, ObservableObject {
     private let healthStore = HKHealthStore()
     
     @AppStorage(🔑BasalBodyTemperature) var ableBBT: Bool = false
@@ -20,13 +21,6 @@ class 📱AppModel: ObservableObject {
     @Published var components: [Int] = [3]
     
     private var sampleCache: HKQuantitySample? = nil
-    
-    init() {
-        Task {
-            await self.setUpHealthStore(.bodyTemperature)
-            self.observePreferredUnits()
-        }
-    }
 }
 
 extension 📱AppModel {
@@ -139,7 +133,81 @@ extension 📱AppModel {
         self.resetComponents()
         self.sampleCache = nil
     }
+    
+    func syncAppleWatch() {
+        do {
+            try WCSession.default.updateApplicationContext([🔑BasalBodyTemperature: self.ableBBT,
+                                                              🔑SecondDecimalPlace: self.ableSecondDecimalPlace,
+                                                                    🔑AutoComplete: self.ableAutoComplete])
+        } catch {
+            print("🚨", error.localizedDescription)
+        }
+    }
 }
+
+extension 📱AppModel: WCSessionDelegate {
+    //==== Required(watchOS, iOS) ====
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print(#function)
+    }
+#if os(iOS)
+    //==== Required ====
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("\(#function): activationState = \(session.activationState.rawValue)")
+    }
+    
+    //==== Required ====
+    func sessionDidDeactivate(_ session: WCSession) {
+        session.activate()
+    }
+#elseif os(watchOS)
+    //==== Optional ====
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        print("🖨️", #function, applicationContext.description)
+        Task { @MainActor in
+            if let ⓥalue = applicationContext[🔑BasalBodyTemperature] as? Bool {
+                self.ableBBT = ⓥalue
+            }
+            if let ⓥalue = applicationContext[🔑SecondDecimalPlace] as? Bool {
+                self.ableSecondDecimalPlace = ⓥalue
+            }
+            if let ⓥalue = applicationContext[🔑AutoComplete] as? Bool {
+                self.ableAutoComplete = ⓥalue
+            }
+        }
+    }
+#endif
+}
+
+#if os(iOS)
+extension 📱AppModel: UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        Task { 
+            await self.setUpHealthStore(.bodyTemperature)
+            self.observePreferredUnits()
+        }
+        if WCSession.isSupported() {
+            WCSession.default.delegate = self
+            WCSession.default.activate()
+        }
+        return true
+    }
+}
+
+#elseif os(watchOS)
+extension 📱AppModel: WKApplicationDelegate {
+    func applicationDidBecomeActive() {
+        Task {
+            await self.setUpHealthStore(.bodyTemperature)
+            self.observePreferredUnits()
+        }
+        if WCSession.isSupported() {
+            WCSession.default.delegate = self
+            WCSession.default.activate()
+        }
+    }
+}
+#endif
 
 private extension 📱AppModel {
     private func requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async { //TODO: 引数おかしい？

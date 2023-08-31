@@ -45,7 +45,6 @@
 		F59A2AE329AB10D1008A194C /* 🪧ValueLabel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
 		F59A2AE429AB10D1008A194C /* 👆Keypad.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
 		F59A2AE529AB10D1008A194C /* 🛏BBTSwitchButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */; };
-		F59A2AE629AB10D2008A194C /* ⌚️SyncDelegate.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */; };
 		F59A2AE729AB10D2008A194C /* 💥Feedback.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
 		F59A2AE829AB10D2008A194C /* App.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* App.swift */; };
 		F59A2AE929AB10D2008A194C /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BC283089D300B0A615 /* ContentView.swift */; };
@@ -60,8 +59,6 @@
 		F59A2AF229AB113F008A194C /* 🛒InAppPurchase.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C52942AADC00BA665C /* 🛒InAppPurchase.swift */; };
 		F59A2AF429AB137B008A194C /* 🟥AutoCompleteHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */; };
 		F59A2AF529AB13A2008A194C /* 🟥AutoCompleteHintView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */; };
-		F5A109A229AA180900D2F390 /* ⌚️SyncDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */; };
-		F5A109A329AA180900D2F390 /* ⌚️SyncDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */; };
 		F5C7DE2129A9FE0900694AFD /* 🛏BBTSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */; };
 		F5C7DE2229A9FE0900694AFD /* 🛏BBTSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */; };
 		F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
@@ -113,7 +110,6 @@
 				F59A2AE329AB10D1008A194C /* 🪧ValueLabel.swift in CopyFiles */,
 				F59A2AE429AB10D1008A194C /* 👆Keypad.swift in CopyFiles */,
 				F59A2AE529AB10D1008A194C /* 🛏BBTSwitchButton.swift in CopyFiles */,
-				F59A2AE629AB10D2008A194C /* ⌚️SyncDelegate.swift in CopyFiles */,
 				F59A2AE729AB10D2008A194C /* 💥Feedback.swift in CopyFiles */,
 				F59A2AE829AB10D2008A194C /* App.swift in CopyFiles */,
 				F59A2AE929AB10D2008A194C /* ContentView.swift in CopyFiles */,
@@ -232,7 +228,6 @@
 		F597588428D94E9B002521F8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		F597588528D94E9B002521F8 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🟥AutoCompleteHintView.swift"; sourceTree = "<group>"; };
-		F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️SyncDelegate.swift"; sourceTree = "<group>"; };
 		F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛏BBTSwitchButton.swift"; sourceTree = "<group>"; };
 		F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💥Feedback.swift"; sourceTree = "<group>"; };
 		F5D228B029A9B1DD00F4F982 /* TapTemperature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapTemperature.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -387,7 +382,6 @@
 				12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */,
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
 				F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */,
-				F5A109A129AA180900D2F390 /* ⌚️SyncDelegate.swift */,
 				F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */,
 				F5397F4F2AA0ADDE002C90F2 /* 🗄️Rest */,
 			);
@@ -586,7 +580,6 @@
 				F585A0C82942AADC00BA665C /* 📣AD.swift in Sources */,
 				125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */,
 				F58BC7EF29A83A20003DDAC1 /* 🧰MetaData.swift in Sources */,
-				F5A109A229AA180900D2F390 /* ⌚️SyncDelegate.swift in Sources */,
 				F5397F4C2AA0AB03002C90F2 /* 📏DegreeUnit.swift in Sources */,
 				F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */,
 				12E811BB283089D300B0A615 /* App.swift in Sources */,
@@ -606,7 +599,6 @@
 				F5D228B329A9B1DD00F4F982 /* App.swift in Sources */,
 				F5397F4D2AA0AB03002C90F2 /* 📏DegreeUnit.swift in Sources */,
 				F5D228BF29A9B24900F4F982 /* 🪧ValueLabel.swift in Sources */,
-				F5A109A329AA180900D2F390 /* ⌚️SyncDelegate.swift in Sources */,
 				F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */,
 				F5D228C029A9B24900F4F982 /* 📱AppModel.swift in Sources */,
 			);
