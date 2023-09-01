@@ -295,8 +295,6 @@
 		1288ADE4286ACE01002F5511 /* 🌐Localization */ = {
 			isa = PBXGroup;
 			children = (
-				124BC6BC28437B9000F75E1F /* Localizable.strings */,
-				123690172844EE92006F22EE /* InfoPlist.strings */,
 				F585A0CF2942B02E00BA665C /* 🌐AppStoreDescription.strings */,
 				F585A0D52942B06500BA665C /* 🌐VersionHistory.strings */,
 			);
@@ -388,6 +386,8 @@
 		F5397F692AA20EEA002C90F2 /* 🌐Localization */ = {
 			isa = PBXGroup;
 			children = (
+				124BC6BC28437B9000F75E1F /* Localizable.strings */,
+				123690172844EE92006F22EE /* InfoPlist.strings */,
 				F5397F6A2AA20EEA002C90F2 /* 🌐ADAppDescription.xcstrings */,
 				F5397F6B2AA20EEA002C90F2 /* 🌐ADAppName.xcstrings */,
 				F5397F6C2AA20EEA002C90F2 /* 🌐AboutApp.xcstrings */,
