@@ -29,15 +29,21 @@ extension 📱AppModel {
     }
     
     var inputValue: Double {
-        if self.components.count < 3 { return 0.0 }
-        var ⓥalue = Double("\(self.components[0])"
-                           + "\(self.components[1])"
-                           + "."
-                           + "\(self.components[2])")!
-        if self.components.indices.contains(3) {
-            ⓥalue = Double("\(ⓥalue)" + "\(self.components[3])")!
+        switch self.components.count {
+            case 3:
+                Double("\(self.components[0])"
+                       + "\(self.components[1])"
+                       + "."
+                       + "\(self.components[2])") ?? 0.0
+            case 4:
+                Double("\(self.components[0])"
+                       + "\(self.components[1])"
+                       + "."
+                       + "\(self.components[2])"
+                       + "\(self.components[3])") ?? 0.0
+            default:
+                0.0
         }
-        return ⓥalue
     }
     
     func resetComponents() {
