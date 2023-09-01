@@ -25,7 +25,8 @@ enum 🗒️StaticInfo {
 
 #if os(iOS)
 extension 🗒️StaticInfo {
-    static let versionInfos: [(version: String, date: String)] = [("1.1", "2023-02-26"),
+    static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-09-01"),
+                                                                  ("1.1", "2023-02-26"),
                                                                   ("1.0.3", "2022-12-09"),
                                                                   ("1.0.2", "2022-09-20"),
                                                                   ("1.0.1", "2022-06-30"),
@@ -40,18 +41,20 @@ extension 🗒️StaticInfo {
                              "ContentView.swift",
                              "📱AppModel.swift",
                              "🪧ValueLabel.swift",
-                             "👆Keypad.swift",
-                             "🛏BBTSwitchButton.swift",
-                             "⌚️SyncDelegate.swift",
-                             "💥Feedback.swift"]
+                             "👆Keypad.swift"]
                 case .Rest: ["🗯ResultView.swift",
-                             "💟OpenHealthAppButton.swift",
                              "🛠Menu.swift",
+                             "🏳️Mode.swift",
+                             "📏DegreeUnit.swift",
+                             "🛏BBTSwitchButton.swift",
+                             "💥Feedback.swift",
+                             "🔑Key.swift",
+                             "💟OpenHealthAppButton.swift",
                              "⌚️SyncOptions.swift",
-                             "📣ADSheet.swift",
                              "🟥AutoCompleteHintView.swift",
                              "🗒️StaticInfo.swift",
                              "ℹ️AboutApp.swift",
+                             "📣ADSheet.swift",
                              "📣ADModel.swift",
                              "📣ADComponents.swift",
                              "🛒InAppPurchaseModel.swift",

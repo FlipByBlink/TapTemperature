@@ -44,6 +44,14 @@
 		F5397F702AA20EEA002C90F2 /* 🌐AboutApp.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F5397F6C2AA20EEA002C90F2 /* 🌐AboutApp.xcstrings */; };
 		F5397F712AA20EEA002C90F2 /* 🌐AD&InAppPurchase.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F5397F6D2AA20EEA002C90F2 /* 🌐AD&InAppPurchase.xcstrings */; };
 		F5397F732AA20F31002C90F2 /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F722AA20F31002C90F2 /* ℹ️AboutApp.swift */; };
+		F5397F772AA21638002C90F2 /* 📏DegreeUnit.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */; };
+		F5397F782AA21638002C90F2 /* 🏳️Mode.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */; };
+		F5397F792AA21638002C90F2 /* 🔑Key.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F542AA14F36002C90F2 /* 🔑Key.swift */; };
+		F5397F7A2AA21638002C90F2 /* 🗒️StaticInfo.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F5D2AA20BDF002C90F2 /* 🗒️StaticInfo.swift */; };
+		F5397F7B2AA21638002C90F2 /* 📣ADModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F5B2AA20BDF002C90F2 /* 📣ADModel.swift */; };
+		F5397F7C2AA21638002C90F2 /* 🛒InAppPurchaseModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F5C2AA20BDF002C90F2 /* 🛒InAppPurchaseModel.swift */; };
+		F5397F7D2AA21638002C90F2 /* 📣ADComponents.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F642AA20C0A002C90F2 /* 📣ADComponents.swift */; };
+		F5397F7E2AA21638002C90F2 /* 🛒InAppPurchaseView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F672AA20C1E002C90F2 /* 🛒InAppPurchaseView.swift */; };
 		F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
 		F585A0C62942AADC00BA665C /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */; };
 		F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C22942AADC00BA665C /* Configuration.storekit */; };
@@ -51,10 +59,6 @@
 		F585A0CD2942B02E00BA665C /* 🌐AppStoreDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F585A0CF2942B02E00BA665C /* 🌐AppStoreDescription.strings */; };
 		F585A0D32942B06500BA665C /* 🌐VersionHistory.strings in Resources */ = {isa = PBXBuildFile; fileRef = F585A0D52942B06500BA665C /* 🌐VersionHistory.strings */; };
 		F58BC7F129A83BA6003DDAC1 /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
-		F59A2ADE29AB10BD008A194C /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5FFCE6729AA3C740035E638 /* Widget.swift */; };
-		F59A2ADF29AB10C4008A194C /* App.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D228B229A9B1DD00F4F982 /* App.swift */; };
-		F59A2AE029AB10C4008A194C /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D228B429A9B1DD00F4F982 /* ContentView.swift */; };
-		F59A2AE129AB10C4008A194C /* 🗯ResultView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
 		F59A2AE229AB10D1008A194C /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
 		F59A2AE329AB10D1008A194C /* 🪧ValueLabel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
 		F59A2AE429AB10D1008A194C /* 👆Keypad.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
@@ -112,6 +116,14 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F5397F772AA21638002C90F2 /* 📏DegreeUnit.swift in CopyFiles */,
+				F5397F782AA21638002C90F2 /* 🏳️Mode.swift in CopyFiles */,
+				F5397F792AA21638002C90F2 /* 🔑Key.swift in CopyFiles */,
+				F5397F7A2AA21638002C90F2 /* 🗒️StaticInfo.swift in CopyFiles */,
+				F5397F7B2AA21638002C90F2 /* 📣ADModel.swift in CopyFiles */,
+				F5397F7C2AA21638002C90F2 /* 🛒InAppPurchaseModel.swift in CopyFiles */,
+				F5397F7D2AA21638002C90F2 /* 📣ADComponents.swift in CopyFiles */,
+				F5397F7E2AA21638002C90F2 /* 🛒InAppPurchaseView.swift in CopyFiles */,
 				F59A2AF529AB13A2008A194C /* 🟥AutoCompleteHintView.swift in CopyFiles */,
 				F59A2AF029AB113F008A194C /* ℹ️AboutApp.swift in CopyFiles */,
 				F59A2AE229AB10D1008A194C /* 📱AppModel.swift in CopyFiles */,
@@ -126,28 +138,6 @@
 				F59A2AEC29AB10D2008A194C /* 🛠Menu.swift in CopyFiles */,
 				F59A2AED29AB10D2008A194C /* ⌚️SyncOptions.swift in CopyFiles */,
 				F59A2AEE29AB10D2008A194C /* 📣ADSheet.swift in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F59A2ADC29AB107C008A194C /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "📁SourceCode/WatchApp";
-			dstSubfolderSpec = 7;
-			files = (
-				F59A2ADF29AB10C4008A194C /* App.swift in CopyFiles */,
-				F59A2AE029AB10C4008A194C /* ContentView.swift in CopyFiles */,
-				F59A2AE129AB10C4008A194C /* 🗯ResultView.swift in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F59A2ADD29AB1095008A194C /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "📁SourceCode/WatchComplication";
-			dstSubfolderSpec = 7;
-			files = (
-				F59A2ADE29AB10BD008A194C /* Widget.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,8 +445,6 @@
 				12E811B5283089D300B0A615 /* Resources */,
 				F5FFCE4629AA2DA00035E638 /* Embed Watch Content */,
 				F59A2ADB29AB1034008A194C /* CopyFiles */,
-				F59A2ADC29AB107C008A194C /* CopyFiles */,
-				F59A2ADD29AB1095008A194C /* CopyFiles */,
 			);
 			buildRules = (
 			);
