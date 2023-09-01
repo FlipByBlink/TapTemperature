@@ -28,8 +28,18 @@ private struct 🛠MenuContent: View {
             self.secondDecimalPlaceToggle()
             self.autoCompleteToggle()
             💟OpenHealthApp.buttonOnList()
-            ℹ️AboutAppLink(name: "TapTemperature", subtitle: "App for iPhone / Apple Watch")
-            📣ADMenuLink()
+            Section {
+                ℹ️IconAndName()
+                ℹ️AppStoreLink()
+                NavigationLink {
+                    List { ℹ️AboutAppContent() }
+                        .navigationTitle(String(localized: "About App", table: "🌐AboutApp"))
+                } label: {
+                    Label(String(localized: "About App", table: "🌐AboutApp"),
+                          systemImage: "doc")
+                }
+            }
+            🛒InAppPurchaseMenuLink()
         }
         .navigationTitle("Menu")
     }

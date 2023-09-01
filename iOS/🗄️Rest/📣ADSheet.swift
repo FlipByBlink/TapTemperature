@@ -1,16 +1,16 @@
 import SwiftUI
 
 struct 📣ADSheet: ViewModifier {
-    @EnvironmentObject var 🛒: 🛒StoreModel
-    @State private var ⓐpp: 📣MyApp = .pickUpAppWithout(.TapTemperature)
+    @EnvironmentObject var 🛒: 🛒InAppPurchaseModel
+    @State private var showSheet: Bool = false
+    @State private var app: 📣ADTargetApp = .pickUpAppWithout(.TapTemperature)
     func body(content: Content) -> some View {
         content
-            .sheet(isPresented: $🛒.🚩showADSheet) {
-                📣ADView(self.ⓐpp)
+            .sheet(isPresented: self.$showSheet) {
+                📣ADView(self.app, second: 5)
             }
             .onAppear {
-                🛒.checkToShowADSheet()
+                if 🛒.checkToShowADSheet() { self.showSheet = true }
             }
     }
 }
-
