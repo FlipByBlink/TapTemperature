@@ -27,7 +27,7 @@ private struct 🛠MenuContent: View {
             }
             self.secondDecimalPlaceToggle()
             self.autoCompleteToggle()
-            self.openHealthAppButton()
+            💟OpenHealthApp.buttonOnList()
             ℹ️AboutAppLink(name: "TapTemperature", subtitle: "App for iPhone / Apple Watch")
             📣ADMenuLink()
         }
@@ -50,27 +50,6 @@ private struct 🛠MenuContent: View {
             }
         } footer: {
             Text("Save 1 step.")
-        }
-    }
-    private func openHealthAppButton() -> some View { //TODO: リファクタリング
-        Link (destination: URL(string: "x-apple-health://")!) {
-            HStack {
-                Label {
-                    Text("Open \"Health\" app")
-                } icon: {
-                    Image(systemName: "app")
-                        .imageScale(.large)
-                        .overlay {
-                            Image(systemName: "heart")
-                                .resizable()
-                                .font(.body.weight(.semibold))
-                                .scaleEffect(0.5)
-                        }
-                }
-                Spacer()
-                Image(systemName: "arrow.up.forward.app")
-                    .foregroundStyle(.secondary)
-            }
         }
     }
 }

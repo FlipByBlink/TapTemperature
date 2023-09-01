@@ -1,8 +1,10 @@
 import SwiftUI
 
-struct 💟OpenHealthAppButton: View {
-    var body: some View {
-        Link(destination: URL(string: "x-apple-health://")!) {
+enum 💟OpenHealthApp {
+    static var url: URL { .init(string: "x-apple-health://")! }
+    static var title: LocalizedStringKey { #"Open "Health" app"# }
+    static func buttonOnToolbar() -> some View {
+        Link(destination: Self.url) {
             Image(systemName: "app")
                 .font(.title3)
                 .overlay {
@@ -13,6 +15,27 @@ struct 💟OpenHealthAppButton: View {
                 }
         }
         .foregroundStyle(.primary)
-        .accessibilityLabel(#"Open "Health" app"#)
+        .accessibilityLabel(Self.title)
+    }
+    static func buttonOnList() -> some View {
+        Link (destination: Self.url) {
+            HStack {
+                Label {
+                    Text(Self.title)
+                } icon: {
+                    Image(systemName: "app")
+                        .imageScale(.large)
+                        .overlay {
+                            Image(systemName: "heart")
+                                .resizable()
+                                .font(.body.weight(.semibold))
+                                .scaleEffect(0.5)
+                        }
+                }
+                Spacer()
+                Image(systemName: "arrow.up.forward.app")
+                    .foregroundStyle(.secondary)
+            }
+        }
     }
 }

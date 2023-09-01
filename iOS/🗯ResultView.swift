@@ -66,7 +66,7 @@ struct 🗯ResultView: View {
                             .imageScale(.small)
                             .font(.largeTitle)
                     }
-                    💟OpenHealthAppButton()
+                    💟OpenHealthApp.buttonOnToolbar()
                 }
                 ToolbarItemGroup(placement: .bottomBar) {
                     if self.model.registrationSuccess { 🗑CancelButton() }

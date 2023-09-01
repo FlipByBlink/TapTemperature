@@ -20,7 +20,7 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     🛏BBTSwitchButton()
-                    💟OpenHealthAppButton()
+                    💟OpenHealthApp.buttonOnToolbar()
                     🛠MenuButton()
                 }
             }
