@@ -7,7 +7,7 @@ struct 🪧ValueLabel: View {
             Text(self.🎰first + self.🎰second)
                 .font(.system(size: self.ⓕontSize, weight: .bold, design: .monospaced))
                 .kerning(3)
-            Text(".")
+            Text(NumberFormatter().decimalSeparator)
                 .font(.system(size: self.ⓕontSize, weight: .bold))
             Text(self.🎰third + self.🎰fourth)
                 .font(.system(size: self.ⓕontSize, weight: .bold, design: .monospaced))

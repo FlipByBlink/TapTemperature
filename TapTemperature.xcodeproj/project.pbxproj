@@ -52,6 +52,8 @@
 		F5397F7C2AA21638002C90F2 /* 🛒InAppPurchaseModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F5C2AA20BDF002C90F2 /* 🛒InAppPurchaseModel.swift */; };
 		F5397F7D2AA21638002C90F2 /* 📣ADComponents.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F642AA20C0A002C90F2 /* 📣ADComponents.swift */; };
 		F5397F7E2AA21638002C90F2 /* 🛒InAppPurchaseView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F672AA20C1E002C90F2 /* 🛒InAppPurchaseView.swift */; };
+		F5397F802AA21D27002C90F2 /* 📝InputValue(WIP).swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F7F2AA21D27002C90F2 /* 📝InputValue(WIP).swift */; };
+		F5397F812AA21D27002C90F2 /* 📝InputValue(WIP).swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F7F2AA21D27002C90F2 /* 📝InputValue(WIP).swift */; };
 		F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
 		F585A0C62942AADC00BA665C /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */; };
 		F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C22942AADC00BA665C /* Configuration.storekit */; };
@@ -199,6 +201,7 @@
 		F5397F6C2AA20EEA002C90F2 /* 🌐AboutApp.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AboutApp.xcstrings"; sourceTree = "<group>"; };
 		F5397F6D2AA20EEA002C90F2 /* 🌐AD&InAppPurchase.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AD&InAppPurchase.xcstrings"; sourceTree = "<group>"; };
 		F5397F722AA20F31002C90F2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
+		F5397F7F2AA21D27002C90F2 /* 📝InputValue(WIP).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝InputValue(WIP).swift"; sourceTree = "<group>"; };
 		F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
 		F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F585A0C22942AADC00BA665C /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -404,6 +407,7 @@
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
 				F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */,
 				F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */,
+				F5397F7F2AA21D27002C90F2 /* 📝InputValue(WIP).swift */,
 				F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */,
 				F5397F4F2AA0ADDE002C90F2 /* 🗄️Rest */,
 				F5397F692AA20EEA002C90F2 /* 🌐Localization */,
@@ -593,6 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5397F802AA21D27002C90F2 /* 📝InputValue(WIP).swift in Sources */,
 				F58BC7F129A83BA6003DDAC1 /* 📣ADSheet.swift in Sources */,
 				F5397F682AA20C1E002C90F2 /* 🛒InAppPurchaseView.swift in Sources */,
 				1256A33C286B1547002AF08A /* 🛠Menu.swift in Sources */,
@@ -630,6 +635,7 @@
 				F5397F5F2AA20BDF002C90F2 /* 📣ADModel.swift in Sources */,
 				F5397F562AA14F36002C90F2 /* 🔑Key.swift in Sources */,
 				F5D228B329A9B1DD00F4F982 /* App.swift in Sources */,
+				F5397F812AA21D27002C90F2 /* 📝InputValue(WIP).swift in Sources */,
 				F5397F4D2AA0AB03002C90F2 /* 📏DegreeUnit.swift in Sources */,
 				F5D228BF29A9B24900F4F982 /* 🪧ValueLabel.swift in Sources */,
 				F5397F632AA20BDF002C90F2 /* 🗒️StaticInfo.swift in Sources */,
