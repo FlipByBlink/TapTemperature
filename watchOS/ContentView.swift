@@ -5,6 +5,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                Spacer(minLength: 0)
                 HStack {
                     🪧ValueLabel()
                     if self.model.ableBBT { Spacer() }
@@ -12,6 +13,7 @@ struct ContentView: View {
                         .buttonStyle(.plain)
                 }
                 .padding(.horizontal, 8)
+                Spacer(minLength: 0)
                 Divider()
                     .padding(.vertical, 6)
                 👆Keypad()

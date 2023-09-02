@@ -3,7 +3,8 @@ import SwiftUI
 struct 👆Keypad: View {
     @EnvironmentObject var model: 📱AppModel
     var body: some View {
-        LazyVGrid(columns: .init(repeating: .init(), count: 3)) {
+        LazyVGrid(columns: .init(repeating: .init(spacing: 0), count: 3),
+                  spacing: 0) {
             ForEach(1 ... 12, id: \.self)  { ⓘndex in
                 switch ⓘndex {
                     case 1 ... 9:
