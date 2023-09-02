@@ -10,30 +10,33 @@ struct 📝InputValue { //MARK: Work in progress
 extension 📝InputValue {
     var result: Double {
         get throws {
-            guard let ①st, let ②nd, let ③rd else {
-                throw Self.ResultError.incorrect
-            }
-            if let ④th {
-                guard let ⓥalue = Double("\(①st)\(②nd).\(③rd)\(④th)") else {
-                    throw Self.ResultError.incorrect
+            if let ①st, let ②nd, let ③rd {
+                if let ④th {
+                    if let ⓥalue = Double("\(①st)\(②nd).\(③rd)\(④th)") {
+                        ⓥalue
+                    } else {
+                        throw Self.ResultError.incorrect
+                    }
+                } else {
+                    if let ⓥalue = Double("\(①st)\(②nd).\(③rd)") {
+                        ⓥalue
+                    } else {
+                        throw Self.ResultError.incorrect
+                    }
                 }
-                return ⓥalue
             } else {
-                guard let ⓥalue = Double("\(①st)\(②nd).\(③rd)") else {
-                    throw Self.ResultError.incorrect
-                }
-                return ⓥalue
+                throw Self.ResultError.lack
             }
         }
     }
     enum ResultError: Error {
-        case incorrect
+        case lack, incorrect
     }
     var decimalSeparator: String {
         NumberFormatter().decimalSeparator
     }
     func description(_ ⓤnit: 📏DegreeUnit, _ ⓢecondDecimalPlace: Bool) -> String {
-        var ⓥalue = ""
+        var ⓥalue: String
         guard let ①st else {
             switch ⓤnit {
                 case .℃: ⓥalue = "_"
@@ -105,15 +108,20 @@ extension 📝InputValue {
         && self.②nd != nil
         && self.③rd != nil
     }
-    func satisfyAutoComplete(_ ⓐbleSecondDecimalPlace: Bool) -> Bool {
+    func satisfyAutoComplete() -> Bool {
         if self.satisfyResult() {
-            if ⓐbleSecondDecimalPlace {
-                self.④th != nil
-            } else {
-                true
-            }
+            self.④th != nil
         } else {
             false
+        }
+    }
+    func preAutoComplete(_ ⓢecondDecimalPlace: Bool) -> Bool {
+        if ⓢecondDecimalPlace {
+            self.③rd != nil
+            && self.④th == nil
+        } else {
+            self.②nd != nil
+            && self.③rd == nil
         }
     }
     init(_ ⓤnit: 📏DegreeUnit) {
