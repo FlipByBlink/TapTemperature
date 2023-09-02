@@ -1,6 +1,5 @@
 import SwiftUI
 import HealthKit
-import WatchConnectivity
 
 class 📱AppModel: NSObject, ObservableObject {
     private let healthStore = HKHealthStore()
@@ -139,50 +138,6 @@ extension 📱AppModel {
         self.resetComponents()
         self.sampleCache = nil
     }
-    
-    func syncAppleWatch() {
-        do {
-            try WCSession.default.updateApplicationContext([🔑Key.ableBBT: self.ableBBT,
-                                                            🔑Key.ableSecondDecimalPlace: self.ableSecondDecimalPlace,
-                                                            🔑Key.ableAutoComplete: self.ableAutoComplete])
-        } catch {
-            print("🚨", error.localizedDescription)
-        }
-    }
-}
-
-extension 📱AppModel: WCSessionDelegate {
-    //==== Required(watchOS, iOS) ====
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print(#function)
-    }
-#if os(iOS)
-    //==== Required ====
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        print("\(#function): activationState = \(session.activationState.rawValue)")
-    }
-    
-    //==== Required ====
-    func sessionDidDeactivate(_ session: WCSession) {
-        session.activate()
-    }
-#elseif os(watchOS)
-    //==== Optional ====
-    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        print("🖨️", #function, applicationContext.description)
-        Task { @MainActor in
-            if let ⓥalue = applicationContext[🔑Key.ableBBT] as? Bool {
-                self.ableBBT = ⓥalue
-            }
-            if let ⓥalue = applicationContext[🔑Key.ableSecondDecimalPlace] as? Bool {
-                self.ableSecondDecimalPlace = ⓥalue
-            }
-            if let ⓥalue = applicationContext[🔑Key.ableAutoComplete] as? Bool {
-                self.ableAutoComplete = ⓥalue
-            }
-        }
-    }
-#endif
 }
 
 #if os(iOS)
@@ -191,10 +146,6 @@ extension 📱AppModel: UIApplicationDelegate {
         Task { 
             await self.setUpHealthStore(.bodyTemperature)
             self.observePreferredUnits()
-        }
-        if WCSession.isSupported() {
-            WCSession.default.delegate = self
-            WCSession.default.activate()
         }
         return true
     }
@@ -206,10 +157,6 @@ extension 📱AppModel: WKApplicationDelegate {
         Task {
             await self.setUpHealthStore(.bodyTemperature)
             self.observePreferredUnits()
-        }
-        if WCSession.isSupported() {
-            WCSession.default.delegate = self
-            WCSession.default.activate()
         }
     }
 }

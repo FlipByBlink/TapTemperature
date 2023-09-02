@@ -20,7 +20,6 @@
 		12E811BD283089D300B0A615 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E811BC283089D300B0A615 /* ContentView.swift */; };
 		12E811BF283089D400B0A615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E811BE283089D400B0A615 /* Assets.xcassets */; };
 		12E811CB28308A2100B0A615 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E811CA28308A2100B0A615 /* HealthKit.framework */; };
-		F519CB4929AA43DF00ACD6B6 /* ⌚️SyncOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */; };
 		F519CB5829AAF6E500ACD6B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		F519CB5929AAF6E500ACD6B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
 		F519CB5A29AAF7CB00ACD6B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
@@ -73,7 +72,6 @@
 		F59A2AEA29AB10D2008A194C /* 🗯ResultView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
 		F59A2AEB29AB10D2008A194C /* 💟OpenHealthAppButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */; };
 		F59A2AEC29AB10D2008A194C /* 🛠Menu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠Menu.swift */; };
-		F59A2AED29AB10D2008A194C /* ⌚️SyncOptions.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */; };
 		F59A2AEE29AB10D2008A194C /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
 		F59A2AF029AB113F008A194C /* ℹ️AboutApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */; };
 		F59A2AF429AB137B008A194C /* 🟥AutoCompleteHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */; };
@@ -139,7 +137,6 @@
 				F59A2AEA29AB10D2008A194C /* 🗯ResultView.swift in CopyFiles */,
 				F59A2AEB29AB10D2008A194C /* 💟OpenHealthAppButton.swift in CopyFiles */,
 				F59A2AEC29AB10D2008A194C /* 🛠Menu.swift in CopyFiles */,
-				F59A2AED29AB10D2008A194C /* ⌚️SyncOptions.swift in CopyFiles */,
 				F59A2AEE29AB10D2008A194C /* 📣ADSheet.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,7 +185,6 @@
 		12E811BE283089D400B0A615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12E811C828308A2100B0A615 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		12E811CA28308A2100B0A615 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️SyncOptions.swift"; sourceTree = "<group>"; };
 		F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📏DegreeUnit.swift"; sourceTree = "<group>"; };
 		F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🏳️Mode.swift"; sourceTree = "<group>"; };
 		F5397F542AA14F36002C90F2 /* 🔑Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔑Key.swift"; sourceTree = "<group>"; };
@@ -336,7 +332,6 @@
 				12E811BC283089D300B0A615 /* ContentView.swift */,
 				125A9BEC283B441D00C54634 /* 🗯ResultView.swift */,
 				1256A33B286B1547002AF08A /* 🛠Menu.swift */,
-				F519CB4829AA43DF00ACD6B6 /* ⌚️SyncOptions.swift */,
 				1288ADE2286ACDDB002F5511 /* 🗄️Rest */,
 				F5397F4E2AA0AD71002C90F2 /* 🧰SupportingFiles */,
 			);
@@ -622,7 +617,6 @@
 				F5397F4C2AA0AB03002C90F2 /* 📏DegreeUnit.swift in Sources */,
 				F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */,
 				12E811BB283089D300B0A615 /* App.swift in Sources */,
-				F519CB4929AA43DF00ACD6B6 /* ⌚️SyncOptions.swift in Sources */,
 				F5C7DE2129A9FE0900694AFD /* 🛏BBTSwitchButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

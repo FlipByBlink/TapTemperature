@@ -31,7 +31,6 @@ struct ContentView: View {
             }
         }
         .modifier(📣ADSheet())
-        .modifier(🅂yncOptions())
         .environment(\.layoutDirection, .leftToRight)
     }
 }
