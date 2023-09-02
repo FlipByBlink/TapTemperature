@@ -11,9 +11,11 @@ struct 👆Keypad: View {
                             self.model.append(ⓘndex)
                         } label: {
                             ZStack {
-                                Color.clear
+                                Rectangle()
+                                    .fill(.background)
                                 Text(ⓘndex.description)
                             }
+                            .modifier(Self.HoverEffect())
                         }
                         .tint(.primary)
                         .disabled(self.disable(ⓘndex))
@@ -22,12 +24,14 @@ struct 👆Keypad: View {
                             Task { await self.model.register() }
                         } label: {
                             ZStack {
-                                Color.clear
+                                Rectangle()
+                                    .fill(.background)
                                 Image(systemName: self.registerButtonImage)
                                     .symbolVariant(self.model.components.count > 2 ? .fill : .none)
                                     .scaleEffect(self.model.components.count > 2 ? 1.15 : 1)
                                     .font(.system(size: self.fontSize))
                             }
+                            .modifier(Self.HoverEffect())
                         }
                         .tint(.pink)
                         .accessibilityLabel("DONE")
@@ -37,9 +41,11 @@ struct 👆Keypad: View {
                             self.model.append(self.zeroOrTen)
                         } label: {
                             ZStack {
-                                Color.clear
+                                Rectangle()
+                                    .fill(.background)
                                 Text(self.zeroOrTen.description)
                             }
+                            .modifier(Self.HoverEffect())
                         }
                         .tint(.primary)
                         .disabled(self.disable(ⓘndex))
@@ -49,10 +55,12 @@ struct 👆Keypad: View {
                             💥Feedback.light()
                         } label: {
                             ZStack {
-                                Color.clear
+                                Rectangle()
+                                    .fill(.background)
                                 Image(systemName: "delete.left")
                                     .scaleEffect(0.7)
                             }
+                            .modifier(Self.HoverEffect())
                         }
                         .tint(.primary)
                         .accessibilityLabel("Delete")
@@ -64,10 +72,20 @@ struct 👆Keypad: View {
         }
         .font(.system(size: self.fontSize, weight: .medium, design: .rounded))
         .minimumScaleFactor(0.66)
+        .frame(maxWidth: 700)
     }
 }
 
 private extension 👆Keypad {
+    private struct HoverEffect: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+#if os(iOS)
+                .contentShape(.hoverEffect, RoundedRectangle(cornerRadius: 12))
+                .hoverEffect()
+#endif
+        }
+    }
     private func disable(_ ⓘndex: Int) -> Bool {
         switch self.model.components.count {
             case 4:
