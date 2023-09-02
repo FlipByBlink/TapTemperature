@@ -1,51 +1,70 @@
 import SwiftUI
 
 struct 🛠MenuButton: View {
+    @State private var showSheet: Bool = false
     var body: some View {
-        NavigationLink {
-            🛠Menu()
+        Button {
+            self.showSheet = true
+            UISelectionFeedbackGenerator().selectionChanged()
         } label: {
             Label("Open menu", systemImage: "gearshape")
         }
         .tint(.primary)
+        .sheet(isPresented: self.$showSheet) {
+            🛠Menu()
+        }
     }
 }
 
 private struct 🛠Menu: View {
     @EnvironmentObject var model: 📱AppModel
+    @Environment(\.dismiss) var dismiss
     var body: some View {
-        List {
-            Section {
-                Toggle(isOn: self.$model.ableBBT) {
-                    Label("Basal body temperature", systemImage: "bed.double")
+        NavigationStack {
+            List {
+                Section {
+                    Toggle(isOn: self.$model.ableBBT) {
+                        Label("Basal body temperature", systemImage: "bed.double")
+                    }
+                    .onChange(of: self.model.ableBBT) { _ in
+                        Task { await self.model.setUpHealthStore(.basalBodyTemperature) }
+                    }
+                } header: {
+                    Text("Option")
                 }
-                .onChange(of: self.model.ableBBT) { _ in
-                    Task { await self.model.setUpHealthStore(.basalBodyTemperature) }
+                self.secondDecimalPlaceToggle()
+                self.autoCompleteToggle()
+                💟OpenHealthApp.buttonOnList()
+                Section {
+                    ℹ️IconAndName()
+                    ℹ️AppStoreLink()
+                    NavigationLink {
+                        List { ℹ️AboutAppContent() }
+                            .navigationTitle(String(localized: "About App", table: "🌐AboutApp"))
+                    } label: {
+                        Label(String(localized: "About App", table: "🌐AboutApp"),
+                              systemImage: "doc")
+                    }
                 }
-            } header: {
-                Text("Option")
+                🛒InAppPurchaseMenuLink()
             }
-            self.secondDecimalPlaceToggle()
-            self.autoCompleteToggle()
-            💟OpenHealthApp.buttonOnList()
-            Section {
-                ℹ️IconAndName()
-                ℹ️AppStoreLink()
-                NavigationLink {
-                    List { ℹ️AboutAppContent() }
-                        .navigationTitle(String(localized: "About App", table: "🌐AboutApp"))
-                } label: {
-                    Label(String(localized: "About App", table: "🌐AboutApp"),
-                          systemImage: "doc")
-                }
-            }
-            🛒InAppPurchaseMenuLink()
+            .navigationTitle("Menu")
+            .toolbar { self.dismissButton() }
         }
-        .navigationTitle("Menu")
     }
 }
 
 private extension 🛠Menu {
+    private func dismissButton() -> some View {
+        Button {
+            self.dismiss()
+            UISelectionFeedbackGenerator().selectionChanged()
+        } label: {
+            Image(systemName: "xmark.circle.fill")
+                .symbolRenderingMode(.hierarchical)
+                .foregroundStyle(Color.secondary)
+        }
+    }
     private func secondDecimalPlaceToggle() -> some View {
         Section {
             Toggle(isOn: self.$model.ableSecondDecimalPlace) {

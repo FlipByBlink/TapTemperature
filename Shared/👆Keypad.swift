@@ -3,8 +3,8 @@ import SwiftUI
 struct 👆Keypad: View {
     @EnvironmentObject var model: 📱AppModel
     var body: some View {
-        LazyVGrid(columns: .init(repeating: .init(spacing: 0), count: 3),
-                  spacing: 0) {
+        LazyVGrid(columns: .init(repeating: .init(spacing: Self.spacing), count: 3),
+                  spacing: Self.spacing) {
             ForEach(1 ... 12, id: \.self)  { ⓘndex in
                 switch ⓘndex {
                     case 1 ... 9:
@@ -78,6 +78,13 @@ struct 👆Keypad: View {
 }
 
 private extension 👆Keypad {
+    private static var spacing: CGFloat? {
+        #if os(iOS)
+        nil
+        #elseif os(watchOS)
+        0
+        #endif
+    }
     private struct HoverEffect: ViewModifier {
         func body(content: Content) -> some View {
             content
