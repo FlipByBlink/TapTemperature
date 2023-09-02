@@ -163,11 +163,11 @@ extension 📱AppModel: WKApplicationDelegate {
 #endif
 
 private extension 📱AppModel {
-    private func requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async { //TODO: 引数おかしい？
-        if self.healthStore.authorizationStatus(for: self.activeMode.quantityType) == .notDetermined {
+    private func requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async {
+        let ⓣype = HKQuantityType(ⓘdentifier)
+        if self.healthStore.authorizationStatus(for: ⓣype) == .notDetermined {
             do {
-                try await self.healthStore.requestAuthorization(toShare: [self.activeMode.quantityType],
-                                                                read: [])
+                try await self.healthStore.requestAuthorization(toShare: [ⓣype], read: [])
             } catch {
                 print(#function, error)
             }
