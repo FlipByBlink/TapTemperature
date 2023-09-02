@@ -66,7 +66,7 @@ extension 📱AppModel {
     @MainActor
     func register() async {
         do {
-            if self.healthStore.authorizationStatus(for: self.activeMode.quantityType) == .sharingDenied {
+            guard self.healthStore.authorizationStatus(for: self.activeMode.quantityType) == .sharingAuthorized else {
                 self.registrationSuccess = false
                 self.showResult = true
                 return
@@ -178,7 +178,7 @@ private extension 📱AppModel {
         Task {
             for ⓣype: HKQuantityType in [.init(.bodyTemperature), .init(.basalBodyTemperature)] {
                 let ⓠuery = HKObserverQuery(sampleType: ⓣype, predicate: nil) { _, ⓒompletionHandler, ⓔrror in
-                    if ⓔrror != nil { return }
+                    guard ⓔrror == nil else { return }
                     self.loadPreferredUnit()
                     ⓒompletionHandler()
                 }
