@@ -6,7 +6,7 @@ enum 🏳️Mode {
 }
 
 extension 🏳️Mode {
-    var quantityType: HKQuantityType {
+    var type: HKQuantityType {
         switch self {
             case .bodyTemperature: .init(.bodyTemperature)
             case .basalBodyTemperature: .init(.basalBodyTemperature)

@@ -400,12 +400,12 @@
 			isa = PBXGroup;
 			children = (
 				1281D252283E1C4300D59319 /* 📱AppModel.swift */,
+				F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */,
+				F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */,
 				12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */,
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
 				F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */,
-				F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */,
 				F5397F7F2AA21D27002C90F2 /* 📝InputValue(WIP).swift */,
-				F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */,
 				F5397F4F2AA0ADDE002C90F2 /* 🗄️Rest */,
 				F5397F692AA20EEA002C90F2 /* 🌐Localization */,
 			);

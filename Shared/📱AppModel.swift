@@ -2,7 +2,7 @@ import SwiftUI
 import HealthKit
 
 class 📱AppModel: NSObject, ObservableObject {
-    private let healthStore = HKHealthStore()
+    private let api = HKHealthStore()
     
     @AppStorage(🔑Key.ableBBT) var ableBBT: Bool = false
     @AppStorage(🔑Key.ableSecondDecimalPlace) var ableSecondDecimalPlace: Bool = false
@@ -66,18 +66,18 @@ extension 📱AppModel {
     @MainActor
     func register() async {
         do {
-            guard self.healthStore.authorizationStatus(for: self.activeMode.quantityType) == .sharingAuthorized else {
+            guard self.api.authorizationStatus(for: self.activeMode.type) == .sharingAuthorized else {
                 self.registrationSuccess = false
                 self.showResult = true
                 return
             }
-            let ⓢample = HKQuantitySample(type: self.activeMode.quantityType,
+            let ⓢample = HKQuantitySample(type: self.activeMode.type,
                                           quantity: .init(unit: self.degreeUnit.hkUnit,
                                                           doubleValue: self.inputValue),
                                           start: .now,
                                           end: .now)
             self.sampleCache = ⓢample
-            try await self.healthStore.save(ⓢample)
+            try await self.api.save(ⓢample)
             self.registrationSuccess = true
             self.showResult = true
             💥Feedback.success()
@@ -97,8 +97,8 @@ extension 📱AppModel {
     
     func loadPreferredUnit() {
         Task { @MainActor in
-            let ⓤnits = try await self.healthStore.preferredUnits(for: [self.activeMode.quantityType])
-            if let ⓤnit = ⓤnits[self.activeMode.quantityType] {
+            let ⓤnits = try await self.api.preferredUnits(for: [self.activeMode.type])
+            if let ⓤnit = ⓤnits[self.activeMode.type] {
                 if ⓤnit != self.degreeUnit.hkUnit {
                     switch ⓤnit {
                         case .degreeCelsius(): self.degreeUnit = .℃
@@ -119,7 +119,7 @@ extension 📱AppModel {
             do {
                 guard let ⓢample = self.sampleCache else { return }
                 self.canceled = true
-                try await self.healthStore.delete(ⓢample)
+                try await self.api.delete(ⓢample)
                 self.sampleCache = nil
                 💥Feedback.error()
             } catch {
@@ -143,7 +143,7 @@ extension 📱AppModel {
 #if os(iOS)
 extension 📱AppModel: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        Task { 
+        Task {
             await self.setUpHealthStore(.bodyTemperature)
             self.observePreferredUnits()
         }
@@ -165,9 +165,9 @@ extension 📱AppModel: WKApplicationDelegate {
 private extension 📱AppModel {
     private func requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async {
         let ⓣype = HKQuantityType(ⓘdentifier)
-        if self.healthStore.authorizationStatus(for: ⓣype) == .notDetermined {
+        if self.api.authorizationStatus(for: ⓣype) == .notDetermined {
             do {
-                try await self.healthStore.requestAuthorization(toShare: [ⓣype], read: [])
+                try await self.api.requestAuthorization(toShare: [ⓣype], read: [])
             } catch {
                 print(#function, error)
             }
@@ -182,9 +182,9 @@ private extension 📱AppModel {
                     self.loadPreferredUnit()
                     ⓒompletionHandler()
                 }
-                self.healthStore.execute(ⓠuery)
-                try await self.healthStore.enableBackgroundDelivery(for: ⓣype,
-                                                                    frequency: .immediate)
+                self.api.execute(ⓠuery)
+                try await self.api.enableBackgroundDelivery(for: ⓣype,
+                                                            frequency: .immediate)
             }
         }
     }
