@@ -25,23 +25,13 @@ private struct 🛠Menu: View {
         NavigationStack {
             List {
                 Section {
-                    Toggle(isOn: self.$model.ableBBT) {
-                        Label("Basal body temperature", systemImage: "bed.double")
-                    }
-                    .onChange(of: self.model.ableBBT) { _ in
-                        Task { await self.model.setUpHealthStore(.basalBodyTemperature) }
-                    }
+                    self.basalBodyTemperatureToggle()
                 } header: {
                     Text("Option")
                 }
                 self.secondDecimalPlaceToggle()
                 self.autoCompleteToggle()
-                NavigationLink {
-                    ℹ️AboutAppMenu()
-                } label: {
-                    Label(String(localized: "About App", table: "🌐AboutApp"),
-                          systemImage: "doc")
-                }
+                self.aboutAppMenuLink()
             }
             .navigationTitle("Menu")
         }
@@ -49,6 +39,14 @@ private struct 🛠Menu: View {
 }
 
 private extension 🛠Menu {
+    private func basalBodyTemperatureToggle() -> some View {
+        Toggle(isOn: self.$model.ableBBT) {
+            Label("Basal body temperature", systemImage: "bed.double")
+        }
+        .onChange(of: self.model.ableBBT) { _ in
+            Task { await self.model.setUpHealthStore(.basalBodyTemperature) }
+        }
+    }
     private func secondDecimalPlaceToggle() -> some View {
         Section {
             Toggle(isOn: self.$model.ableSecondDecimalPlace) {
@@ -66,6 +64,14 @@ private extension 🛠Menu {
             }
         } footer: {
             Text("Save 1 step.")
+        }
+    }
+    private func aboutAppMenuLink() -> some View {
+        NavigationLink {
+            ℹ️AboutAppMenu()
+        } label: {
+            Label(String(localized: "About App", table: "🌐AboutApp"),
+                  systemImage: "doc")
         }
     }
 }

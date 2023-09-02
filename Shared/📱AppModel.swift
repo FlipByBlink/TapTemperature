@@ -90,8 +90,8 @@ extension 📱AppModel {
         }
     }
     
-    func setUpHealthStore(_ ⓘdentifier: HKQuantityTypeIdentifier) async {
-        await self.requestAuthorization(ⓘdentifier)
+    func setUpHealthStore(_ ⓜode: 🏳️Mode) async {
+        await self.requestAuthorization(ⓜode)
         self.loadPreferredUnit()
     }
     
@@ -163,18 +163,17 @@ extension 📱AppModel: WKApplicationDelegate {
 #endif
 
 private extension 📱AppModel {
-    private func requestAuthorization(_ ⓘdentifier: HKQuantityTypeIdentifier) async {
-        let ⓣype = HKQuantityType(ⓘdentifier)
-        if self.api.authorizationStatus(for: ⓣype) == .notDetermined {
+    private func requestAuthorization(_ ⓜode: 🏳️Mode) async {
+        if self.api.authorizationStatus(for: ⓜode.type) == .notDetermined {
             do {
-                try await self.api.requestAuthorization(toShare: [ⓣype], read: [])
+                try await self.api.requestAuthorization(toShare: [ⓜode.type], read: [])
             } catch {
                 print(#function, error)
             }
         }
     }
     
-    private func observePreferredUnits() {
+    private func observePreferredUnits() { //TODO: うまく動作してないかも？
         Task {
             for ⓣype: HKQuantityType in [.init(.bodyTemperature), .init(.basalBodyTemperature)] {
                 let ⓠuery = HKObserverQuery(sampleType: ⓣype, predicate: nil) { _, ⓒompletionHandler, ⓔrror in
