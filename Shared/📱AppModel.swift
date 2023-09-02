@@ -173,17 +173,19 @@ private extension 📱AppModel {
         }
     }
     
-    private func observePreferredUnits() { //TODO: うまく動作してないかも？
+    private func observePreferredUnits() { //MARK: うまく動作してないかも？
         Task {
             for ⓣype: HKQuantityType in [.init(.bodyTemperature), .init(.basalBodyTemperature)] {
                 let ⓠuery = HKObserverQuery(sampleType: ⓣype, predicate: nil) { _, ⓒompletionHandler, ⓔrror in
-                    guard ⓔrror == nil else { return }
+                    if let ⓔrror {
+                        print("🚨", ⓔrror, ⓔrror.localizedDescription)
+                        return
+                    }
                     self.loadPreferredUnit()
                     ⓒompletionHandler()
                 }
                 self.api.execute(ⓠuery)
-                try await self.api.enableBackgroundDelivery(for: ⓣype,
-                                                            frequency: .immediate)
+                //try await self.api.enableBackgroundDelivery(for: ⓣype, frequency: .immediate) //TODO: 削除検討
             }
         }
     }
