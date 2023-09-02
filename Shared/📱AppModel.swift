@@ -72,7 +72,7 @@ extension 📱AppModel {
                 return
             }
             let ⓢample = HKQuantitySample(type: self.activeMode.type,
-                                          quantity: .init(unit: self.degreeUnit.hkUnit,
+                                          quantity: .init(unit: self.degreeUnit.value,
                                                           doubleValue: self.inputValue),
                                           start: .now,
                                           end: .now)
@@ -99,12 +99,8 @@ extension 📱AppModel {
         Task { @MainActor in
             let ⓤnits = try await self.api.preferredUnits(for: [self.activeMode.type])
             if let ⓤnit = ⓤnits[self.activeMode.type] {
-                if ⓤnit != self.degreeUnit.hkUnit {
-                    switch ⓤnit {
-                        case .degreeCelsius(): self.degreeUnit = .℃
-                        case .degreeFahrenheit(): self.degreeUnit = .℉
-                        default: assertionFailure()
-                    }
+                if ⓤnit != self.degreeUnit.value {
+                    self.degreeUnit.set(ⓤnit)
                     self.resetComponents()
                 }
             } else {
