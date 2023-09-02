@@ -3,7 +3,7 @@ import SwiftUI
 import WatchKit
 #endif
 
-struct 💥Feedback {
+enum 💥Feedback {
 #if os(iOS)
     static func light() {
         UISelectionFeedbackGenerator().selectionChanged()

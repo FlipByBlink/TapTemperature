@@ -54,6 +54,8 @@
 		F5397F7E2AA21638002C90F2 /* 🛒InAppPurchaseView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F672AA20C1E002C90F2 /* 🛒InAppPurchaseView.swift */; };
 		F5397F802AA21D27002C90F2 /* 📝InputValue(WIP).swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F7F2AA21D27002C90F2 /* 📝InputValue(WIP).swift */; };
 		F5397F812AA21D27002C90F2 /* 📝InputValue(WIP).swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F7F2AA21D27002C90F2 /* 📝InputValue(WIP).swift */; };
+		F5397FBB2AA332D6002C90F2 /* 🛠Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397FB92AA332D6002C90F2 /* 🛠Menu.swift */; };
+		F5397FBC2AA338D5002C90F2 /* 🌐AboutApp.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F5397F6C2AA20EEA002C90F2 /* 🌐AboutApp.xcstrings */; };
 		F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
 		F585A0C62942AADC00BA665C /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */; };
 		F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C22942AADC00BA665C /* Configuration.storekit */; };
@@ -77,7 +79,6 @@
 		F59A2AF429AB137B008A194C /* 🟥AutoCompleteHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */; };
 		F59A2AF529AB13A2008A194C /* 🟥AutoCompleteHintView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */; };
 		F5C7DE2129A9FE0900694AFD /* 🛏BBTSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */; };
-		F5C7DE2229A9FE0900694AFD /* 🛏BBTSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */; };
 		F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
 		F5D228B329A9B1DD00F4F982 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D228B229A9B1DD00F4F982 /* App.swift */; };
 		F5D228B529A9B1DD00F4F982 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D228B429A9B1DD00F4F982 /* ContentView.swift */; };
@@ -202,6 +203,7 @@
 		F5397F6D2AA20EEA002C90F2 /* 🌐AD&InAppPurchase.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AD&InAppPurchase.xcstrings"; sourceTree = "<group>"; };
 		F5397F722AA20F31002C90F2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F5397F7F2AA21D27002C90F2 /* 📝InputValue(WIP).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝InputValue(WIP).swift"; sourceTree = "<group>"; };
+		F5397FB92AA332D6002C90F2 /* 🛠Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠Menu.swift"; sourceTree = "<group>"; };
 		F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
 		F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F585A0C22942AADC00BA665C /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				F5D228B229A9B1DD00F4F982 /* App.swift */,
 				F5D228B429A9B1DD00F4F982 /* ContentView.swift */,
 				F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */,
+				F5397FB92AA332D6002C90F2 /* 🛠Menu.swift */,
 				F5397F722AA20F31002C90F2 /* ℹ️AboutApp.swift */,
 				F5397F502AA0AE5A002C90F2 /* 🧰SupportingFiles */,
 			);
@@ -577,6 +580,7 @@
 				F519CB5929AAF6E500ACD6B6 /* Localizable.strings in Resources */,
 				F519CB5829AAF6E500ACD6B6 /* InfoPlist.strings in Resources */,
 				F5D228B729A9B1DF00F4F982 /* Assets.xcassets in Resources */,
+				F5397FBC2AA338D5002C90F2 /* 🌐AboutApp.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,10 +632,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5D228B529A9B1DD00F4F982 /* ContentView.swift in Sources */,
+				F5397FBB2AA332D6002C90F2 /* 🛠Menu.swift in Sources */,
 				F5397F612AA20BDF002C90F2 /* 🛒InAppPurchaseModel.swift in Sources */,
 				F5D228BE29A9B24900F4F982 /* 💥Feedback.swift in Sources */,
 				F5D228C129A9B24900F4F982 /* 👆Keypad.swift in Sources */,
-				F5C7DE2229A9FE0900694AFD /* 🛏BBTSwitchButton.swift in Sources */,
 				F5397F5F2AA20BDF002C90F2 /* 📣ADModel.swift in Sources */,
 				F5397F562AA14F36002C90F2 /* 🔑Key.swift in Sources */,
 				F5D228B329A9B1DD00F4F982 /* App.swift in Sources */,
