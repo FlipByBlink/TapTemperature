@@ -13,7 +13,7 @@ struct 👆Keypad: View {
                             ZStack {
                                 Rectangle()
                                     .fill(.background)
-                                Text(ⓘndex.description)
+                                Text("\(ⓘndex.description)")
                             }
                             .modifier(Self.HoverEffect())
                         }
@@ -43,7 +43,7 @@ struct 👆Keypad: View {
                             ZStack {
                                 Rectangle()
                                     .fill(.background)
-                                Text(self.zeroOrTen.description)
+                                Text("\(self.zeroOrTen)")
                             }
                             .modifier(Self.HoverEffect())
                         }
@@ -66,7 +66,7 @@ struct 👆Keypad: View {
                         .accessibilityLabel("Delete")
                         .disabled(self.model.components.isEmpty)
                     default:
-                        Text(verbatim: "🐛")
+                        EmptyView()
                 }
             }
         }
@@ -80,10 +80,10 @@ private extension 👆Keypad {
     private struct HoverEffect: ViewModifier {
         func body(content: Content) -> some View {
             content
-#if os(iOS)
+                #if os(iOS)
                 .contentShape(.hoverEffect, RoundedRectangle(cornerRadius: 12))
                 .hoverEffect()
-#endif
+                #endif
         }
     }
     private func disable(_ ⓘndex: Int) -> Bool {

@@ -67,6 +67,7 @@ struct 🗯ResultView: View {
                             .font(.largeTitle)
                     }
                     💟OpenHealthApp.buttonOnToolbar()
+                        .foregroundStyle(.white)
                 }
                 ToolbarItemGroup(placement: .bottomBar) {
                     if self.model.registrationSuccess { 🗑CancelButton() }
@@ -82,8 +83,8 @@ struct 🗯ResultView: View {
             self.model.reset()
         } label: {
             Label("Dismiss", systemImage: "xmark.circle")
-                .foregroundColor(.primary)
         }
+        .tint(.white)
     }
 }
 
@@ -94,9 +95,9 @@ private struct 🗑CancelButton: View {
             self.model.cancel()
         } label: {
             Image(systemName: "arrow.uturn.backward.circle")
-                .foregroundColor(.primary)
                 .font(.title3)
         }
+        .tint(.white)
         .disabled(self.model.canceled)
         .opacity(self.model.canceled ? 0.5 : 1)
         .accessibilityLabel("Cancel")
@@ -116,6 +117,7 @@ private struct 🗑CanceledLabel: ViewModifier {
                             Text("(perhaps error)")
                         }
                     }
+                    .foregroundStyle(.white)
                 }
             }
             .animation(.default, value: self.model.canceled)
