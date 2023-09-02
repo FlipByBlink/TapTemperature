@@ -3,7 +3,7 @@ import SwiftUI
 struct 🛠MenuButton: View {
     var body: some View {
         NavigationLink {
-            🛠MenuContent()
+            🛠Menu()
         } label: {
             Label("Open menu", systemImage: "gearshape")
         }
@@ -11,7 +11,7 @@ struct 🛠MenuButton: View {
     }
 }
 
-private struct 🛠MenuContent: View {
+private struct 🛠Menu: View {
     @EnvironmentObject var model: 📱AppModel
     var body: some View {
         List {
@@ -43,6 +43,9 @@ private struct 🛠MenuContent: View {
         }
         .navigationTitle("Menu")
     }
+}
+
+private extension 🛠Menu {
     private func secondDecimalPlaceToggle() -> some View {
         Section {
             Toggle(isOn: self.$model.ableSecondDecimalPlace) {

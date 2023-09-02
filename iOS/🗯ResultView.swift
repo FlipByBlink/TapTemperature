@@ -20,12 +20,12 @@ struct 🗯ResultView: View {
                         .minimumScaleFactor(0.1)
                         .padding(.horizontal)
                     if self.model.registrationSuccess {
-                        Text("Registration for \"Health\" app")
+                        Text(#"Registration for "Health" app"#)
                             .strikethrough(self.model.canceled)
                             .bold()
                             .opacity(0.8)
                     } else {
-                        Text("Please check permission on \"Health\" app")
+                        Text(#"Please check permission on "Health" app"#)
                             .font(.body.weight(.semibold))
                             .foregroundColor(.secondary)
                             .lineLimit(1)
@@ -53,7 +53,7 @@ struct 🗯ResultView: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .opacity(self.model.canceled ? 0.25 : 1)
-                .modifier(🗑CanceledLabel())
+                .modifier(Self.CanceledLabel())
             }
             .preferredColorScheme(.dark)
             .toolbar {
@@ -70,7 +70,7 @@ struct 🗯ResultView: View {
                         .foregroundStyle(.white)
                 }
                 ToolbarItemGroup(placement: .bottomBar) {
-                    if self.model.registrationSuccess { 🗑CancelButton() }
+                    if self.model.registrationSuccess { self.cancelButton() }
                 }
             }
             .animation(.default, value: self.model.canceled)
@@ -78,6 +78,9 @@ struct 🗯ResultView: View {
             //.modifier(💬RequestUserReview())
         }
     }
+}
+
+private extension 🗯ResultView {
     private func dismissButton() -> some View {
         Button {
             self.model.reset()
@@ -86,11 +89,7 @@ struct 🗯ResultView: View {
         }
         .tint(.white)
     }
-}
-
-private struct 🗑CancelButton: View {
-    @EnvironmentObject var model: 📱AppModel
-    var body: some View {
+    private func cancelButton() -> some View {
         Button {
             self.model.cancel()
         } label: {
@@ -102,25 +101,24 @@ private struct 🗑CancelButton: View {
         .opacity(self.model.canceled ? 0.5 : 1)
         .accessibilityLabel("Cancel")
     }
-}
-
-private struct 🗑CanceledLabel: ViewModifier {
-    @EnvironmentObject var model: 📱AppModel
-    func body(content: Content) -> some View {
-        content
-            .overlay(alignment: .bottom) {
-                if self.model.canceled {
-                    VStack {
-                        Text("Canceled")
-                            .fontWeight(.semibold)
-                        if self.model.cancelError {
-                            Text("(perhaps error)")
+    private struct CanceledLabel: ViewModifier {
+        @EnvironmentObject var model: 📱AppModel
+        func body(content: Content) -> some View {
+            content
+                .overlay(alignment: .bottom) {
+                    if self.model.canceled {
+                        VStack {
+                            Text("Canceled")
+                                .fontWeight(.semibold)
+                            if self.model.cancelError {
+                                Text("(perhaps error)")
+                            }
                         }
+                        .foregroundStyle(.white)
                     }
-                    .foregroundStyle(.white)
                 }
-            }
-            .animation(.default, value: self.model.canceled)
+                .animation(.default, value: self.model.canceled)
+        }
     }
 }
 
