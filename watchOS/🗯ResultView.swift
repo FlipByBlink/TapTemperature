@@ -11,7 +11,7 @@ struct 🗯ResultView: View {
             Text(self.model.registrationSuccess ? "DONE!" : "Error!?")
                 .font(.title.bold())
             if !self.model.registrationSuccess {
-                Text("Please check permission on \"Health\" app")
+                Text(#"Please check permission on "Health" app"#)
                     .font(.footnote)
             }
             Spacer()
@@ -47,7 +47,17 @@ struct 🗯ResultView: View {
                 self.model.cancel()
             }
         }
-        .toolbar(.hidden, for: .automatic)
-        //Digital Crown 押し込みでsheetを閉じれる
+        .toolbar(self.showToolbar, for: .automatic)
+        //watchOS9: DigitalCrown押し込みでsheetを閉じる事が可能
+    }
+}
+
+private extension 🗯ResultView {
+    private var showToolbar: Visibility {
+        if #available(watchOS 10.0, *) {
+            .visible
+        } else {
+            .hidden
+        }
     }
 }
