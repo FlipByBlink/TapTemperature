@@ -24,7 +24,7 @@ struct ContentView: View {
                 }
             }
             .background { 🟥AutoCompleteHintView() }
-            .fullScreenCover(isPresented: self.$model.showResult) { 🗯ResultView() }
+            .fullScreenCover(isPresented: self.$model.showResultScreen) { 🗯ResultScreen() }
             .modifier(📏LoadPrefferedUnit())
             .modifier(🗑️ResetOnBackground())
         }

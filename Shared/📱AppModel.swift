@@ -13,10 +13,10 @@ class 📱AppModel: NSObject, ObservableObject {
     
     @Published var bbtMode: Bool = true
     
-    @Published var showResult: Bool = false
+    @Published var showResultScreen: Bool = false
     @Published var registrationSuccess: Bool = false
     @Published var canceled: Bool = false
-    @Published var cancelError: Bool = false
+    @Published var failedCancellation: Bool = false
     
     @Published var components: [Int] = [3]
     
@@ -39,35 +39,37 @@ extension 📱AppModel {
         self.components.append(ⓒomponent)
         if self.ableAutoComplete {
             if self.components.count == (self.ableSecondDecimalPlace ? 4 : 3) {
-                Task { await self.register() }
+                self.register()
                 return
             }
         }
         💥Feedback.light()
     }
     
-    func register() async {
-        do {
-            guard self.api.authorizationStatus(for: self.activeMode.type) == .sharingAuthorized else {
-                self.registrationSuccess = false
-                self.showResult = true
-                return
-            }
-            let ⓢample = HKQuantitySample(type: self.activeMode.type,
-                                          quantity: .init(unit: self.degreeUnit.value,
-                                                          doubleValue: self.inputValue),
-                                          start: .now,
-                                          end: .now)
-            self.sampleCache = ⓢample
-            try await self.api.save(ⓢample)
-            self.registrationSuccess = true
-            self.showResult = true
-            💥Feedback.success()
-        } catch {
-            Task { @MainActor in
-                print(#function, error)
-                self.registrationSuccess = false
-                self.showResult = true
+    func register() {
+        Task {
+            do {
+                guard self.api.authorizationStatus(for: self.activeMode.type) == .sharingAuthorized else {
+                    self.registrationSuccess = false
+                    self.showResultScreen = true
+                    return
+                }
+                let ⓢample = HKQuantitySample(type: self.activeMode.type,
+                                              quantity: .init(unit: self.degreeUnit.value,
+                                                              doubleValue: self.inputValue),
+                                              start: .now,
+                                              end: .now)
+                self.sampleCache = ⓢample
+                try await self.api.save(ⓢample)
+                self.registrationSuccess = true
+                self.showResultScreen = true
+                💥Feedback.success()
+            } catch {
+                Task { @MainActor in
+                    print(#function, error)
+                    self.registrationSuccess = false
+                    self.showResultScreen = true
+                }
             }
         }
     }
@@ -81,7 +83,7 @@ extension 📱AppModel {
     
     func loadPreferredUnit() {
         guard self.api.authorizationStatus(for: self.activeMode.type) == .sharingAuthorized else { return }
-        Task { @MainActor in
+        Task {
             let ⓤnits = try await self.api.preferredUnits(for: [self.activeMode.type])
             if let ⓤnit = ⓤnits[self.activeMode.type] {
                 if ⓤnit != self.degreeUnit.value {
@@ -105,16 +107,16 @@ extension 📱AppModel {
             } catch {
                 Task { @MainActor in
                     print(#function, error)
-                    self.cancelError = true
+                    self.failedCancellation = true
                 }
             }
         }
     }
     
     func reset() {
-        self.showResult = false
+        self.showResultScreen = false
         self.canceled = false
-        self.cancelError = false
+        self.failedCancellation = false
         self.resetComponents()
         self.sampleCache = nil
     }

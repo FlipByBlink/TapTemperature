@@ -22,7 +22,7 @@ struct 👆Keypad: View {
                         .disabled(self.disable(ⓘndex))
                     case 10:
                         Button {
-                            Task { await self.model.register() }
+                            self.model.register()
                         } label: {
                             ZStack {
                                 Rectangle()
@@ -30,7 +30,7 @@ struct 👆Keypad: View {
                                 Image(systemName: self.registerButtonImage)
                                     .symbolVariant(self.model.components.count > 2 ? .fill : .none)
                                     .scaleEffect(self.model.components.count > 2 ? 1.15 : 1)
-                                    .font(.system(size: self.fontSize))
+                                    .font(.system(size: Self.fontSize))
                             }
                             .modifier(Self.HoverEffect())
                         }
@@ -71,20 +71,13 @@ struct 👆Keypad: View {
                 }
             }
         }
-        .font(.system(size: self.fontSize, weight: .medium, design: .rounded))
+        .font(.system(size: Self.fontSize, weight: .medium, design: .rounded))
         .minimumScaleFactor(0.66)
         .frame(maxWidth: 700)
     }
 }
 
 private extension 👆Keypad {
-    private static var spacing: CGFloat? {
-        #if os(iOS)
-        nil
-        #elseif os(watchOS)
-        0
-        #endif
-    }
     private struct HoverEffect: ViewModifier {
         func body(content: Content) -> some View {
             content
@@ -160,7 +153,14 @@ private extension 👆Keypad {
             0
         }
     }
-    private var fontSize: CGFloat {
+    private static var spacing: CGFloat? {
+#if os(iOS)
+        nil
+#elseif os(watchOS)
+        0
+#endif
+    }
+    private static var fontSize: CGFloat {
 #if os(iOS)
         48
 #elseif os(watchOS)

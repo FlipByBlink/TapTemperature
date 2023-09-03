@@ -31,7 +31,7 @@ struct 🗯ResultView: View {
                 VStack {
                     Text("Canceled")
                         .fontWeight(.semibold)
-                    if self.model.cancelError {
+                    if self.model.failedCancellation {
                         Text("(perhaps error)")
                     }
                 }

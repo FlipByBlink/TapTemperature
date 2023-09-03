@@ -42,7 +42,7 @@ extension 🗒️StaticInfo {
                              "📱AppModel.swift",
                              "🪧ValueLabel.swift",
                              "👆Keypad.swift"]
-                case .Rest: ["🗯ResultView.swift",
+                case .Rest: ["🗯ResultScreen.swift",
                              "🛠Menu.swift",
                              "🏳️Mode.swift",
                              "📏DegreeUnit.swift",
@@ -75,7 +75,7 @@ extension 🗒️StaticInfo {
                              "ContentView.swift",
                              "📱AppModel.swift",
                              "📱AppModel(Extension).swift",
-                             "🗯ResultView.swift"]
+                             "🗯ResultScreen.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
                              "ℹ️AboutApp.swift"]
             }

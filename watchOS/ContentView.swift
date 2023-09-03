@@ -24,7 +24,7 @@ struct ContentView: View {
             .ignoresSafeArea(edges: .bottom)
             .frame(maxHeight: .infinity)
         }
-        .sheet(isPresented: self.$model.showResult) {
+        .sheet(isPresented: self.$model.showResultScreen) {
             self.model.reset()
         } content: {
             🗯ResultView()

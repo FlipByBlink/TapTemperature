@@ -12,7 +12,7 @@
 		1256A326286AD550002AF08A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1256A325286AD550002AF08A /* StoreKit.framework */; };
 		1256A328286AD8FE002AF08A /* 💟OpenHealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */; };
 		1256A33C286B1547002AF08A /* 🛠Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠Menu.swift */; };
-		125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
+		125A9BED283B441D00C54634 /* 🗯ResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultScreen.swift */; };
 		1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
 		12ADECF8283F7C1500431224 /* 🪧ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
 		12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADECF9283F7CC700431224 /* 👆Keypad.swift */; };
@@ -73,7 +73,7 @@
 		F59A2AE729AB10D2008A194C /* 💥Feedback.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */; };
 		F59A2AE829AB10D2008A194C /* App.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BA283089D300B0A615 /* App.swift */; };
 		F59A2AE929AB10D2008A194C /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12E811BC283089D300B0A615 /* ContentView.swift */; };
-		F59A2AEA29AB10D2008A194C /* 🗯ResultView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultView.swift */; };
+		F59A2AEA29AB10D2008A194C /* 🗯ResultScreen.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 125A9BEC283B441D00C54634 /* 🗯ResultScreen.swift */; };
 		F59A2AEB29AB10D2008A194C /* 💟OpenHealthAppButton.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */; };
 		F59A2AEC29AB10D2008A194C /* 🛠Menu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1256A33B286B1547002AF08A /* 🛠Menu.swift */; };
 		F59A2AEE29AB10D2008A194C /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
@@ -138,7 +138,7 @@
 				F59A2AE729AB10D2008A194C /* 💥Feedback.swift in CopyFiles */,
 				F59A2AE829AB10D2008A194C /* App.swift in CopyFiles */,
 				F59A2AE929AB10D2008A194C /* ContentView.swift in CopyFiles */,
-				F59A2AEA29AB10D2008A194C /* 🗯ResultView.swift in CopyFiles */,
+				F59A2AEA29AB10D2008A194C /* 🗯ResultScreen.swift in CopyFiles */,
 				F59A2AEB29AB10D2008A194C /* 💟OpenHealthAppButton.swift in CopyFiles */,
 				F59A2AEC29AB10D2008A194C /* 🛠Menu.swift in CopyFiles */,
 				F59A2AEE29AB10D2008A194C /* 📣ADSheet.swift in CopyFiles */,
@@ -179,7 +179,7 @@
 		1256A325286AD550002AF08A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💟OpenHealthAppButton.swift"; sourceTree = "<group>"; };
 		1256A33B286B1547002AF08A /* 🛠Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠Menu.swift"; sourceTree = "<group>"; };
-		125A9BEC283B441D00C54634 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
+		125A9BEC283B441D00C54634 /* 🗯ResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultScreen.swift"; sourceTree = "<group>"; };
 		1281D252283E1C4300D59319 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
 		12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧ValueLabel.swift"; sourceTree = "<group>"; };
 		12ADECF9283F7CC700431224 /* 👆Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "👆Keypad.swift"; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 			children = (
 				12E811BA283089D300B0A615 /* App.swift */,
 				12E811BC283089D300B0A615 /* ContentView.swift */,
-				125A9BEC283B441D00C54634 /* 🗯ResultView.swift */,
+				125A9BEC283B441D00C54634 /* 🗯ResultScreen.swift */,
 				1256A33B286B1547002AF08A /* 🛠Menu.swift */,
 				1288ADE2286ACDDB002F5511 /* 🗄️Rest */,
 				F5397F4E2AA0AD71002C90F2 /* 🧰SupportingFiles */,
@@ -620,7 +620,7 @@
 				F5397F602AA20BDF002C90F2 /* 🛒InAppPurchaseModel.swift in Sources */,
 				12E811BD283089D300B0A615 /* ContentView.swift in Sources */,
 				12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */,
-				125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */,
+				125A9BED283B441D00C54634 /* 🗯ResultScreen.swift in Sources */,
 				F5397F552AA14F36002C90F2 /* 🔑Key.swift in Sources */,
 				F58351DF2AA419CA00C7F724 /* 🗑️ResetOnBackground.swift in Sources */,
 				F5397F622AA20BDF002C90F2 /* 🗒️StaticInfo.swift in Sources */,

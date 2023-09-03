@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 🗯ResultView: View {
+struct 🗯ResultScreen: View {
     @EnvironmentObject var model: 📱AppModel
     var body: some View {
         NavigationStack {
@@ -80,7 +80,7 @@ struct 🗯ResultView: View {
     }
 }
 
-private extension 🗯ResultView {
+private extension 🗯ResultScreen {
     private func dismissButton() -> some View {
         Button {
             self.model.reset()
@@ -110,7 +110,7 @@ private extension 🗯ResultView {
                         VStack {
                             Text("Canceled")
                                 .fontWeight(.semibold)
-                            if self.model.cancelError {
+                            if self.model.failedCancellation {
                                 Text("(perhaps error)")
                             }
                         }
