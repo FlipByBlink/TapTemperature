@@ -37,11 +37,9 @@ extension 📱AppModel {
     
     func append(_ ⓒomponent: Int) {
         self.components.append(ⓒomponent)
-        if self.ableAutoComplete {
-            if self.components.count == (self.ableSecondDecimalPlace ? 4 : 3) {
-                self.register()
-                return
-            }
+        if self.satisfyAutoComplete {
+            self.register()
+            return
         }
         💥Feedback.light()
     }
@@ -123,7 +121,7 @@ extension 📱AppModel {
     
     var registeredValueLabel: String {
         if let ⓓoubleValue = self.sampleCache?.quantity.doubleValue(for: self.degreeUnit.value) {
-            "\(ⓓoubleValue) " + self.degreeUnit.rawValue
+            "\(ⓓoubleValue) \(self.degreeUnit)"
         } else {
             "🐛"
         }
@@ -163,6 +161,10 @@ private extension 📱AppModel {
             default:
                 0.0
         }
+    }
+    private var satisfyAutoComplete: Bool {
+        self.ableAutoComplete
+        && self.components.count == (self.ableSecondDecimalPlace ? 4 : 3)
     }
     private func requestAuthorization(_ ⓜode: 🏳️Mode) async {
         if self.api.authorizationStatus(for: ⓜode.type) == .notDetermined {

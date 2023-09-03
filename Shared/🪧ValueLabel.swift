@@ -5,15 +5,15 @@ struct 🪧ValueLabel: View {
     var body: some View {
         HStack(alignment: .firstTextBaseline, spacing: 3) {
             Text(self.first + self.second)
-                .font(.system(size: self.ⓕontSize, weight: .bold, design: .monospaced))
+                .font(.system(size: Self.fontSize, weight: .bold, design: .monospaced))
                 .kerning(3)
             Text(NumberFormatter().decimalSeparator)
-                .font(.system(size: self.ⓕontSize, weight: .bold))
+                .font(.system(size: Self.fontSize, weight: .bold))
             Text(self.third + self.fourth)
-                .font(.system(size: self.ⓕontSize, weight: .bold, design: .monospaced))
+                .font(.system(size: Self.fontSize, weight: .bold, design: .monospaced))
                 .kerning(3)
-            Text(self.model.degreeUnit.rawValue)
-                .font(.system(size: self.ⓕontSize * 0.6, weight: .bold))
+            Text(verbatim: "\(self.model.degreeUnit)")
+                .font(.system(size: Self.fontSize * 0.6, weight: .bold))
         }
     }
 }
@@ -68,7 +68,7 @@ private extension 🪧ValueLabel {
             ""
         }
     }
-    private var ⓕontSize: CGFloat {
+    private static var fontSize: CGFloat {
 #if os(iOS)
         64
 #elseif os(watchOS)

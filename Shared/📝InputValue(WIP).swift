@@ -66,12 +66,12 @@ extension 📝InputValue {
         ⓥalue += "\(③rd)"
         if ⓢecondDecimalPlace {
             if let ④th {
-                return ⓥalue + "\(④th)" + ⓤnit.rawValue
+                return ⓥalue + "\(④th)" + "\(ⓤnit)"
             } else {
-                return ⓥalue + "_" + ⓤnit.rawValue
+                return ⓥalue + "_" + "\(ⓤnit)"
             }
         } else {
-            return ⓥalue + ⓤnit.rawValue
+            return ⓥalue + "\(ⓤnit)"
         }
     }
     mutating func set(_ ⓥalue: Int) {

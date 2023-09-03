@@ -27,7 +27,7 @@ struct 🗯ResultScreen: View {
                     } else {
                         Text(#"Please check permission on "Health" app"#)
                             .font(.body.weight(.semibold))
-                            .foregroundColor(.secondary)
+                            .foregroundStyle(.white.opacity(0.8))
                             .lineLimit(1)
                             .minimumScaleFactor(0.1)
                             .padding(.horizontal)
@@ -65,6 +65,7 @@ struct 🗯ResultScreen: View {
                         Image(systemName: "arrow.right")
                             .imageScale(.small)
                             .font(.largeTitle)
+                            .foregroundStyle(.white)
                     }
                     💟OpenHealthApp.buttonOnToolbar()
                         .foregroundStyle(.white)
@@ -96,7 +97,7 @@ private extension 🗯ResultScreen {
             Image(systemName: "arrow.uturn.backward.circle")
                 .font(.title3)
         }
-        .tint(.white)
+        .foregroundStyle(.white)
         .disabled(self.model.canceled)
         .opacity(self.model.canceled ? 0.5 : 1)
         .accessibilityLabel("Cancel")

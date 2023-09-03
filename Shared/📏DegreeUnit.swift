@@ -1,6 +1,6 @@
 import HealthKit
 
-enum 📏DegreeUnit: String, CaseIterable, Identifiable {
+enum 📏DegreeUnit {
     case ℃, ℉
     var id: Self { self }
     var value: HKUnit {
