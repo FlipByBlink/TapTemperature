@@ -39,9 +39,9 @@ extension 📱AppModel {
         self.components.append(ⓒomponent)
         if self.satisfyAutoComplete {
             self.register()
-            return
+        } else {
+            💥Feedback.light()
         }
-        💥Feedback.light()
     }
     
     func register() {

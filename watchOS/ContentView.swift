@@ -27,7 +27,7 @@ struct ContentView: View {
         .sheet(isPresented: self.$model.showResultScreen) {
             self.model.reset()
         } content: {
-            🗯ResultView()
+            🗯ResultScreen()
         }
         .modifier(📏LoadPrefferedUnit())
         .modifier(🗑️ResetOnBackground())

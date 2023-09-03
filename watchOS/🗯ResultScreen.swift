@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 🗯ResultView: View {
+struct 🗯ResultScreen: View {
     @EnvironmentObject var model: 📱AppModel
     @State private var showUndoAlert: Bool = false
     var body: some View {
@@ -10,6 +10,7 @@ struct 🗯ResultView: View {
                 .font(.largeTitle.bold())
             Text(self.model.registrationSuccess ? "DONE!" : "Error!?")
                 .font(.title.bold())
+                .strikethrough(self.model.canceled)
             if !self.model.registrationSuccess {
                 Text(#"Please check permission on "Health" app"#)
                     .font(.footnote)
@@ -22,6 +23,7 @@ struct 🗯ResultView: View {
             }
             if self.model.registrationSuccess {
                 Text(self.model.registeredValueLabel)
+                    .strikethrough(self.model.canceled)
             }
             Spacer()
         }
@@ -52,7 +54,7 @@ struct 🗯ResultView: View {
     }
 }
 
-private extension 🗯ResultView {
+private extension 🗯ResultScreen {
     private var showToolbar: Visibility {
         if #available(watchOS 10.0, *) {
             .visible

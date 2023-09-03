@@ -42,6 +42,7 @@ struct 🗯ResultScreen: View {
                         }
                         if self.model.registrationSuccess {
                             Text(self.model.registeredValueLabel)
+                                .strikethrough(self.model.canceled)
                                 .font(.title2)
                                 .fontWeight(.bold)
                         }
