@@ -731,7 +731,14 @@
       }
     },
     "Shortcut to add a data." : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データを追加するためのショートカットです。"
+          }
+        }
+      }
     },
     "Sorry" : {
       "localizations" : {
