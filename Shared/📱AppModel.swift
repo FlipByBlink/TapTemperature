@@ -28,24 +28,6 @@ extension 📱AppModel {
         self.ableBBT && self.bbtMode ? .basalBodyTemperature : .bodyTemperature
     }
     
-    var inputValue: Double {
-        switch self.components.count {
-            case 3:
-                Double("\(self.components[0])"
-                       + "\(self.components[1])"
-                       + "."
-                       + "\(self.components[2])") ?? 0.0
-            case 4:
-                Double("\(self.components[0])"
-                       + "\(self.components[1])"
-                       + "."
-                       + "\(self.components[2])"
-                       + "\(self.components[3])") ?? 0.0
-            default:
-                0.0
-        }
-    }
-    
     func resetComponents() {
         switch self.degreeUnit {
             case .℃: self.components = [3]
@@ -136,6 +118,14 @@ extension 📱AppModel {
         self.resetComponents()
         self.sampleCache = nil
     }
+    
+    var registeredValueLabel: String {
+        if let ⓓoubleValue = self.sampleCache?.quantity.doubleValue(for: self.degreeUnit.value) {
+            "\(ⓓoubleValue) " + self.degreeUnit.rawValue
+        } else {
+            "🐛"
+        }
+    }
 }
 
 #if os(iOS)
@@ -155,6 +145,23 @@ extension 📱AppModel: WKApplicationDelegate {
 #endif
 
 private extension 📱AppModel {
+    private var inputValue: Double {
+        switch self.components.count {
+            case 3:
+                Double("\(self.components[0])"
+                       + "\(self.components[1])"
+                       + "."
+                       + "\(self.components[2])") ?? 0.0
+            case 4:
+                Double("\(self.components[0])"
+                       + "\(self.components[1])"
+                       + "."
+                       + "\(self.components[2])"
+                       + "\(self.components[3])") ?? 0.0
+            default:
+                0.0
+        }
+    }
     private func requestAuthorization(_ ⓜode: 🏳️Mode) async {
         if self.api.authorizationStatus(for: ⓜode.type) == .notDetermined {
             do {
