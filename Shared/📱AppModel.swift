@@ -1,6 +1,7 @@
 import SwiftUI
 import HealthKit
 
+@MainActor
 class 📱AppModel: NSObject, ObservableObject {
     private let api = HKHealthStore()
     
@@ -8,7 +9,7 @@ class 📱AppModel: NSObject, ObservableObject {
     @AppStorage(🔑Key.ableSecondDecimalPlace) var ableSecondDecimalPlace: Bool = false
     @AppStorage(🔑Key.ableAutoComplete) var ableAutoComplete: Bool = false
     
-    @Published var degreeUnit: 📏DegreeUnit = .℃
+    @Published private(set) var degreeUnit: 📏DegreeUnit = .℃
     
     @Published var bbtMode: Bool = true
     
@@ -63,7 +64,6 @@ extension 📱AppModel {
         💥Feedback.light()
     }
     
-    @MainActor
     func register() async {
         do {
             guard self.api.authorizationStatus(for: self.activeMode.type) == .sharingAuthorized else {
@@ -90,12 +90,15 @@ extension 📱AppModel {
         }
     }
     
-    func setUpHealthStore(_ ⓜode: 🏳️Mode) async {
-        await self.requestAuthorization(ⓜode)
-        self.loadPreferredUnit()
+    func setUpHealthStore(_ ⓜode: 🏳️Mode) {
+        Task {
+            await self.requestAuthorization(ⓜode)
+            self.loadPreferredUnit()
+        }
     }
     
     func loadPreferredUnit() {
+        guard self.api.authorizationStatus(for: self.activeMode.type) == .sharingAuthorized else { return }
         Task { @MainActor in
             let ⓤnits = try await self.api.preferredUnits(for: [self.activeMode.type])
             if let ⓤnit = ⓤnits[self.activeMode.type] {
@@ -109,7 +112,6 @@ extension 📱AppModel {
         }
     }
     
-    @MainActor
     func cancel() {
         Task {
             do {
@@ -139,10 +141,7 @@ extension 📱AppModel {
 #if os(iOS)
 extension 📱AppModel: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        Task {
-            await self.setUpHealthStore(.bodyTemperature)
-            self.observePreferredUnits()
-        }
+        self.setUpHealthStore(.bodyTemperature)
         return true
     }
 }
@@ -150,10 +149,7 @@ extension 📱AppModel: UIApplicationDelegate {
 #elseif os(watchOS)
 extension 📱AppModel: WKApplicationDelegate {
     func applicationDidBecomeActive() {
-        Task {
-            await self.setUpHealthStore(.bodyTemperature)
-            self.observePreferredUnits()
-        }
+        self.setUpHealthStore(.bodyTemperature)
     }
 }
 #endif
@@ -165,23 +161,6 @@ private extension 📱AppModel {
                 try await self.api.requestAuthorization(toShare: [ⓜode.type], read: [])
             } catch {
                 print(#function, error)
-            }
-        }
-    }
-    
-    private func observePreferredUnits() { //MARK: うまく動作してないかも？
-        Task {
-            for ⓣype: HKQuantityType in [.init(.bodyTemperature), .init(.basalBodyTemperature)] {
-                let ⓠuery = HKObserverQuery(sampleType: ⓣype, predicate: nil) { _, ⓒompletionHandler, ⓔrror in
-                    if let ⓔrror {
-                        print("🚨", ⓔrror, ⓔrror.localizedDescription)
-                        return
-                    }
-                    self.loadPreferredUnit()
-                    ⓒompletionHandler()
-                }
-                self.api.execute(ⓠuery)
-                //try await self.api.enableBackgroundDelivery(for: ⓣype, frequency: .immediate) //TODO: 削除検討
             }
         }
     }

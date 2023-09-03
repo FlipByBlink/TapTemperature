@@ -56,6 +56,8 @@
 		F5397FBB2AA332D6002C90F2 /* 🛠Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397FB92AA332D6002C90F2 /* 🛠Menu.swift */; };
 		F5397FBC2AA338D5002C90F2 /* 🌐AboutApp.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F5397F6C2AA20EEA002C90F2 /* 🌐AboutApp.xcstrings */; };
 		F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
+		F58351DC2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58351DB2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift */; };
+		F58351DD2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58351DB2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift */; };
 		F585A0C62942AADC00BA665C /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */; };
 		F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C22942AADC00BA665C /* Configuration.storekit */; };
 		F585A0C92942AADC00BA665C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C42942AADC00BA665C /* Launch Screen.storyboard */; };
@@ -201,6 +203,7 @@
 		F5397F7F2AA21D27002C90F2 /* 📝InputValue(WIP).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝InputValue(WIP).swift"; sourceTree = "<group>"; };
 		F5397FB92AA332D6002C90F2 /* 🛠Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠Menu.swift"; sourceTree = "<group>"; };
 		F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
+		F58351DB2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📏LoadPrefferedUnit.swift"; sourceTree = "<group>"; };
 		F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F585A0C22942AADC00BA665C /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		F585A0C42942AADC00BA665C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -402,6 +405,7 @@
 				1281D252283E1C4300D59319 /* 📱AppModel.swift */,
 				F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */,
 				F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */,
+				F58351DB2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift */,
 				12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */,
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
 				F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */,
@@ -607,6 +611,7 @@
 				1281D253283E1C4300D59319 /* 📱AppModel.swift in Sources */,
 				1256A328286AD8FE002AF08A /* 💟OpenHealthAppButton.swift in Sources */,
 				F5397F522AA0C63E002C90F2 /* 🏳️Mode.swift in Sources */,
+				F58351DC2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift in Sources */,
 				12ADECF8283F7C1500431224 /* 🪧ValueLabel.swift in Sources */,
 				F5397F602AA20BDF002C90F2 /* 🛒InAppPurchaseModel.swift in Sources */,
 				12E811BD283089D300B0A615 /* ContentView.swift in Sources */,
@@ -640,6 +645,7 @@
 				F5397F732AA20F31002C90F2 /* ℹ️AboutApp.swift in Sources */,
 				F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */,
 				F5D228C029A9B24900F4F982 /* 📱AppModel.swift in Sources */,
+				F58351DD2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift in Sources */,
 				F5397F532AA0C63E002C90F2 /* 🏳️Mode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

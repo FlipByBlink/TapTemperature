@@ -26,6 +26,7 @@ struct ContentView: View {
             }
             .background { 🟥AutoCompleteHintView() }
             .fullScreenCover(isPresented: self.$model.showResult) { 🗯ResultView() }
+            .modifier(📏LoadPrefferedUnit())
             .onChange(of: self.scenePhase) {
                 if $0 == .background { self.model.reset() }
             }

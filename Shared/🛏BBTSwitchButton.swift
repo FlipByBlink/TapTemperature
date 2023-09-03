@@ -19,12 +19,6 @@ struct 🛏BBTSwitchButton: View {
                     .tint(.primary)
             }
             .accessibilityLabel("Switch type")
-            .onChange(of: self.model.bbtMode) { _ in
-                self.model.loadPreferredUnit()
-            }
-            .onChange(of: self.model.degreeUnit) { _ in
-                self.model.resetComponents()
-            }
         }
     }
 }

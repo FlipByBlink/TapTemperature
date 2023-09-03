@@ -54,8 +54,8 @@ private extension 🛠Menu {
         Toggle(isOn: self.$model.ableBBT) {
             Label("Basal body temperature", systemImage: "bed.double")
         }
-        .onChange(of: self.model.ableBBT) { _ in
-            Task { await self.model.setUpHealthStore(.basalBodyTemperature) }
+        .onChange(of: self.model.ableBBT) {
+            if $0 { self.model.setUpHealthStore(.basalBodyTemperature) }
         }
     }
     private func secondDecimalPlaceToggle() -> some View {
