@@ -1,38 +1,38 @@
-"current" = "This application is designed to register body temperature data to the Apple \"Health\" application pre-installed on iPhone in the fastest possible way (as manual).
+"current" = "This application is designed to register body temperature data to the Apple \"Health\" application pre-installed on iPhone / iPad in the fastest possible way (as manual).
 
-【Target/Use-case】
 
-No \"smart\" thermometer.
+Target / Use-case
 
-Frequently measure my temperature (and basal body temperature) using a thermometer almost every day.
+・No \"smart\" thermometer.
 
-Intend to register the data into \"Health\" app every time, after measuring by a thermometer.
+・Frequently measure my temperature (and basal body temperature) using a thermometer almost every day.
 
-【OPTION】
+・Intend to register the data into \"Health\" app every time, after measuring by a thermometer.
 
-Mode as basal body temperature.
 
-Mode for second decimal places.
+Option
 
-Auto complete function.
+・Mode as basal body temperature
 
-Unit: ℃, ℉
+・Mode for second decimal places
 
-Option to hide AD banner. (In-App Purchase)
+・Auto complete function
 
-【OTHERS】
+・Unit: ℃, ℉
 
-Apple Watch support.
 
-Launch \"Health\" app by one tap.
+Others
 
-Cancellation by one tap just after you registered a data.
+・Launch \"Health\" app by one tap
 
-Check source code in app.
+・Apple Watch support
 
-All feature is free.
+・iPad support (iPadOS 17+)
 
-【CONCEPT】
+・Cancellation by one tap just after you registered a data
+
+
+Concept
 
 People frequently measure their body temperature (and basal body temperature) daily using a thermometer. Many iPhone users register their temperature data on \"Health\" app. The best solution is to use a smart thermometer that works with \"Health\" app and automatically stores measurements, but they are expensive and almost non-existent. Manual data registration is possible in \"Health\" app, but \"Health\" app is not designed for daily manual data registration. Therefore, manually entering data that occur continuously daily, such as temperature measurements, is a very time-consuming and stressful experience. This app was developed to solve such problems.
 
