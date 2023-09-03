@@ -3,6 +3,7 @@ import SwiftUI
 struct 🗯ResultScreen: View {
     @EnvironmentObject var model: 📱AppModel
     @State private var showUndoAlert: Bool = false
+    @State private var undoProcessing: Bool = false
     var body: some View {
         VStack {
             Spacer()
@@ -46,9 +47,14 @@ struct 🗯ResultScreen: View {
         }
         .confirmationDialog("Undo?", isPresented: self.$showUndoAlert) {
             Button("Yes, undo") {
-                self.model.cancel()
+                Task {
+                    self.undoProcessing = true
+                    await self.model.cancel()
+                    self.undoProcessing = false
+                }
             }
         }
+        .overlay { if self.undoProcessing { ProgressView() } }
         .onDisappear { self.model.clearRegistrationState() }
         .toolbar(self.showToolbar, for: .automatic)
         //watchOS9: DigitalCrown押し込みでsheetを閉じる事が可能

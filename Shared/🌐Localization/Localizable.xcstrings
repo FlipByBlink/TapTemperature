@@ -731,7 +731,14 @@
       }
     },
     "Sorry" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ごめんなさい"
+          }
+        }
+      }
     },
     "Switch type" : {
       "localizations" : {
@@ -853,10 +860,24 @@
       }
     },
     "Unfortunately, this device is not compatible." : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "残念ながら、このデバイスとの互換性がありません。"
+          }
+        }
+      }
     },
     "Unfortunately, this device is not compatible. iPad support \"Health\" app from iPadOS 17.0." : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "残念ながら、このデバイスとの互換性がありません。iPadOS 17.0以降のiPadでは「ヘルスケア」アプリをサポートしています。"
+          }
+        }
+      }
     },
     "Unit" : {
       "extractionState" : "manual",

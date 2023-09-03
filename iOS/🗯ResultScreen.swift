@@ -72,7 +72,7 @@ struct 🗯ResultScreen: View {
                         .foregroundStyle(.white)
                 }
                 ToolbarItemGroup(placement: .bottomBar) {
-                    if self.model.registrationSuccess { self.cancelButton() }
+                    if self.model.registrationSuccess { Self.CancelButton() }
                 }
             }
             .animation(.default, value: self.model.canceled)
@@ -91,17 +91,31 @@ private extension 🗯ResultScreen {
         }
         .tint(.white)
     }
-    private func cancelButton() -> some View {
-        Button {
-            self.model.cancel()
-        } label: {
-            Image(systemName: "arrow.uturn.backward.circle")
-                .font(.title3)
+    private struct CancelButton: View {
+        @EnvironmentObject var model: 📱AppModel
+        @State private var processing: Bool = false
+        var body: some View {
+            Button {
+                Task {
+                    self.processing = true
+                    await self.model.cancel()
+                    self.processing = false
+                }
+            } label: {
+                Image(systemName: "arrow.uturn.backward.circle")
+                    .font(.title3)
+            }
+            .foregroundStyle(.white)
+            .disabled(self.model.canceled)
+            .opacity(self.model.canceled ? 0.5 : 1)
+            .accessibilityLabel("Cancel")
+            .overlay(alignment: .top) {
+                if self.processing {
+                    ProgressView()
+                        .offset(y: -16)
+                }
+            }
         }
-        .foregroundStyle(.white)
-        .disabled(self.model.canceled)
-        .opacity(self.model.canceled ? 0.5 : 1)
-        .accessibilityLabel("Cancel")
     }
     private struct CanceledLabel: ViewModifier {
         @EnvironmentObject var model: 📱AppModel

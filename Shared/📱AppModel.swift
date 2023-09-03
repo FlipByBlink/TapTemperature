@@ -73,11 +73,9 @@ extension 📱AppModel {
                 self.showResultScreen = true
                 💥Feedback.success()
             } catch {
-                Task { @MainActor in
-                    print(#function, error)
-                    self.registrationSuccess = false
-                    self.showResultScreen = true
-                }
+                print(#function, error)
+                self.registrationSuccess = false
+                self.showResultScreen = true
             }
         }
     }
@@ -104,20 +102,16 @@ extension 📱AppModel {
         }
     }
     
-    func cancel() {
-        Task {
-            do {
-                guard let ⓢample = self.sampleCache else { return }
-                self.canceled = true
-                try await self.api.delete(ⓢample)
-                self.sampleCache = nil
-                💥Feedback.error()
-            } catch {
-                Task { @MainActor in
-                    print(#function, error)
-                    self.failedCancellation = true
-                }
-            }
+    func cancel() async {
+        do {
+            guard let ⓢample = self.sampleCache else { return }
+            try await self.api.delete(ⓢample)
+            self.canceled = true
+            💥Feedback.error()
+        } catch {
+            print(#function, error)
+            self.canceled = true
+            self.failedCancellation = true
         }
     }
     
