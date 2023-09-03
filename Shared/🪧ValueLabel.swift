@@ -3,18 +3,22 @@ import SwiftUI
 struct 🪧ValueLabel: View {
     @EnvironmentObject var model: 📱AppModel
     var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 3) {
+        Group {
             Text(self.first + self.second)
                 .font(.system(size: Self.fontSize, weight: .bold, design: .monospaced))
                 .kerning(3)
+            +
             Text(NumberFormatter().decimalSeparator)
                 .font(.system(size: Self.fontSize, weight: .bold))
+            +
             Text(self.third + self.fourth)
                 .font(.system(size: Self.fontSize, weight: .bold, design: .monospaced))
                 .kerning(3)
+            +
             Text(verbatim: "\(self.model.degreeUnit)")
                 .font(.system(size: Self.fontSize * 0.6, weight: .bold))
         }
+        .lineLimit(1)
     }
 }
 
