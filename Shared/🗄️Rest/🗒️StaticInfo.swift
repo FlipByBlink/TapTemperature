@@ -33,7 +33,7 @@ extension 🗒️StaticInfo {
                                                                   ("1.0", "2022-06-01")] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Rest
+        case main, Rest, Widget
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -61,6 +61,7 @@ extension 🗒️StaticInfo {
                              "📣ADSheet.swift",
                              "🛒InAppPurchaseModel.swift",
                              "🛒InAppPurchaseView.swift"]
+                case .Widget: ["Widget.swift"]
             }
         }
     }
@@ -69,7 +70,7 @@ extension 🗒️StaticInfo {
 #elseif os(watchOS)
 extension 🗒️StaticInfo {
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Rest
+        case main, Rest, Widget
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -88,6 +89,7 @@ extension 🗒️StaticInfo {
                              "🗑️ResetOnBackground.swift",
                              "🗒️StaticInfo.swift",
                              "ℹ️AboutApp.swift"]
+                case .Widget: ["Widget.swift"]
             }
         }
     }
