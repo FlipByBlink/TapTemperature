@@ -1,0 +1,108 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "1.0" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initial release"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1回目のリリース"
+          }
+        }
+      }
+    },
+    "1.0.1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- Add AD banner\n- Add \"Hide AD banner\" option. (In-App Purchase)\n- Refactoring"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- 広告バナーの追加\n- 広告バナー非表示オプション(アプリ内課金)を追加\n- リファクタリング"
+          }
+        }
+      }
+    },
+    "1.0.2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add main 3 words localization(Body Temperature/Basal body temperature/Health).\nBuild on latest development environment(iOS16)."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メイン単語のローカライズ(体温/基礎体温/ヘルスケア)を追加。\n最新開発環境(iOS16)でビルドしました。"
+          }
+        }
+      }
+    },
+    "1.0.3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "small bug fix"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "軽微なバグ修正"
+          }
+        }
+      }
+    },
+    "1.1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support Apple Watch.\nFetch unit from \"Health\" app.\nRemove local history.\nChange AD design.\nVarious bug-fixes and improvements"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Watchをサポートしました。\n単位を「ヘルスケア」アプリから取得するようにしました。\nローカル履歴機能を削除しました。\n広告デザインを変更しました。\nその他、いくつかの小さめの改善やバグ修正をしました。"
+          }
+        }
+      }
+    },
+    "1.2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- Support iPad(iPadOS 17+)Support decimal point localization\n- Support standalone app mode for watchOS\n- Unsupport iOS 15.x\n- Several improve / fix"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "・iPadをサポート(iPadOS 17以降)\n・小数点表記のローカライズに対応\n・Apple Watchアプリをスタンドアローンアプリとして再設計\n・iOS 15.xを非対応にしました\n・その他、軽微な改善/修正"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

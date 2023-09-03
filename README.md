@@ -13,42 +13,42 @@ _Register your weight data to the "Health" App as fast as possible!_
 
 Description
 ------------
-This application is designed to register body temperature data to the Apple "Health" application pre-installed on iPhone in the fastest possible way (as manual).
+This application is designed to register body temperature data to the Apple "Health" application pre-installed on iPhone / iPad in the fastest possible way (as manual).
 
 
-### Target / Use-case
-No "smart" thermometer.
+Target / Use-case
 
-Frequently measure my temperature (and basal body temperature) using a thermometer almost every day.
+・No "smart" thermometer.
 
-Intend to register the data into "Health" app every time, after measuring by a thermometer.
+・Frequently measure my temperature (and basal body temperature) using a thermometer almost every day.
 
-
-### Option
-Mode as basal body temperature.
-
-Mode for second decimal places.
-
-Auto complete function.
-
-Unit: ℃, ℉
-
-Option to hide AD banner. (In-App Purchase)
+・Intend to register the data into "Health" app every time, after measuring by a thermometer.
 
 
-### Others
-Apple Watch support.
+Option
 
-Launch "Health" app by one tap.
+・Mode as basal body temperature
 
-Cancellation by one tap just after you registered a data.
+・Mode for second decimal places
 
-Check source code in app.
+・Auto complete function
 
-All feature is free.
+・Unit: ℃, ℉
 
 
-### Concept
+Others
+
+・Launch "Health" app by one tap
+
+・Apple Watch support
+
+・iPad support (iPadOS 17+)
+
+・Cancellation by one tap just after you registered a data
+
+
+Concept
+
 People frequently measure their body temperature (and basal body temperature) daily using a thermometer. Many iPhone users register their temperature data on "Health" app. The best solution is to use a smart thermometer that works with "Health" app and automatically stores measurements, but they are expensive and almost non-existent. Manual data registration is possible in "Health" app, but "Health" app is not designed for daily manual data registration. Therefore, manually entering data that occur continuously daily, such as temperature measurements, is a very time-consuming and stressful experience. This app was developed to solve such problems.
 
 This app cannot read, view, or manage past data in "Health" app. This app is intended only to register data to the "Health" app. Please check the registered data on the "Health" app.

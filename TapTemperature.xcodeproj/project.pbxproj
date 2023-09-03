@@ -38,6 +38,8 @@
 		F5016A242AA4695E00C4C9F2 /* 🛠Menu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397FB92AA332D6002C90F2 /* 🛠Menu.swift */; };
 		F5016A252AA4695E00C4C9F2 /* ℹ️AboutApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5397F722AA20F31002C90F2 /* ℹ️AboutApp.swift */; };
 		F5016A262AA4695E00C4C9F2 /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5FFCE6729AA3C740035E638 /* Widget.swift */; };
+		F5016A282AA46B4700C4C9F2 /* 🌐AppStoreDescription.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F5016A272AA46B4700C4C9F2 /* 🌐AppStoreDescription.xcstrings */; };
+		F5016A2A2AA46B4700C4C9F2 /* 🌐VersionHistory.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F5016A292AA46B4700C4C9F2 /* 🌐VersionHistory.xcstrings */; };
 		F519CB5829AAF6E500ACD6B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		F519CB5929AAF6E500ACD6B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
 		F519CB5A29AAF7CB00ACD6B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124BC6BC28437B9000F75E1F /* Localizable.strings */; };
@@ -77,8 +79,6 @@
 		F585A0C62942AADC00BA665C /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */; };
 		F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C22942AADC00BA665C /* Configuration.storekit */; };
 		F585A0C92942AADC00BA665C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C42942AADC00BA665C /* Launch Screen.storyboard */; };
-		F585A0CD2942B02E00BA665C /* 🌐AppStoreDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F585A0CF2942B02E00BA665C /* 🌐AppStoreDescription.strings */; };
-		F585A0D32942B06500BA665C /* 🌐VersionHistory.strings in Resources */ = {isa = PBXBuildFile; fileRef = F585A0D52942B06500BA665C /* 🌐VersionHistory.strings */; };
 		F58BC7F129A83BA6003DDAC1 /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */; };
 		F59A2AE229AB10D1008A194C /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1281D252283E1C4300D59319 /* 📱AppModel.swift */; };
 		F59A2AE329AB10D1008A194C /* 🪧ValueLabel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */; };
@@ -230,6 +230,8 @@
 		12E811BE283089D400B0A615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12E811C828308A2100B0A615 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		12E811CA28308A2100B0A615 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		F5016A272AA46B4700C4C9F2 /* 🌐AppStoreDescription.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "🌐AppStoreDescription.xcstrings"; sourceTree = "<group>"; };
+		F5016A292AA46B4700C4C9F2 /* 🌐VersionHistory.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "🌐VersionHistory.xcstrings"; sourceTree = "<group>"; };
 		F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📏DegreeUnit.swift"; sourceTree = "<group>"; };
 		F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🏳️Mode.swift"; sourceTree = "<group>"; };
 		F5397F542AA14F36002C90F2 /* 🔑Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔑Key.swift"; sourceTree = "<group>"; };
@@ -250,10 +252,6 @@
 		F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F585A0C22942AADC00BA665C /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		F585A0C42942AADC00BA665C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		F585A0CE2942B02E00BA665C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/🌐AppStoreDescription.strings"; sourceTree = "<group>"; };
-		F585A0D02942B03300BA665C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/🌐AppStoreDescription.strings"; sourceTree = "<group>"; };
-		F585A0D42942B06500BA665C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/🌐VersionHistory.strings"; sourceTree = "<group>"; };
-		F585A0D62942B06800BA665C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/🌐VersionHistory.strings"; sourceTree = "<group>"; };
 		F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣ADSheet.swift"; sourceTree = "<group>"; };
 		F597586A28D94E0E002521F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F597586B28D94E0E002521F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -345,8 +343,8 @@
 		1288ADE4286ACE01002F5511 /* 🌐Localization */ = {
 			isa = PBXGroup;
 			children = (
-				F585A0CF2942B02E00BA665C /* 🌐AppStoreDescription.strings */,
-				F585A0D52942B06500BA665C /* 🌐VersionHistory.strings */,
+				F5016A272AA46B4700C4C9F2 /* 🌐AppStoreDescription.xcstrings */,
+				F5016A292AA46B4700C4C9F2 /* 🌐VersionHistory.xcstrings */,
 				F5397F6A2AA20EEA002C90F2 /* 🌐ADAppDescription.xcstrings */,
 				F5397F6B2AA20EEA002C90F2 /* 🌐ADAppName.xcstrings */,
 				F5397F6D2AA20EEA002C90F2 /* 🌐AD&InAppPurchase.xcstrings */,
@@ -602,7 +600,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F585A0D32942B06500BA665C /* 🌐VersionHistory.strings in Resources */,
 				F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */,
 				123690152844EE92006F22EE /* InfoPlist.strings in Resources */,
 				124BC6BA28437B9000F75E1F /* Localizable.strings in Resources */,
@@ -610,9 +607,10 @@
 				F5397F702AA20EEA002C90F2 /* 🌐AboutApp.xcstrings in Resources */,
 				F5397F6E2AA20EEA002C90F2 /* 🌐ADAppDescription.xcstrings in Resources */,
 				F5397F712AA20EEA002C90F2 /* 🌐AD&InAppPurchase.xcstrings in Resources */,
+				F5016A282AA46B4700C4C9F2 /* 🌐AppStoreDescription.xcstrings in Resources */,
 				F5397F6F2AA20EEA002C90F2 /* 🌐ADAppName.xcstrings in Resources */,
 				F585A0C92942AADC00BA665C /* Launch Screen.storyboard in Resources */,
-				F585A0CD2942B02E00BA665C /* 🌐AppStoreDescription.strings in Resources */,
+				F5016A2A2AA46B4700C4C9F2 /* 🌐VersionHistory.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,24 +756,6 @@
 				F597588528D94E9B002521F8 /* es-419 */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		F585A0CF2942B02E00BA665C /* 🌐AppStoreDescription.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F585A0CE2942B02E00BA665C /* en */,
-				F585A0D02942B03300BA665C /* ja */,
-			);
-			name = "🌐AppStoreDescription.strings";
-			sourceTree = "<group>";
-		};
-		F585A0D52942B06500BA665C /* 🌐VersionHistory.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F585A0D42942B06500BA665C /* en */,
-				F585A0D62942B06800BA665C /* ja */,
-			);
-			name = "🌐VersionHistory.strings";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
