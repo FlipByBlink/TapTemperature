@@ -15,7 +15,7 @@ struct ContentView: View {
                     .padding(.vertical, 8)
                     .frame(height: 400)
             }
-            .navigationTitle(self.model.activeMode.navigationTitle)
+            .modifier(🚏NavigationTitle())
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     🛏BBTSwitchButton()

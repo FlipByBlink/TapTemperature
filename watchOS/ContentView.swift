@@ -20,7 +20,7 @@ struct ContentView: View {
                     .padding(.horizontal, 8)
                     .padding(.bottom, 4)
             }
-            .navigationTitle(self.model.activeMode.navigationTitle)
+            .navigationTitle(self.model.activeMode == .bodyTemperature ? "Temperature" : "BBT")
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea(edges: .bottom)
             .frame(maxHeight: .infinity)

@@ -50,6 +50,8 @@
 		F50961EB2AA48457005B5CAB /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FFCE6729AA3C740035E638 /* Widget.swift */; };
 		F50961EC2AA49881005B5CAB /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5FFCE6729AA3C740035E638 /* Widget.swift */; };
 		F50961ED2AA498EA005B5CAB /* 🚨UnsupportAlert.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5016A332AA46E1200C4C9F2 /* 🚨UnsupportAlert.swift */; };
+		F50962342AA54E32005B5CAB /* 🚏NavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50962332AA54E32005B5CAB /* 🚏NavigationTitle.swift */; };
+		F50962352AA550EB005B5CAB /* 🚏NavigationTitle.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F50962332AA54E32005B5CAB /* 🚏NavigationTitle.swift */; };
 		F519CB5829AAF6E500ACD6B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		F519CB5B29AAFA1C00ACD6B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		F5397F4C2AA0AB03002C90F2 /* 📏DegreeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */; };
@@ -186,6 +188,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F50962352AA550EB005B5CAB /* 🚏NavigationTitle.swift in CopyFiles */,
 				F50961ED2AA498EA005B5CAB /* 🚨UnsupportAlert.swift in CopyFiles */,
 				F50961EC2AA49881005B5CAB /* Widget.swift in CopyFiles */,
 				F5016A142AA4691200C4C9F2 /* 📏LoadPrefferedUnit.swift in CopyFiles */,
@@ -263,6 +266,7 @@
 		F50961D72AA483E5005B5CAB /* Widget for iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget for iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50961DF2AA483E7005B5CAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F50961E12AA483E7005B5CAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F50962332AA54E32005B5CAB /* 🚏NavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🚏NavigationTitle.swift"; sourceTree = "<group>"; };
 		F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📏DegreeUnit.swift"; sourceTree = "<group>"; };
 		F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🏳️Mode.swift"; sourceTree = "<group>"; };
 		F5397F542AA14F36002C90F2 /* 🔑Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔑Key.swift"; sourceTree = "<group>"; };
@@ -357,6 +361,7 @@
 				1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */,
 				F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */,
 				F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */,
+				F50962332AA54E32005B5CAB /* 🚏NavigationTitle.swift */,
 				F5016A332AA46E1200C4C9F2 /* 🚨UnsupportAlert.swift */,
 				F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */,
 				F5397F5B2AA20BDF002C90F2 /* 📣ADModel.swift */,
@@ -724,6 +729,7 @@
 				F5397F682AA20C1E002C90F2 /* 🛒InAppPurchaseView.swift in Sources */,
 				1256A33C286B1547002AF08A /* 🛠Menu.swift in Sources */,
 				F59A2AF429AB137B008A194C /* 🟥AutoCompleteHintView.swift in Sources */,
+				F50962342AA54E32005B5CAB /* 🚏NavigationTitle.swift in Sources */,
 				F585A0C62942AADC00BA665C /* ℹ️AboutApp.swift in Sources */,
 				F5397F652AA20C0A002C90F2 /* 📣ADComponents.swift in Sources */,
 				F5397F5E2AA20BDF002C90F2 /* 📣ADModel.swift in Sources */,

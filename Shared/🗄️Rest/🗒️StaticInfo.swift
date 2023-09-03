@@ -53,6 +53,7 @@ extension 🗒️StaticInfo {
                              "🗑️ResetOnBackground.swift",
                              "💟OpenHealthAppButton.swift",
                              "🟥AutoCompleteHintView.swift",
+                             "🚏NavigationTitle.swift",
                              "🚨UnsupportAlert.swift",
                              "🗒️StaticInfo.swift",
                              "ℹ️AboutApp.swift",

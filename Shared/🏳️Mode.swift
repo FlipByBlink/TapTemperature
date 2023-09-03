@@ -18,16 +18,4 @@ extension 🏳️Mode {
             case .basalBodyTemperature: "Basal body temperature"
         }
     }
-    var navigationTitle: LocalizedStringKey {
-        switch self {
-            case .bodyTemperature:
-#if os(iOS)
-                "Body temperature"
-#elseif os(watchOS)
-                "Temperature"
-#endif
-            case .basalBodyTemperature: 
-                "BBT"
-        }
-    }
 }
