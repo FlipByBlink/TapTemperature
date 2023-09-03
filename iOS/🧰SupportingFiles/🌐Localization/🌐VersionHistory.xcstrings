@@ -97,7 +97,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "・iPadをサポート(iPadOS 17以降)\n・小数点表記のローカライズに対応\n・Apple Watchアプリをスタンドアローンアプリとして再設計\n・iOS 15.xを非対応にしました\n・その他、軽微な改善/修正"
           }
         }
