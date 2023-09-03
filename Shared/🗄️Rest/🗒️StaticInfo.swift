@@ -38,25 +38,26 @@ extension 🗒️StaticInfo {
         var fileNames: [String] {
             switch self {
                 case .main: ["App.swift",
-                             "ContentView.swift",
                              "📱AppModel.swift",
-                             "🪧ValueLabel.swift",
-                             "👆Keypad.swift"]
-                case .Rest: ["🗯ResultScreen.swift",
-                             "🛠Menu.swift",
-                             "🏳️Mode.swift",
+                             "ContentView.swift"]
+                case .Rest: ["🏳️Mode.swift",
                              "📏DegreeUnit.swift",
+                             "📏LoadPrefferedUnit.swift",
+                             "🪧ValueLabel.swift",
+                             "👆Keypad.swift",
+                             "🗯ResultScreen.swift",
+                             "🛠Menu.swift",
                              "🛏BBTSwitchButton.swift",
                              "💥Feedback.swift",
                              "🔑Key.swift",
+                             "🗑️ResetOnBackground.swift",
                              "💟OpenHealthAppButton.swift",
-                             "⌚️SyncOptions.swift",
                              "🟥AutoCompleteHintView.swift",
                              "🗒️StaticInfo.swift",
                              "ℹ️AboutApp.swift",
-                             "📣ADSheet.swift",
                              "📣ADModel.swift",
                              "📣ADComponents.swift",
+                             "📣ADSheet.swift",
                              "🛒InAppPurchaseModel.swift",
                              "🛒InAppPurchaseView.swift"]
             }
@@ -72,11 +73,19 @@ extension 🗒️StaticInfo {
         var fileNames: [String] {
             switch self {
                 case .main: ["App.swift",
-                             "ContentView.swift",
                              "📱AppModel.swift",
-                             "📱AppModel(Extension).swift",
-                             "🗯ResultScreen.swift"]
-                case .Rest: ["🗒️StaticInfo.swift",
+                             "ContentView.swift"]
+                case .Rest: ["🏳️Mode.swift",
+                             "📏DegreeUnit.swift",
+                             "📏LoadPrefferedUnit.swift",
+                             "🪧ValueLabel.swift",
+                             "👆Keypad.swift",
+                             "🗯ResultScreen.swift",
+                             "🛠Menu.swift",
+                             "💥Feedback.swift",
+                             "🔑Key.swift",
+                             "🗑️ResetOnBackground.swift",
+                             "🗒️StaticInfo.swift",
                              "ℹ️AboutApp.swift"]
             }
         }
