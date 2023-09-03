@@ -24,8 +24,8 @@ struct 🪧WidgetEntryView : View {
                     AccessoryWidgetBackground()
                     Image(systemName: "medical.thermometer")
                         .font(.largeTitle.weight(.medium))
+                        .widgetAccentable()
                 }
-                .widgetAccentable()
             case .accessoryInline:
                 Label("Temperature", systemImage: "medical.thermometer")
                     .widgetAccentable()
