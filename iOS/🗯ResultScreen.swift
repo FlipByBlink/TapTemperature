@@ -77,7 +77,7 @@ struct 🗯ResultScreen: View {
             }
             .animation(.default, value: self.model.canceled)
             .onDisappear { self.model.clearRegistrationState() }
-            //.modifier(💬RequestUserReview())
+            .modifier(Self.RequestUserReview())
         }
     }
 }
@@ -136,17 +136,18 @@ private extension 🗯ResultScreen {
                 .animation(.default, value: self.model.canceled)
         }
     }
+    private struct RequestUserReview: ViewModifier {
+        @Environment(\.requestReview) var requestReview
+        @AppStorage("launchCount") private var launchCount: Int = 0
+        func body(content: Content) -> some View {
+            content
+                .task {
+                    self.launchCount += 1
+                    try? await Task.sleep(for: .seconds(1))
+                    if [20, 40, 60].contains(self.launchCount) {
+                        self.requestReview()
+                    }
+                }
+        }
+    }
 }
-
-//private struct 💬RequestUserReview: ViewModifier {
-//    @State private var ⓒheckToRequest: Bool = false
-//    func body(content: Content) -> some View {
-//        content
-//            .modifier(💬PrepareToRequestUserReview(self.$ⓒheckToRequest))
-//            .onAppear {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                    self.ⓒheckToRequest = true
-//                }
-//            }
-//    }
-//}
