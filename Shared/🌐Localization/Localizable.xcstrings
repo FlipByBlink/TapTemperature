@@ -730,6 +730,9 @@
         }
       }
     },
+    "Sorry" : {
+
+    },
     "Switch type" : {
       "localizations" : {
         "ja" : {
@@ -848,6 +851,12 @@
           }
         }
       }
+    },
+    "Unfortunately, this device is not compatible." : {
+
+    },
+    "Unfortunately, this device is not compatible. iPad support \"Health\" app from iPadOS 17.0." : {
+
     },
     "Unit" : {
       "extractionState" : "manual",

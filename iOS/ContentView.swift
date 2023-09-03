@@ -29,6 +29,7 @@ struct ContentView: View {
             .modifier(🗑️ResetOnBackground())
         }
         .modifier(📣ADSheet())
+        .modifier(🚨UnsupportAlert())
         .environment(\.layoutDirection, .leftToRight)
     }
 }

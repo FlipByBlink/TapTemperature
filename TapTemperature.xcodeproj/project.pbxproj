@@ -42,6 +42,8 @@
 		F5016A302AA46CF600C4C9F2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F5016A2F2AA46CF600C4C9F2 /* Localizable.xcstrings */; };
 		F5016A312AA46CF600C4C9F2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F5016A2F2AA46CF600C4C9F2 /* Localizable.xcstrings */; };
 		F5016A322AA46CF600C4C9F2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F5016A2F2AA46CF600C4C9F2 /* Localizable.xcstrings */; };
+		F5016A342AA46E1200C4C9F2 /* 🚨UnsupportAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5016A332AA46E1200C4C9F2 /* 🚨UnsupportAlert.swift */; };
+		F50961B82AA4734B005B5CAB /* 🚨UnsupportAlert.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5016A332AA46E1200C4C9F2 /* 🚨UnsupportAlert.swift */; };
 		F519CB5829AAF6E500ACD6B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		F519CB5B29AAFA1C00ACD6B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 123690172844EE92006F22EE /* InfoPlist.strings */; };
 		F5397F4C2AA0AB03002C90F2 /* 📏DegreeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */; };
@@ -135,6 +137,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F50961B82AA4734B005B5CAB /* 🚨UnsupportAlert.swift in CopyFiles */,
 				F5016A212AA4695E00C4C9F2 /* App.swift in CopyFiles */,
 				F5016A222AA4695E00C4C9F2 /* ContentView.swift in CopyFiles */,
 				F5016A232AA4695E00C4C9F2 /* 🗯ResultScreen.swift in CopyFiles */,
@@ -231,6 +234,7 @@
 		F5016A272AA46B4700C4C9F2 /* 🌐AppStoreDescription.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "🌐AppStoreDescription.xcstrings"; sourceTree = "<group>"; };
 		F5016A292AA46B4700C4C9F2 /* 🌐VersionHistory.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "🌐VersionHistory.xcstrings"; sourceTree = "<group>"; };
 		F5016A2F2AA46CF600C4C9F2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F5016A332AA46E1200C4C9F2 /* 🚨UnsupportAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🚨UnsupportAlert.swift"; sourceTree = "<group>"; };
 		F5397F4B2AA0AB03002C90F2 /* 📏DegreeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📏DegreeUnit.swift"; sourceTree = "<group>"; };
 		F5397F512AA0C63E002C90F2 /* 🏳️Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🏳️Mode.swift"; sourceTree = "<group>"; };
 		F5397F542AA14F36002C90F2 /* 🔑Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔑Key.swift"; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 				1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */,
 				F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */,
 				F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */,
+				F5016A332AA46E1200C4C9F2 /* 🚨UnsupportAlert.swift */,
 				F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */,
 				F5397F5B2AA20BDF002C90F2 /* 📣ADModel.swift */,
 				F5397F642AA20C0A002C90F2 /* 📣ADComponents.swift */,
@@ -642,6 +647,7 @@
 				12ADECF8283F7C1500431224 /* 🪧ValueLabel.swift in Sources */,
 				F5397F602AA20BDF002C90F2 /* 🛒InAppPurchaseModel.swift in Sources */,
 				12E811BD283089D300B0A615 /* ContentView.swift in Sources */,
+				F5016A342AA46E1200C4C9F2 /* 🚨UnsupportAlert.swift in Sources */,
 				12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */,
 				125A9BED283B441D00C54634 /* 🗯ResultScreen.swift in Sources */,
 				F5397F552AA14F36002C90F2 /* 🔑Key.swift in Sources */,
