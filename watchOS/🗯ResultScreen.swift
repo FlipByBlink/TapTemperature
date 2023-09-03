@@ -3,7 +3,6 @@ import SwiftUI
 struct 🗯ResultScreen: View {
     @EnvironmentObject var model: 📱AppModel
     @State private var showUndoAlert: Bool = false
-    @State private var undoProcessing: Bool = false
     var body: some View {
         VStack {
             Spacer()
@@ -11,7 +10,7 @@ struct 🗯ResultScreen: View {
                 .font(.largeTitle.bold())
             Text(self.model.registrationSuccess ? "DONE!" : "Error!?")
                 .font(.title.bold())
-                .strikethrough(self.model.canceled)
+                .strikethrough(self.model.undid)
             if !self.model.registrationSuccess {
                 Text(#"Please check permission on "Health" app"#)
                     .font(.footnote)
@@ -24,37 +23,33 @@ struct 🗯ResultScreen: View {
             }
             if self.model.registrationSuccess {
                 Text(self.model.registeredValueLabel)
-                    .strikethrough(self.model.canceled)
+                    .strikethrough(self.model.undid)
             }
             Spacer()
         }
-        .opacity(self.model.canceled ? 0.25 : 1)
+        .opacity(self.model.undid ? 0.25 : 1)
         .overlay(alignment: .bottom) {
-            if self.model.canceled {
+            if self.model.undid {
                 VStack {
-                    Text("Canceled")
+                    Text("Undid")
                         .fontWeight(.semibold)
-                    if self.model.failedCancellation {
+                    if self.model.failedUndo {
                         Text("(perhaps error)")
                     }
                 }
             }
         }
         .onTapGesture {
-            if !self.model.canceled || !self.model.registrationSuccess {
+            if !self.model.undid || !self.model.registrationSuccess {
                 self.showUndoAlert = true
             }
         }
         .confirmationDialog("Undo?", isPresented: self.$showUndoAlert) {
             Button("Yes, undo") {
-                Task {
-                    self.undoProcessing = true
-                    await self.model.cancel()
-                    self.undoProcessing = false
-                }
+                self.model.undo()
             }
         }
-        .overlay { if self.undoProcessing { ProgressView() } }
+        .overlay { if self.model.processingUndo { ProgressView() } }
         .onDisappear { self.model.clearRegistrationState() }
         .toolbar(self.showToolbar, for: .automatic)
         //watchOS9: DigitalCrown押し込みでsheetを閉じる事が可能

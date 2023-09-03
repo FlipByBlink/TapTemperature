@@ -315,26 +315,6 @@
         }
       }
     },
-    "Cancel" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "キャンセル"
-          }
-        }
-      }
-    },
-    "Canceled" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "登録を取り消しました"
-          }
-        }
-      }
-    },
     "Delete" : {
       "localizations" : {
         "ja" : {
@@ -855,6 +835,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "體温"
+          }
+        }
+      }
+    },
+    "Undid" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取り消しました"
+          }
+        }
+      }
+    },
+    "Undo" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取り消し"
           }
         }
       }

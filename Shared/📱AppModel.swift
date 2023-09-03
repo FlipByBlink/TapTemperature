@@ -15,8 +15,9 @@ class 📱AppModel: NSObject, ObservableObject {
     
     @Published var showResultScreen: Bool = false
     @Published private(set) var registrationSuccess: Bool = false
-    @Published private(set) var canceled: Bool = false
-    @Published private(set) var failedCancellation: Bool = false
+    @Published private(set) var processingUndo: Bool = false
+    @Published private(set) var undid: Bool = false
+    @Published private(set) var failedUndo: Bool = false
     
     @Published private(set) var components: [Int] = [3]
     
@@ -102,16 +103,20 @@ extension 📱AppModel {
         }
     }
     
-    func cancel() async {
-        do {
+    func undo() {
+        Task {
             guard let ⓢample = self.sampleCache else { return }
-            try await self.api.delete(ⓢample)
-            self.canceled = true
-            💥Feedback.error()
-        } catch {
-            print(#function, error)
-            self.canceled = true
-            self.failedCancellation = true
+            self.processingUndo = true
+            do {
+                try await self.api.delete(ⓢample)
+                self.undid = true
+                💥Feedback.error()
+            } catch {
+                print(#function, error)
+                self.undid = true
+                self.failedUndo = true
+            }
+            self.processingUndo = false
         }
     }
     
@@ -125,8 +130,8 @@ extension 📱AppModel {
     
     func reset() {
         self.showResultScreen = false
-        self.canceled = false
-        self.failedCancellation = false
+        self.undid = false
+        self.failedUndo = false
         self.resetComponents()
         self.sampleCache = nil
     }

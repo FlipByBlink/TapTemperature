@@ -14,14 +14,14 @@ struct 🗯ResultScreen: View {
                         .font(.system(size: 100).weight(.semibold))
                         .minimumScaleFactor(0.1)
                     Text(self.model.registrationSuccess ? "DONE!" : "Error!?")
-                        .strikethrough(self.model.canceled)
+                        .strikethrough(self.model.undid)
                         .font(.system(size: 128).weight(.black))
                         .lineLimit(1)
                         .minimumScaleFactor(0.1)
                         .padding(.horizontal)
                     if self.model.registrationSuccess {
                         Text(#"Registration for "Health" app"#)
-                            .strikethrough(self.model.canceled)
+                            .strikethrough(self.model.undid)
                             .bold()
                             .opacity(0.8)
                     } else {
@@ -42,7 +42,7 @@ struct 🗯ResultScreen: View {
                         }
                         if self.model.registrationSuccess {
                             Text(self.model.registeredValueLabel)
-                                .strikethrough(self.model.canceled)
+                                .strikethrough(self.model.undid)
                                 .font(.title2)
                                 .fontWeight(.bold)
                         }
@@ -53,8 +53,8 @@ struct 🗯ResultScreen: View {
                 }
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .opacity(self.model.canceled ? 0.25 : 1)
-                .modifier(Self.CanceledLabel())
+                .opacity(self.model.undid ? 0.25 : 1)
+                .modifier(Self.UndidLabel())
             }
             .preferredColorScheme(.dark)
             .toolbar {
@@ -72,10 +72,10 @@ struct 🗯ResultScreen: View {
                         .foregroundStyle(.white)
                 }
                 ToolbarItemGroup(placement: .bottomBar) {
-                    if self.model.registrationSuccess { Self.CancelButton() }
+                    if self.model.registrationSuccess { Self.UndoButton() }
                 }
             }
-            .animation(.default, value: self.model.canceled)
+            .animation(.default, value: self.model.undid)
             .onDisappear { self.model.clearRegistrationState() }
             .modifier(Self.RequestUserReview())
         }
@@ -91,49 +91,44 @@ private extension 🗯ResultScreen {
         }
         .tint(.white)
     }
-    private struct CancelButton: View {
+    private struct UndoButton: View {
         @EnvironmentObject var model: 📱AppModel
-        @State private var processing: Bool = false
         var body: some View {
             Button {
-                Task {
-                    self.processing = true
-                    await self.model.cancel()
-                    self.processing = false
-                }
+                self.model.undo()
             } label: {
                 Image(systemName: "arrow.uturn.backward.circle")
                     .font(.title3)
             }
             .foregroundStyle(.white)
-            .disabled(self.model.canceled)
-            .opacity(self.model.canceled ? 0.5 : 1)
-            .accessibilityLabel("Cancel")
+            .disabled(self.model.undid)
+            .opacity(self.model.undid ? 0.5 : 1)
+            .accessibilityLabel("Undo")
             .overlay(alignment: .top) {
-                if self.processing {
+                if self.model.processingUndo {
                     ProgressView()
                         .offset(y: -16)
                 }
             }
         }
     }
-    private struct CanceledLabel: ViewModifier {
+    private struct UndidLabel: ViewModifier {
         @EnvironmentObject var model: 📱AppModel
         func body(content: Content) -> some View {
             content
                 .overlay(alignment: .bottom) {
-                    if self.model.canceled {
+                    if self.model.undid {
                         VStack {
-                            Text("Canceled")
+                            Text("Undid")
                                 .fontWeight(.semibold)
-                            if self.model.failedCancellation {
+                            if self.model.failedUndo {
                                 Text("(perhaps error)")
                             }
                         }
                         .foregroundStyle(.white)
                     }
                 }
-                .animation(.default, value: self.model.canceled)
+                .animation(.default, value: self.model.undid)
         }
     }
     private struct RequestUserReview: ViewModifier {
