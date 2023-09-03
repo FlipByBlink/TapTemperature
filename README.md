@@ -1,5 +1,5 @@
-TapTemperature for "Health" - iPhone, Apple Watch
-=================================================
+TapTemperature for "Health" - iPhone, iPad, Apple Watch
+=======================================================
 _Register your weight data to the "Health" App as fast as possible!_
 
 <img src="TapTemperature/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
