@@ -29,6 +29,8 @@ struct ContentView: View {
         } content: {
             🗯ResultView()
         }
+        .modifier(📏LoadPrefferedUnit())
+        .modifier(🗑️ResetOnBackground())
         .environment(\.layoutDirection, .leftToRight)
     }
 }

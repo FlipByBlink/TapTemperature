@@ -58,6 +58,8 @@
 		F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */; };
 		F58351DC2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58351DB2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift */; };
 		F58351DD2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58351DB2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift */; };
+		F58351DF2AA419CA00C7F724 /* 🗑️ResetOnBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58351DE2AA419CA00C7F724 /* 🗑️ResetOnBackground.swift */; };
+		F58351E02AA419CA00C7F724 /* 🗑️ResetOnBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58351DE2AA419CA00C7F724 /* 🗑️ResetOnBackground.swift */; };
 		F585A0C62942AADC00BA665C /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */; };
 		F585A0C72942AADC00BA665C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C22942AADC00BA665C /* Configuration.storekit */; };
 		F585A0C92942AADC00BA665C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F585A0C42942AADC00BA665C /* Launch Screen.storyboard */; };
@@ -204,6 +206,7 @@
 		F5397FB92AA332D6002C90F2 /* 🛠Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠Menu.swift"; sourceTree = "<group>"; };
 		F53D11FF29A9F09000B35628 /* 🗯ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultView.swift"; sourceTree = "<group>"; };
 		F58351DB2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📏LoadPrefferedUnit.swift"; sourceTree = "<group>"; };
+		F58351DE2AA419CA00C7F724 /* 🗑️ResetOnBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗑️ResetOnBackground.swift"; sourceTree = "<group>"; };
 		F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F585A0C22942AADC00BA665C /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		F585A0C42942AADC00BA665C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -409,6 +412,7 @@
 				12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */,
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
 				F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */,
+				F58351DE2AA419CA00C7F724 /* 🗑️ResetOnBackground.swift */,
 				F5397F7F2AA21D27002C90F2 /* 📝InputValue(WIP).swift */,
 				F5397F4F2AA0ADDE002C90F2 /* 🗄️Rest */,
 				F5397F692AA20EEA002C90F2 /* 🌐Localization */,
@@ -618,6 +622,7 @@
 				12ADECFA283F7CC700431224 /* 👆Keypad.swift in Sources */,
 				125A9BED283B441D00C54634 /* 🗯ResultView.swift in Sources */,
 				F5397F552AA14F36002C90F2 /* 🔑Key.swift in Sources */,
+				F58351DF2AA419CA00C7F724 /* 🗑️ResetOnBackground.swift in Sources */,
 				F5397F622AA20BDF002C90F2 /* 🗒️StaticInfo.swift in Sources */,
 				F5397F4C2AA0AB03002C90F2 /* 📏DegreeUnit.swift in Sources */,
 				F5D2288F29A9A5A700F4F982 /* 💥Feedback.swift in Sources */,
@@ -642,6 +647,7 @@
 				F5397F4D2AA0AB03002C90F2 /* 📏DegreeUnit.swift in Sources */,
 				F5D228BF29A9B24900F4F982 /* 🪧ValueLabel.swift in Sources */,
 				F5397F632AA20BDF002C90F2 /* 🗒️StaticInfo.swift in Sources */,
+				F58351E02AA419CA00C7F724 /* 🗑️ResetOnBackground.swift in Sources */,
 				F5397F732AA20F31002C90F2 /* ℹ️AboutApp.swift in Sources */,
 				F53D120029A9F09000B35628 /* 🗯ResultView.swift in Sources */,
 				F5D228C029A9B24900F4F982 /* 📱AppModel.swift in Sources */,

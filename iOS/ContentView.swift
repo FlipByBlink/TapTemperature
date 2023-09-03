@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var model: 📱AppModel
-    @Environment(\.scenePhase) var scenePhase
     var body: some View {
         NavigationStack {
             VStack {
@@ -27,9 +26,7 @@ struct ContentView: View {
             .background { 🟥AutoCompleteHintView() }
             .fullScreenCover(isPresented: self.$model.showResult) { 🗯ResultView() }
             .modifier(📏LoadPrefferedUnit())
-            .onChange(of: self.scenePhase) {
-                if $0 == .background { self.model.reset() }
-            }
+            .modifier(🗑️ResetOnBackground())
         }
         .modifier(📣ADSheet())
         .environment(\.layoutDirection, .leftToRight)
