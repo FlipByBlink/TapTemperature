@@ -164,7 +164,7 @@ private extension 👆Keypad {
 #if os(iOS)
         48
 #elseif os(watchOS)
-        30
+        24
 #endif
     }
 }

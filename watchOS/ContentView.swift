@@ -5,15 +5,16 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                Spacer(minLength: 0)
+                Spacer(minLength: 4)
                 HStack {
                     🪧ValueLabel()
                     Spacer()
                     🛠MenuButton()
                 }
+                .minimumScaleFactor(0.6)
                 .padding(.horizontal, 12)
+                Spacer(minLength: 4)
                 Divider()
-                    .padding(.vertical, 6)
                 👆Keypad()
                     .buttonStyle(.plain)
                     .padding(.horizontal, 8)

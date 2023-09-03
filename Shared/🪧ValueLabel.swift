@@ -72,7 +72,7 @@ private extension 🪧ValueLabel {
 #if os(iOS)
         64
 #elseif os(watchOS)
-        22
+        28
 #endif
     }
 }
