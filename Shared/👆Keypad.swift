@@ -52,8 +52,7 @@ struct 👆Keypad: View {
                         .disabled(self.disable(ⓘndex))
                     case 12:
                         Button {
-                            self.model.components.removeLast()
-                            💥Feedback.light()
+                            self.model.removeLast()
                         } label: {
                             ZStack {
                                 Rectangle()

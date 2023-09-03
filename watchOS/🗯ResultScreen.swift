@@ -49,6 +49,7 @@ struct 🗯ResultScreen: View {
                 self.model.cancel()
             }
         }
+        .onDisappear { self.model.clearRegistrationState() }
         .toolbar(self.showToolbar, for: .automatic)
         //watchOS9: DigitalCrown押し込みでsheetを閉じる事が可能
     }

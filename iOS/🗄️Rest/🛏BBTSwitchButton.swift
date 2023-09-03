@@ -5,8 +5,7 @@ struct 🛏BBTSwitchButton: View {
     var body: some View {
         if self.model.ableBBT {
             Button {
-                self.model.bbtMode.toggle()
-                💥Feedback.light()
+                self.model.toggleBBTMode()
             } label: {
                 Image(systemName: "bed.double")
                     .foregroundStyle(self.model.bbtMode ? .primary : .quaternary)

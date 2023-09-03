@@ -11,14 +11,14 @@ class 📱AppModel: NSObject, ObservableObject {
     
     @Published private(set) var degreeUnit: 📏DegreeUnit = .℃
     
-    @Published var bbtMode: Bool = true
+    @Published private(set) var bbtMode: Bool = true
     
     @Published var showResultScreen: Bool = false
-    @Published var registrationSuccess: Bool = false
-    @Published var canceled: Bool = false
-    @Published var failedCancellation: Bool = false
+    @Published private(set) var registrationSuccess: Bool = false
+    @Published private(set) var canceled: Bool = false
+    @Published private(set) var failedCancellation: Bool = false
     
-    @Published var components: [Int] = [3]
+    @Published private(set) var components: [Int] = [3]
     
     private var sampleCache: HKQuantitySample? = nil
 }
@@ -26,6 +26,11 @@ class 📱AppModel: NSObject, ObservableObject {
 extension 📱AppModel {
     var activeMode: 🏳️Mode {
         self.ableBBT && self.bbtMode ? .basalBodyTemperature : .bodyTemperature
+    }
+    
+    func toggleBBTMode() {
+        self.bbtMode.toggle()
+        💥Feedback.light()
     }
     
     func resetComponents() {
@@ -42,6 +47,11 @@ extension 📱AppModel {
         } else {
             💥Feedback.light()
         }
+    }
+    
+    func removeLast() {
+        self.components.removeLast()
+        💥Feedback.light()
     }
     
     func register() {
@@ -111,6 +121,14 @@ extension 📱AppModel {
         }
     }
     
+    var registeredValueLabel: String {
+        if let ⓓoubleValue = self.sampleCache?.quantity.doubleValue(for: self.degreeUnit.value) {
+            "\(ⓓoubleValue) \(self.degreeUnit)"
+        } else {
+            "🐛"
+        }
+    }
+    
     func reset() {
         self.showResultScreen = false
         self.canceled = false
@@ -119,12 +137,8 @@ extension 📱AppModel {
         self.sampleCache = nil
     }
     
-    var registeredValueLabel: String {
-        if let ⓓoubleValue = self.sampleCache?.quantity.doubleValue(for: self.degreeUnit.value) {
-            "\(ⓓoubleValue) \(self.degreeUnit)"
-        } else {
-            "🐛"
-        }
+    func clearRegistrationState() {
+        self.registrationSuccess = false
     }
 }
 

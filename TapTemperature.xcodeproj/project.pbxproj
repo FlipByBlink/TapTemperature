@@ -290,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				1256A327286AD8FE002AF08A /* 💟OpenHealthAppButton.swift */,
+				F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */,
 				F59A2AF329AB137B008A194C /* 🟥AutoCompleteHintView.swift */,
 				F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */,
 				F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */,
@@ -411,7 +412,6 @@
 				F58351DB2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift */,
 				12ADECF7283F7C1500431224 /* 🪧ValueLabel.swift */,
 				12ADECF9283F7CC700431224 /* 👆Keypad.swift */,
-				F5C7DE2029A9FE0900694AFD /* 🛏BBTSwitchButton.swift */,
 				F58351DE2AA419CA00C7F724 /* 🗑️ResetOnBackground.swift */,
 				F5397F7F2AA21D27002C90F2 /* 📝InputValue(WIP).swift */,
 				F5397F4F2AA0ADDE002C90F2 /* 🗄️Rest */,

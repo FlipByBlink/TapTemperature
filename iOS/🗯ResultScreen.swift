@@ -76,7 +76,7 @@ struct 🗯ResultScreen: View {
                 }
             }
             .animation(.default, value: self.model.canceled)
-            .onDisappear { self.model.registrationSuccess = false }
+            .onDisappear { self.model.clearRegistrationState() }
             //.modifier(💬RequestUserReview())
         }
     }
