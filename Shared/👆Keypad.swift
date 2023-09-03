@@ -14,7 +14,7 @@ struct 👆Keypad: View {
                             ZStack {
                                 Rectangle()
                                     .fill(.background)
-                                Text("\(ⓘndex.description)")
+                                Text(verbatim: "\(ⓘndex.description)")
                             }
                             .modifier(Self.HoverEffect())
                         }
@@ -44,7 +44,7 @@ struct 👆Keypad: View {
                             ZStack {
                                 Rectangle()
                                     .fill(.background)
-                                Text("\(self.zeroOrTen)")
+                                Text(verbatim: "\(self.zeroOrTen)")
                             }
                             .modifier(Self.HoverEffect())
                         }
