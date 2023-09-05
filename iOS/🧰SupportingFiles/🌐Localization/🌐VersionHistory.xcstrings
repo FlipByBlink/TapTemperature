@@ -92,7 +92,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Support iPad(iPadOS 17+)Support decimal point localization\n- Support standalone app mode for watchOS\n- Unsupport iOS 15.x\n- Several improve / fix"
+            "value" : "- Support iPad(iPadOS 17+)\n- Support decimal point localization\n- Support standalone app mode for watchOS\n- Unsupport iOS 15.x\n- Several improve / fix"
           }
         },
         "ja" : {
