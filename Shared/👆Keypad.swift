@@ -72,7 +72,7 @@ struct 👆Keypad: View {
         }
         .font(.system(size: Self.fontSize, weight: .medium, design: .rounded))
         .minimumScaleFactor(0.66)
-        .frame(maxWidth: 600)
+        .frame(maxWidth: 520)
     }
 }
 
