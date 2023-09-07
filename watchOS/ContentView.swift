@@ -8,11 +8,11 @@ struct ContentView: View {
                 Spacer(minLength: 4)
                 HStack {
                     🪧ValueLabel()
+                        .padding(.leading, 12)
                     Spacer()
                     🛠MenuButton()
                 }
                 .minimumScaleFactor(0.6)
-                .padding(.horizontal, 12)
                 Spacer(minLength: 4)
                 Divider()
                 👆Keypad()

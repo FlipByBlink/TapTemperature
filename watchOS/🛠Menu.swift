@@ -9,7 +9,9 @@ struct 🛠MenuButton: View {
         } label: {
             Label("Open menu", systemImage: "gearshape")
                 .labelStyle(.iconOnly)
+                .padding(8)
         }
+        .padding(.trailing, 4)
         .tint(.primary)
         .buttonStyle(.plain)
         .sheet(isPresented: self.$showSheet) {
