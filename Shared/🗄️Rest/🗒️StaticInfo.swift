@@ -58,8 +58,8 @@ extension 🗒️StaticInfo {
                              "🗒️StaticInfo.swift",
                              "ℹ️AboutApp.swift",
                              "📣ADModel.swift",
-                             "📣ADComponents.swift",
                              "📣ADSheet.swift",
+                             "📣ADComponents.swift",
                              "🛒InAppPurchaseModel.swift",
                              "🛒InAppPurchaseView.swift"]
                 case .Widget: ["Widget.swift"]

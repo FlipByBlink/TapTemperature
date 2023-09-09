@@ -365,8 +365,8 @@
 				F5016A332AA46E1200C4C9F2 /* 🚨UnsupportAlert.swift */,
 				F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */,
 				F5397F5B2AA20BDF002C90F2 /* 📣ADModel.swift */,
-				F5397F642AA20C0A002C90F2 /* 📣ADComponents.swift */,
 				F58BC7F029A83BA6003DDAC1 /* 📣ADSheet.swift */,
+				F5397F642AA20C0A002C90F2 /* 📣ADComponents.swift */,
 				F5397F5C2AA20BDF002C90F2 /* 🛒InAppPurchaseModel.swift */,
 				F5397F672AA20C1E002C90F2 /* 🛒InAppPurchaseView.swift */,
 			);
