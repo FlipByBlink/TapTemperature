@@ -2,7 +2,7 @@ TapTemperature for "Health" - iPhone, iPad, Apple Watch
 =======================================================
 _Register your weight data to the "Health" App as fast as possible!_
 
-<img src="Shared/🗄️Rest/ForREADME/icon.png">
+<img src="Shared/🗄️Rest/ForREADME/icon.png" width="64">
 
 <a href="https://apps.apple.com/app/id1626760566" target="blank">
     <img src="Shared/🗄️Rest/ForREADME/appstore_badge.svg">
