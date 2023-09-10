@@ -282,6 +282,10 @@
 		F5397F722AA20F31002C90F2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F5397FB92AA332D6002C90F2 /* 🛠Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠Menu.swift"; sourceTree = "<group>"; };
 		F53D11FF29A9F09000B35628 /* 🗯ResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗯ResultScreen.swift"; sourceTree = "<group>"; };
+		F567AE422AAD501D00A404F8 /* screenshot1200w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot1200w.png; sourceTree = "<group>"; };
+		F567AE432AAD504700A404F8 /* appstore_badge.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = appstore_badge.svg; sourceTree = "<group>"; };
+		F567AE442AAD504700A404F8 /* apple_health_badge.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = apple_health_badge.svg; sourceTree = "<group>"; };
+		F567AE452AAD509E00A404F8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F58351DB2AA411C800C7F724 /* 📏LoadPrefferedUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📏LoadPrefferedUnit.swift"; sourceTree = "<group>"; };
 		F58351DE2AA419CA00C7F724 /* 🗑️ResetOnBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗑️ResetOnBackground.swift"; sourceTree = "<group>"; };
 		F585A0C12942AADC00BA665C /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
@@ -470,6 +474,7 @@
 				F5D2288E29A9A5A700F4F982 /* 💥Feedback.swift */,
 				F5397F542AA14F36002C90F2 /* 🔑Key.swift */,
 				F5397F5D2AA20BDF002C90F2 /* 🗒️StaticInfo.swift */,
+				F567AE412AAD4FF300A404F8 /* ForREADME */,
 			);
 			path = "🗄️Rest";
 			sourceTree = "<group>";
@@ -491,6 +496,17 @@
 				F5397F6C2AA20EEA002C90F2 /* 🌐AboutApp.xcstrings */,
 			);
 			path = "🌐Localization";
+			sourceTree = "<group>";
+		};
+		F567AE412AAD4FF300A404F8 /* ForREADME */ = {
+			isa = PBXGroup;
+			children = (
+				F567AE452AAD509E00A404F8 /* icon.png */,
+				F567AE432AAD504700A404F8 /* appstore_badge.svg */,
+				F567AE442AAD504700A404F8 /* apple_health_badge.svg */,
+				F567AE422AAD501D00A404F8 /* screenshot1200w.png */,
+			);
+			path = ForREADME;
 			sourceTree = "<group>";
 		};
 		F5D2289029A9A71900F4F982 /* Shared */ = {
