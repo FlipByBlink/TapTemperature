@@ -2,6 +2,7 @@ import SwiftUI
 
 struct 🛠MenuButton: View {
     @State private var showSheet: Bool = false
+    private var isWatchOS9: Bool { if #unavailable(watchOS 10) { true } else { false } }
     var body: some View {
         Button {
             self.showSheet = true
@@ -9,11 +10,10 @@ struct 🛠MenuButton: View {
         } label: {
             Label("Open menu", systemImage: "gearshape")
                 .labelStyle(.iconOnly)
-                .padding(8)
+                .padding(self.isWatchOS9 ? 8 : 0)
         }
-        .padding(.trailing, 4)
-        .tint(.primary)
-        .buttonStyle(.plain)
+        .padding(.trailing, self.isWatchOS9 ? 4 : 0)
+        .tint(self.isWatchOS9 ? .primary : nil)
         .sheet(isPresented: self.$showSheet) {
             🛠Menu()
         }

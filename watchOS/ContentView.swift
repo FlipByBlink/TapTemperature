@@ -9,8 +9,11 @@ struct ContentView: View {
                 HStack {
                     🪧ValueLabel()
                         .padding(.leading, 12)
-                    Spacer()
-                    🛠MenuButton()
+                    if #unavailable(watchOS 10.0) {
+                        Spacer()
+                        🛠MenuButton()
+                            .buttonStyle(.plain)
+                    }
                 }
                 .minimumScaleFactor(0.6)
                 Spacer(minLength: 4)
@@ -24,6 +27,11 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea(edges: .bottom)
             .frame(maxHeight: .infinity)
+            .toolbar {
+                if #available(watchOS 10.0, *) {
+                    ToolbarItem(placement: .topBarLeading) { 🛠MenuButton() }
+                }
+            }
         }
         .sheet(isPresented: self.$model.showResultScreen) {
             self.model.reset()
