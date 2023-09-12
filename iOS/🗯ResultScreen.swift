@@ -101,7 +101,7 @@ private extension 🗯ResultScreen {
                     .font(.title3)
             }
             .foregroundStyle(.white)
-            .disabled(self.model.undid)
+            .disabled(self.model.undid || self.model.processingUndo)
             .opacity(self.model.undid ? 0.5 : 1)
             .accessibilityLabel("Undo")
             .overlay(alignment: .top) {
