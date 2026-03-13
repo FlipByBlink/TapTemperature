@@ -468,8 +468,8 @@
 				123690192844F1BD006F22EE /* Info.plist */,
 				F585A0C42942AADC00BA665C /* Launch Screen.storyboard */,
 				F585A0C22942AADC00BA665C /* Configuration.storekit */,
-				1288ADE4286ACE01002F5511 /* 🌐Localization */,
 				1DA211FB2F63A705001872ED /* PrivacyInfo.xcprivacy */,
+				1288ADE4286ACE01002F5511 /* 🌐Localization */,
 			);
 			path = "🧰SupportingFiles";
 			sourceTree = "<group>";
