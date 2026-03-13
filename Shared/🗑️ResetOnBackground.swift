@@ -6,7 +6,7 @@ struct 🗑️ResetOnBackground: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onChange(of: self.scenePhase) {
-                if $0 == .background { self.model.reset() }
+                if $1 == .background { self.model.reset() }
             }
     }
 }

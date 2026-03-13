@@ -6,16 +6,9 @@ struct ContentView: View {
         NavigationStack {
             VStack(spacing: 0) {
                 Spacer(minLength: 4)
-                HStack {
-                    🪧ValueLabel()
-                        .padding(.leading, 12)
-                    if #unavailable(watchOS 10.0) {
-                        Spacer()
-                        🛠MenuButton()
-                            .buttonStyle(.plain)
-                    }
-                }
-                .minimumScaleFactor(0.6)
+                🪧ValueLabel()
+                    .padding(.leading, 12)
+                    .minimumScaleFactor(0.6)
                 Spacer(minLength: 4)
                 Divider()
                 👆Keypad()
@@ -28,12 +21,10 @@ struct ContentView: View {
             .ignoresSafeArea(edges: .bottom)
             .frame(maxHeight: .infinity)
             .toolbar {
-                if #available(watchOS 10.0, *) {
-                    ToolbarItem(placement: .topBarLeading) { 🛠MenuButton() }
-                }
+                ToolbarItem(placement: .topBarLeading) { 🛠MenuButton() }
             }
         }
-        .sheet(isPresented: self.$model.showResultScreen) {
+        .sheet(isPresented: self.$model.isResultScreenPresented) {
             self.model.reset()
         } content: {
             🗯ResultScreen()

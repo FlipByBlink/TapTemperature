@@ -6,11 +6,11 @@ struct 📏LoadPrefferedUnit: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onChange(of: self.scenePhase) {
-                if $0 == .active {
+                if $1 == .active {
                     self.model.loadPreferredUnit()
                 }
             }
-            .onChange(of: self.model.activeMode) { _ in
+            .onChange(of: self.model.activeMode) { _, _ in
                 self.model.loadPreferredUnit()
             }
     }

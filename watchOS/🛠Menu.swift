@@ -1,26 +1,22 @@
 import SwiftUI
 
 struct 🛠MenuButton: View {
-    @State private var showSheet: Bool = false
-    private var isWatchOS9: Bool { if #unavailable(watchOS 10) { true } else { false } }
+    @EnvironmentObject var model: 📱AppModel
     var body: some View {
         Button {
-            self.showSheet = true
+            self.model.isMenuPresented = true
             💥Feedback.light()
         } label: {
             Label("Open menu", systemImage: "gearshape")
                 .labelStyle(.iconOnly)
-                .padding(self.isWatchOS9 ? 8 : 0)
         }
-        .padding(.trailing, self.isWatchOS9 ? 4 : 0)
-        .tint(self.isWatchOS9 ? .primary : nil)
-        .sheet(isPresented: self.$showSheet) {
+        .sheet(isPresented: self.$model.isMenuPresented) {
             🛠Menu()
         }
     }
 }
 
-private struct 🛠Menu: View {
+struct 🛠Menu: View {
     @EnvironmentObject var model: 📱AppModel
     @Environment(\.dismiss) var dismiss
     var body: some View {
@@ -45,7 +41,7 @@ private extension 🛠Menu {
         Toggle(isOn: self.$model.ableBBT) {
             Label("Basal body temperature", systemImage: "bed.double")
         }
-        .onChange(of: self.model.ableBBT) { _ in
+        .onChange(of: self.model.ableBBT) { _, _ in
             self.model.setUpHealthStore(.basalBodyTemperature)
         }
     }

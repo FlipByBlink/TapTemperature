@@ -13,7 +13,8 @@ class 📱AppModel: NSObject, ObservableObject {
     
     @Published private(set) var bbtMode: Bool = true
     
-    @Published var showResultScreen: Bool = false
+    @Published var isMenuPresented: Bool = false
+    @Published var isResultScreenPresented: Bool = false
     @Published private(set) var registrationSuccess: Bool = false
     @Published private(set) var processingUndo: Bool = false
     @Published private(set) var undid: Bool = false
@@ -60,7 +61,7 @@ extension 📱AppModel {
             do {
                 guard self.api.authorizationStatus(for: self.activeMode.type) == .sharingAuthorized else {
                     self.registrationSuccess = false
-                    self.showResultScreen = true
+                    self.isResultScreenPresented = true
                     return
                 }
                 let ⓢample = HKQuantitySample(type: self.activeMode.type,
@@ -71,12 +72,12 @@ extension 📱AppModel {
                 self.sampleCache = ⓢample
                 try await self.api.save(ⓢample)
                 self.registrationSuccess = true
-                self.showResultScreen = true
+                self.isResultScreenPresented = true
                 💥Feedback.success()
             } catch {
                 print(#function, error)
                 self.registrationSuccess = false
-                self.showResultScreen = true
+                self.isResultScreenPresented = true
             }
         }
     }
@@ -129,7 +130,7 @@ extension 📱AppModel {
     }
     
     func reset() {
-        self.showResultScreen = false
+        self.isResultScreenPresented = false
         self.undid = false
         self.failedUndo = false
         self.resetComponents()
@@ -159,20 +160,28 @@ extension 📱AppModel: WKApplicationDelegate {
 
 private extension 📱AppModel {
     private var inputValue: Double {
-        switch self.components.count {
-            case 3:
-                Double("\(self.components[0])"
-                       + "\(self.components[1])"
-                       + "."
-                       + "\(self.components[2])") ?? 0.0
-            case 4:
-                Double("\(self.components[0])"
-                       + "\(self.components[1])"
-                       + "."
-                       + "\(self.components[2])"
-                       + "\(self.components[3])") ?? 0.0
-            default:
-                0.0
+        let string: String? = {
+            switch self.components.count {
+                case 3:
+                    "\(self.components[0])"
+                    + "\(self.components[1])"
+                    + "."
+                    + "\(self.components[2])"
+                case 4:
+                    "\(self.components[0])"
+                    + "\(self.components[1])"
+                    + "."
+                    + "\(self.components[2])"
+                    + "\(self.components[3])"
+                default:
+                    nil
+            }
+        }()
+        if let string,
+           let value = Double(string) {
+            return value
+        } else {
+            return 0.0
         }
     }
     private var satisfyAutoComplete: Bool {

@@ -306,7 +306,6 @@ private struct 🧑‍💻AboutDeveloperPublisherLink: View {
                 } footer: {
                     Text("Taken on 2021-11", tableName: "🌐AboutApp")
                 }
-                Self.jobHuntSection()
             }
             .navigationTitle(Text("Developer / Publisher", tableName: "🌐AboutApp"))
         } label: {
@@ -347,23 +346,6 @@ private struct 🧑‍💻AboutDeveloperPublisherLink: View {
             } header: {
                 Text("Timeline", tableName: "🌐AboutApp")
             }
-        }
-    }
-    private static func jobHuntSection() -> some View {
-        Section {
-            VStack(spacing: 8) {
-                Text("Job hunting now!", tableName: "🌐AboutApp")
-                    .font(.headline.italic())
-                Text("If you are interested in hiring or acquiring, please contact me.",
-                     tableName: "🌐AboutApp")
-                .font(.subheadline)
-                Text(🗒️StaticInfo.contactAddress)
-                    .textSelection(.enabled)
-                    .italic()
-                    .foregroundStyle(.secondary)
-            }
-            .padding(12)
-            .frame(maxWidth: .infinity)
         }
     }
 }

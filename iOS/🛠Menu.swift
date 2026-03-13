@@ -1,22 +1,19 @@
 import SwiftUI
 
 struct 🛠MenuButton: View {
-    @State private var showSheet: Bool = false
+    @EnvironmentObject var model: 📱AppModel
     var body: some View {
         Button {
-            self.showSheet = true
+            self.model.isMenuPresented = true
             💥Feedback.light()
         } label: {
             Label("Open menu", systemImage: "gearshape")
         }
         .tint(.primary)
-        .sheet(isPresented: self.$showSheet) {
-            🛠Menu()
-        }
     }
 }
 
-private struct 🛠Menu: View {
+struct 🛠Menu: View {
     @EnvironmentObject var model: 📱AppModel
     @Environment(\.dismiss) var dismiss
     var body: some View {
@@ -55,7 +52,7 @@ private extension 🛠Menu {
             Label("Basal body temperature", systemImage: "bed.double")
         }
         .onChange(of: self.model.ableBBT) {
-            if $0 { self.model.setUpHealthStore(.basalBodyTemperature) }
+            if $1 { self.model.setUpHealthStore(.basalBodyTemperature) }
         }
     }
     private func secondDecimalPlaceToggle() -> some View {

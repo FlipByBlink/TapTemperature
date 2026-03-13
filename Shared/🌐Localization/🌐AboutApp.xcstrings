@@ -168,6 +168,7 @@
       }
     },
     "If you are interested in hiring or acquiring, please contact me." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -218,6 +219,7 @@
       }
     },
     "Job hunting now!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
